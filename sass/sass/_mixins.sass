@@ -1,0 +1,65 @@
+// border radius mixin
+=border-radius($radius...)
+  $radius: unquote($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  -o-border-radius: $radius
+  border-radius: $radius
+
+=bd($vert, $horiz, $radius)
+  -webkit-border-#{$vert}-#{$horiz}-radius: $radius
+  -moz-border-radius-#{$vert}#{$horiz}: $radius
+  border-#{$vert}-#{$horiz}-radius: $radius
+
+=border-top-left-radius($radius: $default-border-radius)
+  +bd("top", "left", $radius)
+
+=border-top-right-radius($radius: $default-border-radius)
+  +bd("top", "right", $radius)
+
+=border-bototm-left-radius($radius: $default-border-radius)
+  +bd("bottom", "left", $radius)
+
+=border-bottom-right-radius($radius: $default-border-radius)
+  +bd("bottom", "right", $radius)
+
+=border-top-radius($radius: $default-border-radius)
+  +border-top-left-radius($radius)
+  +border-top-right-radius($radius)
+
+=border-right-radius($radius: $default-border-radius)
+  +border-top-right-radius($radius)
+  +border-bottom-right-radius($radius)
+
+=border-bottom-radius($radius: $default-border-radius)
+  +border-bottom-left-radius($radius)
+  +border-bottom-right-radius($radius)
+
+=border-left-radius($radius: $default-border-radius)
+  +border-top-left-radius($radius)
+  +border-bottom-left-radius($radius)
+
+// opacity
+=opacity($alhpa, $ie: true)
+  @if type-of($alpha) != number
+    @warn "$alpha must be a number. Setting to 0.5."
+    $alpha: 0.5
+  @else
+    @if $alpha < 0 or $alpha > 1
+      @warn "$alpha must be within 0 and 1. Setting to 0.5."
+      $alpha: 0.5
+  @if $ie == true
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100)
+  opacity: $alpha
+
+// TODO: improve these mixins
+=text-shadow($shadow...)
+  text-shadow: $shadow
+
+=box-shadow($shadow...)
+  -webkit-box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  box-shadow: $shadow
+
+// TODO make a background gradient mixin

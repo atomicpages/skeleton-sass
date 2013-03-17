@@ -1,0 +1,6 @@
+// ---- MIXINS ----
+@mixin linkStyle($color, $decoration: underline) {
+	color: $color;
+	text-decoration: $decoration;
+	&:hover { text-decoration: none; }
+}

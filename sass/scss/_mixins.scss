@@ -1,0 +1,64 @@
+// border radius mixin
+@mixin border-radius($radius...) {
+	$radius: unquote($radius);
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin bd($vert, $horiz, $radius) {
+	-webkit-border-#{$vert}-#{$horiz}-radius: $radius;
+	-moz-border-radius-#{$vert}#{$horiz}: $radius;
+	border-#{$vert}-#{$horiz}-radius: $radius;
+}
+@mixin border-top-left-radius($radius: $default-border-radius) { @include bd('top', 'left', $radius); }
+@mixin border-top-right-radius($radius: $default-border-radius) { @include bd('top', 'right', $radius); }
+@mixin border-bototm-left-radius($radius: $default-border-radius) { @include bd('bottom', 'left', $radius); }
+@mixin border-bottom-right-radius($radius: $default-border-radius) { @include bd('bottom', 'right', $radius); }
+@mixin border-top-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-top-right-radius($radius);
+}
+@mixin border-right-radius($radius: $default-border-radius) {
+	@include border-top-right-radius($radius);
+	@include border-bottom-right-radius($radius);	
+}
+@mixin border-bottom-radius($radius: $default-border-radius) {
+	@include border-bottom-left-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+@mixin border-left-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-bottom-left-radius($radius);	
+}
+
+// opacity
+@mixin opacity($alhpa, $ie: true) {
+	@if(type-of($alpha) != number) {
+		@warn "$alpha must be a number. Setting to 0.5.";
+		$alpha: 0.5;
+	} @else {
+		@if($alpha < 0 or $alpha > 1) {
+			@warn "$alpha must be within 0 and 1. Setting to 0.5.";
+			$alpha: 0.5;
+		}
+	}
+	@if($ie == true) {
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100);
+	}
+	opacity: $alpha;
+}
+
+// TODO: improve these mixins
+@mixin text-shadow($shadow...) {
+	text-shadow: $shadow;
+}
+
+@mixin box-shadow($shadow...) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+// TODO make a background gradient mixin

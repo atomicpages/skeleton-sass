@@ -1,0 +1,210 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
+// IMPORTS
+@import "functions"; // import _functions.scss
+
+// TODO: Allow for fluid grids
+@mixin makeGrid($width: 960px, $column_width: 40px, $gutter_width: 20px, $columns: 16, $fixed: false) {
+  @for $i from 1 through $columns {
+    @if $i == 1 {
+      .container .one.column, 
+      .container .one.columns { width: $column_width; }
+    } @else {
+      // a_n = 40 + (60 (n - 1))
+      .container .#{getWordFromNum($i)}.columns { width: $column_width + (($column_width + $gutter_width) * ($i - 1)); }
+    }
+  }
+  .container .one-third.column { width: round($width * (1/3)) - $gutter_width ; }
+  .container .two-thirds.column { width: round($width * (2/3)) - $gutter_width; }
+  /* Offsets */
+  @for $i from 1 through $columns {
+    @if $i < $columns {
+      .container .offset-by-#{getWordFromNum($i)} { width: ($column_width + $gutter_width) * $i; }
+    }
+  }
+}
+
+/* #Base #{$width} Grid
+================================================== */
+.container {
+	position: relative;
+	width: $width;
+	margin: 0 auto;
+	padding: 0;
+	.column, 
+	.columns {
+		float: left;
+		display: inline;
+		margin: {
+		left: 10px;
+		right:0px;
+    };
+    /* Nested Column Classes */
+    &.alpha { margin-left: 0; }
+    &.omega { margin-right: 0; }
+	}
+}
+.row { margin-bottom: 20px; }
+/* Base Grid */
+@include makeGrid($width);
+
+/* #Tablet (Portrait)
+================================================== */
+/* Note: Design for a width of #{unitless($tabletWidth)} */
+@media only screen and (min-width: $tabletWidth) and (max-width: ($width - 1)) {
+	.container { 
+	  width: $tabletWidth;
+	  .column, .columns {
+	    margin: {
+			left: 10px;
+			right: 10px;
+	    };
+	    &.alpha {
+			margin: {
+				left: 0;
+				right: 10px;
+			};
+	    }
+	    &.omega {
+			margin: {
+				right: 0;
+				left: 10px;
+			};
+	    }
+	  } 
+  }
+	.alpha.omega {
+		margin: {
+			left: 0;
+			right: 0;
+		};
+	}
+	@include makeGrid($tabletWidth, 28px);
+}
+
+/*  #Mobile (Portrait)
+================================================== */
+/* Note: Design for a width of #{unitless($mobilePortraitWidth)} */
+@media only screen and (max-width: ($tabletWidth - 1)) {
+	.container { width: $mobilePortraitWidth; }
+	.container .columns, 
+	.container .column { margin: 0; }
+	.container .one.column, 
+	.container .one.columns, 
+	.container .two.columns, 
+	.container .three.columns, 
+	.container .four.columns, 
+	.container .five.columns, 
+	.container .six.columns, 
+	.container .seven.columns, 
+	.container .eight.columns, 
+	.container .nine.columns, 
+	.container .ten.columns, 
+	.container .eleven.columns, 
+	.container .twelve.columns, 
+	.container .thirteen.columns, 
+	.container .fourteen.columns, 
+	.container .fifteen.columns, 
+	.container .sixteen.columns, 
+	.container .one-third.column, 
+	.container .two-thirds.column { width: $mobilePortraitWidth; }
+	/* Offsets */
+	.container .offset-by-one, 
+	.container .offset-by-two, 
+	.container .offset-by-three,  
+	.container .offset-by-four,  
+	.container .offset-by-five, 
+	.container .offset-by-six, 
+	.container .offset-by-seven, 
+  .container .offset-by-eight, 
+  .container .offset-by-nine, 
+  .container .offset-by-ten, 
+  .container .offset-by-eleven, 
+  .container .offset-by-twelve, 
+  .container .offset-by-thirteen, 
+  .container .offset-by-fourteen, 
+  .container .offset-by-fifteen { padding-left: 0; }
+}
+
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of #{unitless($mobileLandscapeWidth)} */
+@media only screen and (min-width: 480px) and (max-width: ($tabletWidth - 1)) {
+	.container { width: $mobileLandscapeWidth; }
+	.container .columns, 
+	.container .column { margin: 0; }
+	.container .one.column, 
+	.container .one.columns, 
+	.container .two.columns, 
+	.container .three.columns, 
+	.container .four.columns, 
+	.container .five.columns, 
+	.container .six.columns, 
+	.container .seven.columns, 
+	.container .eight.columns, 
+	.container .nine.columns, 
+	.container .ten.columns, 
+	.container .eleven.columns, 
+	.container .twelve.columns, 
+	.container .thirteen.columns, 
+	.container .fourteen.columns, 
+	.container .fifteen.columns, 
+	.container .sixteen.columns, 
+	.container .one-third.column, 
+	.container .two-thirds.column { width: $mobileLandscapeWidth; }
+}
+
+/* #Clearing
+================================================== */
+/* Self Clearing Goodness */
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+.row, 
+.clearfix { 
+  zoom: 1;
+  &:after, &:before {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  &:after { clear: both; }
+}
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
