@@ -9,31 +9,36 @@ $mobileLandscapeWidth: 420px; // mobile landscape
 // Function that takes in an int and converts it to the English word up to twenty
 // edit the function to suit your needs.
 // @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright AtomicPages LLC 2013. All Rights Reserved.
+// @copyright AtomicPages LLC 2013
 // @license MIT <http://opensource.org/licenses/MIT>
 // @param int $int
 @function getWordFromNum($int) {
-  $int: abs($int); // if it is negative, let's make it positive
-  $res: '';
-  @if $int == 1         { $res: 'one';
-  } @else if $int == 2  { $res: 'two';
-  } @else if $int == 3  { $res: 'three';
-  } @else if $int == 4  { $res: 'four';
-  } @else if $int == 5  { $res: 'five'
-  } @else if $int == 6  { $res: 'six'
-  } @else if $int == 7  { $res: 'seven'
-  } @else if $int == 8  { $res: 'eight'
-  } @else if $int == 9  { $res: 'nine'
-  } @else if $int == 10 { $res: 'ten'
-  } @else if $int == 11 { $res: 'eleven'
-  } @else if $int == 12 { $res: 'twelve'
-  } @else if $int == 13 { $res: 'thirteen'
-  } @else if $int == 14 { $res: 'fourteen'
-  } @else if $int == 15 { $res: 'fifteen'
-  } @else if $int == 16 { $res: 'sixteen'
-  } @else if $int == 17 { $res: 'seventeen'
-  } @else if $int == 18 { $res: 'eighteen'
-  } @else if $int == 19 { $res: 'nineteen'
-  } @else if $int == 20 { $res: 'twenty'
-  } @return $res;
+	$int: abs($int); // if it is negative, let's make it positive
+	$res: '';
+	@if $int == 1         { $res: 'one';
+	} @else if $int == 2  { $res: 'two';
+	} @else if $int == 3  { $res: 'three';
+	} @else if $int == 4  { $res: 'four';
+	} @else if $int == 5  { $res: 'five'
+	} @else if $int == 6  { $res: 'six'
+	} @else if $int == 7  { $res: 'seven'
+	} @else if $int == 8  { $res: 'eight'
+	} @else if $int == 9  { $res: 'nine'
+	} @else if $int == 10 { $res: 'ten'
+	} @else if $int == 11 { $res: 'eleven'
+	} @else if $int == 12 { $res: 'twelve'
+	} @else if $int == 13 { $res: 'thirteen'
+	} @else if $int == 14 { $res: 'fourteen'
+	} @else if $int == 15 { $res: 'fifteen'
+	} @else if $int == 16 { $res: 'sixteen'
+	} @else if $int == 17 { $res: 'seventeen'
+	} @else if $int == 18 { $res: 'eighteen'
+	} @else if $int == 19 { $res: 'nineteen'
+	} @else if $int == 20 { $res: 'twenty'
+	} @return $res;
+}
+
+// addresses https://github.com/nex3/sass/issues/533
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
 }
