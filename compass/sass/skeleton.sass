@@ -1,3 +1,8 @@
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
 /*
  ** Skeleton V1.2
  ** Copyright 2011, Dave Gamache
@@ -6,46 +11,23 @@
  ** http://www.opensource.org/licenses/mit-license.php
  ** 6/20/2012
 
+// IMPORTS
+@import vars
+
+// import _vars
+@import mixins
+
+// import _mixins
+
 /* Table of Contents
  *==================================================
- *    #Base 960 Grid
+ *    #Base #{strip-units($width)} Grid
  *    #Tablet (Portrait)
  *    #Mobile (Portrait)
  *    #Mobile (Landscape)
  *    #Clearing
 
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
-
-// IMPORTS
-@import functions
-
-// import _functions.scss
-
-// TODO: Allow for fluid grids
-=makeGrid($width: 960px, $column_width: 40px, $gutter_width: 20px, $columns: 16, $fixed: false)
-  @for $i from 1 through $columns
-    @if $i == 1
-      .container .one.column, 
-      .container .one.columns
-        width: $column_width
-    @else
-      // a_n = 40 + (60 (n - 1))
-      .container .#{getWordFromNum($i)}.columns
-        width: $column_width + ($column_width + $gutter_width) * ($i - 1)
-  .container .one-third.column
-    width: round($width * 1 / 3) - $gutter_width
-  .container .two-thirds.column
-    width: round($width * 2 / 3) - $gutter_width
-  /* Offsets
-  @for $i from 1 through $columns
-    @if $i < $columns
-      .container .offset-by-#{getWordFromNum($i)}
-        width: ($column_width + $gutter_width) * $i
-
-/* #Base #{$width} Grid
+/* #Base #{strip-units($width)} Grid
  *==================================================
 .container
   position: relative
@@ -73,7 +55,7 @@
 
 /* #Tablet (Portrait)
  *==================================================
-/* Note: Design for a width of #{unitless($tabletWidth)}
+/* Note: Design for a width of #{strip-units($tabletWidth)}
 @media only screen and (min-width: $tabletWidth) and (max-width: $width - 1)
   .container
     width: $tabletWidth
@@ -97,7 +79,7 @@
 
 /*  #Mobile (Portrait)
  *==================================================
-/* Note: Design for a width of #{unitless($mobilePortraitWidth)}
+/* Note: Design for a width of #{strip-units($mobilePortraitWidth)}
 @media only screen and (max-width: $tabletWidth - 1)
   .container
     width: $mobilePortraitWidth
@@ -144,7 +126,7 @@
 
 /* #Mobile (Landscape)
  *==================================================
-/* Note: Design for a width of #{unitless($mobileLandscapeWidth)}
+/* Note: Design for a width of #{strip-units($mobileLandscapeWidth)}
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1)
   .container
     width: $mobileLandscapeWidth
@@ -189,7 +171,7 @@
 .clearfix
   zoom: 1
   &:after, &:before
-    content: '\0020'
+    content: "\0020"
     display: block
     overflow: hidden
     visibility: hidden

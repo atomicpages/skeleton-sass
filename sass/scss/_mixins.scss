@@ -1,3 +1,14 @@
+// DEPENDENCIES
+@import "functions"; // import _functions
+
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
+// This file is meant for all of your custom mixins.
+
+// ---- MIXINS ----
 // border radius mixin
 @mixin border-radius($radius...) {
 	$radius: unquote($radius);
@@ -62,3 +73,24 @@
 }
 
 // TODO make a background gradient mixin
+
+// TODO: Allow for fluid grids
+@mixin makeGrid($width: getWidth(), $column_width: getColWidth(), $gutter_width: getGutterWidth(), $columns: getCols(), $fixed: getFixed()) {
+	@for $i from 1 through $columns {
+		@if $i == 1 {
+			.container .one.column, 
+			.container .one.columns { width: $column_width; }
+		} @else {
+			// a_n = 40 + (60 (n - 1))
+			.container .#{getWordFromNum($i)}.columns { width: $column_width + (($column_width + $gutter_width) * ($i - 1)); }
+		}
+	}
+	.container .one-third.column { width: round($width * (1/3)) - $gutter_width ; }
+	.container .two-thirds.column { width: round($width * (2/3)) - $gutter_width; }
+	/* Offsets */
+	@for $i from 1 through $columns {
+		@if $i < $columns {
+			.container .offset-by-#{getWordFromNum($i)} { width: ($column_width + $gutter_width) * $i; }
+		}
+	}
+}

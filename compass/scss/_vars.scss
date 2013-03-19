@@ -1,13 +1,43 @@
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
+// This file is meant for all of your variables. Feel free to add your own!
+
 // ---- VARIABLES ----
 
-// backgrounds
-$backgroundColor: #fff;
+// grid vars
+$width: 960px; // base grid
 
-// font styles
+// background vars
+$backgroundColor: #fff !default;
+
+// font vars
 $fontSize: 14px;
-$fontFamily: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$formFontFamily: $fontFamily;
+$fontFamily: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$fontColor: #444 !default;
 
-// heading styles
-$headingFamily: "Georgia", "Times New Roman", serif;
-$headingColor: #181818;
+// form vars
+$formFont: $fontFamily !default;
+
+// link vars
+$linkColor: #333 !default;
+$linkHoverColor: #000 !default;
+$linkDecoration: underline !default;
+
+// heading vars
+$headingFamily: "Georgia", "Times New Roman", serif !default;
+$headingColor: #181818 !default;
+
+// grid vars continued
+// ----------- change values at your own risk
+$columnWidth: 40px;
+$gutterWidth: 20px;
+$columns: 16;
+$fixed: false;
+
+// media query dimensions
+$tabletWidth: 768px !default;
+$mobilePortraitWidth: 300px !default;
+$mobileLandscapeWidth: 420px !default;

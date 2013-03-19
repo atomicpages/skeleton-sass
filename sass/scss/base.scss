@@ -1,3 +1,8 @@
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
 /*
 * Skeleton V1.2
 * Copyright 2011, Dave Gamache
@@ -8,8 +13,8 @@
 */
 
 // IMPORTS
-@import "mixins";
-@import "vars"; // import _global_variables.scss
+@import "vars"; // import _vars
+@import "mixins"; // import _mixins
 
 /* Table of Contents
 ==================================================
@@ -27,7 +32,7 @@
 
 /* # Reset & Basics (Inspired by E. Meyers)
 ================================================== */
-// Keep as is because we want this placement in file
+// Because it differs from compass reset
 html, body, div, span, applet, object, iframe, h1, h2,
 h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
 address, big, cite, code, del, dfn, em, img, ins, kbd,
@@ -51,12 +56,12 @@ nav, section { display: block; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
 blockquote, q { 
-  quotes: none;
-  &:before,
-  &:after {
-    content: '';
-    content: none;
-  } 
+	quotes: none;
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	} 
 }
 table {
 	border: {
@@ -69,9 +74,14 @@ table {
 ================================================== */
 body {
 	background: $backgroundColor;
-	font: $fontSize $fontFamily;
+	font: {
+		size: $fontSize;
+		family: $fontFamily;
+		weight: normal;
+		style: normal;
+	}
 	line-height: $fontSize * 1.5;
-	color: #444;
+	color: $fontColor;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
 }
@@ -165,11 +175,11 @@ hr {
 /* #Links
 ================================================== */
 a, a:visited {
-	color: #333;
-	text-decoration: underline;
+	color: $linkColor;
+	text-decoration: $linkDecoration;
 	outline: 0;
 }
-a:hover, a:focus, a:active { color: #000; }
+a:hover, a:focus, a:active { color: $linkHoverColor; }
 p a, p a:visited { line-height: inherit; }
 
 /* #Lists
@@ -224,7 +234,7 @@ input[type="button"] {
 	font: {
 		size: $fontSize - 1;
 		weight: bold;
-		family: $fontFamily;
+		family: $formFont;
 	};
 	text-decoration: none;
 	@include text-shadow(0 1px rgba(255, 255, 255, 0.75));
@@ -296,7 +306,7 @@ select {
 	@include border-radius(2px);
 	font: {
 		size: $fontSize + 1;
-		family: $fontFamily;
+		family: $formFont;
 	};
 	color: #777;
 	margin: 0 0 20px;
@@ -336,7 +346,7 @@ legend span {
 
 /* #Misc
 ================================================== */
+.subtract-bottom { margin-bottom: -20px !important; }
 .remove-bottom { margin-bottom: 0 !important; }
 .half-bottom { margin-bottom: 10px !important; }
 .add-bottom { margin-bottom: 20px !important; }
-.subtract-bottom { margin-bottom: -20px !important; }

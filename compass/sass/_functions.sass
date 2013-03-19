@@ -1,18 +1,9 @@
-// GLOBAL VARIABLES
-$width: 960px
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
 
-// base grid
-
-// ----------- change values at your own risk
-$tabletWidth: 768px
-
-// tablet width
-$mobilePortraitWidth: 300px
-
-// mobile portrait
-$mobileLandscapeWidth: 420px
-
-// mobile landscape
+// Add custom functions here
 
 // Function that takes in an int and converts it to the English word up to twenty
 // edit the function to suit your needs.
@@ -65,3 +56,29 @@ $mobileLandscapeWidth: 420px
   @else if $int == 20
     $res: "twenty"
   @return $res
+
+// addresses https://github.com/nex3/sass/issues/533
+@function strip-units($number)
+  @return $number / ($number * 0 + 1)
+
+// getters for grid variables
+@function getWidth()
+  @return $width
+
+// @returns number
+@function getCols()
+  @return $columns
+
+// @returns number
+@function getColWidth()
+  @return $columnWidth
+
+// @returns number
+@function getGutterWidth()
+  @return $gutterWidth
+
+// @returns number
+@function getFixed()
+  @return $fixed
+
+// @returns bool

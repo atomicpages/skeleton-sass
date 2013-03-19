@@ -1,3 +1,8 @@
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
 /*
  ** Skeleton V1.2
  ** Copyright 2012, Dave Gamache
@@ -14,9 +19,6 @@
  *	#Font-Face
 
 // IMPORTS
-@import functions
-
-// import _functions.scss
 @import vars
 
 // import _global_variables.scss
@@ -26,25 +28,34 @@
 
 /* #Site Styles
  *==================================================
+/* Add site styles here such as a { color: $linkColor; }
 
 /* #Page Styles
  *==================================================
+/* Add page styles here such as .home { background: $homeBg; }
 
 /* #Media Queries
  *==================================================
+/* Otherwise known as custom responsive code! Write it here!
 @media only screen and (min-width: $width) and (max-width: 1280px)
+  /* add code here
 
-/* Smaller than standard #{$width} (devices and browsers)
+/* Smaller than standard #{strip-units($width)} (devices and browsers)
 @media only screen and (max-width: $width - 1)
+  /* add code here
 
-/* Tablet Portrait size to standard #{$width} (devices and browsers)
+/* Tablet Portrait size to standard #{strip-units($width)} (devices and browsers)
 @media only screen and (min-width: $tabletWidth) and (max-width: $width - 1)
+  /* add code here
 
 /* All Mobile Sizes (devices and browser)
 @media only screen and (max-width: $tabletWidth - 1)
+  /* add code here
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers)
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1)
+  /* add code here
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 @media only screen and (max-width: 479px)
+  /* add code here

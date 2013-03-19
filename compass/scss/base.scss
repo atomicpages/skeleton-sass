@@ -1,3 +1,8 @@
+// SASS Transcription of Skeleton Framework
+// @license MIT <http://www.opensource.org/licenses/mit-license.php>
+// @author Dennis Thompson <http://www.atomicpages.net/>
+// @copyright Copyright 2013, Dennis Thompson
+
 /*
 * Skeleton V1.2
 * Copyright 2011, Dave Gamache
@@ -7,13 +12,10 @@
 * 6/20/2012
 */
 
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-
 // IMPORTS
 @import "compass/css3";
-@import "vars"; // import _global_variables.scss
+@import "vars"; // import _vars
+@import "mixins"; // import _mixins
 
 /* Table of Contents
 ==================================================
@@ -31,7 +33,7 @@
 
 /* # Reset & Basics (Inspired by E. Meyers)
 ================================================== */
-// Keep as is because we want this placement in file
+// Because it differs from compass reset
 html, body, div, span, applet, object, iframe, h1, h2,
 h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
 address, big, cite, code, del, dfn, em, img, ins, kbd,
@@ -55,12 +57,12 @@ nav, section { display: block; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
 blockquote, q { 
-  quotes: none;
-  &:before,
-  &:after {
-    content: '';
-    content: none;
-  } 
+	quotes: none;
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
 }
 table {
 	border: {
@@ -73,9 +75,14 @@ table {
 ================================================== */
 body {
 	background: $backgroundColor;
-	font: $fontSize $fontFamily;
+	font: {
+		size: $fontSize;
+		family: $fontFamily;
+		weight: normal;
+		style: normal;
+	}
 	line-height: $fontSize * 1.5;
-	color: #444;
+	color: $fontColor;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
 }
@@ -84,8 +91,10 @@ body {
 ================================================== */
 h1, h2, h3, h4, h5, h6 {
 	color: $headingColor;
-	font-family: $headingFamily;
-	font-weight: normal;
+	font: {
+		family: $headingFamily;
+		weight: normal;
+	}
 }
 h1, h2, h3,
 h4, h5, h6 { 
@@ -124,9 +133,9 @@ p {
   margin: 0 0 20px 0;
   img { margin: 0; }
   &.lead {
-    font-size: round($fontSize * 1.75);
-    line-height: round($fontSize * 2.25);
-    color: #777;
+	font-size: round($fontSize * 1.75);
+	line-height: round($fontSize * 2.25);
+	color: #777;
   } 
 }
 em, i { font-style: italic; }
@@ -169,28 +178,42 @@ hr {
 /* #Links
 ================================================== */
 a, a:visited {
-	color: #333;
-	text-decoration: underline;
+	color: $linkColor;
+	text-decoration: $linkDecoration;
 	outline: 0;
 }
-a:hover, a:focus, a:active { color: #000; }
+a:hover, a:focus, a:active { color: $linkHoverColor; }
 p a, p a:visited { line-height: inherit; }
 
 /* #Lists
 ================================================== */
-ul, ol { margin-bottom: 20px; }
+ul, 
+ol { margin-bottom: 20px; }
 ul { list-style: none outside; }
 ol { list-style: decimal; }
-ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+ol, 
+ul.square, 
+ul.circle, 
+ul.disc { margin-left: 30px; }
 ul.square { list-style: square outside; }
 ul.circle { list-style: circle outside; }
 ul.disc { list-style: disc outside; }
-ul ul, ul ol,  ol ol, ol ul {
-	margin: 4px 0 5px 30px;
+ul ul, 
+ul ol, 
+ol ol, 
+ol ul {
+	margin: {
+		top: 4px;
+		right: 0;
+		bottom: 5px;
+		left: 30px;
+	}
 	font-size: 90%;
 }
-ul ul li, ul ol li,
-ol ol li, ol ul li { margin-bottom: 6px; }
+ul ul li, 
+ul ol li,
+ol ol li, 
+ol ul li { margin-bottom: 6px; }
 li {
 	line-height: 18px;
 	margin-bottom: 12px;
@@ -224,7 +247,7 @@ input[type="button"] {
 	font: {
 		size: $fontSize - 1;
 		weight: bold;
-		family: $fontFamily;
+		family: $formFont;
 	};
 	text-decoration: none;
 	@include text-shadow(0 1px rgba(255, 255, 255, 0.75));
@@ -233,7 +256,7 @@ input[type="button"] {
 	padding: 8px 10px;
 	&:hover {
 		color: #222;
-	    @include background(#ddd linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(0,0,0,0.3) 100%));
+		@include background(#ddd linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(0,0,0,0.3) 100%));
 		border: 1px solid #888;
 		border: {
 			top: 1px solid #aaa;
@@ -246,9 +269,9 @@ input[type="button"] {
 	}
 	&.full-width {
 		width: 100%;
-	    padding-left: 0 !important;
-	    padding-right: 0 !important;
-	    text-align: center;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center;
 	}
 	&.smaller {
 		font-size: $fontSize - 2;
@@ -288,7 +311,7 @@ select {
 	@include border-radius(2px);
 	font: {
 		size: $fontSize + 1;
-		family: $fontFamily;
+		family: $formFont;
 	};
 	color: #777;
 	margin: 0 0 20px;
@@ -311,8 +334,8 @@ label,
 legend {
 	display: block;
 	font: {
-	    size: $fontSize + 1;
-	    weight: bold;
+		size: $fontSize + 1;
+		weight: bold;
   };
 }
 select { width: 220px; }
@@ -328,7 +351,7 @@ legend span {
 
 /* #Misc
 ================================================== */
+.subtract-bottom { margin-bottom: -20px !important; }
 .remove-bottom { margin-bottom: 0 !important; }
 .half-bottom { margin-bottom: 10px !important; }
 .add-bottom { margin-bottom: 20px !important; }
-.subtract-bottom { margin-bottom: -20px !important; }
