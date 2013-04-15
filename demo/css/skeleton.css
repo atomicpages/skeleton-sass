@@ -36,21 +36,21 @@ body.fixed .container .fifteen.columns { width: 880px; }
 body.fixed .container .sixteen.columns { width: 940px; }
 body.fixed .container .one-third.column { width: 300px; }
 body.fixed .container .two-thirds.column { width: 620px; }
-body.fixed .container .container .offset-by-one { padding-left: 60px; }
-body.fixed .container .container .offset-by-two { padding-left: 120px; }
-body.fixed .container .container .offset-by-three { padding-left: 180px; }
-body.fixed .container .container .offset-by-four { padding-left: 240px; }
-body.fixed .container .container .offset-by-five { padding-left: 300px; }
-body.fixed .container .container .offset-by-six { padding-left: 360px; }
-body.fixed .container .container .offset-by-seven { padding-left: 420px; }
-body.fixed .container .container .offset-by-eight { padding-left: 480px; }
-body.fixed .container .container .offset-by-nine { padding-left: 540px; }
-body.fixed .container .container .offset-by-ten { padding-left: 600px; }
-body.fixed .container .container .offset-by-eleven { padding-left: 660px; }
-body.fixed .container .container .offset-by-twelve { padding-left: 720px; }
-body.fixed .container .container .offset-by-thirteen { padding-left: 780px; }
-body.fixed .container .container .offset-by-fourteen { padding-left: 840px; }
-body.fixed .container .container .offset-by-fifteen { padding-left: 900px; }
+body.fixed .container .offset-by-one { padding-left: 60px; }
+body.fixed .container .offset-by-two { padding-left: 120px; }
+body.fixed .container .offset-by-three { padding-left: 180px; }
+body.fixed .container .offset-by-four { padding-left: 240px; }
+body.fixed .container .offset-by-five { padding-left: 300px; }
+body.fixed .container .offset-by-six { padding-left: 360px; }
+body.fixed .container .offset-by-seven { padding-left: 420px; }
+body.fixed .container .offset-by-eight { padding-left: 480px; }
+body.fixed .container .offset-by-nine { padding-left: 540px; }
+body.fixed .container .offset-by-ten { padding-left: 600px; }
+body.fixed .container .offset-by-eleven { padding-left: 660px; }
+body.fixed .container .offset-by-twelve { padding-left: 720px; }
+body.fixed .container .offset-by-thirteen { padding-left: 780px; }
+body.fixed .container .offset-by-fourteen { padding-left: 840px; }
+body.fixed .container .offset-by-fifteen { padding-left: 900px; }
 /* Fluid */
 body.fluid .container .column,
 body.fluid .container .columns {
@@ -74,21 +74,21 @@ body.fluid .container .thirteen.columns { width: 79.25%; }
 body.fluid .container .fourteen.columns { width: 85.5%; }
 body.fluid .container .fifteen.columns { width: 91.75%; }
 body.fluid .container .sixteen.columns { width: 98%; }
-body.fluid .container .container .offset-by-one { padding-left: 6.25%; }
-body.fluid .container .container .offset-by-two { padding-left: 12.5%; }
-body.fluid .container .container .offset-by-three { padding-left: 18.75%; }
-body.fluid .container .container .offset-by-four { padding-left: 25%; }
-body.fluid .container .container .offset-by-five { padding-left: 31.25%; }
-body.fluid .container .container .offset-by-six { padding-left: 37.5%; }
-body.fluid .container .container .offset-by-seven { padding-left: 43.75%; }
-body.fluid .container .container .offset-by-eight { padding-left: 50%; }
-body.fluid .container .container .offset-by-nine { padding-left: 56.25%; }
-body.fluid .container .container .offset-by-ten { padding-left: 62.5%; }
-body.fluid .container .container .offset-by-eleven { padding-left: 68.75%; }
-body.fluid .container .container .offset-by-twelve { padding-left: 75%; }
-body.fluid .container .container .offset-by-thirteen { padding-left: 81.25%; }
-body.fluid .container .container .offset-by-fourteen { padding-left: 87.5%; }
-body.fluid .container .container .offset-by-fifteen { padding-left: 93.75%; }
+body.fluid .container .offset-by-one { padding-left: 6.25%; }
+body.fluid .container .offset-by-two { padding-left: 12.5%; }
+body.fluid .container .offset-by-three { padding-left: 18.75%; }
+body.fluid .container .offset-by-four { padding-left: 25%; }
+body.fluid .container .offset-by-five { padding-left: 31.25%; }
+body.fluid .container .offset-by-six { padding-left: 37.5%; }
+body.fluid .container .offset-by-seven { padding-left: 43.75%; }
+body.fluid .container .offset-by-eight { padding-left: 50%; }
+body.fluid .container .offset-by-nine { padding-left: 56.25%; }
+body.fluid .container .offset-by-ten { padding-left: 62.5%; }
+body.fluid .container .offset-by-eleven { padding-left: 68.75%; }
+body.fluid .container .offset-by-twelve { padding-left: 75%; }
+body.fluid .container .offset-by-thirteen { padding-left: 81.25%; }
+body.fluid .container .offset-by-fourteen { padding-left: 87.5%; }
+body.fluid .container .offset-by-fifteen { padding-left: 93.75%; }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   body.fixed .container { width: 768px; }
   body.fixed .container .column, 
@@ -129,21 +129,21 @@ body.fluid .container .container .offset-by-fifteen { padding-left: 93.75%; }
   body.fixed .container .sixteen.columns { width: 748px; }
   body.fixed .container .one-third.column { width: 236px; }
   body.fixed .container .two-thirds.column { width: 492px; }
-  body.fixed .container .container .offset-by-one { padding-left: 48px; }
-  body.fixed .container .container .offset-by-two { padding-left: 96px; }
-  body.fixed .container .container .offset-by-three { padding-left: 144px; }
-  body.fixed .container .container .offset-by-four { padding-left: 192px; }
-  body.fixed .container .container .offset-by-five { padding-left: 240px; }
-  body.fixed .container .container .offset-by-six { padding-left: 288px; }
-  body.fixed .container .container .offset-by-seven { padding-left: 336px; }
-  body.fixed .container .container .offset-by-eight { padding-left: 384px; }
-  body.fixed .container .container .offset-by-nine { padding-left: 432px; }
-  body.fixed .container .container .offset-by-ten { padding-left: 480px; }
-  body.fixed .container .container .offset-by-eleven { padding-left: 528px; }
-  body.fixed .container .container .offset-by-twelve { padding-left: 576px; }
-  body.fixed .container .container .offset-by-thirteen { padding-left: 624px; }
-  body.fixed .container .container .offset-by-fourteen { padding-left: 672px; }
-  body.fixed .container .container .offset-by-fifteen { padding-left: 720px; }
+  body.fixed .container .offset-by-one { padding-left: 48px; }
+  body.fixed .container .offset-by-two { padding-left: 96px; }
+  body.fixed .container .offset-by-three { padding-left: 144px; }
+  body.fixed .container .offset-by-four { padding-left: 192px; }
+  body.fixed .container .offset-by-five { padding-left: 240px; }
+  body.fixed .container .offset-by-six { padding-left: 288px; }
+  body.fixed .container .offset-by-seven { padding-left: 336px; }
+  body.fixed .container .offset-by-eight { padding-left: 384px; }
+  body.fixed .container .offset-by-nine { padding-left: 432px; }
+  body.fixed .container .offset-by-ten { padding-left: 480px; }
+  body.fixed .container .offset-by-eleven { padding-left: 528px; }
+  body.fixed .container .offset-by-twelve { padding-left: 576px; }
+  body.fixed .container .offset-by-thirteen { padding-left: 624px; }
+  body.fixed .container .offset-by-fourteen { padding-left: 672px; }
+  body.fixed .container .offset-by-fifteen { padding-left: 720px; }
   /* Fluid */
   body.fluid .container .column,
   body.fluid .container .columns {
@@ -167,21 +167,21 @@ body.fluid .container .container .offset-by-fifteen { padding-left: 93.75%; }
   body.fluid .container .fourteen.columns { width: 85.5%; }
   body.fluid .container .fifteen.columns { width: 91.75%; }
   body.fluid .container .sixteen.columns { width: 98%; }
-  body.fluid .container .container .offset-by-one { padding-left: 6.25%; }
-  body.fluid .container .container .offset-by-two { padding-left: 12.5%; }
-  body.fluid .container .container .offset-by-three { padding-left: 18.75%; }
-  body.fluid .container .container .offset-by-four { padding-left: 25%; }
-  body.fluid .container .container .offset-by-five { padding-left: 31.25%; }
-  body.fluid .container .container .offset-by-six { padding-left: 37.5%; }
-  body.fluid .container .container .offset-by-seven { padding-left: 43.75%; }
-  body.fluid .container .container .offset-by-eight { padding-left: 50%; }
-  body.fluid .container .container .offset-by-nine { padding-left: 56.25%; }
-  body.fluid .container .container .offset-by-ten { padding-left: 62.5%; }
-  body.fluid .container .container .offset-by-eleven { padding-left: 68.75%; }
-  body.fluid .container .container .offset-by-twelve { padding-left: 75%; }
-  body.fluid .container .container .offset-by-thirteen { padding-left: 81.25%; }
-  body.fluid .container .container .offset-by-fourteen { padding-left: 87.5%; }
-  body.fluid .container .container .offset-by-fifteen { padding-left: 93.75%; }
+  body.fluid .container .offset-by-one { padding-left: 6.25%; }
+  body.fluid .container .offset-by-two { padding-left: 12.5%; }
+  body.fluid .container .offset-by-three { padding-left: 18.75%; }
+  body.fluid .container .offset-by-four { padding-left: 25%; }
+  body.fluid .container .offset-by-five { padding-left: 31.25%; }
+  body.fluid .container .offset-by-six { padding-left: 37.5%; }
+  body.fluid .container .offset-by-seven { padding-left: 43.75%; }
+  body.fluid .container .offset-by-eight { padding-left: 50%; }
+  body.fluid .container .offset-by-nine { padding-left: 56.25%; }
+  body.fluid .container .offset-by-ten { padding-left: 62.5%; }
+  body.fluid .container .offset-by-eleven { padding-left: 68.75%; }
+  body.fluid .container .offset-by-twelve { padding-left: 75%; }
+  body.fluid .container .offset-by-thirteen { padding-left: 81.25%; }
+  body.fluid .container .offset-by-fourteen { padding-left: 87.5%; }
+  body.fluid .container .offset-by-fifteen { padding-left: 93.75%; }
 }
 @media only screen and (max-width: 767px) {
   .container { width: 300px; }

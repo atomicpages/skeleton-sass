@@ -67,12 +67,11 @@
 // generate the offset
 // Note: although $colWidth is optional, it is REQUIRED by the fixed grid
 =_offset($unit, $colCount, $colWidth: )
-  .container
-    @if $unit == "%"
-      @for $i from 1 through $colCount - 1
-        .offset-by-#{getWordFromNum($i)}
-          padding-left: 6.25 * $i#{$unit}
-    @else
-      @for $i from 1 through $colCount - 1
-        .offset-by-#{getWordFromNum($i)}
-          padding-left: ($colWidth + 20) * $i
+  @if $unit == "%"
+    @for $i from 1 through $colCount - 1
+      .offset-by-#{getWordFromNum($i)}
+        padding-left: 6.25 * $i#{$unit}
+  @else
+    @for $i from 1 through $colCount - 1
+      .offset-by-#{getWordFromNum($i)}
+        padding-left: ($colWidth + 20) * $i
