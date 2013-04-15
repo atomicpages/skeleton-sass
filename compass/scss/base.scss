@@ -1,39 +1,22 @@
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
-
-/*
-* Skeleton V1.2
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 6/20/2012
-*/
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * originally authored by Dave Gamache. This translation offers
+ * mixins that support fluid and as well as fixed grids to supplement
+ * the work that Dave Gamache has done.
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @license MIT
+ * @version 1.2
+ */
 
 // IMPORTS
 @import "compass/css3";
 @import "vars"; // import _vars
 @import "mixins"; // import _mixins
 
-/* Table of Contents
-==================================================
-	# Reset & Basics
-	# Basic Styles
-	# Site Styles
-	# Typography
-	# Links
-	# Lists
-	# Images
-	# Buttons
-	# Forms
-	# Misc */
 
-
-/* # Reset & Basics (Inspired by E. Meyers)
-================================================== */
-// Because it differs from compass reset
+/* RESET & BASICS (Inspired by E. Meyers)
+ * ------------------------------------------------ */
 html, body, div, span, applet, object, iframe, h1, h2,
 h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
 address, big, cite, code, del, dfn, em, img, ins, kbd,
@@ -71,8 +54,8 @@ table {
 	}
 }
 
-/* #Basic Styles
-================================================== */
+/* BASIC STYLES
+ * ------------------------------------------------ */
 body {
 	background: $backgroundColor;
 	font: {
@@ -87,8 +70,8 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
-/* #Typography
-================================================== */
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
 h1, h2, h3, h4, h5, h6 {
 	color: $headingColor;
 	font: {
@@ -175,8 +158,8 @@ hr {
 	height: 0;
 }
 
-/* #Links
-================================================== */
+/* LINKS
+ * ------------------------------------------------ */
 a, a:visited {
 	color: $linkColor;
 	text-decoration: $linkDecoration;
@@ -185,23 +168,19 @@ a, a:visited {
 a:hover, a:focus, a:active { color: $linkHoverColor; }
 p a, p a:visited { line-height: inherit; }
 
-/* #Lists
-================================================== */
+/* LISTS
+ * ------------------------------------------------ */
 ul, 
 ol { margin-bottom: 20px; }
 ul { list-style: none outside; }
 ol { list-style: decimal; }
-ol, 
-ul.square, 
-ul.circle, 
-ul.disc { margin-left: 30px; }
+ol, ul.square, 
+ul.circle, ul.disc { margin-left: 30px; }
 ul.square { list-style: square outside; }
 ul.circle { list-style: circle outside; }
 ul.disc { list-style: disc outside; }
-ul ul, 
-ul ol, 
-ol ol, 
-ol ul {
+ul ul, ul ol,
+ol ol, ol ul {
 	margin: {
 		top: 4px;
 		right: 0;
@@ -210,10 +189,8 @@ ol ul {
 	}
 	font-size: 90%;
 }
-ul ul li, 
-ul ol li,
-ol ol li, 
-ol ul li { margin-bottom: 6px; }
+ul ul li,  ul ol li,
+ol ol li,  ol ul li { margin-bottom: 6px; }
 li {
 	line-height: 18px;
 	margin-bottom: 12px;
@@ -221,15 +198,15 @@ li {
 ul.large li { line-height: 21px; }
 li p { line-height: 21px; }
 
-/* #Images
-================================================== */
+/* IMAGES
+ * ------------------------------------------------ */
 img.scale-with-grid {
 	max-width: 100%;
 	height: auto;
 }
 
-/* #Buttons
-================================================== */
+/* BUTTONS
+ * ------------------------------------------------ */
 .button,
 button,
 input[type="submit"],
@@ -292,8 +269,8 @@ input {
 	}
 }
 
-/* #Forms
-================================================== */
+/* FORMS
+ * ------------------------------------------------ */
 form { margin-bottom: 20px; }
 fieldset { margin-bottom: 20px; }
 input[type="text"],
@@ -336,7 +313,7 @@ legend {
 	font: {
 		size: $fontSize + 1;
 		weight: bold;
-  };
+	};
 }
 select { width: 220px; }
 input[type="checkbox"] { display: inline; }
@@ -349,8 +326,8 @@ legend span {
 	color: #444;
 }
 
-/* #Misc
-================================================== */
+/* MISC
+ * ------------------------------------------------ */
 .subtract-bottom { margin-bottom: -20px !important; }
 .remove-bottom { margin-bottom: 0 !important; }
 .half-bottom { margin-bottom: 10px !important; }

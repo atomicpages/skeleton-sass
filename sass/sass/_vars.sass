@@ -1,45 +1,72 @@
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
+// GLOBAL VARIABLES - include your variables here or alter the predefined vars
+// See skeleton file for copyright info
 
-// This file is meant for all of your variables. Feel free to add your own!
-
-// ---- VARIABLES ----
-
-// grid vars
-$width: 960px
-
-// base grid
+// MY VARIABLES
+// $foo: "bar";
 
 // background vars
-$backgroundColor: white !default
+$backgroundColor: white
+
+// default background information
 
 // font vars
 $fontSize: 14px
-$fontFamily: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default
-$fontColor: #444444 !default
+
+// default font size. Change here will adjust sizes across the board.
+$fontFamily: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+// default fonts
+$fontColor: #444444
+
+// default font color
 
 // form vars
-$formFont: $fontFamily !default
+$formFont: $fontFamily
+
+// default font font
 
 // link vars
-$linkColor: #333333 !default
-$linkHoverColor: black !default
-$linkDecoration: underline !default
+$linkColor: #333333
+
+// default link INERT color
+$linkHoverColor: black
+
+// default link HOVER color
+$linkDecoration: underline
+
+// default link decoration
 
 // heading vars
-$headingFamily: "Georgia", "Times New Roman", serif !default
-$headingColor: #181818 !default
+$headingFamily: "Georgia", "Times New Roman", serif
 
-// grid vars continued
-// ----------- change values at your own risk
-$columnWidth: 40px
-$gutterWidth: 20px
-$columns: 16
-$fixed: false
+// default heading font
+$headingColor: #181818
+
+// default heading color
+
+// grid variables
+$baseWidth: 960px
+
+// change this to alter the overall width of the grid
+$baseWidthMQ: 960px
+
+// base width for media query calculations in layout file
+$baseColWidth: 40px
+
+// change this the alter the grid calculation, see _mixins file for more details
+$baseGutterWidth: 20px
+
+// calculation has changed, this is mainly here for consistency with 960.gs
+$isFluid: false
+
+// want a fluid grid by default?
+
+// ------ CHANGE MAY CAUSE UNDESIRED RESULTS
+$baseColCount: 16
+
+// number of cols to generate
 
 // media query dimensions
-$tabletWidth: 768px !default
-$mobilePortraitWidth: 300px !default
-$mobileLandscapeWidth: 420px !default
+$tabletWidth: 768px
+$mobilePortraitWidth: 300px
+$mobileLandscapeWidth: 420px

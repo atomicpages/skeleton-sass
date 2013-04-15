@@ -3,9 +3,9 @@ skeleton-sass
 
 A SASS and Compass + SASS translation of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive frontend framework. This translation includes:
 
-* Skeleton SCSS Translation
-* Skeleton SCSS w/ Compass Translation
-* .sass and .scss styles are included
+* Sassified Skeleton CSS Framework
+* `.scss` and `.sass` files
+* Compass and non-compass versions available
 
 For your convenience all global variables, functions, and mixins are separated into individual files.
 
@@ -20,5 +20,30 @@ Included Files
 * **_functions.scss** is a "private file" that contains the function that generates the grid for the framework. Feel free to change the grid in skeleton.scss to suit your needs!
 * **_vars.scss** is a "private file" the contains all of the global variables that the framework uses. Feel free to change and add your own! See file for additional information.
 
-### License
-Like Skeleton, this is released under the [MIT license](http://opensource.org/licenses/mit-license.php).
+License
+-------
+This project is released under the MIT license.
+
+Find a Bug?
+-----------
+* Submit a pull request OR
+* Create a new issue on the [github page](https://github.com/atomicpages/skeleton-sass/)
+
+Changelog
+---------
+### 1.2
+* Addition of **fluid** grid :)
+* Complete restructure of `mixins` file and grid generation
+* Changed name of `makeGrid` mixin to `grid`
+* Changed core variable names. See `vars` for more information
+* Cleaned up headers across the board
+* Removed unnecessary and unused functions
+* Separated roles in `mixins` file
+* Cleaned up comments in all files
+* and more...
+
+### 1.1
+* Update to several functions and mixins.
+* Addition of new variables
+* Several fixes for non-compass version
+* Fixing of `.sass` files

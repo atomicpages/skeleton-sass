@@ -1,17 +1,13 @@
-
 <!--
-	Demo showcasing the usage of skeleton css framework
+	Demo showcasing the use of skeleton css framework
 	and showing other aspects of the framework such as
 	default styles and width manipulation.
+	See the test.html file for other awesome tests
+	and an excellent resource!
 	@author Dennis Thompson - AtomicPages LLC
-	@copyright Copyright (c) Dennis Thompson 2012.
-	@license GPL 2.0
-	
-	Skeleton CSS is copyright of Dave Gamache which is
-	released under the MIT License. Edits to Skeleton
-	base.css file by Dennis Thompson.
+	@copyright Copyright (c) 2013 AtomicPages LLC
+	@license MIT
 -->
-
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -27,7 +23,7 @@
 <title>Responsive Demo</title>
 
 <!-- favicons -->
-<link rel="shortcut icon" href="https://raw.github.com/dhgamache/Skeleton/master/images/favicon.ico">
+<link rel="shortcut-icon" href="https://raw.github.com/dhgamache/Skeleton/master/images/favicon.ico">
 <link rel="apple-touch-icon" href="https://raw.github.com/dhgamache/Skeleton/master/images/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://raw.github.com/dhgamache/Skeleton/master/images/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114" href="https://raw.github.com/dhgamache/Skeleton/master/images/apple-touch-icon-114x114.png">
@@ -41,11 +37,11 @@
 <style type="text/css">
 	a.blank { visibility: hidden; }
 	::selection { 
-		background: #CCC; 
+		background: #ccc; 
 		text-shadow: none;
 	}
 	::-moz-selection { 
-		background: #CCC; 
+		background: #ccc; 
 		text-shadow: none; 
 	}
 	p.div {
@@ -69,33 +65,103 @@
 		width: 250px;
 		height: 100px;
 	}
+	body.fluid .container { 
+		width: 92%; 
+		-webkit-transition: width 0.5s;
+		-moz-transition: width 0.5s;
+		-o-transition: width 0.5s;
+		transition: width 0.5s;
+	}
+	body.fixed .container {
+		-webkit-transition: width 0.5s;
+		-moz-transition: width 0.5s;
+		-o-transition: width 0.5s;
+		transition: width 0.5s;
+	}
+	.sticky-wrapper {
+		width: 100%;
+		padding: 20px 0;
+		background: #c9de96;
+		background: -moz-linear-gradient(top,  #c9de96 0%, #8ab66b 44%, #398235 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(44%,#8ab66b), color-stop(100%,#398235));
+		background: -webkit-linear-gradient(top,  #c9de96 0%,#8ab66b 44%,#398235 100%);
+		background: -o-linear-gradient(top,  #c9de96 0%,#8ab66b 44%,#398235 100%);
+		background: -ms-linear-gradient(top,  #c9de96 0%,#8ab66b 44%,#398235 100%);
+		background: linear-gradient(to bottom,  #c9de96 0%,#8ab66b 44%,#398235 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 );
+		border-bottom: 1px solid #295e26;
+	}
+	.top { }
+	.top p { text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7); }
 </style>
 
 <!-- load scripts -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="scripts/jquery.js"></script>
 <script type="text/javascript">
-(function($) {
+$(document).ready(function() {
+	var $h = $(window).height();
+	var $w = $(window).width();
+	$('.default, .resize').text($w + "px X " + $h + "px");
 	$(window).resize(function() {
-		var width = $(window).width();
-		$('.width').text(width);
-		var height = $(window).height();
-		$('.height').text(height);
+		var h = $(window).height();
+		var w = $(window).width();
+		$('.resize').text(w + "px X " + h + "px");
 	});
-})(jQuery);
-
-var dWidth = document.documentElement.clientWidth;
-var dHeight = document.documentElement.clientHeight;
+	$('#mmf').click(function() {
+		// $('body').toggleClass('fluid');
+		if ( $('body').hasClass('fixed') ) {
+			$('body').removeClass('fixed').addClass('fluid');
+			$('#mmf').text('Make me Fixed!');
+			$("#width_control").attr('type', 'number');
+			$('#width_control').change(function() {
+				$('.container').width( $(this).val() + "%" );
+			});
+		} else {
+			$('body').removeClass('fluid').addClass('fixed');
+			$('#mmf').text('Make me Fluid!');
+			$("#width_control").attr('type', 'hidden');
+			$('.container').removeAttr('style');
+		}
+	});
+	$(window).scroll (function() {
+		$('.sticky-wrapper').css({
+			'opacity': 0.5,
+			'position': 'fixed',
+			'z-index': 99
+		});
+		$('.sticky-wrapper').hover(
+			function() {
+				$('.sticky-wrapper').stop(true, true).animate({opacity: 1}, 200);
+			},
+			function() {
+				$('.sticky-wrapper').stop(true, true).animate({opacity: 0.5}, 200);
+			}
+		);
+	})
+	$('.top').waypoint('sticky');
+});
 </script>
 </head>
-<body>
+<body class="fixed">
+	<div class="top">
+		<div class="container">
+			<div class="thirteen columns">
+				<p class="div small">Check out the fluid capabilities of Skeleton SASS! Begin by clicking on the button to the right of this text.</p>
+			</div>
+			<div class="three columns">
+				<button id="mmf">Make me Fluid!</button>
+				<input type="hidden" id="width_control" min="10" max="100" value="92" />
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="sixteen columns">
 			<a name="top" class="blank">&nbsp;</a>
 			<p class="div">Foreword</p>
-			<p>This is a demo showcasing the default styles of the skeleton css framework and the functionality of the responsive media queries. I encourage you to view this file on a smart phone (iPhone and Android work best) if you can. Observe the functionality of the responsive adjustment to the device viewport.</p>
-			<p>Also, a special note on the form elements at the bottom of the page. These utilize new HTML 5 form types such as tel, search, url, and email. I highly recommend viewing these new elements on a mobile device to see how easy they make life for mobile users!!</p>
-			<p class="div small">Your default viewport size: <script>document.write(dWidth + ' X ' + dHeight);</script></p>
-			<p class="div small">Your current viewport size (resize to view): <span class="width"></span> X <span class="height"></span></p>
+			<p>This is a demo showcasing the default styles of the skeleton css framework and the functionality of the media queries. I encourage you resize your browser window or view this file on a smart phone.</p>
+			<p>Also, a special note on the form elements at the bottom of the page. These utilize new HTML 5 form types such as tel, search, url, and email. I highly recommend viewing these new elements on a mobile device to see how easy they make life for mobile users! Seriously, you'll be amazed.</p>
+			<p class="div small">Your default viewport size: <span class="default"></span></p>
+			<p class="div small">Your current viewport size (resize to change): <span class="resize"></span></p>
 			<p class="div">Paragraph &amp; Alignment</p>
 			<p class="div small">Left</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius dolor quis risus placerat malesuada. Sed dapibus ante in justo vehicula sed ultricies nibh vehicula. Aenean rutrum venenatis turpis, non condimentum magna aliquam et. Integer pretium rhoncus nulla id feugiat. Curabitur eget pharetra elit. Vestibulum non condimentum turpis. Ut adipiscing pulvinar enim non elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam adipiscing pharetra lectus, at malesuada ipsum ullamcorper a. Ut in lorem turpis, id lobortis arcu. Morbi pharetra lectus a sem tincidunt in convallis nunc ultricies. Fusce et dignissim velit. Quisque vel nunc sit amet libero semper tempor sed id urna. Pellentesque imperdiet lacinia risus hendrerit vehicula. Ut eu elit magna, id scelerisque dolor.</p>
@@ -299,7 +365,7 @@ var dHeight = document.documentElement.clientHeight;
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius dolor quis risus placerat malesuada. Sed dapibus ante in justo vehicula sed ultricies nibh vehicula. Aenean rutrum venenatis turpis, non condimentum magna aliquam et. Integer pretium rhoncus nulla id feugiat. Curabitur eget pharetra elit.</p>
 		</div>
 		<div class="sixteen columns">
-			<p class="div center"><a href="#top">Top</a></p>
+			<p class="div center"><a href="test.html">test.html</a> <a href="#top">Top</a></p>
 		</div>
 	</div>
 </body>

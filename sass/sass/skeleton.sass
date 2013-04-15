@@ -1,15 +1,12 @@
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
-
-/*
- ** Skeleton V1.2
- ** Copyright 2011, Dave Gamache
- ** www.getskeleton.com
- ** Free to use under the MIT license.
- ** http://www.opensource.org/licenses/mit-license.php
- ** 6/20/2012
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * originally authored by Dave Gamache. This translation offers
+ * mixins that support fluid and as well as fixed grids to supplement
+ * the work that Dave Gamache has done.
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @license MIT
+ * @version 1.2
 
 // IMPORTS
 @import vars
@@ -19,28 +16,21 @@
 
 // import _mixins
 
-/* Table of Contents
- *==================================================
- *    #Base #{strip-units($width)} Grid
- *    #Tablet (Portrait)
- *    #Mobile (Portrait)
- *    #Mobile (Landscape)
- *    #Clearing
-
-/* #Base #{strip-units($width)} Grid
- *==================================================
+/* BASE GRID
+ * ------------------------------------------------
 .container
   position: relative
-  width: $width
+  width: $baseWidth
   margin: 0 auto
   padding: 0
-  .column, 
+  .column,
   .columns
     float: left
     display: inline
+    position: relative
     margin:
       left: 10px
-      right: 0px
+      right: 10px
     /* Nested Column Classes
     &.alpha
       margin-left: 0
@@ -50,13 +40,12 @@
 .row
   margin-bottom: 20px
 
-/* Base Grid
-+makeGrid($width)
+// @include grid($baseWidth, true); // fluid
++grid($baseWidth)
 
-/* #Tablet (Portrait)
- *==================================================
-/* Note: Design for a width of #{strip-units($tabletWidth)}
-@media only screen and (min-width: $tabletWidth) and (max-width: $width - 1)
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------
+@media only screen and (min-width: 768px) and (max-width: 959px)
   .container
     width: $tabletWidth
     .column, .columns
@@ -75,88 +64,70 @@
     margin:
       left: 0
       right: 0
-  +makeGrid($tabletWidth, 28px)
+  // @include grid($tabletWidth, true); // fluid
+  +grid($tabletWidth, false, 28px)
+  // fixed
 
-/*  #Mobile (Portrait)
- *==================================================
-/* Note: Design for a width of #{strip-units($mobilePortraitWidth)}
-@media only screen and (max-width: $tabletWidth - 1)
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------
+@media only screen and (max-width: 767px)
   .container
     width: $mobilePortraitWidth
-  .container .columns, 
+  .container .columns,
   .container .column
     margin: 0
-  .container .one.column, 
-  .container .one.columns, 
-  .container .two.columns, 
-  .container .three.columns, 
-  .container .four.columns, 
-  .container .five.columns, 
-  .container .six.columns, 
-  .container .seven.columns, 
-  .container .eight.columns, 
-  .container .nine.columns, 
-  .container .ten.columns, 
-  .container .eleven.columns, 
-  .container .twelve.columns, 
-  .container .thirteen.columns, 
-  .container .fourteen.columns, 
-  .container .fifteen.columns, 
-  .container .sixteen.columns, 
-  .container .one-third.column, 
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
   .container .two-thirds.column
     width: $mobilePortraitWidth
-  /* Offsets
-  .container .offset-by-one, 
-  .container .offset-by-two, 
-  .container .offset-by-three,  
-  .container .offset-by-four,  
-  .container .offset-by-five, 
-  .container .offset-by-six, 
-  .container .offset-by-seven, 
-  .container .offset-by-eight, 
-  .container .offset-by-nine, 
-  .container .offset-by-ten, 
-  .container .offset-by-eleven, 
-  .container .offset-by-twelve, 
-  .container .offset-by-thirteen, 
-  .container .offset-by-fourteen, 
-  .container .offset-by-fifteen
-    padding-left: 0
 
-/* #Mobile (Landscape)
- *==================================================
-/* Note: Design for a width of #{strip-units($mobileLandscapeWidth)}
-@media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1)
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------
+@media only screen and (min-width: 480px) and (max-width: 767px)
   .container
     width: $mobileLandscapeWidth
-  .container .columns, 
+  .container .columns,
   .container .column
     margin: 0
-  .container .one.column, 
-  .container .one.columns, 
-  .container .two.columns, 
-  .container .three.columns, 
-  .container .four.columns, 
-  .container .five.columns, 
-  .container .six.columns, 
-  .container .seven.columns, 
-  .container .eight.columns, 
-  .container .nine.columns, 
-  .container .ten.columns, 
-  .container .eleven.columns, 
-  .container .twelve.columns, 
-  .container .thirteen.columns, 
-  .container .fourteen.columns, 
-  .container .fifteen.columns, 
-  .container .sixteen.columns, 
-  .container .one-third.column, 
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
   .container .two-thirds.column
     width: $mobileLandscapeWidth
 
-/* #Clearing
- *==================================================
-/* Self Clearing Goodness
+/* CLEARING
+ * ------------------------------------------------
 .container:after
   content: "\0020"
   display: block
@@ -164,13 +135,9 @@
   clear: both
   visibility: hidden
 
-/* Use clearfix class on parent to clear nested columns,
- *  or wrap each row of columns in a <div class="row">
-
-.row, 
-.clearfix
+.clearfix, .row
   zoom: 1
-  &:after, &:before
+  &:before, &:after
     content: "\0020"
     display: block
     overflow: hidden
@@ -180,7 +147,6 @@
   &:after
     clear: both
 
-/* You can also use a <br class="clear" /> to clear columns
 .clear
   clear: both
   display: block

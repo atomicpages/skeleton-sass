@@ -1,39 +1,78 @@
-// DEPENDENCIES
+// See skeleton file for copyright info
+
 @import functions
 
-// import _functions
+=grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount)
+  $unit: ""
+  @if $fluid == true
+    $unit: "%"
+    // required for fluid
+  @if $fluid == true
+    // and for you math heads... a_n = (6.25 * n) - 2
+    // where n is the iteration
+    +_fluidGrid($unit, $colCount)
+  @else
+    // and for you math heads... a_n = 40 + ( 60 ( n - 1 ) )
+    // where 40 = column width
+    // where 60 is the consistent difference between each column
+    // where n is the iteration
+    +_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
 
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
+// "PRIVATE" MIXINS - these are mixins the help separate logic and should never be used outside of the grid mixin
+// generate the fluid grid
+=_fluidGrid($unit, $colCount)
+  // override only for fluid
+  /* Overrides
+  .container
+    .column,
+    .columns
+      margin:
+        left: 1%
+        right: 1%
+  /* The Grid
+  .container
+    @for $i from 1 through $colCount
+      @if $i == 1
+        .#{getWordFromNum($i)}.column,
+        .#{getWordFromNum($i)}.columns
+          width: 6.25 * $i - 2#{$unit}
+      @else
+        .#{getWordFromNum($i)}.columns
+          width: 6.25 * $i - 2#{$unit}
+    // TODO: fix 1/3 and 2/3 for fluid
+    // .one-third.column { width: (100 / 3)#{$unit}; }
+    // .two-thirds.column { width: ( ( 100 * 2 ) / 3 )#{$unit}; }
+    /* The Offsets
+    +_offset($unit, $colCount)
 
-// This file is meant for all of your custom mixins.
+// generate the fixed grid
+=_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
+  /* The Grid
+  .container
+    @for $i from 1 through $colCount
+      @if $i == 1
+        .#{getWordFromNum($i)}.column,
+        .#{getWordFromNum($i)}.columns
+          width: $colWidth
+      @else
+        .#{getWordFromNum($i)}.columns
+          width: $colWidth + ($colWidth + $gutterWidth) * ($i - 1)
+    .one-third.column
+      width: $width / 3 - 20
+    .two-thirds.column
+      width: $width * 2 / 3 - 20
+    /* The Offsets
+    +_offset("px", $colCount, $colWidth)
 
-// ---- MIXINS ----
-=linkStyle($color, $decoration: underline)
-  color: $color
-  text-decoration: $decoration
-  &:hover
-    text-decoration: none
-
-// TODO: Allow for fluid grids
-=makeGrid($width: getWidth(), $column_width: getColWidth(), $gutter_width: getGutterWidth(), $columns: getCols(), $fixed: getFixed())
-  @for $i from 1 through $columns
-    @if $i == 1
-      .container .one.column, 
-      .container .one.columns
-        width: $column_width
+// generate the offset
+// Note: although $colWidth is optional, it is REQUIRED by the fixed grid
+=_offset($unit, $colCount, $colWidth: )
+  .container
+    @if $unit == "%"
+      @for $i from 1 through $colCount - 1
+        .offset-by-#{getWordFromNum($i)}
+          padding-left: 6.25 * $i#{$unit}
     @else
-      // a_n = 40 + (60 (n - 1))
-      .container .#{getWordFromNum($i)}.columns
-        width: $column_width + ($column_width + $gutter_width) * ($i - 1)
-  .container .one-third.column
-    width: round($width * 1 / 3) - $gutter_width
-  .container .two-thirds.column
-    width: round($width * 2 / 3) - $gutter_width
-  /* Offsets
-  @for $i from 1 through $columns
-    @if $i < $columns
-      .container .offset-by-#{getWordFromNum($i)}
-        width: ($column_width + $gutter_width) * $i
+      @for $i from 1 through $colCount - 1
+        .offset-by-#{getWordFromNum($i)}
+          padding-left: ($colWidth + 20) * $i

@@ -1,0 +1,68 @@
+//  100% working
+@mixin filter-gradient($start, $stop: false, $direction: false) {
+    $direction: unquote($direction);
+    $type: false;
+    @if(unquote($start) != none) {
+        @if(type-of($direction) != "string") {
+            @warn "Invalid parameter for $direction. Expected string but got #{type-of($direction)}, defaulting to vertical";
+            $direction: vertical;
+        }
+        @if($direction == vertical) {
+            $type: 0;
+        } @else {
+            $type: 1;
+        }
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=#{$type});
+    } @else {
+        $stop: null;
+        $direction: null;
+        // see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+        filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+    }
+}
+
+// needs multiple stop support
+@mixin _buildGradient($direction, $start, $stop, $ie: true) {
+    $direction: unquote($direction);
+    $webkitGradientDirection: null;
+    $linearGradientDirection: null;
+    @if($direction == left or $direction == horizontal) {
+        $webkitGradientDirection: linear, left top, right top;
+        $linearGradientDirection: to right;
+    } @else if($direction == top or $direction == vertical) {
+        $webkitGradientDirection: linear, left top, left bottom;
+        $linearGradientDirection: to bottom;
+    } @else if($direction == left top) {
+        $direction: -45deg;
+        $webkitGradientDirection: linear, left top, right bottom;
+        $linearGradientDirection: 135deg;
+    } @else if($direction == left bottom) {
+        $direction: 45deg;
+        $webkitGradientDirection: linear, left bottom, right top;
+        $linearGradientDirection: $direction;
+    }
+    background-image: -moz-linear-gradient($direction, $start, $stop);
+    background-image: -webkit-gradient($webkitGradientDirection, color-stop(nth($start, 1), nth($start, 2)), color-stop(nth($stop, 1), nth($stop, 2)));
+    background-image: -webkit-linear-gradient($direction, $start, $stop);
+    background-image: -o-linear-gradient($direction, $start, $stop);
+    background-image: -ms-linear-gradient($direction, $start, $stop);
+    background-image: linear-gradient($linearGradientDirection, $start, $stop);
+    @if($ie == true) {
+        @include filter-gradient(nth($start, 1), nth($stop, 1), vertical);
+    }
+}
+
+// needs multiple stop support
+@mixin linear-gradient($direction, $start: false, $stop: false) {
+    $direction: unquote($direction);
+    @if(type-of($start) != "list") {
+        @warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
+        $start: false;
+    } @else if(type-of($stop) != "list") {
+        @warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
+        $stop: false;
+    }
+    @include _buildGradient($direction, $start, $stop);
+}
+
+// need radial gradient support

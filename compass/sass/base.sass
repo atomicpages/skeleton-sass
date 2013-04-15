@@ -1,15 +1,12 @@
-// SASS Transcription of Skeleton Framework
-// @license MIT <http://www.opensource.org/licenses/mit-license.php>
-// @author Dennis Thompson <http://www.atomicpages.net/>
-// @copyright Copyright 2013, Dennis Thompson
-
-/*
- ** Skeleton V1.2
- ** Copyright 2011, Dave Gamache
- ** www.getskeleton.com
- ** Free to use under the MIT license.
- ** http://www.opensource.org/licenses/mit-license.php
- ** 6/20/2012
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * originally authored by Dave Gamache. This translation offers
+ * mixins that support fluid and as well as fixed grids to supplement
+ * the work that Dave Gamache has done.
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @license MIT
+ * @version 1.2
 
 // IMPORTS
 @import compass/css3
@@ -20,22 +17,8 @@
 
 // import _mixins
 
-/* Table of Contents
- *==================================================
- *	# Reset & Basics
- *	# Basic Styles
- *	# Site Styles
- *	# Typography
- *	# Links
- *	# Lists
- *	# Images
- *	# Buttons
- *	# Forms
- *	# Misc
-
-/* # Reset & Basics (Inspired by E. Meyers)
- *==================================================
-// Because it differs from compass reset
+/* RESET & BASICS (Inspired by E. Meyers)
+ * ------------------------------------------------
 
 html, body, div, span, applet, object, iframe, h1, h2,
 h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
@@ -77,8 +60,8 @@ table
     collapse: collapse
     spacing: 0
 
-/* #Basic Styles
- *==================================================
+/* BASIC STYLES
+ * ------------------------------------------------
 body
   background: $backgroundColor
   font:
@@ -92,8 +75,8 @@ body
   /* Fix for webkit rendering
   -webkit-text-size-adjust: 100%
 
-/* #Typography
- *==================================================
+/* TYPOGRAPHY
+ * ------------------------------------------------
 h1, h2, h3, h4, h5, h6
   color: $headingColor
   font:
@@ -188,8 +171,8 @@ hr
   margin: 10px 0 30px
   height: 0
 
-/* #Links
- *==================================================
+/* LINKS
+ * ------------------------------------------------
 a, a:visited
   color: $linkColor
   text-decoration: $linkDecoration
@@ -201,8 +184,8 @@ a:hover, a:focus, a:active
 p a, p a:visited
   line-height: inherit
 
-/* #Lists
- *==================================================
+/* LISTS
+ * ------------------------------------------------
 
 ul, 
 ol
@@ -214,10 +197,8 @@ ul
 ol
   list-style: decimal
 
-ol, 
-ul.square, 
-ul.circle, 
-ul.disc
+ol, ul.square, 
+ul.circle, ul.disc
   margin-left: 30px
 
 ul.square
@@ -229,10 +210,8 @@ ul.circle
 ul.disc
   list-style: disc outside
 
-ul ul, 
-ul ol, 
-ol ol, 
-ol ul
+ul ul, ul ol,
+ol ol, ol ul
   margin:
     top: 4px
     right: 0
@@ -240,10 +219,8 @@ ol ul
     left: 30px
   font-size: 90%
 
-ul ul li, 
-ul ol li,
-ol ol li, 
-ol ul li
+ul ul li,  ul ol li,
+ol ol li,  ol ul li
   margin-bottom: 6px
 
 li
@@ -256,14 +233,14 @@ ul.large li
 li p
   line-height: 21px
 
-/* #Images
- *==================================================
+/* IMAGES
+ * ------------------------------------------------
 img.scale-with-grid
   max-width: 100%
   height: auto
 
-/* #Buttons
- *==================================================
+/* BUTTONS
+ * ------------------------------------------------
 
 .button,
 button,
@@ -317,8 +294,8 @@ input
     border: 0
     padding: 0
 
-/* #Forms
- *==================================================
+/* FORMS
+ * ------------------------------------------------
 form
   margin-bottom: 20px
 
@@ -380,8 +357,8 @@ legend span
     weight: normal
   color: #444
 
-/* #Misc
- *==================================================
+/* MISC
+ * ------------------------------------------------
 .subtract-bottom
   margin-bottom: -20px !important
 
