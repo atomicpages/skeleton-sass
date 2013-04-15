@@ -20,6 +20,10 @@ Included Files
 * **_functions.scss** is a "private file" that contains the function that generates the grid for the framework. Feel free to change the grid in skeleton.scss to suit your needs!
 * **_vars.scss** is a "private file" the contains all of the global variables that the framework uses. Feel free to change and add your own! See file for additional information.
 
+Demo
+----
+Demo files are included in the `demo` foler for your convenience. Additionally, a live demo can be seen at [http://atomicpages.org/skeleton-sass/](http://atomicpages.org/skeleton-sass/). The website version has additional things like jQuery Cookie to help maintain settings after your sessions ends. Two cookies will be created: one to store the type of view and the other to store the width of the fluid view. Feel free to play around and take a look at the other resources!
+
 License
 -------
 This project is released under the MIT license.
@@ -47,3 +51,8 @@ Changelog
 * Addition of new variables
 * Several fixes for non-compass version
 * Fixing of `.sass` files
+
+Authors
+-------
+* [Dennis Thompson](http://dennis-thompson.com)
+* [AtomicPages LLC](http://www.atomicpages.net)
