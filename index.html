@@ -45,6 +45,42 @@
 				</ul>
 				<p>For your convenience all global variables, functions, and mixins are separated into individual files.</p>
 
+				<h2>How to Use</h2>
+				<p>Using Skeleton SASS is very easy and consists of you running a few terminal command or using something like <a href="http://mhs.github.io/scout-app/" target="_blank" rel="nofollow">Scout (Free)</a> or <a href="http://compass.handlino.com/" target="_blank" rel="nofollow">Compass.app (Paid)</a>.</p>
+
+				<ol>
+					<li>Create a new directory in your web project called <code>sass</code></li>
+					<li>Copy &amp; Paste your desired flavor or Skeleton SASS into the newly created <code>sass</code> directory</li>
+					<li>Ensure SASS is installed on your system:
+						<ol>
+							<li>Open Terminal/Command Prompt with Ruby</li>
+							<li><code>sass -v</code></li>
+						</ol>
+					</li>
+					<li>If you wish to use the Compass version ensure Compass is installed
+						<ol>
+							<li>Open Terminal/Command Prompt with Ruby</li>
+							<li><code>compass -v</code></li>
+						</ol>
+					</li>
+					<li>Compile files for the first time:
+						<ol>
+							<li>Open Terminal/Command Prompt with Ruby</li>
+							<li><code>cd path/to/my/project/sass</code></li>
+							<li><code>sass --update sass:css</code></li>
+							<li><strong>Note:</strong> if you use the Compass version issue the following: <code>sass --update --compass sass:css</code></li>
+						</ol>
+					</li>
+					<li>Link files in the following order inside your source code:
+						<ol>
+							<li><code>skeleton.css</code></li>
+							<li><code>base.css</code></li>
+							<li><code>layout.css</code></li>
+						</ol>
+					</li>
+					<li>Add <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;</code> to the head section of your HTML document</li>
+				</ol>
+
 				<h2>Included Files</h2>
 
 				<ul>
