@@ -131,6 +131,7 @@ pre {
 		color: invert(#f2f2f2);
 	}
 }
+.gist pre { color: black; }
 pre code {
 	color: invert(#f2f2f2);
 	background-color: invert(#303030);
@@ -145,18 +146,39 @@ ol li {
 	list-style: decimal inside;
 	padding-left: 3px;
 }
+.wrapper {
+	border: {
+		top: 1px solid lighten($bgColor, 5%);
+		bottom: 1px solid darken($bgColor, 3%);
+	};
+}
+aside {
+	&#left_sidebar {
+		padding: 5px 0 0 0;
+		ul {
+			margin: 0;
+			li {
+				width: 100%;
+				list-style: none;
+				padding: 0;
+				a {
+					text-decoration: none;
+					padding: 5px;
+					background: rgba(0, 0, 0, 0.2);
+					@include box-shadow(inset 1px 1px 5px rgba(0, 0, 0, 0.5));
+					display: block;
+					width: 95%;
+				}
+			}
+		}
+	}
+}
 section {
 	&#downloads {
 		padding-bottom: 20px;
 		border-bottom: 1px solid darken($bgColor, 3%);
 	}
-	&#main_content {
-		padding: 20px 0;
-		border: {
-			top: 1px solid lighten($bgColor, 5%);
-			bottom: 1px solid darken($bgColor, 3%);
-		};
-	}
+	&#main_content { padding: 20px 0; }
 	&.changelog {
 		padding: 20px 0 10px 0;
 		margin: 0 60px;
@@ -203,7 +225,10 @@ footer {
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
 	section {
 		&#downloads {
-			a.button { margin: 10px 0; }
+			a.button { 
+				width: 382px;
+				margin: 10px 0; 
+			}
 		}
 		&.changelog { margin: 0; }
 	}

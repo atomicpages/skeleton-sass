@@ -132,6 +132,9 @@ pre {
     background: #cfcfcf;
     color: #0d0d0d; }
 
+.gist pre {
+  color: black; }
+
 pre code {
   color: #0d0d0d;
   background-color: #cfcfcf;
@@ -146,13 +149,33 @@ ol li {
   list-style: decimal inside;
   padding-left: 3px; }
 
+.wrapper {
+  border-top: 1px solid #272727;
+  border-bottom: 1px solid #121212; }
+
+aside#left_sidebar {
+  padding: 5px 0 0 0; }
+  aside#left_sidebar ul {
+    margin: 0; }
+    aside#left_sidebar ul li {
+      width: 100%;
+      list-style: none;
+      padding: 0; }
+      aside#left_sidebar ul li a {
+        text-decoration: none;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+        display: block;
+        width: 95%; }
+
 section#downloads {
   padding-bottom: 20px;
   border-bottom: 1px solid #121212; }
 section#main_content {
-  padding: 20px 0;
-  border-top: 1px solid #272727;
-  border-bottom: 1px solid #121212; }
+  padding: 20px 0; }
 section.changelog {
   padding: 20px 0 10px 0;
   margin: 0 60px;
@@ -187,6 +210,7 @@ footer {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   section#downloads a.button {
+    width: 382px;
     margin: 10px 0; }
   section.changelog {
     margin: 0; } }
