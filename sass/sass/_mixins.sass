@@ -97,14 +97,10 @@
   box-sizing: $type
 
 =grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount)
-  $unit: ""
   @if $fluid == true
-    $unit: "%"
-    // required for fluid
-  @if $fluid == true
-    // and for you math heads... a_n = (6.25 * n) - 2
+    // and for you math heads... a_n = (100n / $colCount) - 2
     // where n is the iteration
-    +_fluidGrid($unit, $colCount)
+    +_fluidGrid($colCount)
   @else
     // and for you math heads... a_n = 40 + ( 60 ( n - 1 ) )
     // where 40 = column width
@@ -114,7 +110,7 @@
 
 // "PRIVATE" MIXINS - these are mixins the help separate logic and should never be used outside of the grid mixin
 // generate the fluid grid
-=_fluidGrid($unit, $colCount)
+=_fluidGrid($colCount, $unit: "%")
   // override only for fluid
   /* Overrides
   .container
@@ -129,13 +125,11 @@
       @if $i == 1
         .#{getWordFromNum($i)}.column,
         .#{getWordFromNum($i)}.columns
-          width: 6.25 * $i - 2#{$unit}
+          width: 100 * $i / $colCount - 2#{$unit}
       @else
         .#{getWordFromNum($i)}.columns
-          width: 6.25 * $i - 2#{$unit}
-    // TODO: fix 1/3 and 2/3 for fluid
-    // .one-third.column { width: (100 / 3)#{$unit}; }
-    // .two-thirds.column { width: ( ( 100 * 2 ) / 3 )#{$unit}; }
+          width: 100 * $i / $colCount - 2#{$unit}
+    /* The Offsets
     +_offset($unit, $colCount)
 
 // generate the fixed grid
@@ -157,7 +151,7 @@
 
 // generate the offset
 // Note: although $colWidth is optional, it is REQUIRED by the fixed grid
-=_offset($unit, $colCount, $colWidth: )
+=_offset($unit, $colCount, $colWidth)
   @if $unit == "%"
     @for $i from 1 through $colCount - 1
       .offset-by-#{getWordFromNum($i)}
