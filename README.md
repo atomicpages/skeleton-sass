@@ -41,6 +41,15 @@ Do either of the following:
 
 Changelog
 ---------
+### 1.2.2
+* Added support for fluid grid generation based on column number
+* Cleaned up headers
+* Housekeeping in `_mixins` file
+* Fixed issue in `.sass` files. `null` type being stripped when using `sass-convert --from scss --to sass`
+
+### 1.2.1
+* Fixed Duplicate `.container` on offsets
+
 ### 1.2
 * Addition of **fluid** grid :)
 * Complete restructure of `mixins` file and grid generation
