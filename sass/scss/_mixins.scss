@@ -164,7 +164,7 @@
 
 // generate the offset
 // Note: although $colWidth is optional, it is REQUIRED by the fixed grid
-@mixin _offset($unit, $colCount, $colWidth) {
+@mixin _offset($unit, $colCount, $colWidth: null) {
     @if ( $unit == "%" ) {
         @for $i from 1 through ( $colCount - 1 ) {
             .offset-by-#{getWordFromNum($i)} { padding-left: 6.25 * $i#{$unit}; }
