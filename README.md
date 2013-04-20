@@ -22,7 +22,11 @@ Included Files
 
 Demo
 ----
-Demo files are included in the `demo` foler for your convenience. Additionally, a live demo can be seen at [http://atomicpages.org/skeleton-sass/](http://atomicpages.org/skeleton-sass/). The website version has additional things like jQuery Cookie to help maintain settings after your sessions ends. Two cookies will be created: one to store the type of view and the other to store the width of the fluid view. Feel free to play around and take a look at the other resources!
+Demo files are included in the `demo` folder for your convenience. Additionally, a live demo can be seen at [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). The website version has additional things like jQuery Cookie to help maintain settings after your sessions ends. Two cookies will be created: one to store the type of view and the other to store the width of the fluid view. Feel free to play around and take a look at the other resources!
+
+Documentation
+-------------
+Skeleton SASS is heavily documented! If you're looking for a detailed description of how certain things works (or just want more info) you can view the [wiki pages](https://github.com/atomicpages/skeleton-sass/wiki/_pages)
 
 License
 -------
@@ -30,7 +34,9 @@ This project is released under the MIT license.
 
 Find a Bug?
 -----------
-* Submit a pull request OR
+Do either of the following:
+
+* Submit a pull request
 * Create a new issue on the [github page](https://github.com/atomicpages/skeleton-sass/)
 
 Changelog
