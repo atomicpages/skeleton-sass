@@ -44,8 +44,12 @@ body {
 	margin: 0;
 }
 a { 
-	color: $anchorColor !important; 
-	&:hover { color: $anchorColorHover !important; }
+	color: $anchorColor !important;
+	text-decoration: none;
+	&:hover { 
+		color: lighten($anchorColorHover, 20%) !important;
+		text-decoration: none;
+	}
 }
 h1, h2, h3, h4, h5, h6 { 
 	font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
@@ -110,7 +114,7 @@ a.button {
 #view-on-github span { background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat; }
 #view-on-github { margin-right: 0; }
 code, pre {
-	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
+	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 	color: invert(#222);
 	margin-bottom: 30px;
 	font-size: 14px;
@@ -168,6 +172,7 @@ aside {
 					@include box-shadow(inset 1px 1px 5px rgba(0, 0, 0, 0.5));
 					display: block;
 					width: 95%;
+					@include border-radius(3px);
 				}
 			}
 		}

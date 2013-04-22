@@ -12,7 +12,7 @@
  * ------------------------------------------------ */
 .container {
   position: relative;
-  width: 960px;
+  width: 92%;
   margin: 0 auto;
   padding: 0; }
   .container .column,
@@ -33,76 +33,78 @@
 .row {
   margin-bottom: 20px; }
 
+/* Overrides */
+.container .column,
+.container .columns {
+  margin-left: 1%;
+  margin-right: 1%; }
+
 /* The Grid */
 .container {
   /* The Offsets */ }
   .container .one.column,
   .container .one.columns {
-    width: 40px; }
+    width: 4.25%; }
   .container .two.columns {
-    width: 100px; }
+    width: 10.5%; }
   .container .three.columns {
-    width: 160px; }
+    width: 16.75%; }
   .container .four.columns {
-    width: 220px; }
+    width: 23%; }
   .container .five.columns {
-    width: 280px; }
+    width: 29.25%; }
   .container .six.columns {
-    width: 340px; }
+    width: 35.5%; }
   .container .seven.columns {
-    width: 400px; }
+    width: 41.75%; }
   .container .eight.columns {
-    width: 460px; }
+    width: 48%; }
   .container .nine.columns {
-    width: 520px; }
+    width: 54.25%; }
   .container .ten.columns {
-    width: 580px; }
+    width: 60.5%; }
   .container .eleven.columns {
-    width: 640px; }
+    width: 66.75%; }
   .container .twelve.columns {
-    width: 700px; }
+    width: 73%; }
   .container .thirteen.columns {
-    width: 760px; }
+    width: 79.25%; }
   .container .fourteen.columns {
-    width: 820px; }
+    width: 85.5%; }
   .container .fifteen.columns {
-    width: 880px; }
+    width: 91.75%; }
   .container .sixteen.columns {
-    width: 940px; }
-  .container .one-third.column {
-    width: 300px; }
-  .container .two-thirds.column {
-    width: 620px; }
+    width: 98%; }
   .container .offset-by-one {
-    padding-left: 60px; }
+    padding-left: 6.25%; }
   .container .offset-by-two {
-    padding-left: 120px; }
+    padding-left: 12.5%; }
   .container .offset-by-three {
-    padding-left: 180px; }
+    padding-left: 18.75%; }
   .container .offset-by-four {
-    padding-left: 240px; }
+    padding-left: 25%; }
   .container .offset-by-five {
-    padding-left: 300px; }
+    padding-left: 31.25%; }
   .container .offset-by-six {
-    padding-left: 360px; }
+    padding-left: 37.5%; }
   .container .offset-by-seven {
-    padding-left: 420px; }
+    padding-left: 43.75%; }
   .container .offset-by-eight {
-    padding-left: 480px; }
+    padding-left: 50%; }
   .container .offset-by-nine {
-    padding-left: 540px; }
+    padding-left: 56.25%; }
   .container .offset-by-ten {
-    padding-left: 600px; }
+    padding-left: 62.5%; }
   .container .offset-by-eleven {
-    padding-left: 660px; }
+    padding-left: 68.75%; }
   .container .offset-by-twelve {
-    padding-left: 720px; }
+    padding-left: 75%; }
   .container .offset-by-thirteen {
-    padding-left: 780px; }
+    padding-left: 81.25%; }
   .container .offset-by-fourteen {
-    padding-left: 840px; }
+    padding-left: 87.5%; }
   .container .offset-by-fifteen {
-    padding-left: 900px; }
+    padding-left: 93.75%; }
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -123,76 +125,78 @@
     margin-left: 0;
     margin-right: 0; }
 
+  /* Overrides */
+  .container .column,
+  .container .columns {
+    margin-left: 1%;
+    margin-right: 1%; }
+
   /* The Grid */
   .container {
     /* The Offsets */ }
     .container .one.column,
     .container .one.columns {
-      width: 28px; }
+      width: 4.25%; }
     .container .two.columns {
-      width: 76px; }
+      width: 10.5%; }
     .container .three.columns {
-      width: 124px; }
+      width: 16.75%; }
     .container .four.columns {
-      width: 172px; }
+      width: 23%; }
     .container .five.columns {
-      width: 220px; }
+      width: 29.25%; }
     .container .six.columns {
-      width: 268px; }
+      width: 35.5%; }
     .container .seven.columns {
-      width: 316px; }
+      width: 41.75%; }
     .container .eight.columns {
-      width: 364px; }
+      width: 48%; }
     .container .nine.columns {
-      width: 412px; }
+      width: 54.25%; }
     .container .ten.columns {
-      width: 460px; }
+      width: 60.5%; }
     .container .eleven.columns {
-      width: 508px; }
+      width: 66.75%; }
     .container .twelve.columns {
-      width: 556px; }
+      width: 73%; }
     .container .thirteen.columns {
-      width: 604px; }
+      width: 79.25%; }
     .container .fourteen.columns {
-      width: 652px; }
+      width: 85.5%; }
     .container .fifteen.columns {
-      width: 700px; }
+      width: 91.75%; }
     .container .sixteen.columns {
-      width: 748px; }
-    .container .one-third.column {
-      width: 236px; }
-    .container .two-thirds.column {
-      width: 492px; }
+      width: 98%; }
     .container .offset-by-one {
-      padding-left: 48px; }
+      padding-left: 6.25%; }
     .container .offset-by-two {
-      padding-left: 96px; }
+      padding-left: 12.5%; }
     .container .offset-by-three {
-      padding-left: 144px; }
+      padding-left: 18.75%; }
     .container .offset-by-four {
-      padding-left: 192px; }
+      padding-left: 25%; }
     .container .offset-by-five {
-      padding-left: 240px; }
+      padding-left: 31.25%; }
     .container .offset-by-six {
-      padding-left: 288px; }
+      padding-left: 37.5%; }
     .container .offset-by-seven {
-      padding-left: 336px; }
+      padding-left: 43.75%; }
     .container .offset-by-eight {
-      padding-left: 384px; }
+      padding-left: 50%; }
     .container .offset-by-nine {
-      padding-left: 432px; }
+      padding-left: 56.25%; }
     .container .offset-by-ten {
-      padding-left: 480px; }
+      padding-left: 62.5%; }
     .container .offset-by-eleven {
-      padding-left: 528px; }
+      padding-left: 68.75%; }
     .container .offset-by-twelve {
-      padding-left: 576px; }
+      padding-left: 75%; }
     .container .offset-by-thirteen {
-      padding-left: 624px; }
+      padding-left: 81.25%; }
     .container .offset-by-fourteen {
-      padding-left: 672px; }
+      padding-left: 87.5%; }
     .container .offset-by-fifteen {
-      padding-left: 720px; } }
+      padding-left: 93.75%; } }
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {

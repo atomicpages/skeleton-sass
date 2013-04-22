@@ -17,7 +17,7 @@
  * ------------------------------------------------ */
 .container {
 	position: relative;
-	width: $baseWidth;
+	width: 92%;
 	margin: 0 auto;
 	padding: 0;
 	.column,
@@ -36,8 +36,7 @@
 }
 .row { margin-bottom: 20px; }
 
-// @include grid($baseWidth, true); // fluid
-@include grid($baseWidth);
+@include grid($baseWidth, true);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -69,8 +68,7 @@
 			right: 0;
 		};
 	}
-	// @include grid($tabletWidth, true); // fluid
-	@include grid($tabletWidth, false, 28px); // fixed
+	@include grid($tabletWidth, true);
 }
 
 /*  MOBILE (PORTRAIT)

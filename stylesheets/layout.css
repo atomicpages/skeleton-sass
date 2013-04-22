@@ -19,9 +19,11 @@ body {
   margin: 0; }
 
 a {
-  color: #949595 !important; }
+  color: #949595 !important;
+  text-decoration: none; }
   a:hover {
-    color: #9c9d9d !important; }
+    color: #cfd0d0 !important;
+    text-decoration: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
@@ -112,7 +114,7 @@ a.button {
   margin-right: 0; }
 
 code, pre {
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #dddddd;
   margin-bottom: 30px;
   font-size: 14px; }
@@ -169,7 +171,12 @@ aside#left_sidebar {
         -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
         box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
         display: block;
-        width: 95%; }
+        width: 95%;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
 
 section#downloads {
   padding-bottom: 20px;

@@ -36,8 +36,7 @@
 }
 .row { margin-bottom: 20px; }
 
-// @include grid($baseWidth, true); // fluid
-@include grid($baseWidth);
+@include grid($baseWidth, false, 60px, 20px, 12);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -69,8 +68,7 @@
 			right: 0;
 		};
 	}
-	// @include grid($tabletWidth, true); // fluid
-	@include grid($tabletWidth, false, 28px); // fixed
+	@include grid($tabletWidth, false, 44px, 20px, 12); // fixed
 }
 
 /*  MOBILE (PORTRAIT)
@@ -93,10 +91,6 @@
 		.ten.columns,
 		.eleven.columns,
 		.twelve.columns,
-		.thirteen.columns,
-		.fourteen.columns,
-		.fifteen.columns,
-		.sixteen.columns,
 		.one-third.column,
 		.two-thirds.column  { width: $mobilePortraitWidth; }
 	}
@@ -122,10 +116,6 @@
 		.ten.columns,
 		.eleven.columns,
 		.twelve.columns,
-		.thirteen.columns,
-		.fourteen.columns,
-		.fifteen.columns,
-		.sixteen.columns,
 		.one-third.column,
 		.two-thirds.column { width: $mobileLandscapeWidth; }
 	}

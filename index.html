@@ -18,7 +18,7 @@
 	</style>
 <![endif]-->
 <!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
 <body>
@@ -45,6 +45,13 @@
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Installing-Compass">Installing Compass</a></li>
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Usage">Usage</a></li>
 					</ul>
+					<br>
+					<h4>Documentation</h4>
+					<ul>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Mixin-Documentation">Mixins</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Function-Documentation">Functions</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Variable-Documentation">Variables</a></li>
+					</ul>
 				</aside>
 			</div>
 
@@ -60,7 +67,18 @@
 					<p>For your convenience all global variables, functions, and mixins are separated into individual files.</p>
 
 					<h2>How to Use</h2>
-					<p>Using Skeleton SASS is very easy and consists of you running a few terminal command or using something either of the following programs:</p>
+					<p>Using Skeleton SASS is very easy and consists of you running a few terminal commands or by using a GUI-based application.</p>
+
+					<p>Skeleton SASS is separated into four different flavors:</p>
+					<ul>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/tree/master/compass/scss" target="_blank">Compass SCSS</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/tree/master/compass/sass" target="_blank">Compass SASS</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/tree/master/sass/scss" target="_blank">Non-compass SCSS</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/tree/master/sass/sass" target="_blank">Non-compass SASS</a></li>
+					</ul>
+					<p>Each flavor is self-contained and will operate based six files. You only need to download your preferred syntax to begin using!</p>
+
+					<h4>Application</h4>
 					<ul>
 						<li><a href="http://mhs.github.io/scout-app/" target="_blank" rel="nofollow">Scout (Free)</a></li>
 						<li><a href="http://compass.handlino.com/" target="_blank" rel="nofollow">Compass.app (Paid)</a></li>
@@ -75,7 +93,7 @@
 								<li>Open Terminal/Command Prompt with Ruby</li>
 								<li><code>cd path/to/my/project/sass</code></li>
 								<li><code>sass --update sass:css</code></li>
-								<li><strong>Note:</strong> if you use the Compass version issue the following: <code>sass --update --compass sass:css</code></li>
+								<li><strong>Note:</strong> if you use the Compass version issue the following: <br><code>sass --update --compass sass:css</code></li>
 							</ol>
 						</li>
 						<li>Link files in the following order inside your source code:
@@ -116,6 +134,15 @@
 
 					<h2>Changelog</h2>
 					<section class="changelog first">
+						<h3>1.2.2</h3>
+						<ul>
+							<li>Added support for fluid grid generation based on column number</li>
+							<li>Cleaned up headers</li>
+							<li>Housekeeping in <code>_mixins</code> file</li>
+							<li>Fixed issue in <code>.sass</code> files. <code>null</code> type being stripped when using <code>sass-convert --from scss --to sass</code></li>
+						</ul>
+					</section>
+					<section class="changelog">
 						<h3>1.2.1</h3>
 						<ul>
 							<li>Fixed Duplicate <code>.container</code> on offsets</li>
@@ -157,8 +184,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('aside a').hover(
-				function() { $(this).animate({ backgroundColor: 'rgba(0, 0, 0, 0.4)'}, 200); },
-				function() { $(this).animate({ backgroundColor: 'rgba(0, 0, 0, 0.2)'}, 200); }
+				function() { $(this).stop(true, true).animate({ backgroundColor: 'rgba(0, 0, 0, 0.4)'}, 200); },
+				function() { $(this).stop(true, true).animate({ backgroundColor: 'rgba(0, 0, 0, 0.2)'}, 200); }
 			);
 			$('.code-wrap .gist').hide();
 			$('.code-wrap').click(function(e) {
