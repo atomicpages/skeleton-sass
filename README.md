@@ -1,11 +1,12 @@
 skeleton-sass
 =============
 
-A SASS and Compass + SASS translation of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive frontend framework. This translation includes:
+A SASS and Compass + SASS translation of Dave Gamache's [Skeleton CSS](http://getskeleton.com/) responsive front-end framework. This translation includes:
 
 * Sassified Skeleton CSS Framework
 * `.scss` and `.sass` files
 * Compass and non-compass versions available
+* Grid creation using custom mixins and functions
 
 For your convenience all global variables, functions, and mixins are separated into individual files.
 
@@ -22,11 +23,7 @@ Included Files
 
 Demo
 ----
-Demo files are included in the `demo` folder for your convenience. Additionally, a live demo can be seen at [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). The website version has additional things like jQuery Cookie to help maintain settings after your sessions ends. Two cookies will be created: one to store the type of view and the other to store the width of the fluid view. Feel free to play around and take a look at the other resources!
-
-Documentation
--------------
-Skeleton SASS is heavily documented! If you're looking for a detailed description of how certain things works (or just want more info) you can view the [wiki pages](https://github.com/atomicpages/skeleton-sass/wiki/_pages)
+Demo files are included in the `demo` foler for your convenience. Additionally, a live demo can be seen at [http://atomicpages.org/skeleton-sass/](http://atomicpages.org/skeleton-sass/). The website version has additional things like jQuery Cookie to help maintain settings after your sessions ends. Two cookies will be created: one to store the type of view and the other to store the width of the fluid view. Feel free to play around and take a look at the other resources!
 
 License
 -------
@@ -34,9 +31,7 @@ This project is released under the MIT license.
 
 Find a Bug?
 -----------
-Do either of the following:
-
-* Submit a pull request
+* Submit a pull request OR
 * Create a new issue on the [github page](https://github.com/atomicpages/skeleton-sass/)
 
 Changelog
@@ -45,7 +40,7 @@ Changelog
 * Added support for fluid grid generation based on column number
 * Cleaned up headers
 * Housekeeping in `_mixins` file
-* Fixed issue in `.sass` files. `null` type being stripped when using `sass-convert --from scss --to sass`
+* Fixed issue in .sass files. null type being stripped when using `sass-convert --from scss --to sass`
 
 ### 1.2.1
 * Fixed Duplicate `.container` on offsets
@@ -69,5 +64,5 @@ Changelog
 
 Authors
 -------
-* [Dennis Thompson](http://dennis-thompson.com)
-* [AtomicPages LLC](http://www.atomicpages.net)
+* [Dennis Thompson](http://dennis-thompson.com/)
+* [AtomicPages LLC](http://www.atomicpages.net/)
