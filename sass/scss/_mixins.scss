@@ -141,12 +141,25 @@
             }
         }
         /* The Offsets */
-        @include _offset($unit, $colCount);
+        @include _offset($unit, $colCount, false);
     }
 }
 
 // generate the fixed grid
 @mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
+    @if($gutterWidth != $baseGutterWidth) {
+        /* Gutter Overrides */
+        .container {
+            .column,
+            .columns {
+                margin: {
+                    left: $gutterWidth / 2;
+                    right: $gutterWidth / 2;
+                };
+            }
+        }
+    }
+    /* The Grid */
     .container {
         @for $i from 1 through $colCount {
              @if ( $i == 1 ) {
@@ -158,6 +171,7 @@
         }
         .one-third.column { width: ( $width / 3 ) - 20}
         .two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
+        /* The Offsets */
         @include _offset("px", $colCount, $colWidth);
     }
 }

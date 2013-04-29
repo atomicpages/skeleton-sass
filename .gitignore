@@ -2,6 +2,10 @@
 *.rbc
 .bundle
 .config
+.sass-cache
+compass/css
+sass/css
+sass/scss/dev
 coverage
 InstalledFiles
 lib/bundler/man

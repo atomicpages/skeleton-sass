@@ -3,68 +3,76 @@
 @import functions
 
 =grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount)
-  @if $fluid == true
-    // and for you math heads... a_n = (100n / $colCount) - 2
-    // where n is the iteration
-    +_fluidGrid($colCount)
-  @else
-    // and for you math heads... a_n = 40 + ( 60 ( n - 1 ) )
-    // where 40 = column width
-    // where 60 is the consistent difference between each column
-    // where n is the iteration
-    +_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
+	@if $fluid == true
+		// and for you math heads... a_n = (100n / $colCount) - 2
+		// where n is the iteration
+		+_fluidGrid($colCount)
+	@else
+		// and for you math heads... a_n = 40 + ( 60 ( n - 1 ) )
+		// where 40 = column width
+		// where 60 is the consistent difference between each column
+		// where n is the iteration
+		+_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
 
 // "PRIVATE" MIXINS - these are mixins the help separate logic and should never be used outside of the grid mixin
 // generate the fluid grid
 =_fluidGrid($colCount, $unit: "%")
-  // override only for fluid
-  /* Overrides
-  .container
-    .column,
-    .columns
-      margin:
-        left: 1%
-        right: 1%
-  /* The Grid
-  .container
-    @for $i from 1 through $colCount
-      @if $i == 1
-        .#{getWordFromNum($i)}.column,
-        .#{getWordFromNum($i)}.columns
-          width: 100 * $i / $colCount - 2#{$unit}
-      @else
-        .#{getWordFromNum($i)}.columns
-          width: 100 * $i / $colCount - 2#{$unit}
-    /* The Offsets
-    +_offset($unit, $colCount)
+	// override only for fluid
+	/* Overrides
+	.container
+		.column,
+		.columns
+			margin:
+				left: 1%
+				right: 1%
+	/* The Grid
+	.container
+		@for $i from 1 through $colCount
+			@if $i == 1
+				.#{getWordFromNum($i)}.column,
+				.#{getWordFromNum($i)}.columns
+					width: 100 * $i / $colCount - 2#{$unit}
+			@else
+				.#{getWordFromNum($i)}.columns
+					width: 100 * $i / $colCount - 2#{$unit}
+		/* The Offsets
+		+_offset($unit, $colCount, false)
 
 // generate the fixed grid
 =_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
-  /* The Grid
-  .container
-    @for $i from 1 through $colCount
-      @if $i == 1
-        .#{getWordFromNum($i)}.column,
-        .#{getWordFromNum($i)}.columns
-          width: $colWidth
-      @else
-        .#{getWordFromNum($i)}.columns
-          width: $colWidth + ($colWidth + $gutterWidth) * ($i - 1)
-    .one-third.column
-      width: $width / 3 - 20
-    .two-thirds.column
-      width: $width * 2 / 3 - 20
-    /* The Offsets
-    +_offset("px", $colCount, $colWidth)
+	@if $gutterWidth != $baseGutterWidth
+		/* Gutter Overrides
+		.container
+			.column,
+			.columns
+				margin:
+					left: $gutterWidth / 2
+					right: $gutterWidth / 2
+	/* The Grid
+	.container
+		@for $i from 1 through $colCount
+			@if $i == 1
+				.#{getWordFromNum($i)}.column,
+				.#{getWordFromNum($i)}.columns
+					width: $colWidth
+			@else
+				.#{getWordFromNum($i)}.columns
+					width: $colWidth + ($colWidth + $gutterWidth) * ($i - 1)
+		.one-third.column
+			width: $width / 3 - 20
+		.two-thirds.column
+			width: $width * 2 / 3 - 20
+		/* The Offsets
+		+_offset("px", $colCount, $colWidth)
 
 // generate the offset
 // Note: although $colWidth is optional, it is REQUIRED by the fixed grid
 =_offset($unit, $colCount, $colWidth)
-  @if $unit == "%"
-    @for $i from 1 through $colCount - 1
-      .offset-by-#{getWordFromNum($i)}
-        padding-left: 6.25 * $i#{$unit}
-  @else
-    @for $i from 1 through $colCount - 1
-      .offset-by-#{getWordFromNum($i)}
-        padding-left: ($colWidth + 20) * $i
+	@if $unit == "%"
+		@for $i from 1 through $colCount - 1
+			.offset-by-#{getWordFromNum($i)}
+				padding-left: 6.25 * $i#{$unit}
+	@else
+		@for $i from 1 through $colCount - 1
+			.offset-by-#{getWordFromNum($i)}
+				padding-left: ($colWidth + 20) * $i

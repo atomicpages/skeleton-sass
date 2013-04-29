@@ -26,8 +26,8 @@
 		display: inline;
 		position: relative;
 		margin: {
-			left: 10px;
-			right: 10px;
+			left: $baseGutterWidth / 2;
+			right: $baseGutterWidth / 2;
     	};
 	    /* Nested Column Classes */
 	    &.alpha { margin-left: 0; }
