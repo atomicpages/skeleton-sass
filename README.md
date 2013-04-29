@@ -41,6 +41,11 @@ Do either of the following:
 
 Changelog
 ---------
+### 1.2.3
+* Cleaned up `.sass` files by using tabs instead of default 2 spaces
+* Fixed gutter calculation on fixed grid and in the skeleton file
+* Used boolean in `_fluidGrid` to prevent `sass-convert` from stripping `null` value
+
 ### 1.2.2
 * Added support for fluid grid generation based on column number
 * Cleaned up headers
