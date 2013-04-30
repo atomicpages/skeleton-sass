@@ -41,6 +41,9 @@ Do either of the following:
 
 Changelog
 ---------
+### 1.3
+* Greatly improved `int` to `string` conversion by using something other than a million if-else statements
+
 ### 1.2.3
 * Cleaned up `.sass` files by using tabs instead of default 2 spaces
 * Fixed gutter calculation on fixed grid and in the skeleton file
