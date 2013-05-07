@@ -91,9 +91,6 @@ $tens: "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", 
     $int: abs($int)
     // no nonnegative numbers
     $number: ""
-    @if $int > 100
-        // I'm sorry Dave; I can't let you do that.
-        $number: "No numbers past 100"
     $temp: $int / 10
     $temp: floor($temp)
     @if $int >= 1 and $int <= 100
