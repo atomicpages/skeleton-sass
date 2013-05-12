@@ -41,6 +41,9 @@ Do either of the following:
 
 Changelog
 ---------
+### 1.3.1
+* Removed unnecessary if statement at the top of the `numToString` function
+
 ### 1.3
 * Greatly improved `int` to `string` conversion by using something other than a million if-else statements
 
