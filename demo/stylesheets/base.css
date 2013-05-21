@@ -6,6 +6,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
+ * @version 1.2.2
  */
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
@@ -47,8 +48,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* #Basic Styles
-================================================== */
+/* BASIC STYLES
+ * ------------------------------------------------ */
 body {
   background: white;
   font-size: 14px;
@@ -125,7 +126,7 @@ u {
 small {
   font-size: 80%; }
 
-/*  Blockquotes  */
+/*	Blockquotes  */
 blockquote, blockquote p {
   font-size: 20px;
   line-height: 28px;

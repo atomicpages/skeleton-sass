@@ -1,0 +1,160 @@
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * originally authored by Dave Gamache. This translation offers
+ * mixins that support fluid and as well as fixed grids to supplement
+ * the work that Dave Gamache has done.
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @license MIT
+ * @version 1.2.2
+ */
+
+// IMPORTS
+@import "vars"; // import _vars
+@import "mixins"; // import _mixins
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container {
+	position: relative;
+	width: 92%;
+	margin: 0 auto;
+	padding: 0;
+	.column,
+	.columns {
+		float: left;
+		display: inline;
+		position: relative;
+		margin: {
+			left: 10px;
+			right: 10px;
+    	};
+	    /* Nested Column Classes */
+	    &.alpha { margin-left: 0; }
+	    &.omega { margin-right: 0; }
+	}
+}
+.row { margin-bottom: 20px; }
+
+@include grid($baseWidth, true);
+
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.container {
+		width: $tabletWidth;
+		.column, .columns {
+			margin: {
+				left: 10px;
+				right: 10px;
+			};
+			&.alpha {
+				margin: {
+					left: 0;
+					right: 10px;
+				};
+			}
+			&.omega {
+				margin: {
+					right: 0;
+					left: 10px;
+				};
+			}
+		} 
+	}
+	.alpha.omega {
+		margin: {
+			left: 0;
+			right: 0;
+		};
+	}
+	@include grid($tabletWidth, true);
+}
+
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (max-width: 767px) {
+	.container { width: $mobilePortraitWidth; }
+	.container {
+		.columns,
+		.column { margin: 0; }
+		.one.column,
+		.one.columns,
+		.two.columns,
+		.three.columns,
+		.four.columns,
+		.five.columns,
+		.six.columns,
+		.seven.columns,
+		.eight.columns,
+		.nine.columns,
+		.ten.columns,
+		.eleven.columns,
+		.twelve.columns,
+		.thirteen.columns,
+		.fourteen.columns,
+		.fifteen.columns,
+		.sixteen.columns,
+		.one-third.column,
+		.two-thirds.column  { width: $mobilePortraitWidth; }
+	}
+}
+
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container { width: $mobileLandscapeWidth; }
+	.container {
+		.columns,
+		.column { margin: 0; }
+		.one.column,
+		.one.columns,
+		.two.columns,
+		.three.columns,
+		.four.columns,
+		.five.columns,
+		.six.columns,
+		.seven.columns,
+		.eight.columns,
+		.nine.columns,
+		.ten.columns,
+		.eleven.columns,
+		.twelve.columns,
+		.thirteen.columns,
+		.fourteen.columns,
+		.fifteen.columns,
+		.sixteen.columns,
+		.one-third.column,
+		.two-thirds.column { width: $mobileLandscapeWidth; }
+	}
+}
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after { 
+	content: "\0020"; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; 
+}
+.clearfix, .row {
+	zoom: 1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+	&:after { clear: both; }
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
