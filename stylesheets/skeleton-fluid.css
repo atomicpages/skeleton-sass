@@ -78,33 +78,33 @@
   .container .offset-by-one {
     padding-left: 6.25%; }
   .container .offset-by-two {
-    padding-left: 12.5%; }
-  .container .offset-by-three {
-    padding-left: 18.75%; }
-  .container .offset-by-four {
     padding-left: 25%; }
-  .container .offset-by-five {
-    padding-left: 31.25%; }
-  .container .offset-by-six {
-    padding-left: 37.5%; }
-  .container .offset-by-seven {
-    padding-left: 43.75%; }
-  .container .offset-by-eight {
-    padding-left: 50%; }
-  .container .offset-by-nine {
+  .container .offset-by-three {
     padding-left: 56.25%; }
+  .container .offset-by-four {
+    padding-left: 100%; }
+  .container .offset-by-five {
+    padding-left: 156.25%; }
+  .container .offset-by-six {
+    padding-left: 225%; }
+  .container .offset-by-seven {
+    padding-left: 306.25%; }
+  .container .offset-by-eight {
+    padding-left: 400%; }
+  .container .offset-by-nine {
+    padding-left: 506.25%; }
   .container .offset-by-ten {
-    padding-left: 62.5%; }
+    padding-left: 625%; }
   .container .offset-by-eleven {
-    padding-left: 68.75%; }
+    padding-left: 756.25%; }
   .container .offset-by-twelve {
-    padding-left: 75%; }
+    padding-left: 900%; }
   .container .offset-by-thirteen {
-    padding-left: 81.25%; }
+    padding-left: 1056.25%; }
   .container .offset-by-fourteen {
-    padding-left: 87.5%; }
+    padding-left: 1225%; }
   .container .offset-by-fifteen {
-    padding-left: 93.75%; }
+    padding-left: 1406.25%; }
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -170,33 +170,33 @@
     .container .offset-by-one {
       padding-left: 6.25%; }
     .container .offset-by-two {
-      padding-left: 12.5%; }
-    .container .offset-by-three {
-      padding-left: 18.75%; }
-    .container .offset-by-four {
       padding-left: 25%; }
-    .container .offset-by-five {
-      padding-left: 31.25%; }
-    .container .offset-by-six {
-      padding-left: 37.5%; }
-    .container .offset-by-seven {
-      padding-left: 43.75%; }
-    .container .offset-by-eight {
-      padding-left: 50%; }
-    .container .offset-by-nine {
+    .container .offset-by-three {
       padding-left: 56.25%; }
+    .container .offset-by-four {
+      padding-left: 100%; }
+    .container .offset-by-five {
+      padding-left: 156.25%; }
+    .container .offset-by-six {
+      padding-left: 225%; }
+    .container .offset-by-seven {
+      padding-left: 306.25%; }
+    .container .offset-by-eight {
+      padding-left: 400%; }
+    .container .offset-by-nine {
+      padding-left: 506.25%; }
     .container .offset-by-ten {
-      padding-left: 62.5%; }
+      padding-left: 625%; }
     .container .offset-by-eleven {
-      padding-left: 68.75%; }
+      padding-left: 756.25%; }
     .container .offset-by-twelve {
-      padding-left: 75%; }
+      padding-left: 900%; }
     .container .offset-by-thirteen {
-      padding-left: 81.25%; }
+      padding-left: 1056.25%; }
     .container .offset-by-fourteen {
-      padding-left: 87.5%; }
+      padding-left: 1225%; }
     .container .offset-by-fifteen {
-      padding-left: 93.75%; } }
+      padding-left: 1406.25%; } }
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {

@@ -3,8 +3,9 @@
 // This is a function to convert numbers to English words.
 // This function should probably not be used outside of the
 // grid mixin unless you need it for something else.
+// DEPRECATED SINCE 1.3
 @function getWordFromNum($int) {
-	$int: abs($int); // if it is negative, let's make it positive
+	$int: abs($int); // if it is negative, let"s make it positive
 	$res: "";
 	@if $int == 1         { $res: "one";
 	} @else if $int == 2  { $res: "two";
@@ -26,10 +27,67 @@
 	} @else if $int == 18 { $res: "eighteen"
 	} @else if $int == 19 { $res: "nineteen"
 	} @else if $int == 20 { $res: "twenty"
+	} @else if $int == 21 { $res: "twenty-one"
+	} @else if $int == 22 { $res: "twenty-two"
+	} @else if $int == 23 { $res: "twenty-three"
+	} @else if $int == 24 { $res: "twenty-four"
+	} @else if $int == 25 { $res: "twenty-five"
+	} @else if $int == 26 { $res: "twenty-six"
+	} @else if $int == 27 { $res: "twenty-seven"
+	} @else if $int == 28 { $res: "twenty-eight"
+	} @else if $int == 29 { $res: "twenty-nine"
+	} @else if $int == 30 { $res: "thirty"
 	} @return $res;
 }
 
 // addresses https://github.com/nex3/sass/issues/533
 @function strip-units($number) {
 	@return $number / ($number * 0 + 1);
+}
+
+// Below converts any number from 1 to 100 to the English word. 
+// This is much more sophisticated than our getWordFromNum()
+// function. This function caps at 100 because, let's be honest,
+// a grid that is over 100 columns is a little crazy -- no?
+// ----------------------------------
+// string numToString ( number $int )
+
+// SASS lists begin at 1, not 0
+// These variables are used solely for this function so there's no need to include them elsewhere
+$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
+$teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
+$tens: "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "nintey";
+
+@function numToString($int) {
+	$int: abs($int); // no nonnegative numbers
+	$number: "";
+	$temp: $int / 10;
+	$temp: floor($temp);
+	@if($int >= 1 and $int <= 100) {
+		@if($temp < 1) { // it's a one!
+			$number: nth($ones, $int % 10);
+		}
+		@if($temp == 1) { // in the teen range
+            // in the teen range
+            @if($int % 10 == 0) {
+                $number: "ten";
+            } @else {
+                $number: nth($teens, $int % 10);
+            }
+		}
+		@if($temp >= 2 and $temp <= 9) { // more than our teens
+			@if($int % 10 == 0) {
+				// means it's a number evenly divisible by 10
+				$number: nth($tens, $int / 10);
+			} @else {
+				$number: "#{nth($tens, floor($int / 10))}-#{nth($ones, $int % 10)}";
+			}
+		}
+		@if($temp == 10) { // this is the end...
+			$number: "one-hundred";
+		}
+	} @else {
+		$number: "Invalid parameter passed. Number must be between 1 and 100."
+	}
+	@return $number;
 }

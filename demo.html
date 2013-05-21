@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<!-- <meta http-equiv="Cache-control" content="public"> -->
 <title>Skeleton Sass by AtomicPages LLC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="http://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
@@ -43,6 +42,17 @@
 		width: 250px;
 		height: 100px;
 	}
+	pre {
+		font: normal 14px Consolas, monospace;
+		background: #dbdbdb;
+		padding: 8px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+	}
 </style>
 </head>
 <body>
@@ -71,10 +81,13 @@
 			<div class="sixteen columns">
 				<a name="top" class="blank">&nbsp;</a>
 				<h2>Foreword</h2>
-				<p>This is a demo showcasing the default styles of the skeleton css framework and the functionality of the media queries. I encourage you resize your browser window or view this file on a smart phone.</p>
-				<p>Also, a special note on the form elements at the bottom of the page. These utilize new HTML 5 form types such as tel, search, url, and email. I highly recommend viewing these new elements on a mobile device to see how easy they make life for mobile users! Seriously, you'll be amazed.</p>
+				<p>This is a demo showcasing the default styles of the Skeleton SASS and the functionality of the media queries. Resize your browser window or view this file on a smart phone and see the magic!</p>
+				<p>Also, a special note on the form elements at the bottom of the page. These utilize new HTML 5 form types such as tel, search, url, and email. Video these on mobile device to see how easy they make life for mobile users! Seriously, you'll be amazed.</p>
 				<p class="div small">Your default viewport size: <span class="default"></span></p>
 				<p class="div small">Your current viewport size (resize to change): <span class="resize"></span></p>
+				<p class="div">Code</p>
+				<pre>@include grid($baseWidth, true); // desktop grid
+@include grid($tabletWidth, true); // tablet grid</pre>
 				<p class="div">Paragraph &amp; Alignment</p>
 				<p class="div small">Left</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius dolor quis risus placerat malesuada. Sed dapibus ante in justo vehicula sed ultricies nibh vehicula. Aenean rutrum venenatis turpis, non condimentum magna aliquam et. Integer pretium rhoncus nulla id feugiat. Curabitur eget pharetra elit. Vestibulum non condimentum turpis. Ut adipiscing pulvinar enim non elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam adipiscing pharetra lectus, at malesuada ipsum ullamcorper a. Ut in lorem turpis, id lobortis arcu. Morbi pharetra lectus a sem tincidunt in convallis nunc ultricies. Fusce et dignissim velit. Quisque vel nunc sit amet libero semper tempor sed id urna. Pellentesque imperdiet lacinia risus hendrerit vehicula. Ut eu elit magna, id scelerisque dolor.</p>

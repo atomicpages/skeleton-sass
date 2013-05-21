@@ -10,10 +10,10 @@
 
 // IMPORTS
 @import "compass/css3";
-@import "vars"; // import _global_variables.scss
-@import "mixins"; // import _mixins.scss
+@import "vars";
+@import "mixins";
 
-@function toRGBA($color, $alpha: 1) {
+@function toRGBA($color, $alpha: 1) { // custom functions
 	$r: red($color);
 	$g: green($color);
 	$b: blue($color);
@@ -34,6 +34,14 @@ $h2: #aaa;
 
 /* SITE STYLES
  * ------------------------------------------------ */
+::selection {
+	background: lighten($bgColor, 25%);
+	@include text-shadow(none);
+}
+::-moz-selection {
+	background: lighten($bgColor, 25%);
+	@include text-shadow(none);
+}
 body {
 	font-size: 1em;
 	line-height: 1.5em;
@@ -142,13 +150,21 @@ pre code {
 	border: none;
 	padding: 0;
 }
-ul li {
+ul > li {
 	list-style: disc inside;
 	padding-left: 20px;
 }
-ol li {
+ol > li {
 	list-style: decimal inside;
 	padding-left: 3px;
+}
+.resize {
+	background: transparent url('../images/resize.png') no-repeat right bottom;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 80px;
+	width: 80px;
 }
 .wrapper {
 	border: {
@@ -173,6 +189,7 @@ aside {
 					display: block;
 					width: 95%;
 					@include border-radius(3px);
+					&:hover { color: #949595 !important; }
 				}
 			}
 		}
@@ -219,7 +236,12 @@ footer {
 @media only screen and (max-width: $baseWidthMQ - 1) { }
 
 /* Tablet Portrait size to standard #{strip-units($baseWidthMQ)} (devices and browsers) */
-@media only screen and (min-width: $tabletWidth) and (max-width: $baseWidthMQ - 1) { }
+@media only screen and (min-width: $tabletWidth) and (max-width: $baseWidthMQ - 1) {
+	a.button {
+		width: 336px;
+		margin-bottom: 10px;
+	}
+}
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: $tabletWidth - 1) {
@@ -237,6 +259,7 @@ footer {
 		}
 		&.changelog { margin: 0; }
 	}
+	.resize { display: none; }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -251,4 +274,5 @@ footer {
 		}
 		&.changelog { margin: 0; }
 	}
+	.resize { display: none; }
 }
