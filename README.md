@@ -56,6 +56,12 @@ Find a Bug?
 
 Changelog
 ---------
+### 1.3.3
+* Oops! The demo has now been fixed!
+
+### 1.3.2
+* Updated README file and fixed demo files so it actually works this time ;)
+
 ### 1.3.1
 * Removed unnecessary if statement at the top of the `numToString` function
 
