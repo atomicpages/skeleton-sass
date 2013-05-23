@@ -53,6 +53,30 @@
 		-moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
 		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
 	}
+	.outline .header {
+		background: #dbdbdb;
+		height: 100px;
+		margin-bottom: 10px;
+	}
+	.outline .nav {
+		background: #c2c2c2;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+	.outline .sidebar {
+		background: #b5b5b5;
+		height: 300px;
+		margin-bottom: 10px;
+	}
+	.outline .content {
+		background: #a8a8a8;
+		height: 300px;
+		margin-bottom: 10px;
+	}
+	.outline .footer {
+		background: #9b9b9b;
+		height: 100px;
+	}
 </style>
 </head>
 <body>
@@ -64,10 +88,12 @@
 						<td><button id="mmf">Make me Fluid!</button></td>
 						<td><button id="twelve">12 Column Grid</button></td>
 						<td><button id="twenty">20 Column Grid</button></td>
+						<td><button id="outline">Outline</button></td>
 						<td><button id="reset">Reset Demo</button></td>
 					</tr>
 					<tr>
 						<td><input type="hidden" id="width_control" min="10" max="100" value="92"></td>
+						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>

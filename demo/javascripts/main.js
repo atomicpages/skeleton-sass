@@ -36,6 +36,17 @@ $(document).ready(function() {
 		$('#stylesheet').attr('href', 'stylesheets/skeleton-twelve.css');
 	});
 
+	$('#outline').click(function() {
+		$('body').attr('class', '');
+		$('#stylesheet').attr('href', 'stylesheets/skeleton.css');
+		$("#width_control").val(92);
+		$("#width_control").attr('type', 'hidden');
+		$('.container').removeAttr('style');
+		$.get('outline.html', function(data) {
+			$('#content').html(data);
+		});
+	});
+
 	$('#twenty').click(function() {
 		$.get('demo-20.html', function(data) {
 			$('#content').html(data);
