@@ -196,6 +196,28 @@ aside {
 	}
 }
 section {
+	&#sites {
+		section {
+			margin-bottom: 20px;
+			div {
+				height: 160px;
+				background: #ccc;
+				margin-right: 9.52678%;
+			}
+			&:after {
+				clear: both;
+				display: block;
+				visibility: hidden;
+				content: "\0020";
+			}
+		}
+		&:after {
+			clear: both;
+			display: block;
+			visibility: hidden;
+			content: "\0020";
+		}
+	}
 	&#downloads {
 		padding-bottom: 20px;
 		border-bottom: 1px solid darken($bgColor, 3%);
@@ -251,6 +273,11 @@ footer {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
 	section {
+		&#sites {
+			section {
+				div { margin: 10px 0; }
+			}
+		}
 		&#downloads {
 			a.button { 
 				width: 382px;
@@ -265,6 +292,11 @@ footer {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
 	section {
+		&#sites {
+			section {
+				div { margin: 10px 0; }
+			}
+		}
 		&#downloads {
 			a.button { 
 				margin: 0 0 10px 0;

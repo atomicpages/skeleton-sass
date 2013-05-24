@@ -196,6 +196,22 @@ aside#left_sidebar {
         aside#left_sidebar ul li a:hover {
           color: #949595 !important; }
 
+section#sites section {
+  margin-bottom: 20px; }
+  section#sites section div {
+    height: 160px;
+    background: #ccc;
+    margin-right: 9.52678%; }
+  section#sites section:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    content: "\0020"; }
+section#sites:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  content: "\0020"; }
 section#downloads {
   padding-bottom: 20px;
   border-bottom: 1px solid #121212; }
@@ -238,6 +254,8 @@ footer {
   /* Tablet */ }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  section#sites section div {
+    margin: 10px 0; }
   section#downloads a.button {
     width: 382px;
     margin: 10px 0; }
@@ -248,6 +266,8 @@ footer {
     display: none; } }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
+  section#sites section div {
+    margin: 10px 0; }
   section#downloads a.button {
     margin: 0 0 10px 0;
     width: 282px; }
