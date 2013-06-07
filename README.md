@@ -56,6 +56,9 @@ Find a Bug?
 
 Changelog
 ---------
+### 1.3.4
+* Added sample outline of a web page to show a more realistic example of how the page will scale
+
 ### 1.3.3
 * Oops! The demo has now been fixed!
 
