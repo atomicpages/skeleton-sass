@@ -14,6 +14,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+TODO.md
 
 # YARD artifacts
 .yardoc
