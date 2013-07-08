@@ -1,48 +1,89 @@
-// TODO add support for -webkit-gradient
-@mixin linear-gradient($direction, $stops...) {
-    // no base64_encode inline SVG support :(
-    $direction: quote($direction);
-    @if($direction == "top" or $direction == "vertical") {
-        $direction: top;
-        background: -moz-linear-gradient($direction, $stops);
-        background: -webkit-linear-gradient($direction, $stops);
-        background: -o-linear-gradient($direction, $stops);
-        background: -ms-linear-gradient($direction, $stops);
-        background: linear-gradient(to bottom, $stops);
-    } @else if($direction == "left" or $direction == "horizontal") {
-        $direction: left;
-        background: -moz-linear-gradient($direction, $stops);
-        background: -webkit-linear-gradient($direction, $stops);
-        background: -o-linear-gradient($direction, $stops);
-        background: -ms-linear-gradient($direction, $stops);
-        background: linear-gradient(to right, $stops);
-    } @else if($direction == "diagonal" or $direction == "top-bottom diagonal" or $direction == "t-b diagonal" or $direction == "tbdiagonal") {
-        $direction: -45deg;
-        background: -moz-linear-gradient($direction, $stops);
-        background: -webkit-linear-gradient($direction, $stops);
-        background: -o-linear-gradient($direction, $stops);
-        background: -ms-linear-gradient($direction, $stops);
-        background: linear-gradient(135deg, $stops);
-    } @else if($direction == "diagonal" or $direction == "bottom-top diagonal" or $direction == "b-t diagonal" or $direction == "btdiagonal") {
-        $direction: 45deg;
-        background: -moz-linear-gradient($direction, $stops);
-        background: -webkit-linear-gradient($direction, $stops);
-        background: -o-linear-gradient($direction, $stops);
-        background: -ms-linear-gradient($direction, $stops);
-        background: linear-gradient($direction, $stops);
-    }
+// needs multiple stop support
+// needs center adjustment support
+@mixin _buildRadialGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == radial or $direction == ellipse or $direction == center) {
+		background: $start;
+		background: -moz-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0% #{$start}), color-stop(100% #{$stop}));
+		background: -webkit-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -o-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -ms-radial-gradient(center, ellipse cover, $start, $stop);
+		background: radial-gradient(ellipse at center, $start, $stop);
+	}
+	@if($ie == true) {
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$stop}',GradientType=1);
+	}
 }
 
-@mixin radial-gradient($position, $shape, $stops...) {
-    $direction: center, ellipse cover;
-    background: -moz-radial-gradient($direction, $stops);
-    background: -webkit-radial-gradient($direction, $stops);
-    background: -o-radial-gradient($direction, $stops);
-    background: -ms-radial-gradient($direction, $stops);
-    background: radial-gradient(ellipse at center, $stops);
+// needs multiple stop support
+@mixin _buildGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == left or $direction == horizontal) {
+		$webkitGradientDirection: linear, left top, right top;
+		$linearGradientDirection: to right;
+	} @else if($direction == top or $direction == vertical) {
+		$webkitGradientDirection: linear, left top, left bottom;
+		$linearGradientDirection: to bottom;
+	} @else if($direction == left top) {
+		$direction: -45deg;
+		$webkitGradientDirection: linear, left top, right bottom;
+		$linearGradientDirection: 135deg;
+	} @else if($direction == left bottom) {
+		$direction: 45deg;
+		$webkitGradientDirection: linear, left bottom, right top;
+		$linearGradientDirection: $direction;
+	}
+	background: nth($start, 1);
+	background-image: -moz-linear-gradient($direction, $start, $stop);
+	background-image: -webkit-gradient($webkitGradientDirection, color-stop(nth($start, 1), nth($start, 2)), color-stop(nth($stop, 1), nth($stop, 2)));
+	background-image: -webkit-linear-gradient($direction, $start, $stop);
+	background-image: -o-linear-gradient($direction, $start, $stop);
+	background-image: -ms-linear-gradient($direction, $start, $stop);
+	background-image: linear-gradient($linearGradientDirection, $start, $stop);
+	@if($ie == true) {
+		@include filter-gradient(nth($start, 1), nth($stop, 1), vertical);
+	}
 }
 
-body {
-    margin: 0 auto;
-    @include linear-gradient("vertical", rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%);
+@mixin filter-gradient($start, $stop: false, $direction: false) {
+	$direction: unquote($direction);
+	$type: false;
+	@if(unquote($start) != none) {
+		@if(type-of($direction) != "string") {
+			@warn "Invalid parameter for $direction. Expected string but got #{type-of($direction)}, defaulting to vertical";
+			$direction: vertical;
+		}
+		@if($direction == vertical) {
+			$type: 0;
+		} @else {
+			$type: 1;
+		}
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=#{$type});
+	} @else {
+		$stop: null;
+		$direction: null;
+		// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+		filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+	}
+}
+
+// needs multiple stop support
+@mixin linear-gradient($direction, $start: false, $stop: false, $ie: true) {
+	@if(type-of($start) != "list") {
+		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
+		$start: false;
+	} @else if(type-of($stop) != "list") {
+		@warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
+		$stop: false;
+	}
+	@include _buildGradient($direction, $start, $stop, $ie);
+}
+
+@mixin radial-gradient($direction, $start: false, $stop: false, $ie: true) {
+	@include _buildRadialGradient($direction, $start, $stop, $ie);
 }
