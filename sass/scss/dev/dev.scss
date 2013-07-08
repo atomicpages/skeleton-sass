@@ -87,3 +87,125 @@
 @mixin radial-gradient($direction, $start: false, $stop: false, $ie: true) {
 	@include _buildRadialGradient($direction, $start, $stop, $ie);
 }
+
+@mixin single-transition($property, $duration, $function, $delay: false) {
+	@if($delay == false) {
+		$delay: "";
+	}
+	-webkit-transition: $property $duration $function $delay;
+	-moz-transition: $property $duration $function $delay;
+	-ms-transition: $property $duration $function $delay;
+	-o-transition: $property $duration $function $delay;
+	transition: $property $duration $function $delay;
+}
+
+@mixin transition($transition...) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin reset-box-model {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+@mixin reset-font {
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@mixin reset-focus {
+	outline: 0;
+}
+
+@mixin reset-body {
+	line-height: 1;
+}
+
+@mixin reset-list-style {
+	list-style: none;
+}
+
+@mixin reset-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin reset-table-cell {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+@mixin reset-quotation {
+	quotes: none;
+	&:before, &:after {
+		content: "";
+		content: none;
+	}
+}
+
+@mixin reset-image-anchor-border {
+	border: none;
+}
+
+@mixin reset-html5 {
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section { display: block; }
+}
+
+@mixin global-reset {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	@include reset-html5;
+	body { @include reset-body; }
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	table {
+		@include reset-table;
+	}
+}
+
+@mixin nested-reset {
+	div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	caption, th, td { @include reset-table-cell; }
+	table { @include reset-table; }
+	a img { @include reset-image-anchor-border; }
+}
