@@ -11,6 +11,10 @@ the file on github. Be sure you **test** your functions/mixins
 before you submit them. Working demos will get you a mention :)
 
 ## Changelog
+#### 1.3.4.4
+* Migrated 100% working changes to `_mixins` file
+* Changed `_functions` file to `_dependencies` to hide "private" mixins and framework functions
+
 #### 1.3.4.3
 * Added support for transition
 * Added `global-reset` mixin
