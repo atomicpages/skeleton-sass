@@ -6,14 +6,7 @@
 // undesired results!
 
 // ---------- MIXIN DEPENDENCIES
-@mixin _bd($vert, $horiz, $radius) {
-	-webkit-border-#{$vert}-#{$horiz}-radius: $radius;
-	-moz-border-radius-#{$vert}#{$horiz}: $radius;
-	border-#{$vert}-#{$horiz}-radius: $radius;
-}
-
-// generate the fluid grid
-@mixin _fluidGrid($colCount, $unit: "%") {
+@mixin _fluidGrid($colCount, $unit: "%") { // generate the fluid grid
 	// override only for fluid
 	/* Overrides */
 	.container {
@@ -66,7 +59,22 @@
 		}
 		.one-third.column { width: ( $width / 3 ) - 20}
 		.two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
+		/* The Offsets */
 		@include _offset("px", $colCount, $colWidth);
+	}
+}
+
+// generate the offset
+// Note: although $colWidth is optional, it is REQUIRED by the fixed grid
+@mixin _offset($unit, $colCount, $colWidth) {
+	@if ( $unit == "%" ) {
+		@for $i from 1 through ( $colCount - 1 ) {
+			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount ) * $i#{$unit}; }
+		}
+	} @else {
+		@for $i from 1 through ( $colCount - 1 ) {
+			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
+		}
 	}
 }
 
@@ -91,20 +99,6 @@
 @mixin _mobileOffset($colCount) {
 	@for $i from 1 through ($colCount - 1) {
 		.offset-by-#{numToString($i)} { padding-left: 0; }
-	}
-}
-
-// generate the offset
-// Note: although $colWidth is optional, it is REQUIRED by the fixed grid
-@mixin _offset($unit, $colCount, $colWidth) {
-	@if ( $unit == "%" ) {
-		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount ) * $i#{$unit}; }
-		}
-	} @else {
-		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
-		}
 	}
 }
 

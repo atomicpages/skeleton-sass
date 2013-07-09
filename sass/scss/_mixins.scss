@@ -1,40 +1,9 @@
 // See skeleton file for copyright info
 
-// this file depends on...
-@import "dependencies";
+@import "dependencies"; // don't remove me
 
-// ---- TABLE OF CONTENTS ----
-// This file contains all of the mixins that are used in this framework. Feel free to add your very own custom mixins at the top of this file!
-// border-radius
-//		border-top-left-radius
-//		border-top-right-radius
-//		border-bototm-left-radius
-//		border-bottom-right-radius
-//		border-top-radius
-//		border-right-radius
-//		border-bottom-radius
-//		border-left-radius
-// opacity
-// text-shadow
-// box-shadow
-// box-sizing
-// transition
-//		single-transition
-// RESET MIXINS
-// 		reset-box-model
-// 		reset-font
-// 		reset-focus
-// 		reset-body
-// 		reset-list-style
-// 		reset-table
-// 		reset-table-cell
-// 		reset-quotation
-// 		reset-image-anchor-border
-// 		reset-html5
-// global-reset
-// nested-reset
-// GRID MIXIN
-// grid
+// ---------- ADD CUSTOM MIXINS BELOW HERE
+// @mixin myMixin() { }
 
 // ---- MIXINS ----
 
@@ -50,13 +19,13 @@
 	border-radius: $radius;
 }
 
-@mixin border-top-left-radius($radius: $default-border-radius) { @include _bd('top', 'left', $radius); }
+@mixin border-top-left-radius($radius: $default-border-radius) { @include _bd("top", "left", $radius); }
 
-@mixin border-top-right-radius($radius: $default-border-radius) { @include _bd('top', 'right', $radius); }
+@mixin border-top-right-radius($radius: $default-border-radius) { @include _bd("top", "right", $radius); }
 
-@mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd('bottom', 'left', $radius); }
+@mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd("bottom", "left", $radius); }
 
-@mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd('bottom', 'right', $radius); }
+@mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd("bottom", "right", $radius); }
 
 @mixin border-top-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
@@ -191,8 +160,10 @@
 }
 
 @mixin reset-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	border: {
+		collapse: collapse;
+		spacing: 0;
+	}
 }
 
 @mixin reset-table-cell {
@@ -270,10 +241,16 @@
 }
 // end reset mixins
 
+// grid ( [ number $width: 960px, [ bool $fluid: false, [ number $colWith: 40px, [ number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] ] )
 @mixin grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
 	@if ( $fluid == true ) {
 		@include _fluidGrid($colCount);
 	} @else {
 		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
 	}
+}
+
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ]  ] )
+@mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
+	@include _mobileGrid($width, $colCount);
 }
