@@ -8,6 +8,10 @@
  * @license MIT
  * @version 1.4.0
  */
+/**
+ * This _functions partial file is meant for you to add your very own custom functions!
+ * Feel free to begin adding them below this header
+ */
 /* BASE GRID
  * ------------------------------------------------ */
 .container {
@@ -191,72 +195,15 @@
   .container {
     width: 300px; }
 
-  .container .one.column,
-  .container .one.columns {
+  .container .one.column {
     width: 300px; }
-  .container .two.columns {
-    width: 300px; }
-  .container .three.columns {
-    width: 300px; }
-  .container .four.columns {
-    width: 300px; }
-  .container .five.columns {
-    width: 300px; }
-  .container .six.columns {
-    width: 300px; }
-  .container .seven.columns {
-    width: 300px; }
-  .container .eight.columns {
-    width: 300px; }
-  .container .nine.columns {
-    width: 300px; }
-  .container .ten.columns {
-    width: 300px; }
-  .container .eleven.columns {
-    width: 300px; }
-  .container .twelve.columns {
-    width: 300px; }
-  .container .thirteen.columns {
-    width: 300px; }
-  .container .fourteen.columns {
-    width: 300px; }
-  .container .fifteen.columns {
-    width: 300px; }
-  .container .sixteen.columns {
+  .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns {
     width: 300px; }
   .container .one-third.column {
     width: 300px; }
   .container .two-third.column {
     width: 300px; }
-  .container .offset-by-one {
-    padding-left: 0; }
-  .container .offset-by-two {
-    padding-left: 0; }
-  .container .offset-by-three {
-    padding-left: 0; }
-  .container .offset-by-four {
-    padding-left: 0; }
-  .container .offset-by-five {
-    padding-left: 0; }
-  .container .offset-by-six {
-    padding-left: 0; }
-  .container .offset-by-seven {
-    padding-left: 0; }
-  .container .offset-by-eight {
-    padding-left: 0; }
-  .container .offset-by-nine {
-    padding-left: 0; }
-  .container .offset-by-ten {
-    padding-left: 0; }
-  .container .offset-by-eleven {
-    padding-left: 0; }
-  .container .offset-by-twelve {
-    padding-left: 0; }
-  .container .offset-by-thirteen {
-    padding-left: 0; }
-  .container .offset-by-fourteen {
-    padding-left: 0; }
-  .container .offset-by-fifteen {
+  .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen {
     padding-left: 0; } }
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
@@ -264,72 +211,15 @@
   .container {
     width: 420px; }
 
-  .container .one.column,
-  .container .one.columns {
+  .container .one.column {
     width: 420px; }
-  .container .two.columns {
-    width: 420px; }
-  .container .three.columns {
-    width: 420px; }
-  .container .four.columns {
-    width: 420px; }
-  .container .five.columns {
-    width: 420px; }
-  .container .six.columns {
-    width: 420px; }
-  .container .seven.columns {
-    width: 420px; }
-  .container .eight.columns {
-    width: 420px; }
-  .container .nine.columns {
-    width: 420px; }
-  .container .ten.columns {
-    width: 420px; }
-  .container .eleven.columns {
-    width: 420px; }
-  .container .twelve.columns {
-    width: 420px; }
-  .container .thirteen.columns {
-    width: 420px; }
-  .container .fourteen.columns {
-    width: 420px; }
-  .container .fifteen.columns {
-    width: 420px; }
-  .container .sixteen.columns {
+  .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns {
     width: 420px; }
   .container .one-third.column {
     width: 420px; }
   .container .two-third.column {
     width: 420px; }
-  .container .offset-by-one {
-    padding-left: 0; }
-  .container .offset-by-two {
-    padding-left: 0; }
-  .container .offset-by-three {
-    padding-left: 0; }
-  .container .offset-by-four {
-    padding-left: 0; }
-  .container .offset-by-five {
-    padding-left: 0; }
-  .container .offset-by-six {
-    padding-left: 0; }
-  .container .offset-by-seven {
-    padding-left: 0; }
-  .container .offset-by-eight {
-    padding-left: 0; }
-  .container .offset-by-nine {
-    padding-left: 0; }
-  .container .offset-by-ten {
-    padding-left: 0; }
-  .container .offset-by-eleven {
-    padding-left: 0; }
-  .container .offset-by-twelve {
-    padding-left: 0; }
-  .container .offset-by-thirteen {
-    padding-left: 0; }
-  .container .offset-by-fourteen {
-    padding-left: 0; }
-  .container .offset-by-fifteen {
+  .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen {
     padding-left: 0; } }
 /* CLEARING
  * ------------------------------------------------ */

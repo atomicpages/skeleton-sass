@@ -1,0 +1,22 @@
+// See skeleton file for copyright info
+
+@import dependencies
+
+// don't remove me
+@import functions
+
+// your custom functions
+
+// ---------- ADD CUSTOM MIXINS BELOW HERE
+// @mixin myMixin() { }
+
+// grid ( [ number $width: 960px, [ bool $fluid: false, [ number $colWith: 40px, [ number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] ] )
+=grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount)
+	@if $fluid == true
+		+_fluidGrid($colCount)
+	@else
+		+_fixedGrid($width, $colWidth, $gutterWidth, $colCount)
+
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ]  ] )
+=mobileGrid($width: $baseWidth, $colCount: $baseColCount)
+	+_mobileGrid($width, $colCount)

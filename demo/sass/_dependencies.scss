@@ -6,6 +6,7 @@
 // undesired results!
 
 // ---------- MIXIN DEPENDENCIES
+// _fluidGrid ( number $colCount, [ string $unit: "%" ] )
 @mixin _fluidGrid($colCount, $unit: "%") { // generate the fluid grid
 	// override only for fluid
 	.container {
@@ -31,7 +32,7 @@
 	}
 }
 
-// generate the fixed grid
+// _fixedGrid ( number $width, number $colWidth, number $gutterWidth, number $colCount )
 @mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
 	.container {
 		.column,
@@ -58,7 +59,7 @@
 	}
 }
 
-// generate the offset
+// _offset ( string $unit, number $colCount, number $colWidth )
 @mixin _offset($unit, $colCount, $colWidth) {
 	@if ( $unit == "%" ) {
 		@for $i from 1 through ( $colCount - 1 ) {
@@ -71,27 +72,46 @@
 	}
 }
 
-// generate mobile grid
+// _mobileGrid ( number $width, number $colCount )
 @mixin _mobileGrid($width, $colCount) {
 	.container { width: $width; }
 	.container {
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
-				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: $width; }
+				.#{numToString($i)}.column { width: $width; }
 			} @else {
-				.#{numToString($i)}.columns { width: $width; }
+				// .#{numToString($i)}.columns { width: $width; }
 			}
 		}
+		@include _group($colCount, ".columns", "after") { width: $width; }
 		.one-third.column { width: $width; }
 		.two-third.column { width: $width; }
 		@include _mobileOffset($colCount);
 	}
 }
 
+// _mobileOffset ( number $colCount )
 @mixin _mobileOffset($colCount) {
-	@for $i from 1 through ($colCount - 1) {
-		.offset-by-#{numToString($i)} { padding-left: 0; }
+	@include _group($colCount - 1, "offset-by-") { padding-left: 0; }
+}
+
+// _group ( number $stop, string $selector, [ string $pos: "before" ] )
+@mixin _group($stop, $selector, $pos: "before") {
+	$store: "";
+	@if(type-of($stop) != "number") {
+		@warn "Stop must be a number! #{type-of($stop)} was provided.";
+	}
+	@if($pos == "after") {
+		@for $i from 1 through $stop {
+			$store: $store + "." + numToString($i) + $selector + ",";
+		}
+	} @else {
+		@for $i from 1 through $stop {
+			$store: $store + "." + $selector + numToString($i) + ",";
+		}
+	}
+	#{$store} {
+		@content;
 	}
 }
 

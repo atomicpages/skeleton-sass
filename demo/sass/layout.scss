@@ -118,11 +118,8 @@ pre {
 	background: #303030;
 	color: #f2f2f2;
 	text-shadow: none;
-	overflow: auto;
-	&.active {
-		background: invert(#303030);
-		color: invert(#f2f2f2);
-	}
+	overflow: hidden;
+	word-wrap: break-word;
 }
 .gist pre { color: black; }
 pre code {

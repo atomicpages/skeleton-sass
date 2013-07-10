@@ -76,6 +76,7 @@ Skeleton SASS is heavily documented! If you're looking for a detailed descriptio
 ##### Resources
 * [Installing SASS](https://github.com/atomicpages/skeleton-sass/wiki/Installing-SASS)
 * [Installing Compass](https://github.com/atomicpages/skeleton-sass/wiki/Installing-Compass)
+* [Setting up a Fluid Grid](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-a-Fluid-Grid)
 
 
 ##### Documentation
@@ -88,9 +89,9 @@ Skeleton SASS is heavily documented! If you're looking for a detailed descriptio
 This project is released under the [MIT license](https://github.com/atomicpages/skeleton-sass/blob/master/license.txt). Who doesn't like free code?
 
 ### Find a Bug?
-Skeleton SASS is community driven. We will gladly reviw any issues that you find. If you wish to contribute, then you will land a spot in the contributions section of this document!
+Skeleton SASS is community driven. We will gladly review any issues that you find. If you wish to contribute you'll land a spot in the contributions section of this document!
 
-##### Found a Bug/How Can I Help?
+##### I Found a Bug/How Can I Help?
 * [Create a new issue on the github page!](https://github.com/atomicpages/skeleton-sass/issues)
 * [Fork me if you want to help!](https://github.com/atomicpages/skeleton-sass)
 
@@ -120,6 +121,7 @@ Changelog
 	* `radial-gradient` - produces a radial gradient
 * Removed redundant code for `.container .columns` margins
 * Fixed offset calculation issue for fluid grid
+* Added support for grouped selectors on `mobileGrid`
 
 ### 1.3.4
 * Added sample outline of a web page to show a more realistic example of how the page will scale
@@ -171,3 +173,7 @@ Authors
 -------
 * [Dennis Thompson](http://dennis-thompson.com/)
 * [AtomicPages LLC](http://www.atomicpages.net/)
+
+Contributors
+------------
+* Jackson Hines

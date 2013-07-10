@@ -7,6 +7,10 @@
  * @license MIT
  * @version 1.4.0
  */
+/**
+ * This _functions partial file is meant for you to add your very own custom functions!
+ * Feel free to begin adding them below this header
+ */
 /* SITE STYLES
  * ------------------------------------------------ */
 ::selection {
@@ -137,10 +141,8 @@ pre {
   background: #303030;
   color: #f2f2f2;
   text-shadow: none;
-  overflow: auto; }
-  pre.active {
-    background: #cfcfcf;
-    color: #0d0d0d; }
+  overflow: hidden;
+  word-wrap: break-word; }
 
 .gist pre {
   color: black; }
