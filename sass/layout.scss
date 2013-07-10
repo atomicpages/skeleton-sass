@@ -5,32 +5,13 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.2
+ * @version 1.4.0
  */
 
 // IMPORTS
 @import "compass/css3";
 @import "vars";
 @import "mixins";
-
-@function toRGBA($color, $alpha: 1) { // custom functions
-	$r: red($color);
-	$g: green($color);
-	$b: blue($color);
-	@return rgba($r, $g, $b, $alpha);
-}
-
-// local vars
-$bgColor: #1a1a1a;
-$textColor: #6d6d6d;
-
-$anchorColor: grayscale(invert(#d5000d));
-$anchorColorHover: grayscale(invert(#c5000c));
-$aButton: invert(#303030);
-
-$h1: lighten($textColor, 30%);
-$h2: #aaa;
-
 
 /* SITE STYLES
  * ------------------------------------------------ */
@@ -46,7 +27,7 @@ body {
 	font-size: 1em;
 	line-height: 1.5em;
 	background: $bgColor url("../images/bg.png") 0 0 repeat;
-	font-family: "Helvetica Neue", Helvetica, Arial, serif;
+	font-family: Helvetica, Arial, serif;
 	text-shadow: 0 1px 0 toRGBA(lighten($bgColor, 25%), 0.5);
 	color: $textColor;
 	margin: 0;
@@ -60,20 +41,20 @@ a {
 	}
 }
 h1, h2, h3, h4, h5, h6 { 
-	font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
-	color: $h2;
+	font-family: $hedingFont;
+	color: $h2Color;
 }
 strong { color: invert(#333); }
 header {
 	padding-top: 35px;
 	padding-bottom: 25px;
 	h1 {
-		font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
-		color: $h1;
+		font-family: $hedingFont;
+		color: $h1Color;
 	}
 	h2 {
-		font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
-		color: $h2;
+		font-family: $hedingFont;
+		color: $h2Color;
 		font-size: 24px;
 	}
 }
@@ -86,7 +67,7 @@ a.button {
 		right: solid 1px invert(lighten(#b7b7b7, 10%));
 		bottom: solid 1px invert(lighten(#b3b3b3, 10%));
 	};
-	color: $aButton;
+	color: $aButtonColor;
 	line-height: 25px;
 	font-weight: bold;
 	font-size: 15px;
@@ -137,11 +118,8 @@ pre {
 	background: #303030;
 	color: #f2f2f2;
 	text-shadow: none;
-	overflow: auto;
-	&.active {
-		background: invert(#303030);
-		color: invert(#f2f2f2);
-	}
+	overflow: hidden;
+	word-wrap: break-word;
 }
 .gist pre { color: black; }
 pre code {
@@ -196,28 +174,6 @@ aside {
 	}
 }
 section {
-	&#sites {
-		section {
-			margin-bottom: 20px;
-			div {
-				height: 160px;
-				background: #ccc;
-				margin-right: 9.52678%;
-			}
-			&:after {
-				clear: both;
-				display: block;
-				visibility: hidden;
-				content: "\0020";
-			}
-		}
-		&:after {
-			clear: both;
-			display: block;
-			visibility: hidden;
-			content: "\0020";
-		}
-	}
 	&#downloads {
 		padding-bottom: 20px;
 		border-bottom: 1px solid darken($bgColor, 3%);
@@ -273,11 +229,6 @@ footer {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
 	section {
-		&#sites {
-			section {
-				div { margin: 10px 0; }
-			}
-		}
 		&#downloads {
 			a.button { 
 				width: 382px;
@@ -292,11 +243,6 @@ footer {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
 	section {
-		&#sites {
-			section {
-				div { margin: 10px 0; }
-			}
-		}
 		&#downloads {
 			a.button { 
 				margin: 0 0 10px 0;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache-control" content="public">
 <title>Skeleton SASS | Responsive SASS Framework</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="http://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
 		<div class="sixteen columns inner">
 			<header>
 				<h1>Skeleton SASS</h1>
-				<h2>"A SASS, SCSS, &amp;amp; Compass translation of Dave Gamache's Skeleton responsive CSS grid that has been SASSified to make it even more awesome."<small>&amp;mdash; Dennis Thompson (Skeleton SASS Creator)</small></h2>
+				<h2>"A SASS, SCSS, &amp; Compass translation of Dave Gamache's Skeleton responsive CSS grid that has been SASSified to make it even more awesome."<small>&mdash; Dennis Thompson (Skeleton SASS Creator)</small></h2>
 			</header>
 			<section id="downloads" class="clearfix">
 				<a href="demo.html" id="view-demo" class="button"><span>View Demo</span></a>
@@ -43,7 +43,7 @@
 					<ul>
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Installing-SASS">Installing SASS</a></li>
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Installing-Compass">Installing Compass</a></li>
-						<li><a href="#" onclick="window.open('https://docs.google.com/forms/d/1ich0fSxtrxhwOTk0cVfq4kkm5vucsOL6zWqXekJ2Ehk/viewform?entry.1831473522&amp;entry.1618212676&amp;entry.510533224&amp;entry.1942628456&amp;entry.181981918=No&amp;entry.704845062', '_blank ');">Do you use Skeleton SASS on your Site? Tell Us!</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-a-Fluid-Grid">Setting up a Fluid Grid</a></li>
 					</ul>
 					<br>
 					<h4>Documentation</h4>
@@ -96,7 +96,7 @@
 					<h5>Command Line</h5>
 					<ol>
 						<li>Create a new directory in your web project called <code>sass</code></li>
-						<li>Copy &amp;amp; Paste your desired flavor or Skeleton SASS into the newly created <code>sass</code> directory</li>
+						<li>Copy &amp; Paste your desired flavor or Skeleton SASS into the newly created <code>sass</code> directory</li>
 						<li>Compile files for the first time:
 							<ol>
 								<li>Open Terminal/Command Prompt with Ruby</li>
@@ -115,6 +115,7 @@
 						<li>Add the following to the head section of your HTML document (see code example): <br><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;</code></li>
 					</ol>
 
+					<h5></h5>
 					<div class="code-wrap">
 						<p><a href="#">Code Sample</a></p>
 						<script src="https://gist.github.com/atomicpages/63dc94f4d7d8425ce0ab.js" id="sample-page"></script>
@@ -134,16 +135,6 @@
 					
 					<h3>License</h3>
 					<p>This project is released under the MIT license.</p>
-					
-					<section id="sites">
-						<h4>Do you use Skeleton SASS For your Website? <span style="display: none;">These Folks Do!</span></h4>
-						<p><a href="#" onclick="window.open('https://docs.google.com/forms/d/1ich0fSxtrxhwOTk0cVfq4kkm5vucsOL6zWqXekJ2Ehk/viewform?entry.1831473522&amp;entry.1618212676&amp;entry.510533224&amp;entry.1942628456&amp;entry.181981918=No&amp;entry.704845062', '_blank ');">Want to be on this list? Tell Us!</a></p>
-						<section style="display: none;">
-							<div class="three columns alpha"></div>
-							<div class="three columns"></div>
-							<div class="three columns omega"></div>
-						</section>
-					</section>
 
 					<h3>Find a Bug?</h3>
 					<ul>
@@ -153,6 +144,39 @@
 
 					<h3>Changelog</h3>
 					<section class="changelog first">
+						<h5>1.4.0</h5>
+						<ul>
+							<li>Moved contents from <code>_functions</code> to a new partial called <code>_dependencies</code></li>
+							<li>Moved all of the "private" mixins to <code>_dependencies</code> partial since these are core mixins and functions</li>
+							<li>Finally added offset styles to mobile grids -- sorry! I realize that was a major piece that was missing</li>
+							<li>Added <code>mobileGrid</code> mixin</li>
+							<li>Added the following mixins to the non-compass version:</li>
+								<ul>
+									<li><code>single-transition</code></li>
+									<li><code>transition</code></li>
+									<li><code>reset-font</code></li>
+									<li><code>reset-focus</code></li>
+									<li><code>reset-list-style</code></li>
+									<li><code>reset-table</code></li>
+									<li><code>reset-table-cell</code></li>
+									<li><code>reset-quotation</code></li>
+									<li><code>reset-image-anchor-border</code></li>
+									<li><code>reset-html5</code></li>
+									<li><code>global-reset</code></li>
+									<li><code>nested-reset</code></li>
+								</ul>
+							<li>Non-compass version gradient support is available but these mixins still need multi-stop support</li>
+							<ul>
+								<li><code>filter-gradient</code> - this is for IE only and works 100%</li>
+								<li><code>linear-gradient</code> - produces a linear gradient in all directions</li>
+								<li><code>radial-gradient</code> - produces a radial gradient</li>
+							</ul>
+							<li>Removed redundant code for <code>.container .columns</code> margins</li>
+							<li>Fixed offset calculation issue for fluid grid</li>
+							<li>Added support for grouped selectors on <code>mobileGrid</code></li>
+						</ul>
+					</section>
+					<section class="changelog">
 						<h5>1.3.4</h5>
 						<ul>
 							<li>Added sample outline of a web page to show a more realistic example of how the page will scale</li>
@@ -161,7 +185,7 @@
 					<section class="changelog">
 						<h5>1.3.3</h5>
 						<ul>
-							<li>Fixed duplicate <code>&amp;lt;div&amp;gt;</code> in the 12-grid and 20-grid demo files. Sorry about that!</li>
+							<li>Fixed duplicate <code>&lt;div&gt;</code> in the 12-grid and 20-grid demo files. Sorry about that!</li>
 						</ul>
 					</section>
 					<section class="changelog">
@@ -235,11 +259,11 @@
 		<div class="sixteen columns footer">
 			<footer>
 				<h6>Skeleton SASS is maintained by <a href="http://dennis-thompson.com/">Dennis Thompson</a> | <a href="http://www.atomicpages.net/">AtomicPages LLC</a></h6>
-				<h6><a href="#" onclick="window.open('https://docs.google.com/forms/d/1ich0fSxtrxhwOTk0cVfq4kkm5vucsOL6zWqXekJ2Ehk/viewform?entry.1831473522&amp;entry.1618212676&amp;entry.510533224&amp;entry.1942628456&amp;entry.181981918=No&amp;entry.704845062', '_blank ');">Have Some Feedback? Want your Website on this Site?</a></h6>
 			</footer>
 		</div>
 	</div>
 	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/respond.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('aside a').hover(

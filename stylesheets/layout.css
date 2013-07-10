@@ -5,7 +5,11 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.2
+ * @version 1.4.0
+ */
+/**
+ * This _functions partial file is meant for you to add your very own custom functions!
+ * Feel free to begin adding them below this header
  */
 /* SITE STYLES
  * ------------------------------------------------ */
@@ -21,7 +25,7 @@ body {
   font-size: 1em;
   line-height: 1.5em;
   background: #1a1a1a url("../images/bg.png") 0 0 repeat;
-  font-family: "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Helvetica, Arial, serif;
   text-shadow: 0 1px 0 rgba(90, 90, 90, 0.5);
   color: #6d6d6d;
   margin: 0; }
@@ -34,7 +38,7 @@ a {
     text-decoration: none; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
   color: #aaaaaa; }
 
 strong {
@@ -44,10 +48,10 @@ header {
   padding-top: 35px;
   padding-bottom: 25px; }
   header h1 {
-    font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+    font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
     color: #bababa; }
   header h2 {
-    font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+    font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
     color: #aaaaaa;
     font-size: 24px; }
 
@@ -137,10 +141,8 @@ pre {
   background: #303030;
   color: #f2f2f2;
   text-shadow: none;
-  overflow: auto; }
-  pre.active {
-    background: #cfcfcf;
-    color: #0d0d0d; }
+  overflow: hidden;
+  word-wrap: break-word; }
 
 .gist pre {
   color: black; }
@@ -196,22 +198,6 @@ aside#left_sidebar {
         aside#left_sidebar ul li a:hover {
           color: #949595 !important; }
 
-section#sites section {
-  margin-bottom: 20px; }
-  section#sites section div {
-    height: 160px;
-    background: #ccc;
-    margin-right: 9.52678%; }
-  section#sites section:after {
-    clear: both;
-    display: block;
-    visibility: hidden;
-    content: "\0020"; }
-section#sites:after {
-  clear: both;
-  display: block;
-  visibility: hidden;
-  content: "\0020"; }
 section#downloads {
   padding-bottom: 20px;
   border-bottom: 1px solid #121212; }
@@ -254,8 +240,6 @@ footer {
   /* Tablet */ }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  section#sites section div {
-    margin: 10px 0; }
   section#downloads a.button {
     width: 382px;
     margin: 10px 0; }
@@ -266,8 +250,6 @@ footer {
     display: none; } }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-  section#sites section div {
-    margin: 10px 0; }
   section#downloads a.button {
     margin: 0 0 10px 0;
     width: 282px; }

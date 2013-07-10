@@ -1,10 +1,12 @@
-skeleton-sass
+Skeleton SASS
 =============
 
-The `gh-pages` branch is the companion web page for the Skeleton SASS. Since there's not much to say here are some links :)
+Welcome to the repository for the companion website for Skeleton SASS. Here you can find a live demo of the website on a web server.
 
-* [Skeleton SASS Demo Page](http://atomicpages.github.io/skeleton-sass/)
-* [Skeleton SASS Master Branch](https://github.com/atomicpages/skeleton-sass)
-  * [Compass](https://github.com/atomicpages/skeleton-sass/tree/master/compass)
-  * [Non-Compass](https://github.com/atomicpages/skeleton-sass/tree/master/sass)
-* [Wiki](https://github.com/atomicpages/skeleton-sass/wiki/_pages)
+## Changelog
+### 1.4.0
+* Addition of respond.js for legacy browsers
+* Update of site code to use the latest version of Skeleton SASS
+* Fixing of scaling issues with IE 8
+* Fixed values in `skeleton-twenty` that handle the grid generation
+* Update to changelog in `index.html`

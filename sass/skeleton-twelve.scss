@@ -6,7 +6,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.2.2
+ * @version 1.4.0
  */
 
 // IMPORTS
@@ -25,18 +25,15 @@
 		float: left;
 		display: inline;
 		position: relative;
-		margin: {
-			left: 10px;
-			right: 10px;
-    	};
-	    /* Nested Column Classes */
-	    &.alpha { margin-left: 0; }
-	    &.omega { margin-right: 0; }
+		&.alpha { margin-left: 0; }
+		&.omega { margin-right: 0; }
 	}
 }
 .row { margin-bottom: 20px; }
 
-@include grid($baseWidth, false, 60px, 20px, 12);
+// @include grid($baseWidth, true); // fluid
+@include grid($baseWidth, false, 60px, 20px, 12); // 12-column fixed grid
+// @include grid($baseWidth);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -44,10 +41,6 @@
 	.container {
 		width: $tabletWidth;
 		.column, .columns {
-			margin: {
-				left: 10px;
-				right: 10px;
-			};
 			&.alpha {
 				margin: {
 					left: 0;
@@ -68,57 +61,21 @@
 			right: 0;
 		};
 	}
-	@include grid($tabletWidth, false, 44px, 20px, 12); // fixed
+	// @include grid($tabletWidth, true); // fluid
+	@include grid($tabletWidth, false, 44px, 20px, 12); // 12-column fixed grid
+	// @include grid($tabletWidth, false, 28px); // fixed
 }
 
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {
-	.container { width: $mobilePortraitWidth; }
-	.container {
-		.columns,
-		.column { margin: 0; }
-		.one.column,
-		.one.columns,
-		.two.columns,
-		.three.columns,
-		.four.columns,
-		.five.columns,
-		.six.columns,
-		.seven.columns,
-		.eight.columns,
-		.nine.columns,
-		.ten.columns,
-		.eleven.columns,
-		.twelve.columns,
-		.one-third.column,
-		.two-thirds.column  { width: $mobilePortraitWidth; }
-	}
+	@include mobileGrid($mobilePortraitWidth, 12);
 }
 
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.container { width: $mobileLandscapeWidth; }
-	.container {
-		.columns,
-		.column { margin: 0; }
-		.one.column,
-		.one.columns,
-		.two.columns,
-		.three.columns,
-		.four.columns,
-		.five.columns,
-		.six.columns,
-		.seven.columns,
-		.eight.columns,
-		.nine.columns,
-		.ten.columns,
-		.eleven.columns,
-		.twelve.columns,
-		.one-third.column,
-		.two-thirds.column { width: $mobileLandscapeWidth; }
-	}
+	@include mobileGrid($mobileLandscapeWidth, 12);
 }
 
 /* CLEARING
