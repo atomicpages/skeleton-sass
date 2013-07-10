@@ -17,7 +17,7 @@ Skeleton SASS is a SASS port of Skeleton CSS. Skeleton SASS is primarily written
 
 If you are new to SASS altogether then please read our [wiki](https://github.com/atomicpages/skeleton-sass/wiki) for a more in-depth look at Skeleton SASS, information regarding installing ruby and SASS, and many other valuable resources!
 
-If you have used Skeleton CSS and you are tired of dealing with vanilla CSS, then transitioning to Skeleton SASS will require minimal effort. Since Skeleton SASS is built to duplicate the file hierarchy as Skeleton CSS, this allows the transition to be smooth and painless.
+If you have used Skeleton CSS and you are tired of dealing with vanilla CSS, then transitioning to Skeleton SASS will require minimal effort. Since Skeleton SASS is built to duplicate the file hierarchy of Skeleton CSS. This allows the transition to be smooth and painless.
 
 If you have tried other SASS ports of Skeleton CSS you've probably seen a ports that are built inefficiently, inaccurately, and perhaps even downright poorly. Skeleton SASS will be the last time you search for a SASS port of Skeleton CSS. With only _three_ additional files to satisfy dependencies, this will allow you to easily transition into using Skeleton SASS.  
 
@@ -32,10 +32,10 @@ If you have tried other SASS ports of Skeleton CSS you've probably seen a ports 
 
 ### File Overview
 * `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles. 
-* `layout` is an _optional_ file where you can add custom styles that may extend the framework and even handle all of the custom styles for your website.
+* `layout` is an _optional_ file where you can add custom styles that may extend the framework and/or custom styles for your website.
 * `base` is an _optional_ file which contains the default styles for the framework.
-* `_mixins` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that is meant to be included -- not rendered into its own css file. See this file for additional information.
-* `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains functions which handle various tasks in grid generation. See file for additional information.
+* `_mixins` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains all of the mixins used in the framework. You may add your own custom mixins here as well as edit existing mixins to suit your needs. See this file for additional information.
+* `_dependencies` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains functions and "private" mixins that aren't meant to be used directly. Avoid editing this file directly unless you know what you're doing!
 * `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which contains all of the global variables for the framework. See file for additional information.
 
 ### Project Organization
@@ -48,14 +48,14 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 
 * `compass` (Compass Version)
 	* `sass`
-		* `_functions.sass`
+		* `_dependencies.sass`
 		* `_mixins.sass`
 		* `_vars.sass`
 		* `base.sass`
 		* `layout.sass`
 		*  `skeleton.sass`
 	* `scss` 
-		* `_functions.scss`
+		* `_dependencies.scss`
 		* `_mixins.scss`
 		* `_vars.scss`
 		* `base.scss`
@@ -96,6 +96,31 @@ Skeleton SASS is community driven. We will gladly reviw any issues that you find
 
 Changelog
 ---------
+### 1.4.0
+* Moved contents from `_functions` to a new partial called `_dependencies`
+* Moved all of the "private" mixins to `_dependencies` partial since these are core mixins and functions
+* Finally added offset styles to mobile grids -- sorry! I realize that was a _major_ piece that was missing
+* Added `mobileGrid` mixin
+* Added the following mixins to the non-compass version:
+	*  `single-transition`
+	*  `transition`
+	*  `reset-font`
+	*  `reset-focus`
+	*  `reset-list-style`
+	*  `reset-table`
+	*  `reset-table-cell`
+	*  `reset-quotation`
+	*  `reset-image-anchor-border`
+	*  `reset-html5`
+	*  `global-reset`
+	*  `nested-reset`
+* Non-compass version gradient support is available but these mixins still need multi-stop support
+	* `filter-gradient` - this is for IE only and works 100%
+	* `linear-gradient` - produces a linear gradient in all directions
+	* `radial-gradient` - produces a radial gradient
+* Removed redundant code for `.container .columns` margins
+* Fixed offset calculation issue for fluid grid
+
 ### 1.3.4
 * Added sample outline of a web page to show a more realistic example of how the page will scale
 

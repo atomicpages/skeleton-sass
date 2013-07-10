@@ -126,12 +126,53 @@
 }
 
 // transition ( list $transition )
-@mixin transition($transition...) {
+@mixin transition($transition) {
 	-webkit-transition: $transition;
 	-moz-transition: $transition;
 	-ms-transition: $transition;
 	-o-transition: $transition;
 	transition: $transition;
+}
+
+// filter-gradient ( color $start, [ color $stop: false, [ string $direction: false ] ] )
+@mixin filter-gradient($start, $stop: false, $direction: false) {
+	$direction: unquote($direction);
+	$type: false;
+	@if(unquote($start) != none) {
+		@if(type-of($direction) != "string") {
+			@warn "Invalid parameter for $direction. Expected string but got #{type-of($direction)}, defaulting to vertical";
+			$direction: vertical;
+		}
+		@if($direction == vertical) {
+			$type: 0;
+		} @else {
+			$type: 1;
+		}
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=#{$type});
+	} @else {
+		$stop: null;
+		$direction: null;
+		// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+		filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+	}
+}
+
+// needs multiple stop support
+// linear-gradient ( string $direction, list $start, list $stop, [ bool $ie: true ] )
+@mixin linear-gradient($direction, $start, $stop, $ie: true) {
+	@if(type-of($start) != "list") {
+		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
+		$start: false;
+	} @else if(type-of($stop) != "list") {
+		@warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
+		$stop: false;
+	}
+	@include _buildGradient($direction, $start, $stop, $ie);
+}
+
+// radial-gradient ( string $direction, list $start, list $stop, [ bool $ie: true ] )
+@mixin radial-gradient($direction, $start, $stop, $ie: true) {
+	@include _buildRadialGradient($direction, $start, $stop, $ie);
 }
 
 // begin reset mixins

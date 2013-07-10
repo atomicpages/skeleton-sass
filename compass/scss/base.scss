@@ -78,13 +78,13 @@ h6 {
 }
 .subheader { color: #777; }
 p { 
-  margin: 0 0 20px 0;
-  img { margin: 0; }
-  &.lead {
-	font-size: round($fontSize * 1.75);
-	line-height: round($fontSize * 2.25);
-	color: #777;
-  } 
+	margin: 0 0 20px 0;
+	img { margin: 0; }
+	&.lead {
+		font-size: round($fontSize * 1.75);
+		line-height: round($fontSize * 2.25);
+		color: #777;
+	} 
 }
 em, i { font-style: italic; }
 strong, b {

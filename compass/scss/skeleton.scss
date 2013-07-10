@@ -25,18 +25,15 @@
 		float: left;
 		display: inline;
 		position: relative;
-		margin: {
-			left: $baseGutterWidth / 2;
-			right: $baseGutterWidth / 2;
-    	};
-	    /* Nested Column Classes */
-	    &.alpha { margin-left: 0; }
-	    &.omega { margin-right: 0; }
+		&.alpha { margin-left: 0; }
+		&.omega { margin-right: 0; }
 	}
 }
 .row { margin-bottom: 20px; }
 
 // @include grid($baseWidth, true); // fluid
+// @include grid($baseWidth, false, 60px, 20px, 12); // 12-column fixed grid
+// @include grid($baseWidth, false, 28px, 20px, 20); // 20-column fixed grid
 @include grid($baseWidth);
 
 /* TABLET (PORTRAIT)
@@ -45,10 +42,6 @@
 	.container {
 		width: $tabletWidth;
 		.column, .columns {
-			margin: {
-				left: 10px;
-				right: 10px;
-			};
 			&.alpha {
 				margin: {
 					left: 0;
@@ -70,61 +63,21 @@
 		};
 	}
 	// @include grid($tabletWidth, true); // fluid
+	// @include grid($tabletWidth, false, 44px, 20px, 12); // 12-column fixed grid
+	// @include grid($tabletWidth, false, 17px, 20px, 20); // 20-column fixed grid
 	@include grid($tabletWidth, false, 28px); // fixed
 }
 
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {
-	.container { width: $mobilePortraitWidth; }
-	.container .columns,
-	.container .column { margin: 0; }
-	.container .one.column,
-	.container .one.columns,
-	.container .two.columns,
-	.container .three.columns,
-	.container .four.columns,
-	.container .five.columns,
-	.container .six.columns,
-	.container .seven.columns,
-	.container .eight.columns,
-	.container .nine.columns,
-	.container .ten.columns,
-	.container .eleven.columns,
-	.container .twelve.columns,
-	.container .thirteen.columns,
-	.container .fourteen.columns,
-	.container .fifteen.columns,
-	.container .sixteen.columns,
-	.container .one-third.column,
-	.container .two-thirds.column  { width: $mobilePortraitWidth; }
+	@include mobileGrid($mobilePortraitWidth);
 }
 
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.container { width: $mobileLandscapeWidth; }
-	.container .columns,
-	.container .column { margin: 0; }
-	.container .one.column,
-	.container .one.columns,
-	.container .two.columns,
-	.container .three.columns,
-	.container .four.columns,
-	.container .five.columns,
-	.container .six.columns,
-	.container .seven.columns,
-	.container .eight.columns,
-	.container .nine.columns,
-	.container .ten.columns,
-	.container .eleven.columns,
-	.container .twelve.columns,
-	.container .thirteen.columns,
-	.container .fourteen.columns,
-	.container .fifteen.columns,
-	.container .sixteen.columns,
-	.container .one-third.column,
-	.container .two-thirds.column { width: $mobileLandscapeWidth; }
+	@include mobileGrid($mobileLandscapeWidth);
 }
 
 /* CLEARING

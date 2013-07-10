@@ -1,6 +1,7 @@
 // See skeleton file for copyright info
 
 @import "dependencies"; // don't remove me
+@import "functions";	// your custom functions
 
 // ---------- ADD CUSTOM MIXINS BELOW HERE
 // @mixin myMixin() { }
@@ -8,14 +9,8 @@
 // grid ( [ number $width: 960px, [ bool $fluid: false, [ number $colWith: 40px, [ number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] ] )
 @mixin grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
 	@if ( $fluid == true ) {
-		// and for you math heads... a_n = (100n / $colCount) - 2
-		// where n is the iteration
 		@include _fluidGrid($colCount);
 	} @else {
-		// and for you math heads... a_n = 40 + ( 60 ( n - 1 ) )
-		// where 40 = column width
-		// where 60 is the consistent difference between each column
-		// where n is the iteration
 		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
 	}
 }

@@ -42,16 +42,13 @@
 
 // generate the fixed grid
 @mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
-	@if($gutterWidth != $baseGutterWidth) {
-		/* Gutter Overrides */
-		.container {
-			.column,
-			.columns {
-				margin: {
-					left: $gutterWidth / 2;
-					right: $gutterWidth / 2;
-				};
-			}
+	.container {
+		.column,
+		.columns {
+			margin: {
+				left: $gutterWidth / 2;
+				right: $gutterWidth / 2;
+			};
 		}
 	}
 	/* The Grid */
@@ -95,16 +92,69 @@
 }
 
 // generate the offset
-// Note: although $colWidth is optional, it is REQUIRED by the fixed grid
 @mixin _offset($unit, $colCount, $colWidth) {
 	@if ( $unit == "%" ) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount ) * $i#{$unit}; }
+			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount )#{$unit}; }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
 			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
 		}
+	}
+}
+
+// needs multiple stop support
+// needs center adjustment support
+// _buildRadialGradient ( string $direction, color $start, color $stop, bool $ie )
+@mixin _buildRadialGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == radial or $direction == ellipse or $direction == center) {
+		background: $start;
+		background: -moz-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0% #{$start}), color-stop(100% #{$stop}));
+		background: -webkit-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -o-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -ms-radial-gradient(center, ellipse cover, $start, $stop);
+		background: radial-gradient(ellipse at center, $start, $stop);
+	}
+	@if($ie == true) {
+		@include filter-gradient($start, $stop, $direction);
+	}
+}
+
+// needs multiple stop support
+// _buildGradient ( string $direction, list $start, list $stop, bool $ie )
+@mixin _buildGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == left or $direction == horizontal) {
+		$webkitGradientDirection: linear, left top, right top;
+		$linearGradientDirection: to right;
+	} @else if($direction == top or $direction == vertical) {
+		$webkitGradientDirection: linear, left top, left bottom;
+		$linearGradientDirection: to bottom;
+	} @else if($direction == left top) {
+		$direction: -45deg;
+		$webkitGradientDirection: linear, left top, right bottom;
+		$linearGradientDirection: 135deg;
+	} @else if($direction == left bottom) {
+		$direction: 45deg;
+		$webkitGradientDirection: linear, left bottom, right top;
+		$linearGradientDirection: $direction;
+	}
+	background: nth($start, 1);
+	background-image: -moz-linear-gradient($direction, $start, $stop);
+	background-image: -webkit-gradient($webkitGradientDirection, color-stop(nth($start, 1), nth($start, 2)), color-stop(nth($stop, 1), nth($stop, 2)));
+	background-image: -webkit-linear-gradient($direction, $start, $stop);
+	background-image: -o-linear-gradient($direction, $start, $stop);
+	background-image: -ms-linear-gradient($direction, $start, $stop);
+	background-image: linear-gradient($linearGradientDirection, $start, $stop);
+	@if($ie == true) {
+		@include filter-gradient(nth($start, 1), nth($stop, 1), vertical);
 	}
 }
 

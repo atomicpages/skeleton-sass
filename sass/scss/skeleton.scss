@@ -6,7 +6,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.4
+ * @version 1.4.0
  */
 
 // IMPORTS
@@ -25,13 +25,9 @@
 		float: left;
 		display: inline;
 		position: relative;
-		margin: {
-			left: 10px;
-			right: 10px;
-    	};
-	    /* Nested Column Classes */
-	    &.alpha { margin-left: 0; }
-	    &.omega { margin-right: 0; }
+		/* Nested Column Classes */
+		&.alpha { margin-left: 0; }
+		&.omega { margin-right: 0; }
 	}
 }
 .row { margin-bottom: 20px; }
@@ -45,10 +41,6 @@
 	.container {
 		width: $tabletWidth;
 		.column, .columns {
-			margin: {
-				left: 10px;
-				right: 10px;
-			};
 			&.alpha {
 				margin: {
 					left: 0;

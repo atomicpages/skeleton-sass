@@ -5,7 +5,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.2
+ * @version 1.4.0
  */
 /* SITE STYLES
  * ------------------------------------------------ */
@@ -21,7 +21,7 @@ body {
   font-size: 1em;
   line-height: 1.5em;
   background: #1a1a1a url("../images/bg.png") 0 0 repeat;
-  font-family: "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Helvetica, Arial, serif;
   text-shadow: 0 1px 0 rgba(90, 90, 90, 0.5);
   color: #6d6d6d;
   margin: 0; }
@@ -34,7 +34,7 @@ a {
     text-decoration: none; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
   color: #aaaaaa; }
 
 strong {
@@ -44,10 +44,10 @@ header {
   padding-top: 35px;
   padding-bottom: 25px; }
   header h1 {
-    font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+    font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
     color: #bababa; }
   header h2 {
-    font-family: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
+    font-family: "Fjalla One", "Helvetica Neue", Helvetica, Arial, serif;
     color: #aaaaaa;
     font-size: 24px; }
 
