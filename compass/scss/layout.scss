@@ -6,7 +6,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.2.2
+ * @version 1.4.0
  */
 
 // IMPORTS
@@ -19,7 +19,7 @@
 
 /* PAGE STYLES
  * ------------------------------------------------ */
-/* Add page styles here such as .home { background: rgba(0, 0, 0, 0.4); } */
+/* Add page styles here such as .page-home { background: rgba(0, 0, 0, 0.4); } */
 
 /* MEDIA QUERIES
  * ------------------------------------------------ */
@@ -40,7 +40,7 @@
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: $tabletWidth - 1) {
-/* add code here */
+	/* add code here */
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */

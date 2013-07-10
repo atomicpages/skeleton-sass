@@ -43,6 +43,7 @@
 					<ul>
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Installing-SASS">Installing SASS</a></li>
 						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Installing-Compass">Installing Compass</a></li>
+						<li><a href="https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-a-Fluid-Grid">Setting up a Fluid Grid</a></li>
 					</ul>
 					<br>
 					<h4>Documentation</h4>
@@ -143,6 +144,39 @@
 
 					<h3>Changelog</h3>
 					<section class="changelog first">
+						<h5>1.4.0</h5>
+						<ul>
+							<li>Moved contents from <code>_functions</code> to a new partial called <code>_dependencies</code></li>
+							<li>Moved all of the "private" mixins to <code>_dependencies</code> partial since these are core mixins and functions</li>
+							<li>Finally added offset styles to mobile grids -- sorry! I realize that was a major piece that was missing</li>
+							<li>Added <code>mobileGrid</code> mixin</li>
+							<li>Added the following mixins to the non-compass version:</li>
+								<ul>
+									<li><code>single-transition</code></li>
+									<li><code>transition</code></li>
+									<li><code>reset-font</code></li>
+									<li><code>reset-focus</code></li>
+									<li><code>reset-list-style</code></li>
+									<li><code>reset-table</code></li>
+									<li><code>reset-table-cell</code></li>
+									<li><code>reset-quotation</code></li>
+									<li><code>reset-image-anchor-border</code></li>
+									<li><code>reset-html5</code></li>
+									<li><code>global-reset</code></li>
+									<li><code>nested-reset</code></li>
+								</ul>
+							<li>Non-compass version gradient support is available but these mixins still need multi-stop support</li>
+							<ul>
+								<li><code>filter-gradient</code> - this is for IE only and works 100%</li>
+								<li><code>linear-gradient</code> - produces a linear gradient in all directions</li>
+								<li><code>radial-gradient</code> - produces a radial gradient</li>
+							</ul>
+							<li>Removed redundant code for <code>.container .columns</code> margins</li>
+							<li>Fixed offset calculation issue for fluid grid</li>
+							<li>Added support for grouped selectors on <code>mobileGrid</code></li>
+						</ul>
+					</section>
+					<section class="changelog">
 						<h5>1.3.4</h5>
 						<ul>
 							<li>Added sample outline of a web page to show a more realistic example of how the page will scale</li>
@@ -151,7 +185,7 @@
 					<section class="changelog">
 						<h5>1.3.3</h5>
 						<ul>
-							<li>Fixed duplicate <code>&lt;div&gt; in the 12-grid and 20-grid demo files. Sorry about that!</li>
+							<li>Fixed duplicate <code>&lt;div&gt;</code> in the 12-grid and 20-grid demo files. Sorry about that!</li>
 						</ul>
 					</section>
 					<section class="changelog">
@@ -229,6 +263,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/respond.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('aside a').hover(
