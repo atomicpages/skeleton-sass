@@ -9,6 +9,7 @@ Skeleton SASS is a "SASSification" of Dave Gamache's [Skeleton CSS](http://getsk
 	* Fixed Grid (default)
 	* Fluid Grid
 	* Adjust columns and gutters
+* Install Skeleton SASS with bower! `bower install skeleton-sass`
 * [Live demo!](http://atomicpages.github.io/skeleton-sass/demo.html)
 * [Extensive documentation](https://github.com/atomicpages/skeleton-sass/wiki)
 
@@ -26,6 +27,7 @@ If you have tried other SASS ports of Skeleton CSS you've probably seen a ports 
 2. Separation of variables, functions, and mixins to keep code clean and **DRY**
 3. Compass and Non-Compass versions available
 4. `.sass` and `.scss` versions available
+5. Install Skeleton SASS with bower front-end package manager
 
 ### Project Organization
 Skeleton SASS is organized into **two** major categories:
@@ -65,6 +67,9 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 * `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which is **required** because it contains all of the global variables for the framework. See file for additional information.
 * `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) where you may add custom functions. This file is **not required** by any means and may be discarded if you wish.
 
+### Bower
+
+
 ### Demo
 Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
 
@@ -97,6 +102,13 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.4.2
+* Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any sass code
+* Added additional files and folders to bower ignore
+
+### 1.4.1
+* Added Skeleton SASS to bower! You can now drop Skeleton SASS into your projects using `bower install skeleton-sass`
+
 ### 1.4.0
 * Moved contents from `_functions` to a new partial called `_dependencies`
 * Moved all of the "private" mixins to `_dependencies` partial since these are core mixins and functions

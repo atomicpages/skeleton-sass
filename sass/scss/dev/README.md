@@ -18,7 +18,7 @@ a more detailed log will be available in the master branch.
 ## Changelog
 #### 1.3.4.4
 * Migrated 100% working changes to `_mixins` file
-* Changed `_functions` file to `_dependencies` to hide "private" mixins and framework functions
+* Changed `_functions` file to `_dependencies` to separate "private" mixins and framework functions
 
 #### 1.3.4.3
 * Added support for transition
