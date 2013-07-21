@@ -8,8 +8,10 @@
 		"url": "https://github.com/atomicpages/skeleton-sass.git"
 	},
 	"licenses": [
-		"type": "MIT",
-		"url": "http://opensource.org/licenses/MIT"
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
 	],
 	"ignore": [
 		".gitignore",
