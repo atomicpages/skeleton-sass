@@ -1,0 +1,18 @@
+{
+	"name": "skeleton-sass",
+	"version": "1.4.1",
+	"author": "Dennis Thompson",
+	"homepage": "http://atomicpages.github.io/skeleton-sass/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atomicpages/skeleton-sass.git"
+	},
+	"licenses": [
+		"type": "MIT",
+		"url": "http://opensource.org/licenses/MIT"
+	],
+	"ignore": [
+		".gitignore",
+		"demo/*"
+	]
+}
