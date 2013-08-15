@@ -85,7 +85,7 @@
 		}
 		@include _group($colCount, ".columns", "after") { width: $width; }
 		.one-third.column { width: $width; }
-		.two-third.column { width: $width; }
+		.two-thirds.column { width: $width; }
 		@include _mobileOffset($colCount);
 	}
 }
