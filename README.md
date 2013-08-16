@@ -192,3 +192,4 @@ Authors
 Contributors
 ------------
 * Jackson Hines
+* [robertosobachi](https://github.com/robertosobachi) for informing me of a typo on a selector
