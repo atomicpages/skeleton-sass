@@ -34,7 +34,7 @@
 
 @mixin border-right-radius($radius: $default-border-radius) {
 	@include border-top-right-radius($radius);
-	@include border-bottom-right-radius($radius);	
+	@include border-bottom-right-radius($radius);
 }
 
 @mixin border-bottom-radius($radius: $default-border-radius) {
@@ -44,7 +44,7 @@
 
 @mixin border-left-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
-	@include border-bottom-left-radius($radius);	
+	@include border-bottom-left-radius($radius);
 }
 
 // opacity
@@ -88,7 +88,7 @@
 		@warn "Invalid parameters passed. Expected a list or a string got #{type-of($shadow)}. Defaulting to none.";
 		$shadow: none;
 	}
-	
+
 	@if($shadow == none) {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
@@ -227,7 +227,7 @@
 
 @mixin reset-html5 {
 	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure, 
+	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section { display: block; }
 }
 
@@ -241,8 +241,8 @@
 	dl, dt, dd, ol, ul, li,
 	fieldset, form, label, legend,
 	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
 	menu, nav, output, ruby, section, summary,
 	time, mark, audio, video {
 		@include reset-box-model;
@@ -267,8 +267,8 @@
 	dl, dt, dd, ol, ul, li,
 	fieldset, form, label, legend,
 	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
 	menu, nav, output, ruby, section, summary,
 	time, mark, audio, video {
 		@include reset-box-model;
@@ -282,11 +282,14 @@
 }
 // end reset mixins
 
-// grid ( [ number $width: 960px, [ bool $fluid: false, [ number $colWith: 40px, [ number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] ] )
+// grid ( [ number $width: 960px, [ bool $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
 @mixin grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
 	@if ( $fluid == true ) {
 		@include _fluidGrid($colCount);
 	} @else {
+		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
+		// @see https://github.com/atomicpages/skeleton-sass/issues/7
+		$colWidth: ($width / $colCount) - $gutterWidth;
 		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
 	}
 }

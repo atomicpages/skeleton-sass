@@ -20,7 +20,7 @@ If you are new to SASS altogether then please read our [wiki](https://github.com
 
 If you have used Skeleton CSS and you are tired of dealing with vanilla CSS, then transitioning to Skeleton SASS will require minimal effort. Since Skeleton SASS is built to duplicate the file hierarchy of Skeleton CSS. This allows the transition to be smooth and painless.
 
-If you have tried other SASS ports of Skeleton CSS you've probably seen a ports that are built inefficiently, inaccurately, and perhaps even downright poorly. Skeleton SASS will be the last time you search for a SASS port of Skeleton CSS. With only _three_ additional files to satisfy dependencies, this will allow you to easily transition into using Skeleton SASS. Continue reading about each of the files that are used by Skeleton SASS.  
+If you have tried other SASS ports of Skeleton CSS you've probably seen a ports that are built inefficiently, inaccurately, and perhaps even downright poorly. Skeleton SASS will be the last time you search for a SASS port of Skeleton CSS. With only _three_ additional files to satisfy dependencies, this will allow you to easily transition into using Skeleton SASS. Continue reading about each of the files that are used by Skeleton SASS.
 
 ### Features
 1. Duplicates the exact file hierarchy, file structure, and file names as Skeleton CSS
@@ -46,7 +46,7 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 		* `base.sass`
 		* `layout.sass`
 		*  `skeleton.sass`
-	* `scss` 
+	* `scss`
 		* `_dependencies.scss`
 		* `_mixins.scss`
 		* `_functions.scss`
@@ -59,7 +59,7 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 	* `scss` is the same as above
 
 ### File Overview
-* `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles and is **required** for the framework to be used. 
+* `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles and is **required** for the framework to be used.
 * `layout` is an _optional_ file where you can add custom styles that may extend the framework and/or custom styles for your website. You may discard this file if you wish.
 * `base` is an _optional_ file which contains the default styles for the framework. You may discard this file if you wish.
 * `_mixins` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains all of the high-level core mixins used in the framework which means this file is **required**. Additionally, you may add your own custom mixins at the top of this file as well as edit existing mixins to suit your needs. See this file for additional information.
@@ -70,7 +70,7 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 ### Bower
 > Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io For more info on bower, checkout [bower.io](http://bower.io/).
 
-Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`. 
+Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`.
 
 
 ### Demo
@@ -105,6 +105,8 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.5.0
+* Added
 ### 1.4.2
 * Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any sass code
 * Added additional files and folders to bower ignore
@@ -193,3 +195,4 @@ Contributors
 ------------
 * Jackson Hines
 * [robertosobachi](https://github.com/robertosobachi) for informing me of a typo on a selector
+* [vephinx](https://github.com/vephinx) for a lovely enhancement on the `grid` mixin

@@ -1,12 +1,12 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
  * originally authored by Dave Gamache. This translation offers
  * mixins that support fluid and as well as fixed grids to supplement
  * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.4.2
+ * @version 1.5.0
  */
 
 // IMPORTS
@@ -53,7 +53,7 @@
 					left: 10px;
 				};
 			}
-		} 
+		}
 	}
 	.alpha.omega {
 		margin: {
@@ -79,12 +79,12 @@
 
 /* CLEARING
  * ------------------------------------------------ */
-.container:after { 
-	content: "\0020"; 
-	display: block; 
-	height: 0; 
-	clear: both; 
-	visibility: hidden; 
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
 .clearfix, .row {
 	zoom: 1;
