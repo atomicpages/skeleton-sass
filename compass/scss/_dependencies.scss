@@ -74,8 +74,16 @@
 
 // _mobileGrid ( number $width, number $colCount )
 @mixin _mobileGrid($width, $colCount) {
-	.container { width: $width; }
 	.container {
+		width: $width;
+		.column,
+		.columns {
+			// fixes https://github.com/atomicpages/skeleton-sass/issues/9
+			margin: {
+				left: 0;
+				right: 0;
+			};
+		}
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column { width: $width; }

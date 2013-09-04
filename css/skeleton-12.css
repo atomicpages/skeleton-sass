@@ -6,7 +6,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.5.0
+ * @version 1.5.1
  */
 
 /* BASE GRID
@@ -117,6 +117,8 @@
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {
 	.container 						{ width: 300px; }
+	.container .column,
+	.container .columns				{ margin-left: 0; margin-right: 0; }
 	.container .one.column 			{ width: 300px; }
 	.container .one.columns,
 	.container .two.columns,
@@ -149,6 +151,8 @@
  * ------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	.container 						{ width: 420px; }
+	.container .column,
+	.container .columns				{ margin-left: 0; margin-right: 0; }
 	.container .one.column 			{ width: 420px; }
 	.container .one.columns,
 	.container .two.columns,

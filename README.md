@@ -105,8 +105,14 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.5.1
+* Resolved [issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
+
 ### 1.5.0
-* Added
+* Added ### 1.4.2
+Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any * sass code
+* Added additional files and folders to bower ignore
+
 ### 1.4.2
 * Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any sass code
 * Added additional files and folders to bower ignore
@@ -195,4 +201,6 @@ Contributors
 ------------
 * Jackson Hines
 * [robertosobachi](https://github.com/robertosobachi) for informing me of a typo on a selector
-* [vephinx](https://github.com/vephinx) for a lovely enhancement on the `grid` mixin
+* [vephinx](https://github.com/vephinx):
+	* [Issue #7](https://github.com/atomicpages/skeleton-sass/issues/7)
+	* [Issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
