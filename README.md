@@ -105,6 +105,9 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.5.2
+* Fixed quote issue on `transition` mixin for non-compass version
+
 ### 1.5.1
 * Resolved [issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
 
@@ -200,7 +203,9 @@ Authors
 Contributors
 ------------
 * Jackson Hines
-* [robertosobachi](https://github.com/robertosobachi) for informing me of a typo on a selector
+* [robertosobachi](https://github.com/robertosobachi)
+	* [Issue #6](https://github.com/atomicpages/skeleton-sass/issues/6)
+	* [Pull #10](https://github.com/atomicpages/skeleton-sass/pull/10)
 * [vephinx](https://github.com/vephinx):
 	* [Issue #7](https://github.com/atomicpages/skeleton-sass/issues/7)
 	* [Issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
