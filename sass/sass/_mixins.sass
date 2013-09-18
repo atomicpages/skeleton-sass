@@ -112,6 +112,7 @@
 
 // transition ( list $transition )
 =transition($transition)
+	$transition: unquote($transition) //this helps with multiple tansitions
 	-webkit-transition: $transition
 	-moz-transition: $transition
 	-ms-transition: $transition
