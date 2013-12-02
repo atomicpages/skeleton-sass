@@ -6,6 +6,16 @@
 // ---------- ADD CUSTOM MIXINS BELOW HERE
 // @mixin myMixin() { }
 
+// @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+// box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ])
+@mixin box_shadow($shadow) {
+	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
+}
+
+@mixin border-radius($radii...) {
+	@include prefixer(border-radius, $radii, webkit moz ms o spec);
+}
+
 // grid ( [ number $width: 960px, [ bool $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
 @mixin grid($width: $baseWidth, $fluid: $isFluid, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
 	@if ( $fluid == true ) {

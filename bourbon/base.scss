@@ -16,7 +16,7 @@
 
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
-@include global-reset;
+// @include global-reset;
 
 /* BASIC STYLES
  * ------------------------------------------------ */
@@ -195,7 +195,7 @@ input[type="button"] {
 		family: $formFont;
 	};
 	text-decoration: none;
-	@include text-shadow(0 1px rgba(255, 255, 255, 0.75));
+	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
 	cursor: pointer;
 	line-height: normal;
 	padding: 8px 10px;
@@ -250,19 +250,7 @@ input {
  * ------------------------------------------------ */
 form { margin-bottom: 20px; }
 fieldset { margin-bottom: 20px; }
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="search"],
-input[type="url"],
-input[type="tel"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="number"],
+#{$all-text-inputs},
 textarea,
 select {
 	background: #fff;
@@ -282,11 +270,11 @@ select {
 	&:hover, &:focus {
 		border: 1px solid #aaa;
 		color: #444;
-		@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+		@include box_shadow(0 0 3px rgba(0,0,0,0.2));
 	}
 	&:active {
 		border: 1px solid darken(#aaa, 10%);
-		@include box-shadow(0 0 3px rgba(0,0,0,0.3));
+		@include box_shadow(0 0 3px rgba(0,0,0,0.3));
 	}
 }
 select { padding: 0; }

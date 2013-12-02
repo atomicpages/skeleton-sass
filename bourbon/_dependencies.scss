@@ -5,6 +5,8 @@
 // various functions and mixins if you wish! Note that altering this file may cause
 // undesired results!
 
+@import "loader";
+
 // ---------- MIXIN DEPENDENCIES
 // _fluidGrid ( number $colCount, [ string $unit: "%" ] )
 @mixin _fluidGrid($colCount, $unit: "%") { // generate the fluid grid

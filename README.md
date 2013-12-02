@@ -9,6 +9,7 @@ Skeleton SASS is a "SASSification" of Dave Gamache's [Skeleton CSS](http://getsk
 	* Fixed Grid (default)
 	* Fluid Grid
 	* Adjust columns and gutters
+* Install Skeleton SASS with bower! `bower install skeleton-sass`
 * [Live demo!](http://atomicpages.github.io/skeleton-sass/demo.html)
 * [Extensive documentation](https://github.com/atomicpages/skeleton-sass/wiki)
 
@@ -19,29 +20,19 @@ If you are new to SASS altogether then please read our [wiki](https://github.com
 
 If you have used Skeleton CSS and you are tired of dealing with vanilla CSS, then transitioning to Skeleton SASS will require minimal effort. Since Skeleton SASS is built to duplicate the file hierarchy of Skeleton CSS. This allows the transition to be smooth and painless.
 
-If you have tried other SASS ports of Skeleton CSS you've probably seen a ports that are built inefficiently, inaccurately, and perhaps even downright poorly. Skeleton SASS will be the last time you search for a SASS port of Skeleton CSS. With only _three_ additional files to satisfy dependencies, this will allow you to easily transition into using Skeleton SASS.  
+If you have tried other SASS ports of Skeleton CSS you've probably seen a ports that are built inefficiently, inaccurately, and perhaps even downright poorly. Skeleton SASS will be the last time you search for a SASS port of Skeleton CSS. With only _three_ additional files to satisfy dependencies, this will allow you to easily transition into using Skeleton SASS. Continue reading about each of the files that are used by Skeleton SASS.
 
 ### Features
 1. Duplicates the exact file hierarchy, file structure, and file names as Skeleton CSS
 2. Separation of variables, functions, and mixins to keep code clean and **DRY**
-3. Choose from two different syntaxes:
-  * `.sass` indented-style syntax
-     * [Compass](http://compass-style.org/) port available, uses `compass/css3` library only
-  * `.scss` "SassyCSS" syntax
-     * [Compass](http://compass-style.org/) port available, uses `compass/css3` library only
-
-### File Overview
-* `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles. 
-* `layout` is an _optional_ file where you can add custom styles that may extend the framework and/or custom styles for your website.
-* `base` is an _optional_ file which contains the default styles for the framework.
-* `_mixins` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains all of the mixins used in the framework. You may add your own custom mixins here as well as edit existing mixins to suit your needs. See this file for additional information.
-* `_dependencies` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains functions and "private" mixins that aren't meant to be used directly. Avoid editing this file directly unless you know what you're doing!
-* `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which contains all of the global variables for the framework. See file for additional information.
+3. Compass and Non-Compass versions available
+4. `.sass` and `.scss` versions available
+5. Install Skeleton SASS with bower front-end package manager
 
 ### Project Organization
 Skeleton SASS is organized into **two** major categories:
 
-1. Compass Version
+1. [Compass Version](http://compass-style.org/)
 2. Non-Compass Version
 
 Both of these versions are organized the same exact way to ensure maximum usability:
@@ -50,13 +41,15 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 	* `sass`
 		* `_dependencies.sass`
 		* `_mixins.sass`
+		* `_functions.sass`
 		* `_vars.sass`
 		* `base.sass`
 		* `layout.sass`
 		*  `skeleton.sass`
-	* `scss` 
+	* `scss`
 		* `_dependencies.scss`
 		* `_mixins.scss`
+		* `_functions.scss`
 		* `_vars.scss`
 		* `base.scss`
 		* `layout.scss`
@@ -65,10 +58,25 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 	* `sass` is the same as above
 	* `scss` is the same as above
 
+### File Overview
+* `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles and is **required** for the framework to be used.
+* `layout` is an _optional_ file where you can add custom styles that may extend the framework and/or custom styles for your website. You may discard this file if you wish.
+* `base` is an _optional_ file which contains the default styles for the framework. You may discard this file if you wish.
+* `_mixins` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains all of the high-level core mixins used in the framework which means this file is **required**. Additionally, you may add your own custom mixins at the top of this file as well as edit existing mixins to suit your needs. See this file for additional information.
+* `_dependencies` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains core functions and "private" mixins that aren't meant to be used directly. Avoid editing this file directly unless you know what you're doing! The framework **will not work** if you delete this file.
+* `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which is **required** because it contains all of the global variables for the framework. See file for additional information.
+* `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) where you may add custom functions. This file is **not required** by any means and may be discarded if you wish.
+
+### Bower
+> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io For more info on bower, checkout [bower.io](http://bower.io/).
+
+Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`.
+
+
 ### Demo
 Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
 
-Want to see customization on the default 16-column fixed-grid system? See the [demo here](http://atomicpages.github.io/skeleton-sass/demo.html)!
+Want to see spin on the default 16-column fixed-grid system? See the [demo here](http://atomicpages.github.io/skeleton-sass/demo.html)!
 
 ### Documentation
 Skeleton SASS is heavily documented! If you're looking for a detailed description (or just want more info) you can checkout the [wiki pages](https://github.com/atomicpages/skeleton-sass/wiki/_pages)!
@@ -97,6 +105,39 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.6.0
+* Added support for [Bourbon](http://bourbon.io/)
+
+### 1.5.3
+* Added the following HTML5 `input` types to inherit default styles in `base.css`
+	* `date`
+	* `datetime`
+	* `datetime-local`
+	* `week`
+	* `number`
+	* `month`
+	* `time`
+* Updated `test.html` to accommodate these updated types as well as these input types:
+	* `color`
+
+### 1.5.2
+* Fixed quote issue on `transition` mixin for non-compass version
+
+### 1.5.1
+* Resolved [issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
+
+### 1.5.0
+* Added ### 1.4.2
+Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any * sass code
+* Added additional files and folders to bower ignore
+
+### 1.4.2
+* Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any sass code
+* Added additional files and folders to bower ignore
+
+### 1.4.1
+* Added Skeleton SASS to bower! You can now drop Skeleton SASS into your projects using `bower install skeleton-sass`
+
 ### 1.4.0
 * Moved contents from `_functions` to a new partial called `_dependencies`
 * Moved all of the "private" mixins to `_dependencies` partial since these are core mixins and functions
@@ -177,3 +218,9 @@ Authors
 Contributors
 ------------
 * Jackson Hines
+* [robertosobachi](https://github.com/robertosobachi)
+	* [Issue #6](https://github.com/atomicpages/skeleton-sass/issues/6)
+	* [Pull #10](https://github.com/atomicpages/skeleton-sass/pull/10)
+* [vephinx](https://github.com/vephinx):
+	* [Issue #7](https://github.com/atomicpages/skeleton-sass/issues/7)
+	* [Issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
