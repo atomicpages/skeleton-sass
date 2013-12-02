@@ -1,23 +1,22 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
  * originally authored by Dave Gamache. This translation offers
  * mixins that support fluid and as well as fixed grids to supplement
  * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.4.0
+ * @version 1.5.1
  */
 
 // IMPORTS
-@import "compass/css3";
 @import "vars"; // import _vars
 @import "mixins"; // import _mixins
 
 
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
-@import "compass/reset";
+@include global-reset;
 
 /* BASIC STYLES
  * ------------------------------------------------ */
@@ -45,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 h1, h2, h3,
-h4, h5, h6 { 
+h4, h5, h6 {
 	a { font-weight: inherit; }
 }
 h1 {
@@ -77,14 +76,14 @@ h6 {
 	line-height: round($fontSize * 1.75);
 }
 .subheader { color: #777; }
-p { 
-	margin: 0 0 20px 0;
-	img { margin: 0; }
-	&.lead {
-		font-size: round($fontSize * 1.75);
-		line-height: round($fontSize * 2.25);
-		color: #777;
-	} 
+p {
+  margin: 0 0 20px 0;
+  img { margin: 0; }
+  &.lead {
+	font-size: round($fontSize * 1.75);
+	line-height: round($fontSize * 2.25);
+	color: #777;
+  }
 }
 em, i { font-style: italic; }
 strong, b {
@@ -135,11 +134,11 @@ p a, p a:visited { line-height: inherit; }
 
 /* LISTS
  * ------------------------------------------------ */
-ul, 
+ul,
 ol { margin-bottom: 20px; }
 ul { list-style: none outside; }
 ol { list-style: decimal; }
-ol, ul.square, 
+ol, ul.square,
 ul.circle, ul.disc { margin-left: 30px; }
 ul.square { list-style: square outside; }
 ul.circle { list-style: circle outside; }
@@ -177,11 +176,15 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	@include background(#eee linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%));
+	background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+	background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
 	border: 1px solid #aaa;
 	border: {
 		top: 1px solid #ccc;
-		left: 1px solid #ccc; 
+		left: 1px solid #ccc;
 	};
 	@include border-radius(3px);
 	color: #444;
@@ -198,7 +201,11 @@ input[type="button"] {
 	padding: 8px 10px;
 	&:hover {
 		color: #222;
-		@include background(#ddd linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(0,0,0,0.3) 100%));
+		background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+		background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 		border: 1px solid #888;
 		border: {
 			top: 1px solid #aaa;
@@ -207,7 +214,12 @@ input[type="button"] {
 	}
 	&:active {
 		border: 1px solid #666;
-		@include background(#ccc linear-gradient(top, rgba(255,255,255,0.35) 0%,rgba(10,10,10,0.4) 100%));
+		border: 1px solid #666;
+		background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
+		background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
 	}
 	&.full-width {
 		width: 100%;
@@ -244,7 +256,7 @@ input[type="email"],
 input[type="search"],
 input[type="url"],
 input[type="tel"],
-textarea, 
+textarea,
 select {
 	background: #fff;
 	border: 1px solid #ccc;
