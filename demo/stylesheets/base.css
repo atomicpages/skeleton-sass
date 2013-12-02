@@ -1,16 +1,12 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
  * originally authored by Dave Gamache. This translation offers
  * mixins that support fluid and as well as fixed grids to supplement
  * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.4.0
- */
-/**
- * This _functions partial file is meant for you to add your very own custom functions!
- * Feel free to begin adding them below this header
+ * @version 1.5.1
  */
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
@@ -139,7 +135,7 @@ u {
 small {
   font-size: 80%; }
 
-/*	Blockquotes  */
+/*  Blockquotes  */
 blockquote, blockquote p {
   font-size: 20px;
   line-height: 28px;
@@ -333,6 +329,13 @@ input[type="email"],
 input[type="search"],
 input[type="url"],
 input[type="tel"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="number"],
 textarea,
 select {
   background: #fff;
@@ -362,6 +365,20 @@ select {
   input[type="url"]:focus,
   input[type="tel"]:hover,
   input[type="tel"]:focus,
+  input[type="date"]:hover,
+  input[type="date"]:focus,
+  input[type="datetime"]:hover,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:hover,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:hover,
+  input[type="month"]:focus,
+  input[type="week"]:hover,
+  input[type="week"]:focus,
+  input[type="time"]:hover,
+  input[type="time"]:focus,
+  input[type="number"]:hover,
+  input[type="number"]:focus,
   textarea:hover,
   textarea:focus,
   select:hover,
@@ -377,6 +394,13 @@ select {
   input[type="search"]:active,
   input[type="url"]:active,
   input[type="tel"]:active,
+  input[type="date"]:active,
+  input[type="datetime"]:active,
+  input[type="datetime-local"]:active,
+  input[type="month"]:active,
+  input[type="week"]:active,
+  input[type="time"]:active,
+  input[type="number"]:active,
   textarea:active,
   select:active {
     border: 1px solid #909090;

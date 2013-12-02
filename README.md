@@ -105,6 +105,18 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.5.3
+* Added the following HTML5 `input` types to inherit default styles in `base.css`
+	* `date`
+	* `datetime`
+	* `datetime-local`
+	* `week`
+	* `number`
+	* `month`
+	* `time`
+* Updated `test.html` to accommodate these updated types as well as these input types:
+	* `color`
+
 ### 1.5.2
 * Fixed quote issue on `transition` mixin for non-compass version
 
