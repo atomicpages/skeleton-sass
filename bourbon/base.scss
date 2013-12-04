@@ -16,7 +16,7 @@
 
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
-// @include global-reset;
+@include global-reset;
 
 /* BASIC STYLES
  * ------------------------------------------------ */
@@ -176,11 +176,9 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
-	background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-	background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-	background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-	background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-color: #eee;
+	@include filter-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2), vertical);
+	@include background-image(linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%));
 	border: 1px solid #aaa;
 	border: {
 		top: 1px solid #ccc;
@@ -201,25 +199,20 @@ input[type="button"] {
 	padding: 8px 10px;
 	&:hover {
 		color: #222;
-		background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
-		background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-		background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-		background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-		background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #ddd;
+		@include filter-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3), vertical);
+		@include background-image(linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%));
 		border: 1px solid #888;
 		border: {
-			top: 1px solid #aaa;
-			left: 1px solid #aaa;
+			top-color: #aaa;
+			left-color: #aaa;
 		};
 	}
 	&:active {
 		border: 1px solid #666;
-		border: 1px solid #666;
-		background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
-		background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
-		background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
-		background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
-		background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background-color: #ccc;
+		@include filter-gradient(rgba(255, 255, 255, 0.35), rgba(0, 0, 0, 0.35), vertical);
+		@include background-image(linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%));
 	}
 	&.full-width {
 		width: 100%;

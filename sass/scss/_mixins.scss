@@ -140,16 +140,8 @@
 	$direction: unquote($direction);
 	$type: false;
 	@if(unquote($start) != none) {
-		@if(type-of($direction) != "string") {
-			@warn "Invalid parameter for $direction. Expected string but got #{type-of($direction)}, defaulting to vertical";
-			$direction: vertical;
-		}
-		@if($direction == vertical) {
-			$type: 0;
-		} @else {
-			$type: 1;
-		}
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=#{$type});
+		*zoom: 1;
+		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}');
 	} @else {
 		$stop: null;
 		$direction: null;

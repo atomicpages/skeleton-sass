@@ -208,12 +208,11 @@ input[type="button"] {
 		background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 		border: 1px solid #888;
 		border: {
-			top: 1px solid #aaa;
-			left: 1px solid #aaa;
+			top-color: #aaa;
+			left-color: #aaa;
 		};
 	}
 	&:active {
-		border: 1px solid #666;
 		border: 1px solid #666;
 		background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
 		background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
