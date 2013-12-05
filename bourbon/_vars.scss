@@ -9,7 +9,7 @@ $backgroundColor: #fff; 														// default background information
 
 // font vars
 $fontSize: 14px; 																// default font size. Change here will adjust sizes across the board.
-$fontFamily: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;	// default fonts
+$fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;					// @see http://bourbon.io/docs/#font-family
 $fontColor: #444; 																// default font color
 
 // form vars
@@ -32,9 +32,14 @@ $baseGutterWidth:	20px;														// calculation has changed, this is mainly 
 $isFluid: 			false;														// want a fluid grid by default?
 
 // ------ CHANGE MAY CAUSE UNDESIRED RESULTS
-$baseColCount: 		16;															// number of cols to generate
+$baseColCount: 			16;														// number of cols to generate
 
 // media query dimensions
 $tabletWidth: 			768px;
 $mobilePortraitWidth: 	300px;
 $mobileLandscapeWidth: 	420px;
+
+// BOURBON
+$fg-column: 			$baseColWidth;											// Column Width
+$fg-gutter: 			$baseGutterWidth;										// Gutter Width
+$fg-max-columns: 		$baseColCount;											// Total Columns For Main Container

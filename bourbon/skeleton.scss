@@ -32,8 +32,8 @@
 }
 .row { margin-bottom: 20px; }
 
-// @include grid($baseWidth, true); // fluid
-@include grid($baseWidth);
+@include grid($baseWidth, true); // fluid
+// @include grid($baseWidth);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */

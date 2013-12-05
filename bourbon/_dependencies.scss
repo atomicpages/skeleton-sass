@@ -8,8 +8,8 @@
 @import "loader";
 
 // ---------- MIXIN DEPENDENCIES
-// _fluidGrid ( number $colCount, [ string $unit: "%" ] )
-@mixin _fluidGrid($colCount, $unit: "%") { // generate the fluid grid
+// _fluidGrid ( number $colCount )
+@mixin _fluidGrid($colCount) { // generate the fluid grid
 	// override only for fluid
 	.container {
 		.column,
@@ -25,12 +25,12 @@
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: ( ( 100 * $i ) / $colCount ) - 2#{$unit}; }
+				.#{numToString($i)}.columns { width: flex-grid(1); }
 			} @else {
-				.#{numToString($i)}.columns { width: ( ( 100 * $i ) / $colCount ) - 2#{$unit}; }
+				.#{numToString($i)}.columns { width: flex-grid($i); }
 			}
 		}
-		@include _offset($unit, $colCount, false);
+		@include _offset(true, $colCount, false);
 	}
 }
 
@@ -57,15 +57,15 @@
 		}
 		.one-third.column { width: ( $width / 3 ) - 20}
 		.two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
-		@include _offset("px", $colCount, $colWidth);
+		@include _offset(false, $colCount, $colWidth);
 	}
 }
 
-// _offset ( string $unit, number $colCount, number $colWidth )
-@mixin _offset($unit, $colCount, $colWidth) {
-	@if ( $unit == "%" ) {
+// _offset ( bool $isFluid, number $colCount, number $colWidth )
+@mixin _offset($isFluid, $colCount, $colWidth) {
+	@if ( $isFluid == true ) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount )#{$unit}; }
+			.offset-by-#{numToString($i)} { padding-left: flex-grid($i); }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
@@ -89,9 +89,9 @@
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column { width: $width; }
-			} @else {
+			// } @else {
 				// .#{numToString($i)}.columns { width: $width; }
-			}
+			// }
 		}
 		@include _group($colCount, ".columns", "after") { width: $width; }
 		.one-third.column { width: $width; }
