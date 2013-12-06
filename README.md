@@ -37,6 +37,17 @@ Skeleton SASS is organized into **two** major categories:
 
 Both of these versions are organized the same exact way to ensure maximum usability:
 
+* `bourbon`
+	* `core`
+		* Bourbon source files
+	* `_loader.scss`
+	* `_dependencies.scss`
+	* `_mixins.scss`
+	* `_functions.scss`
+	* `_vars.scss`
+	* `base.scss`
+	* `layout.scss`
+	*  `skeleton.scss`
 * `compass` (Compass Version)
 	* `sass`
 		* `_dependencies.sass`
