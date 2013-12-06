@@ -107,6 +107,10 @@ Changelog
 ---------
 ### 1.6.0
 * Added support for [Bourbon](http://bourbon.io/)
+* Revised `_fluidGrid` mixin to utilize Sass functions
+* Fixed spelling errors in the `numToString` function
+* Added a `debug.scss` file for you all to use!
+* Revised `_fixedGrid` mixin
 
 ### 1.5.3
 * Added the following HTML5 `input` types to inherit default styles in `base.css`

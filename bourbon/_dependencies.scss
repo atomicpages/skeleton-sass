@@ -1,16 +1,17 @@
 // See skeleton file for copyright info
 
-// This file is not ment to be tampered with. This file contains the background operations
+// This file is not meant to be tampered with. This file contains the background operations
 // that are interesting but you don't really need to see. Feel free to poke around and edit
 // various functions and mixins if you wish! Note that altering this file may cause
 // undesired results!
 
-@import "loader";
+@import "loader"; // this includes all of bourbon
 
 // ---------- MIXIN DEPENDENCIES
 // _fluidGrid ( number $colCount )
-@mixin _fluidGrid($colCount) { // generate the fluid grid
+@mixin _fluidGrid($colCount) {
 	// override only for fluid
+	/* Overrides */
 	.container {
 		.column,
 		.columns {
@@ -25,11 +26,12 @@
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: flex-grid(1); }
+				.#{numToString($i)}.columns { width: flex-grid(1) - 2; }
 			} @else {
-				.#{numToString($i)}.columns { width: flex-grid($i); }
+				.#{numToString($i)}.columns { width: flex-grid($i) - 2; }
 			}
 		}
+		/* The Offsets */
 		@include _offset(true, $colCount, false);
 	}
 }
@@ -65,7 +67,7 @@
 @mixin _offset($isFluid, $colCount, $colWidth) {
 	@if ( $isFluid == true ) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: flex-grid($i); }
+			.offset-by-#{numToString($i)} { padding-left: flex-gutter($i); }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
@@ -80,7 +82,6 @@
 		width: $width;
 		.column,
 		.columns {
-			// fixes https://github.com/atomicpages/skeleton-sass/issues/9
 			margin: {
 				left: 0;
 				right: 0;
@@ -89,13 +90,13 @@
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column { width: $width; }
-			// } @else {
+			} @else {
 				// .#{numToString($i)}.columns { width: $width; }
-			// }
+			}
 		}
 		@include _group($colCount, ".columns", "after") { width: $width; }
 		.one-third.column { width: $width; }
-		.two-thirds.column { width: $width; }
+		.two-third.column { width: $width; }
 		@include _mobileOffset($colCount);
 	}
 }
@@ -139,7 +140,7 @@
 	// set up lists
 	$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
 	$teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
-	$tens: "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "nintey";
+	$tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety";
 
 	$int: abs($int); // no nonnegative numbers
 	$number: "";
