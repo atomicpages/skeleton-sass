@@ -1,13 +1,6 @@
-/**
- * This _functions partial file is meant for you to add your very own custom functions!
- * Feel free to begin adding them below this header
- */
+//
+// This _functions partial file is meant for you to add your very own custom functions!
+// Feel free to begin adding them below this header
+//
 
 // @function myFunction() { }
-
-@function toRGBA($color, $alpha: 1) { // custom functions
-	$r: red($color);
-	$g: green($color);
-	$b: blue($color);
-	@return rgba($r, $g, $b, $alpha);
-}

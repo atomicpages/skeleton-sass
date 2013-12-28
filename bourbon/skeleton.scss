@@ -13,10 +13,15 @@
 @import "vars"; // import _vars
 @import "mixins"; // import _mixins
 
+// VARIABLE OVERRIDE EXAMPLES
+// $baseWidth: 95%;
+// $tabletWidth: 95%;
+
 /* BASE GRID
  * ------------------------------------------------ */
 .container {
 	position: relative;
+	// change value at the top of this file or in _vars.scss
 	width: $baseWidth;
 	margin: 0 auto;
 	padding: 0;
@@ -25,20 +30,22 @@
 		float: left;
 		display: inline;
 		position: relative;
-		/* Nested Column Classes */
 		&.alpha { margin-left: 0; }
 		&.omega { margin-right: 0; }
 	}
 }
 .row { margin-bottom: 20px; }
 
-@include grid($baseWidth, true); // fluid
-// @include grid($baseWidth);
+// @include grid($baseWidth, true); // fluid
+// @include grid($baseWidth, false, 20px, 12); // 12-column fixed grid
+// @include grid($baseWidth, false, 20px, 20); // 20-column fixed grid
+@include grid($baseWidth);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (min-width: $tabletWidth) and (max-width: $baseWidthMQ - 1) {
 	.container {
+		// change value at the top of this file or in _vars.scss
 		width: $tabletWidth;
 		.column, .columns {
 			&.alpha {
@@ -61,19 +68,22 @@
 			right: 0;
 		};
 	}
-	// @include grid($tabletWidth, true); // fluid
-	@include grid($tabletWidth, false, 28px); // fixed
+
+	// DNRY (Do Not Repeat Yourself) for fluid tablet, values are the same
+	// @include grid($tabletWidth, false, 20px, 12); // 12-column fixed grid
+	// @include grid($tabletWidth, false, 20px, 20); // 20-column fixed grid
+	@include grid($tabletWidth, false); // fixed
 }
 
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $tabletWidth - 1) {
 	@include mobileGrid($mobilePortraitWidth);
 }
 
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
 	@include mobileGrid($mobileLandscapeWidth);
 }
 
