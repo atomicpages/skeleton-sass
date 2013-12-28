@@ -1,27 +1,17 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
  * originally authored by Dave Gamache. This translation offers
- * mixins that support fluid and as well as fixed grids to supplement
- * the work that Dave Gamache has done.
+ * mixins that support fluid and as well as fixed grids.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.6.0
+ * @version 1.4.0
  */
 
 // IMPORTS
 @import "compass/css3";
 @import "vars";
 @import "mixins";
-
-$bgColor: #1a1a1a;
-$textColor: #6d6d6d;
-$anchorColor: grayscale(invert(#d5000d));
-$anchorColorHover: grayscale(invert(#c5000c));
-$aButtonColor: invert(#303030);
-$h1Color: lighten($textColor, 30%);
-$h2Color: #aaa;
-$hedingFont: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
 
 /* SITE STYLES
  * ------------------------------------------------ */
@@ -42,15 +32,15 @@ body {
 	color: $textColor;
 	margin: 0;
 }
-a {
+a { 
 	color: $anchorColor !important;
 	text-decoration: none;
-	&:hover {
+	&:hover { 
 		color: lighten($anchorColorHover, 20%) !important;
 		text-decoration: none;
 	}
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 { 
 	font-family: $hedingFont;
 	color: $h2Color;
 }
@@ -207,7 +197,7 @@ footer {
 	font-size: 13px;
 	color: invert(#aaa);
 	text-align: center;
-	a {
+	a { 
 		color: invert(#666);
 		&:hover { color: invert(#444); }
 	}
@@ -240,9 +230,9 @@ footer {
 @media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
 	section {
 		&#downloads {
-			a.button {
+			a.button { 
 				width: 382px;
-				margin: 10px 0;
+				margin: 10px 0; 
 			}
 		}
 		&.changelog { margin: 0; }
@@ -254,7 +244,7 @@ footer {
 @media only screen and (max-width: 479px) {
 	section {
 		&#downloads {
-			a.button {
+			a.button { 
 				margin: 0 0 10px 0;
 				width: 282px;
 			}

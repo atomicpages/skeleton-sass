@@ -1,6 +1,6 @@
 Active Development
 ------------------
-This directory houses items that we are working on in order to improve
+This directory houses items that we are working on in order to improve 
 your experience using the non compass version of skeleton sass. Currently
 we are working on:
 
@@ -10,7 +10,7 @@ If you wish to contribute to the development of these items please fork
 the file on github. Be sure you **test** your functions/mixins
 before you submit them. Working demos will get you a mention :)
 
-A special note about the chagelog. This log will be incremental and probably
+A speical note about the chagelog. This log will be incremental and probably
 won't reflect all of the changes that happen inside of the dev file because
 the changes might be too numerous to log. During each major/minor release
 a more detailed log will be available in the master branch.

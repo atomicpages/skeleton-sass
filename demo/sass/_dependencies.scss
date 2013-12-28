@@ -1,15 +1,14 @@
 // See skeleton file for copyright info
 
-// This file is not meant to be tampered with. This file contains the background operations
+// This file is not ment to be tampered with. This file contains the background operations
 // that are interesting but you don't really need to see. Feel free to poke around and edit
 // various functions and mixins if you wish! Note that altering this file may cause
 // undesired results!
 
 // ---------- MIXIN DEPENDENCIES
-// _fluidGrid ( number $colCount )
-@mixin _fluidGrid($colCount) {
+// _fluidGrid ( number $colCount, [ string $unit: "%" ] )
+@mixin _fluidGrid($colCount, $unit: "%") { // generate the fluid grid
 	// override only for fluid
-	/* Overrides */
 	.container {
 		.column,
 		.columns {
@@ -24,13 +23,12 @@
 		@for $i from 1 through $colCount {
 			@if ( $i == 1 ) {
 				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: percentage( ( $i / $colCount ) ) - 2; }
+				.#{numToString($i)}.columns { width: ( ( 100 * $i ) / $colCount ) - 2#{$unit}; }
 			} @else {
-				.#{numToString($i)}.columns { width: percentage( ( $i / $colCount ) ) - 2; }
+				.#{numToString($i)}.columns { width: ( ( 100 * $i ) / $colCount ) - 2#{$unit}; }
 			}
 		}
-		/* The Offsets */
-		@include _offset(true, $colCount, false);
+		@include _offset($unit, $colCount, false);
 	}
 }
 
@@ -57,15 +55,15 @@
 		}
 		.one-third.column { width: ( $width / 3 ) - 20}
 		.two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
-		@include _offset(false, $colCount, $colWidth);
+		@include _offset("px", $colCount, $colWidth);
 	}
 }
 
 // _offset ( string $unit, number $colCount, number $colWidth )
-@mixin _offset($isFluid, $colCount, $colWidth) {
-	@if ( $isFluid == true ) {
+@mixin _offset($unit, $colCount, $colWidth) {
+	@if ( $unit == "%" ) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
+			.offset-by-#{numToString($i)} { padding-left: ( ( 100 * $i ) / $colCount )#{$unit}; }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
@@ -76,24 +74,18 @@
 
 // _mobileGrid ( number $width, number $colCount )
 @mixin _mobileGrid($width, $colCount) {
+	.container { width: $width; }
 	.container {
-		width: $width;
-		.column,
-		.columns {
-			// fixes https://github.com/atomicpages/skeleton-sass/issues/9
-			margin: {
-				left: 0;
-				right: 0;
-			};
-		}
 		@for $i from 1 through $colCount {
-			@if ($i == 1) {
+			@if ( $i == 1 ) {
 				.#{numToString($i)}.column { width: $width; }
+			} @else {
+				// .#{numToString($i)}.columns { width: $width; }
 			}
 		}
 		@include _group($colCount, ".columns", "after") { width: $width; }
 		.one-third.column { width: $width; }
-		.two-thirds.column { width: $width; }
+		.two-third.column { width: $width; }
 		@include _mobileOffset($colCount);
 	}
 }
@@ -137,7 +129,7 @@
 	// set up lists
 	$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
 	$teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
-	$tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety";
+	$tens: "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "nintey";
 
 	$int: abs($int); // no nonnegative numbers
 	$number: "";

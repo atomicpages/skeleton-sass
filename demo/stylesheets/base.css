@@ -1,12 +1,16 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
  * originally authored by Dave Gamache. This translation offers
  * mixins that support fluid and as well as fixed grids to supplement
  * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.6.0
+ * @version 1.4.0
+ */
+/**
+ * This _functions partial file is meant for you to add your very own custom functions!
+ * Feel free to begin adding them below this header
  */
 /* RESET & BASICS (Inspired by E. Meyers)
  * ------------------------------------------------ */
@@ -54,7 +58,7 @@ q, blockquote {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
 /* BASIC STYLES
@@ -237,15 +241,18 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
+  background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+  background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
   background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
   background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-  background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-  background: #eeeeee linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
   border: 1px solid #aaa;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   color: #444;
   display: inline-block;
@@ -263,10 +270,11 @@ input[type="button"] {
   input[type="reset"]:hover,
   input[type="button"]:hover {
     color: #222;
+    background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+    background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
     background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
     background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-    background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-    background: #dddddd linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
     border: 1px solid #888;
     border-top: 1px solid #aaa;
     border-left: 1px solid #aaa; }
@@ -276,10 +284,11 @@ input[type="button"] {
   input[type="reset"]:active,
   input[type="button"]:active {
     border: 1px solid #666;
+    background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
+    background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
     background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
     background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
-    background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
-    background: #cccccc linear-gradient(to bottom, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%); }
+    background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%); }
   .button.full-width,
   button.full-width,
   input[type="submit"].full-width,
@@ -324,21 +333,16 @@ input[type="email"],
 input[type="search"],
 input[type="url"],
 input[type="tel"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="number"],
 textarea,
 select {
   background: #fff;
   border: 1px solid #ccc;
   padding: 6px 4px;
   outline: none;
-  -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   font-size: 15px;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -358,28 +362,14 @@ select {
   input[type="url"]:focus,
   input[type="tel"]:hover,
   input[type="tel"]:focus,
-  input[type="date"]:hover,
-  input[type="date"]:focus,
-  input[type="datetime"]:hover,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:hover,
-  input[type="datetime-local"]:focus,
-  input[type="month"]:hover,
-  input[type="month"]:focus,
-  input[type="week"]:hover,
-  input[type="week"]:focus,
-  input[type="time"]:hover,
-  input[type="time"]:focus,
-  input[type="number"]:hover,
-  input[type="number"]:focus,
   textarea:hover,
   textarea:focus,
   select:hover,
   select:focus {
     border: 1px solid #aaa;
     color: #444;
-    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
   input[type="text"]:active,
   input[type="password"]:active,
@@ -387,18 +377,11 @@ select {
   input[type="search"]:active,
   input[type="url"]:active,
   input[type="tel"]:active,
-  input[type="date"]:active,
-  input[type="datetime"]:active,
-  input[type="datetime-local"]:active,
-  input[type="month"]:active,
-  input[type="week"]:active,
-  input[type="time"]:active,
-  input[type="number"]:active,
   textarea:active,
   select:active {
     border: 1px solid #909090;
-    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
 
 select {

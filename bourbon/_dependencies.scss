@@ -67,8 +67,7 @@
 @mixin _offset($isFluid, $colCount, $colWidth) {
 	@if ( $isFluid == true ) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			// TODO use flex-gutter found in bourbon core
-			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
+			.offset-by-#{numToString($i)} { padding-left: flex-gutter($i); }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {

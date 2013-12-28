@@ -1,6 +1,6 @@
 // See skeleton file for copyright info
 
-// This file is not meant to be tampered with. This file contains the background operations
+// This file is not ment to be tampered with. This file contains the background operations
 // that are interesting but you don't really need to see. Feel free to poke around and edit
 // various functions and mixins if you wish! Note that altering this file may cause
 // undesired results!
@@ -87,7 +87,7 @@
 			};
 		}
 		@for $i from 1 through $colCount {
-			@if ($i == 1) {
+			@if ( $i == 1 ) {
 				.#{numToString($i)}.column { width: $width; }
 			}
 		}
