@@ -5,17 +5,16 @@
 .sass-cache
 compass/css
 sass/css
-sass/scss/dev
 coverage
 InstalledFiles
 lib/bundler/man
-TODO.md
 pkg
 rdoc
 spec/reports
 test/tmp
 test/version_tmp
 tmp
+TODO.md
 
 # YARD artifacts
 .yardoc

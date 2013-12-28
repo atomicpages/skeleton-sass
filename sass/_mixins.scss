@@ -1,0 +1,293 @@
+// See skeleton file for copyright info
+
+@import "dependencies"; // don't remove me
+
+// ---------- ADD CUSTOM MIXINS BELOW HERE
+// @mixin myMixin() { }
+
+// ---- MIXINS ----
+
+// border-radius ( list $radius )
+@mixin border-radius($radius) {
+	@if(length($radius) > 4) {
+		@warn "Border-radius propery supports a maximum of 4 parameters. #{length($radius)} parameters were supplied.";
+	}
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius: $default-border-radius) { @include _bd("top", "left", $radius); }
+
+@mixin border-top-right-radius($radius: $default-border-radius) { @include _bd("top", "right", $radius); }
+
+@mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd("bottom", "left", $radius); }
+
+@mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd("bottom", "right", $radius); }
+
+@mixin border-top-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-top-right-radius($radius);
+}
+
+@mixin border-right-radius($radius: $default-border-radius) {
+	@include border-top-right-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+
+@mixin border-bottom-radius($radius: $default-border-radius) {
+	@include border-bottom-left-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+
+@mixin border-left-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-bottom-left-radius($radius);
+}
+
+// opacity
+// opacity ( number $alpha [ bool $ie: true ] )
+@mixin opacity($alhpa, $ie: true) {
+	@if(type-of($alpha) != number) {
+		@warn "$alpha must be a number. Setting to 0.5.";
+		$alpha: 0.5;
+	} @else {
+		@if($alpha < 0 or $alpha > 1) {
+			@warn "$alpha must be within 0 and 1. Setting to 0.5.";
+			$alpha: 0.5;
+		}
+	}
+	@if($ie == true) {
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100);
+	}
+	opacity: $alpha;
+}
+
+// text shadow
+// text-shadow ( list $shadow )
+@mixin text-shadow($shadow) {
+	$shadow: unquote($shadow);
+	@if(type-of($shadow) != "list" and type-of($shadow) != "string") {
+		@warn "Invalid parameters passed. Expected a list or a string got #{type-of($shadow)}. Defaulting to none.";
+		$shadow: none;
+	}
+	@if($shadow == none) {
+		text-shadow: none;
+	} @else {
+		text-shadow: $shadow;
+	}
+}
+
+// box shadow
+// box-shadow ( list $shadow )
+@mixin box-shadow($shadow) {
+	$shadow: unquote($shadow);
+	@if(type-of($shadow) != "list" and type-of($shadow) != "string") {
+		@warn "Invalid parameters passed. Expected a list or a string got #{type-of($shadow)}. Defaulting to none.";
+		$shadow: none;
+	}
+
+	@if($shadow == none) {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	} @else {
+		-webkit-box-shadow: $shadow;
+		-moz-box-shadow: $shadow;
+		box-shadow: $shadow;
+	}
+}
+
+// box sizing
+// box-sixing ( string $type )
+@mixin box-sizing($type) {
+	$type: unquote($type);
+	@if($type != content-box and $type != padding-box and $type != border-box) {
+		@warn "Allowed values are content-box, padding-box, or border-box. Got #{$type} but defaulting to content-box.";
+		$type: content-box;
+	}
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	box-sizing: $type;
+}
+
+// single-transition ( string $property, number $duration, string $function, [ number $delay: false ] )
+@mixin single-transition($property, $duration, $function, $delay: false) {
+	@if($delay == false) {
+		$delay: "";
+	}
+	-webkit-transition: $property $duration $function $delay;
+	-moz-transition: $property $duration $function $delay;
+	-ms-transition: $property $duration $function $delay;
+	-o-transition: $property $duration $function $delay;
+	transition: $property $duration $function $delay;
+}
+
+// transition ( list $transition )
+@mixin transition($transition) {
+	$transition: unquote($transition); //this helps with multiple tansitions
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+// filter-gradient ( color $start, [ color $stop: false, [ string $direction: false ] ] )
+@mixin filter-gradient($start, $stop: false, $direction: false) {
+	$direction: unquote($direction);
+	$type: false;
+	@if(unquote($start) != none) {
+		*zoom: 1;
+		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}');
+	} @else {
+		$stop: null;
+		$direction: null;
+		// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+		filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+	}
+}
+
+// needs multiple stop support
+// linear-gradient ( string $direction, list $start, list $stop, [ bool $ie: true ] )
+@mixin linear-gradient($direction, $start, $stop, $ie: true) {
+	@if(type-of($start) != "list") {
+		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
+		$start: false;
+	} @else if(type-of($stop) != "list") {
+		@warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
+		$stop: false;
+	}
+	@include _buildGradient($direction, $start, $stop, $ie);
+}
+
+// radial-gradient ( string $direction, list $start, list $stop, [ bool $ie: true ] )
+@mixin radial-gradient($direction, $start, $stop, $ie: true) {
+	@include _buildRadialGradient($direction, $start, $stop, $ie);
+}
+
+// begin reset mixins
+@mixin reset-box-model {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+@mixin reset-font {
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@mixin reset-focus {
+	outline: 0;
+}
+
+@mixin reset-body {
+	line-height: 1;
+}
+
+@mixin reset-list-style {
+	list-style: none;
+}
+
+@mixin reset-table {
+	border: {
+		collapse: collapse;
+		spacing: 0;
+	}
+}
+
+@mixin reset-table-cell {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+@mixin reset-quotation {
+	quotes: none;
+	&:before, &:after {
+		content: "";
+		content: none;
+	}
+}
+
+@mixin reset-image-anchor-border {
+	border: none;
+}
+
+@mixin reset-html5 {
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section { display: block; }
+}
+
+@mixin global-reset {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	@include reset-html5;
+	body { @include reset-body; }
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	table {
+		@include reset-table;
+	}
+}
+
+@mixin nested-reset {
+	div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	caption, th, td { @include reset-table-cell; }
+	table { @include reset-table; }
+	a img { @include reset-image-anchor-border; }
+}
+// end reset mixins
+
+// grid ( [ number $width: 960px, [ bool $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
+@mixin grid($width: $baseWidth, $fluid: $isFluid, $colWidth: $baseColWidth, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
+	@if ( $fluid == true ) {
+		@include _fluidGrid($colCount);
+	} @else {
+		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
+		// @see https://github.com/atomicpages/skeleton-sass/issues/7
+		$colWidth: ($width / $colCount) - $gutterWidth;
+		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
+	}
+}
+
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ]  ] )
+@mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
+	@include _mobileGrid($width, $colCount);
+}

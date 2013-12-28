@@ -37,6 +37,17 @@ Skeleton SASS is organized into **two** major categories:
 
 Both of these versions are organized the same exact way to ensure maximum usability:
 
+* `bourbon`
+	* `core`
+		* Bourbon source files
+	* `_loader.scss`
+	* `_dependencies.scss`
+	* `_mixins.scss`
+	* `_functions.scss`
+	* `_vars.scss`
+	* `base.scss`
+	* `layout.scss`
+	*  `skeleton.scss`
 * `compass` (Compass Version)
 	* `sass`
 		* `_dependencies.sass`
@@ -68,10 +79,11 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 * `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) where you may add custom functions. This file is **not required** by any means and may be discarded if you wish.
 
 ### Bower
-> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io For more info on bower, checkout [bower.io](http://bower.io/).
+> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io
+
+For more info on bower, checkout [bower.io](http://bower.io/).
 
 Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`.
-
 
 ### Demo
 Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
@@ -105,6 +117,17 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.6.0
+* Added support for [Bourbon](http://bourbon.io/)
+* Revised `_fluidGrid` mixin to utilize Sass functions
+* Resolved spelling errors in `numToString` function
+* Revised `_fixedGrid` mixin
+* Resolved [Issue #11](https://github.com/atomicpages/skeleton-sass/issues/11)
+* Cleaned up fluid grids for tablets by removing redundant code
+* Fixed `1.5.0` documentation in the README
+* Finally updated the bower version number so bower users can actually upgrade
+* Removed `.sass` files, use `sass-convert -R my_css_dir --from css --to scss`
+
 ### 1.5.3
 * Added the following HTML5 `input` types to inherit default styles in `base.css`
 	* `date`
@@ -118,19 +141,19 @@ Changelog
 	* `color`
 
 ### 1.5.2
-* Fixed quote issue on `transition` mixin for non-compass version
+* Fixed quote issue on `transitionn` mixin for non-compass version
 
 ### 1.5.1
 * Resolved [issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
 
 ### 1.5.0
-* Added ### 1.4.2
-Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any * sass code
-* Added additional files and folders to bower ignore
+* Commit fixes [issue #7](https://github.com/atomicpages/skeleton-sass/issues/7). You no longer need to manually calculate $colWidth in the `grid` mixin!
+* Resolved spelling error: `.two-third.column` changed to `.two-thirds.column`
+
 
 ### 1.4.2
-* Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to parse any sass code
-* Added additional files and folders to bower ignore
+* Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of the box without having to compile any sass code!
+* Added additional files and folders for bower to ignore
 
 ### 1.4.1
 * Added Skeleton SASS to bower! You can now drop Skeleton SASS into your projects using `bower install skeleton-sass`
@@ -138,7 +161,7 @@ Added vanilla CSS component to Skeleton SASS. You can now have CSS right out of 
 ### 1.4.0
 * Moved contents from `_functions` to a new partial called `_dependencies`
 * Moved all of the "private" mixins to `_dependencies` partial since these are core mixins and functions
-* Finally added offset styles to mobile grids -- sorry! I realize that was a _major_ piece that was missing
+* Finally added offset styles to mobile grids &ndash; I realize that was a _major_ piece that was missing
 * Added `mobileGrid` mixin
 * Added the following mixins to the non-compass version:
 	*  `single-transition`

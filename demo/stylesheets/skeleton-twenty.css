@@ -1,16 +1,12 @@
 /**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid 
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
  * originally authored by Dave Gamache. This translation offers
  * mixins that support fluid and as well as fixed grids to supplement
  * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2013 AtomicPages LLC
  * @license MIT
- * @version 1.4.0
- */
-/**
- * This _functions partial file is meant for you to add your very own custom functions!
- * Feel free to begin adding them below this header
+ * @version 1.6.0
  */
 /* BASE GRID
  * ------------------------------------------------ */
@@ -148,119 +144,125 @@
   /* The Grid */
   .container .one.column,
   .container .one.columns {
-    width: 17px; }
+    width: 18.4px; }
   .container .two.columns {
-    width: 54px; }
+    width: 56.8px; }
   .container .three.columns {
-    width: 91px; }
+    width: 95.2px; }
   .container .four.columns {
-    width: 128px; }
+    width: 133.6px; }
   .container .five.columns {
-    width: 165px; }
+    width: 172px; }
   .container .six.columns {
-    width: 202px; }
+    width: 210.4px; }
   .container .seven.columns {
-    width: 239px; }
+    width: 248.8px; }
   .container .eight.columns {
-    width: 276px; }
+    width: 287.2px; }
   .container .nine.columns {
-    width: 313px; }
+    width: 325.6px; }
   .container .ten.columns {
-    width: 350px; }
+    width: 364.0px; }
   .container .eleven.columns {
-    width: 387px; }
+    width: 402.4px; }
   .container .twelve.columns {
-    width: 424px; }
+    width: 440.8px; }
   .container .thirteen.columns {
-    width: 461px; }
+    width: 479.2px; }
   .container .fourteen.columns {
-    width: 498px; }
+    width: 517.6px; }
   .container .fifteen.columns {
-    width: 535px; }
+    width: 556px; }
   .container .sixteen.columns {
-    width: 572px; }
+    width: 594.4px; }
   .container .seventeen.columns {
-    width: 609px; }
+    width: 632.8px; }
   .container .eighteen.columns {
-    width: 646px; }
+    width: 671.2px; }
   .container .nineteen.columns {
-    width: 683px; }
+    width: 709.6px; }
   .container .twenty.columns {
-    width: 720px; }
+    width: 748px; }
   .container .one-third.column {
     width: 236px; }
   .container .two-thirds.column {
     width: 492px; }
   .container .offset-by-one {
-    padding-left: 37px; }
+    padding-left: 38.4px; }
   .container .offset-by-two {
-    padding-left: 74px; }
+    padding-left: 76.8px; }
   .container .offset-by-three {
-    padding-left: 111px; }
+    padding-left: 115.2px; }
   .container .offset-by-four {
-    padding-left: 148px; }
+    padding-left: 153.6px; }
   .container .offset-by-five {
-    padding-left: 185px; }
+    padding-left: 192px; }
   .container .offset-by-six {
-    padding-left: 222px; }
+    padding-left: 230.4px; }
   .container .offset-by-seven {
-    padding-left: 259px; }
+    padding-left: 268.8px; }
   .container .offset-by-eight {
-    padding-left: 296px; }
+    padding-left: 307.2px; }
   .container .offset-by-nine {
-    padding-left: 333px; }
+    padding-left: 345.6px; }
   .container .offset-by-ten {
-    padding-left: 370px; }
+    padding-left: 384px; }
   .container .offset-by-eleven {
-    padding-left: 407px; }
+    padding-left: 422.4px; }
   .container .offset-by-twelve {
-    padding-left: 444px; }
+    padding-left: 460.8px; }
   .container .offset-by-thirteen {
-    padding-left: 481px; }
+    padding-left: 499.2px; }
   .container .offset-by-fourteen {
-    padding-left: 518px; }
+    padding-left: 537.6px; }
   .container .offset-by-fifteen {
-    padding-left: 555px; }
+    padding-left: 576px; }
   .container .offset-by-sixteen {
-    padding-left: 592px; }
+    padding-left: 614.4px; }
   .container .offset-by-seventeen {
-    padding-left: 629px; }
+    padding-left: 652.8px; }
   .container .offset-by-eighteen {
-    padding-left: 666px; }
+    padding-left: 691.2px; }
   .container .offset-by-nineteen {
-    padding-left: 703px; } }
+    padding-left: 729.6px; } }
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: 767px) {
   .container {
     width: 300px; }
-
-  .container .one.column {
-    width: 300px; }
-  .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns, .container .seventeen.columns, .container .eighteen.columns, .container .nineteen.columns, .container .twenty.columns {
-    width: 300px; }
-  .container .one-third.column {
-    width: 300px; }
-  .container .two-third.column {
-    width: 300px; }
-  .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen, .container .offset-by-sixteen, .container .offset-by-seventeen, .container .offset-by-eighteen, .container .offset-by-nineteen {
-    padding-left: 0; } }
+    .container .column,
+    .container .columns {
+      margin-left: 0;
+      margin-right: 0; }
+    .container .one.column {
+      width: 300px; }
+    .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns {
+      width: 300px; }
+    .container .one-third.column {
+      width: 300px; }
+    .container .two-thirds.column {
+      width: 300px; }
+    .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen {
+      padding-left: 0; } }
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .container {
     width: 420px; }
-
-  .container .one.column {
-    width: 420px; }
-  .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns, .container .seventeen.columns, .container .eighteen.columns, .container .nineteen.columns, .container .twenty.columns {
-    width: 420px; }
-  .container .one-third.column {
-    width: 420px; }
-  .container .two-third.column {
-    width: 420px; }
-  .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen, .container .offset-by-sixteen, .container .offset-by-seventeen, .container .offset-by-eighteen, .container .offset-by-nineteen {
-    padding-left: 0; } }
+    .container .column,
+    .container .columns {
+      margin-left: 0;
+      margin-right: 0; }
+    .container .one.column {
+      width: 420px; }
+    .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns {
+      width: 420px; }
+    .container .one-third.column {
+      width: 420px; }
+    .container .two-thirds.column {
+      width: 420px; }
+    .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen {
+      padding-left: 0; } }
 /* CLEARING
  * ------------------------------------------------ */
 .container:after {
