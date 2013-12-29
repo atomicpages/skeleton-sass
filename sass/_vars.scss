@@ -1,17 +1,8 @@
 // GLOBAL VARIABLES - include your variables here or alter the predefined vars
 // See skeleton file for copyright info
 
-// MY GLOBAL VARIABLES
-$bgColor: #1a1a1a;
-$textColor: #6d6d6d;
-$anchorColor: grayscale(invert(#d5000d));
-$anchorColorHover: grayscale(invert(#c5000c));
-$aButtonColor: invert(#303030);
-$h1Color: lighten($textColor, 30%);
-$h2Color: #aaa;
-$hedingFont: 'Fjalla One', "Helvetica Neue", Helvetica, Arial, serif;
-
-// GLOBAL VARIABLES
+// MY VARIABLES
+// $foo: "bar";
 
 // background vars
 $backgroundColor: #fff; 														// default background information
@@ -35,7 +26,12 @@ $headingColor: #181818;															// default heading color
 
 // grid variables
 $baseWidth: 		960px; 														// change this to alter the overall width of the grid
-$baseWidthMQ:		960px; 														// base width for media query calculations in layout file
+
+
+// DEPCREATED: will be removed in 2.0
+$baseWidthMQ:		960px;														// base width for media query calculations in layout file
+
+
 $baseColWidth: 		40px;														// change this the alter the grid calculation, see _mixins file for more details
 $baseGutterWidth:	20px;														// calculation has changed, this is mainly here for consistency with 960.gs
 $isFluid: 			false;														// want a fluid grid by default?
