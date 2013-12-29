@@ -117,6 +117,10 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.6.1
+* Fixed missing `one-third` and `two-thirds` selectors in fluid grid
+* Updated `12`, `20`, and `fluid` CSS files in `css` directory
+
 ### 1.6.0
 * Added support for [Bourbon](http://bourbon.io/)
 * Revised `_fluidGrid` mixin to utilize Sass functions
