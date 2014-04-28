@@ -45,29 +45,22 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 	* `_mixins.scss`
 	* `_functions.scss`
 	* `_vars.scss`
+	* `_config.scss`
 	* `base.scss`
 	* `layout.scss`
 	*  `skeleton.scss`
 * `compass` (Compass Version)
-	* `sass`
-		* `_dependencies.sass`
-		* `_mixins.sass`
-		* `_functions.sass`
-		* `_vars.sass`
-		* `base.sass`
-		* `layout.sass`
-		*  `skeleton.sass`
 	* `scss`
 		* `_dependencies.scss`
 		* `_mixins.scss`
 		* `_functions.scss`
 		* `_vars.scss`
+		* * `_config.scss`
 		* `base.scss`
 		* `layout.scss`
 		*  `skeleton.scss`
 * `sass` (Non-Compass Version)
-	* `sass` is the same as above
-	* `scss` is the same as above
+	* `scss` has the same files as `compass`
 
 ### File Overview
 * `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles and is **required** for the framework to be used.
@@ -77,6 +70,7 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 * `_dependencies` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains core functions and "private" mixins that aren't meant to be used directly. Avoid editing this file directly unless you know what you're doing! The framework **will not work** if you delete this file.
 * `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which is **required** because it contains all of the global variables for the framework. See file for additional information.
 * `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) where you may add custom functions. This file is **not required** by any means and may be discarded if you wish.
+* `_config.scss` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that houses all **local** configuration information that you do not wish to be overridden by bower. Git users be warned as if you are doing a fresh pull, git will still *override* this file!
 
 ### Bower
 > Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io
