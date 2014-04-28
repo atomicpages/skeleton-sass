@@ -112,11 +112,15 @@ This project is released under the [MIT license](https://github.com/atomicpages/
 Skeleton SASS is community driven. We will gladly review any issues that you find. If you wish to contribute you'll land a spot in the contributions section of this document!
 
 ##### I Found a Bug/How Can I Help?
-* [Create a new issue on the github page!](https://github.com/atomicpages/skeleton-sass/issues)
-* [Fork me if you want to help!](https://github.com/atomicpages/skeleton-sass)
+* [Create an Issue](https://github.com/atomicpages/skeleton-sass/issues)
+* [Fork &amp; Pull](https://github.com/atomicpages/skeleton-sass)
 
 Changelog
 ---------
+### 1.6.2
+* Added local configuration file that won't be overridden when updating with bower.
+* Updated `bower.json` to exclude `demo` and development files from being installed with bower
+
 ### 1.6.1
 * Fixed missing `one-third` and `two-thirds` selectors in fluid grid
 * Updated `12`, `20`, and `fluid` CSS files in `css` directory

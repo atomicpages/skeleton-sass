@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass",
-	"version": "1.6.1",
+	"version": "1.6.2",
 	"author": "Dennis Thompson",
 	"homepage": "http://atomicpages.github.io/skeleton-sass/",
 	"repository": {
@@ -14,8 +14,7 @@
 		}
 	],
 	"ignore": [
-		".gitignore",
-		"./demo",
-		"./sass/dev"
+		"demo",
+		"sass/dev"
 	]
 }
