@@ -111,6 +111,10 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 1.6.3
+* Removed local configuration from automatically importing. Now all you need to to is uncomment the line in order for the import to work [issue #13](https://github.com/atomicpages/skeleton-sass/issues/13). [See the wiki](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-with-Bower) for information regarding preserving changes when using bower
+* Added releases so everyone can install legacy versions of Skeleton Sass via bower starting with this version!
+
 ### 1.6.2
 * Added local configuration file that won't be overridden when updating with bower.
 * Updated `bower.json` to exclude `demo` and development files from being installed with bower
