@@ -3,8 +3,10 @@
 .bundle
 .config
 .sass-cache
-compass/css
-sass/css
+flavors/*/css
+*.config.scss
+skeleton.scss
+skeleton.css
 coverage
 InstalledFiles
 lib/bundler/man
