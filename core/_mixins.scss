@@ -18,3 +18,12 @@
 @mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
 	@include _mobileGrid($width, $colCount);
 }
+
+@mixin getFontSize {
+	@if($use-rem == true) {
+		font-size: strip-units($fontSize)rem;
+		@if($use-px-fallback == true) {
+			font-size: (strip-units($fontSize) * 10);
+		}
+	}
+}

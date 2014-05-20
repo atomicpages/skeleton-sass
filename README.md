@@ -31,15 +31,49 @@ If you have tried other SASS ports of Skeleton CSS you've probably seen a ports 
 Skeleton SASS is organized into **three** major categories:
 
 1. [Compass Version](http://compass-style.org/)
+	* Requires Sass 3.2.x
+	* Compass 0.12.6
+		* **Note:** At the time of writing, Compass 0.12.x does *not* support Sass 3.3.x. Therefore, the dependency for Compass is Sass 3.2.x. There are alpha builds of Compass 1.x which *do* support Sass 3.3.x. However, we will wait until a stable release is out before making it a requirement.
 2. [Bourbon Version](http://bourbon.io/)
-3. Non-Compass Version
+	* Requires Sass 3.3.x
+	* Requires Bourbon 4.x
+3. Vanilla Sass Version
+	* Requires Sass 3.3.x
+
+### Requirements
 
 Both of these versions are organized the same exact way to ensure maximum usability:
 
 * Project organization needs updating
 
 ### File Overview
-* Needs updating
+* `core`
+	* `_config.scss` houses all of the global configuration and variable options. Any change here will alter all flavors
+	* `_dependencies.scss` houses all of the logic behind the front-facing mixins (e.g. grid generation, conversion, etc.)
+	* `_mixins.scss` houses all of the global mixins that are shared between all flavors
+	* `_MYconfig.scss` houses all of your custom logic, functions, mixins, variables, etc. Simply change to another name (i.e. _projectname_config.sass) and import in `_config.scss`.
+	* `flavors`
+		* `_bourbon.scss` loads all the necessary files for the bourbon flavor to function
+		* `_compass.scss` loads all the necessary files for the compass flavor to function
+		* `_sass.scss` loads all the necessary files for the sass flavor to function
+* `flavors`
+	* `bourbon`
+		* `bourbon` houses the bourbon framework
+		* `deps` houses flavor-specific functionality
+		* `_base.scss` handles all of the base styles for skeleton
+		* `_bourbon.scss` houses all of the imports for bourbon
+		* `_skeleton.scss` houses the skeleton grid
+		* `_vars.scss` houses all flavor-specific variables
+	* `compass`
+		* `_base.scss` handles all of the base styles for skeleton
+		* `_skeleton.scss` houses the skeleton grid
+		* `_vars.scss` houses all flavor-specific variables
+	* `sass`
+		* `deps` houses flavor-specific functionality
+		* `dev` houses all development files for custom functions and mixins not yet released
+		* `_base.scss` handles all of the base styles for skeleton
+		* `_skeleton.scss` houses the skeleton grid
+		* `_vars.scss` houses all flavor-specific variables
 
 ### Bower
 > Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io

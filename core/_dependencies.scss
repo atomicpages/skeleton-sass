@@ -170,3 +170,30 @@
 	}
 	@return $number;
 }
+
+// TODO once Compass 1.x becomes stable, this function will include substring searching
+// to determine the unit. If it's a percentage, then our equation changes.
+@function em($px, $base: $baseFontSize) {
+	@if not unitless($px) {
+		$px: strip-units($px);
+	}
+
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@return ($px / $base) * 1em;
+}
+
+// TOOD create a more general function that both em and rem uses. Keep it DRY
+@function rem($px, $base: $baseFontSize) {
+	@if not unitless($px) {
+		$px: strip-units($px);
+	}
+
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@return ($px / $base) * 1rem;
+}
