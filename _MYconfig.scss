@@ -1,11 +1,16 @@
-// This file is just a placeholder and not actually used. Please rename to _functions.scss
-// and write custom functions that you wish to be scoped globally across all flavors (except css)
-// This file can be used to override any and all mixins and functions. Please override variables in the project
-// directories in _vars.scss in any given flavor (except css).
-
-// Once file has been renamed to _functions.scss do the following:
-// 		1. Open _config.scss and scroll to the bottom
-//		2. Uncomment @import "functions"; to enable the use of custom code
-//		3. Enjoy!
-
-// @function myFunction() { }
+// This file stores all of your global project configuration options
+// and will not be wiped out by upgrading skeleton sass. Run the
+// setup.sh script from command line or follow the steps below
+// to manually configure:
+//
+// MANUAL CONFIGURATON
+// 1. Rename _MYconfig.scss to _[projectname].config.scss
+// 2. Rename skeleton_template.scss to skeleton.scss
+// 3. Navigate to core and edit _config.scss using your favorite
+//    text editor. Add the following to the end of _config.scss:
+//    @import " _[projectname].config.scss";
+//
+// HOW TO RUN AUTOMATED SETUP
+// 1. Open terminal and issue the following command:
+//    bin/setup.sh
+// 2. Follow prompts from script

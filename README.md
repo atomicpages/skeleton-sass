@@ -1,5 +1,5 @@
-Skeleton SASS
-=============
+Skeleton SASS 2 &alpha;
+=======================
 
 Skeleton SASS is a "SASSification" of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive front-end framework.
 
@@ -40,13 +40,11 @@ Skeleton SASS is organized into **three** major categories:
 3. Vanilla Sass Version
 	* Requires Sass 3.3.x
 
-### Requirements
-
-Both of these versions are organized the same exact way to ensure maximum usability:
-
-* Project organization needs updating
-
 ### File Overview
+* `skeleton_template.scss` houses **all** custom code.
+	* **Note:** this file name is meant to be changed. // add link to how to
+* `_MYconfig.scss` houses all of your global configuration (e.g. mixins, functions, variables, etc.)
+	* **Note:** this file name is meant to be changed. // add link to how to
 * `core`
 	* `_config.scss` houses all of the global configuration and variable options. Any change here will alter all flavors
 	* `_dependencies.scss` houses all of the logic behind the front-facing mixins (e.g. grid generation, conversion, etc.)
@@ -76,16 +74,19 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 		* `_vars.scss` houses all flavor-specific variables
 
 ### Bower
-> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io
+> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; [bower.io](http://bower.io/)
 
-For more info on bower, checkout [bower.io](http://bower.io/).
+Install Skeleton Sass with bower via command line:
 
-Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`.
+	bower install skeleton-sass
+
+You can also install alpha, beta, rc, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
+
+	bower install skeleton-sass#[tag]
+	bower install skeleton-sass#2.0.0-a4
 
 ### Demo
 Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
-
-Want to see spin on the default 16-column fixed-grid system? See the [demo here](http://atomicpages.github.io/skeleton-sass/demo.html)!
 
 ### Documentation
 Skeleton SASS is heavily documented! If you're looking for a detailed description (or just want more info) you can checkout the [wiki pages](https://github.com/atomicpages/skeleton-sass/wiki/_pages)!
@@ -119,6 +120,11 @@ Changelog
 * All of the different implementations of Skeleton Sass have been moved to the `flavors` folder
 * All core/shared files have been moved to the `core` folder.
 * Ability to choose between bourbon, compass, and vanilla sass by changing the preferred flavor in `skeleton.scss`
+* Added shell scripts to aid in setting up and upgrading Skeleton Sass for you *nix/OS X users who use command line.
+	* Batch scripts for Windows users coming soon
+	* Manual configuration documentation coming soon
+* Completely removed `layout.scss` and added predefined media queries to `skeleton_template.scss`
+
 
 Authors
 -------

@@ -1,13 +1,4 @@
-/**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
- * originally authored by Dave Gamache. This translation offers
- * mixins that support fluid and as well as fixed grids to supplement
- * the work that Dave Gamache has done.
- * @author Dennis Thompson <http://www.atomicpages.net>
- * @copyright Copyright (c) 2013 AtomicPages LLC
- * @license MIT
- * @version 1.7.0
- */
+// Skeleton Sass base styles
 
 // IMPORTS
 @import "compass/css3";
@@ -20,15 +11,29 @@
 
 /* BASIC STYLES
  * ------------------------------------------------ */
+html {
+	font-size: percentage(strip-units($baseFontSize) / 16);
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	line-height: 1.2;
+}
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 body {
 	background: $backgroundColor;
 	font: {
-		size: $fontSize;
 		family: $fontFamily;
 		weight: normal;
 		style: normal;
 	}
-	line-height: $fontSize * 1.5;
+	@include font-size(14px);
+	line-height: $fontSize * 2.6;
 	color: $fontColor;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
@@ -48,32 +53,32 @@ h4, h5, h6 {
 	a { font-weight: inherit; }
 }
 h1 {
-	font-size: round($fontSize * 3.8333);
-	line-height: round($fontSize * 4.1666);
-	margin-bottom: round($fontSize * 1.1666);
+	@include font-size($fontSize * 3.8333);
+	line-height: $fontSize * 4.1666;
+	margin-bottom: $fontSize * 1.1666;
 }
 h2 {
-	font-size: round($fontSize * 2.9166);
-	line-height: round($fontSize * 3.333);
-	margin-bottom: round($fontSize * 0.833);
+	@include font-size($fontSize * 2.9166);
+	line-height: $fontSize * 3.333;
+	margin-bottom: $fontSize * 0.833;
 }
 h3 {
-	font-size: round($fontSize * 2.333);
-	line-height: round($fontSize * 2.833);
-	margin-bottom: round($fontSize * 0.666);
+	@include font-size($fontSize * 2.333);
+	line-height: $fontSize * 2.833;
+	margin-bottom: $fontSize * 0.666;
 }
 h4 {
-	font-size: round($fontSize * 1.75);
-	line-height: round($fontSize * 2.5);
-	margin-bottom: round($fontSize * 0.333);
+	@include font-size($fontSize * 1.75);
+	line-height: $fontSize * 2.5;
+	margin-bottom: $fontSize * 0.333;
 }
 h5 {
-	font-size: round($fontSize * 1.4166);
+	@include font-size($fontSize * 1.4166);
 	line-height: $fontSize * 2;
 }
 h6 {
-	font-size: round($fontSize * 1.1666);
-	line-height: round($fontSize * 1.75);
+	@include font-size($fontSize * 1.1666);
+	line-height: $fontSize * 1.75;
 }
 .subheader { color: #777; }
 p {

@@ -2,7 +2,7 @@
 
 cwd=${PWD##*/}
 
-if [ $cwd == "bin" ]; then
+if [[ $cwd = "bin" ]]; then
 	cd ../
 fi
 

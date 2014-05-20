@@ -14,16 +14,27 @@
 	}
 }
 
-// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ]  ] )
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ] ] )
 @mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
 	@include _mobileGrid($width, $colCount);
 }
 
-@mixin getFontSize {
-	@if($use-rem == true) {
-		font-size: strip-units($fontSize)rem;
-		@if($use-px-fallback == true) {
-			font-size: (strip-units($fontSize) * 10);
+// font-size ( [ number $size, [ bool $fallback: true ] ] )
+@mixin font-size($size, $fallback: $use-px-fallback) {
+	@if($fallback == true) {
+		font-size: $size;
+	}
+
+	@if($use-rem == true and $use-em == false and $use-percent == false) {
+		font-size: rem($size);
+	} @elseif($use-em == true and $use-rem == false and $use-percent == false) {
+		font-size: em($size);
+	} @elseif($use-percent == true and $use-rem == false and $use-em == false) {
+		font-size: percent($size);
+	} @else {
+		@debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px.";
+		@if($fallback == false) {
+			font-size: $size;
 		}
 	}
 }
