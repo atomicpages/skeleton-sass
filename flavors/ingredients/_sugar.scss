@@ -1,24 +1,5 @@
 // This file houses all of the common styles for the base. Like most sweets, sugar is always the base of the item
 
-/**
- * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
- * originally authored by Dave Gamache. This translation offers
- * mixins that support fluid and as well as fixed grids to supplement
- * the work that Dave Gamache has done.
- * @author Dennis Thompson <http://www.atomicpages.net>
- * @copyright Copyright (c) 2013 AtomicPages LLC
- * @license MIT
- * @version 1.7.0
- */
-
-// IMPORTS
-@import "vars"; // import _vars
-
-
-/* RESET & BASICS (Inspired by E. Meyers)
- * ------------------------------------------------ */
-@include global-reset;
-
 /* BASIC STYLES
  * ------------------------------------------------ */
 html {
@@ -183,3 +164,133 @@ img.scale-with-grid {
 	max-width: 100%;
 	height: auto;
 }
+
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	border: 1px solid #aaa;
+	border: {
+		top: 1px solid #ccc;
+		left: 1px solid #ccc;
+	};
+	@include border-radius(3px);
+	color: #444;
+	display: inline-block;
+	font: {
+		weight: bold;
+		family: $formFont;
+	};
+	@include font-size($fontSize - 1);
+	text-decoration: none;
+	cursor: pointer;
+	line-height: normal;
+	padding: relative(8px) relative(10px);
+	&:hover {
+		color: #222;
+		border: 1px solid #888;
+		border: {
+			top: 1px solid #aaa;
+			left: 1px solid #aaa;
+		};
+	}
+	&:active { border: 1px solid #666; }
+	&.full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center;
+	}
+	&.smaller {
+		@include font-size($fontSize - 2);
+		padding: relative(4px) relative(5px);
+	}
+	&.larger {
+		@include font-size($fontSize + 2);
+		padding: relative(10px) relative(18px);
+	}
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+/* FORMS
+ * ------------------------------------------------ */
+form { margin-bottom: relative(20px); }
+fieldset { margin-bottom: relative(20px); }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: relative(6px) relative(4px);
+	outline: none;
+	@include border-radius(2px);
+	font: {
+		family: $formFont;
+	};
+	@include font-size($fontSize + 1);
+	color: #777;
+	margin: 0 0 relative(20px);
+	width: relative(210px);
+	max-width: 100%;
+	display: block;
+	&:hover,
+	&:focus {
+		border: 1px solid #aaa;
+		color: #444;
+		@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+	}
+	&:active {
+		border: 1px solid darken(#aaa, 10%);
+		@include box_shadow(0 0 3px rgba(0,0,0,0.3));
+	}
+}
+select { padding: 0; }
+textarea { min-height: relative(60px); }
+label,
+legend {
+	display: block;
+	font: {
+		weight: bold;
+	};
+	@include font-size($fontSize + 1);
+}
+select { width: relative(220px); }
+input[type="checkbox"] { display: inline; }
+label span,
+legend span {
+	font: {
+		weight: normal;
+	};
+	@include font-size($fontSize + 1);
+	color: #444;
+}
+
+/* MISC
+ * ------------------------------------------------ */
+.subtract-bottom { margin-bottom: relative(-20px) !important; }
+.remove-bottom { margin-bottom: 0 !important; }
+.half-bottom { margin-bottom: relative(10px) !important; }
+.add-bottom { margin-bottom: relative(20px) !important; }

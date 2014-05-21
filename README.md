@@ -1,4 +1,4 @@
-Skeleton SASS 2 &alpha;
+Skeleton SASS 2&alpha;
 =======================
 
 Skeleton SASS is a "SASSification" of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive front-end framework.
@@ -115,7 +115,7 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
-### 2.0.0 &alpha;
+### 2.0.0&alpha;
 * **Huge** changes to the structure of Skeleton Sass
 * All of the different implementations of Skeleton Sass have been moved to the `flavors` folder
 * All core/shared files have been moved to the `core` folder.
@@ -124,6 +124,18 @@ Changelog
 	* Batch scripts for Windows users coming soon
 	* Manual configuration documentation coming soon
 * Completely removed `layout.scss` and added predefined media queries to `skeleton_template.scss`
+* New functions and mixins:
+	* `_calcRU` is a function meant to be used in other functions. This function calculates the relative unit based on the `$baseFontSize` and the `$size` passed into the function. These functions depend on `_calcRU`
+		* `em`
+		* `rem`
+		* `percent`
+		* `relative`
+	* `em` converts an absolute `px` unit to an `em` unit
+	* `rem` converts an absolute `px` unit to a `rem` unit
+	* `percent` converts an absolute `px` unit to a `%` unit
+	* `relative` converts an absolute `px` unit to the chosen relative unit as defined in `_config.scss` or your hown project configuration.
+		* **Note:** if more than one relative unit is select then this function will simply spit out the `px` unit. // documentation is needed
+	* `@font-size` is a *mixin* that handles everything involving `font-size`. // TODO complete this
 
 
 Authors

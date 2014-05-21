@@ -9,7 +9,6 @@ $backgroundColor: #fff; // default background information
 $use-rem: true; // use rem as default unit?
 $use-em: false; // use em as default unit?
 $use-percent: false; // use percentage as default unit?
-
 $use-px-fallback: true; // allow for pixel fall back
 
 $fontSize: 14px;  // default font size. Change here will adjust sizes across the board.
@@ -31,13 +30,8 @@ $headingColor: #181818; // default heading color
 // grid variables
 $baseWidth: 960px;  // change this to alter the overall width of the grid
 
-
-// DEPCREATED: will be removed in 2.0
-$baseWidthMQ: 960px; // base width for media query calculations in layout file
-
-
 $baseColWidth: 40px; // change this the alter the grid calculation, see _mixins file for more details
-$baseGutterWidth:20px; // calculation has changed, this is mainly here for consistency with 960.gs
+$baseGutterWidth: 20px; // calculation has changed, this is mainly here for consistency with 960.gs
 $isFluid: false; // want a fluid grid by default?
 
 // ------ CHANGE MAY CAUSE UNDESIRED RESULTS

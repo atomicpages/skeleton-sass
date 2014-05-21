@@ -171,7 +171,7 @@
 	@return $number;
 }
 
-@function calcRU($px, $base, $unit) {
+@function _calcRU($px, $base, $unit) {
 	$unit: quote($unit);
 
 	@if not $unit == "em" or not $unit == "rem" or not $unit == "%" {
@@ -197,16 +197,16 @@
 // TODO once Compass 1.x becomes stable, this function will include string slicing
 // to determine the unit. If it's a percentage, then our equation changes.
 @function em($px, $base: $baseFontSize) {
-	@return calcRU($px, $base, "em");
+	@return _calcRU($px, $base, "em");
 }
 
 // TOOD create a more general function that both em and rem uses. Keep it DRY
 @function rem($px, $base: $baseFontSize) {
-	@return calcRU($px, $base, "rem");
+	@return _calcRU($px, $base, "rem");
 }
 
 @function percent($px, $base: $baseFontSize) {
-	@return calcRU($px, $base, "%");
+	@return _calcRU($px, $base, "%");
 }
 
 @function relative($size) {
