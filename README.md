@@ -1,4 +1,4 @@
-Skeleton SASS 2&alpha;
+Skeleton SASS 2&beta;
 =======================
 
 Skeleton SASS is a "SASSification" of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive front-end framework.
@@ -115,7 +115,7 @@ Skeleton SASS is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
-### 2.0.0&alpha;
+### 2.0.0&beta;
 * **Huge** changes to the structure of Skeleton Sass
 * All of the different implementations of Skeleton Sass have been moved to the `flavors` folder
 * All core/shared files have been moved to the `core` folder.
