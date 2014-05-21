@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "Setup utility working..."
 cwd=${PWD##*/}
 
 if [[ $cwd = "bin" ]]; then
@@ -42,7 +43,7 @@ echo "Renaming skeleton_template to skeleton"
 mv skeleton_template.scss skeleton.scss
 
 echo "Adding user override to core/_config.scss"
-echo "@import \"core/_${name}.config.scss\"" >> core/_config.scss
+echo "@import \"../_${name}.config.scss\"" >> core/_config.scss
 
 echo "Done"
 exit 0;

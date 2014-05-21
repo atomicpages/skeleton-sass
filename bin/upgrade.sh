@@ -3,15 +3,15 @@
 echo "Upgrade utility working..."
 cwd=${PWD##*/}
 
-if [[ $cwd = "bin" ]]; then
+if [[ $cwd="bin" ]]; then
 	cd ../
 fi
 
-echo "Run git pull? [y/n]"
+echo "Update Skeleton Sass?"
+git=$(git rev-parse --is-inside-work-tree)
+
 read ans
 valid=0
-
-# { [ "$varB" = "t1" ] || [ "$varC" = "t2" ]; } then
 
 if [[ ("$ans" = "y" || "$ans" = "n" || "$ans" = "Y" || "$ans" = "N") ]]; then
 	let valid=1
@@ -30,10 +30,20 @@ while [ $valid -ne 1 ]; do
 done
 
 if [[ "$ans" == "y" || "$ans" == "Y" ]]; then
-	echo "Starting git pull..."
-	git pull origin
+	if [[ $git="true" ]]; then
+		echo "Git repo found, pulling latest version from origin/master"
+		git pull origin/master
+	elif [[ -f .bower.config ]]; then
+		echo ".bower.config file detected, Skeleton Sass was installed using bower. Running bower update skeleton-sass"
+		cd ../ && bower update skeleton-sass
+	else
+		echo "Git repo not found. Bower files not found. Update manually"
+		exit 0
+	fi
 	echo "Upgrade complete. Removing unneeded files"
+	rm _MYconfig.scss skeleton_template.scss
+else
+	echo "Aborting"
 fi
 
-rm _MYconfig.scss
-rm skeleton_template.scss
+exit 0
