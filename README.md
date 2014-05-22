@@ -51,22 +51,9 @@ Skeleton SASS is organized into **three** major categories:
 	* `_mixins.scss` houses all of the global mixins that are shared between all flavors
 	* `_MYconfig.scss` houses all of your custom logic, functions, mixins, variables, etc. Simply change to another name (i.e. _projectname_config.sass) and import in `_config.scss`.
 	* `flavors`
-		* `_bourbon.scss` loads all the necessary files for the bourbon flavor to function
-		* `_compass.scss` loads all the necessary files for the compass flavor to function
-		* `_sass.scss` loads all the necessary files for the sass flavor to function
+		* `_vanilla.scss` loads all the necessary files for the sass flavor to function
 * `flavors`
-	* `bourbon`
-		* `bourbon` houses the bourbon framework
-		* `deps` houses flavor-specific functionality
-		* `_base.scss` handles all of the base styles for skeleton
-		* `_bourbon.scss` houses all of the imports for bourbon
-		* `_skeleton.scss` houses the skeleton grid
-		* `_vars.scss` houses all flavor-specific variables
-	* `compass`
-		* `_base.scss` handles all of the base styles for skeleton
-		* `_skeleton.scss` houses the skeleton grid
-		* `_vars.scss` houses all flavor-specific variables
-	* `sass`
+	* `vanilla` &ndash; who doesn't like good ol' vanilla?
 		* `deps` houses flavor-specific functionality
 		* `dev` houses all development files for custom functions and mixins not yet released
 		* `_base.scss` handles all of the base styles for skeleton
@@ -125,7 +112,7 @@ Changelog
 	* Manual configuration documentation coming soon
 * Completely removed `layout.scss` and added predefined media queries to `skeleton_template.scss`
 * New functions and mixins:
-	* `_calcRU` is a function meant to be used in other functions. This function calculates the relative unit based on the `$baseFontSize` and the `$size` passed into the function. These functions depend on `_calcRU`
+	* `_calcRU` is a function meant to be used in other functions. This function calculates the relative unit based on the `$base-font-size` and the `$size` passed into the function. These functions depend on `_calcRU`
 		* `em`
 		* `rem`
 		* `percent`
@@ -136,6 +123,9 @@ Changelog
 	* `relative` converts an absolute `px` unit to the chosen relative unit as defined in `_config.scss` or your hown project configuration.
 		* **Note:** if more than one relative unit is select then this function will simply spit out the `px` unit. // documentation is needed
 	* `@font-size` is a *mixin* that handles everything involving `font-size`. // TODO complete this
+	* Removed `bourbon` and `compass` completely to flatten the dependency tree. At the core, Skeleton Sass never really needed either of these and it was mostly for you. If you wish to use any other frameworks, just add it to a dependency in your `skeleton.scss` file in the project root. Much simpler!
+	* No more camelCase variables. Based on what I've seen the convention seems to be to use hyphens in variable names.
+	* A better naming convention has been created that aligns with Skeleton.
 
 
 Authors

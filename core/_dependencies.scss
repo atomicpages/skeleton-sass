@@ -61,7 +61,7 @@
 	}
 }
 
-// _offset ( bool $isFluid, number $colCount, number $colWidth )
+// _offset ( boolean $isFluid, number $colCount, number $colWidth )
 @mixin _offset($isFluid, $colCount, $colWidth) {
 	@if ( $isFluid == true ) {
 		@for $i from 1 through ( $colCount - 1 ) {
@@ -196,16 +196,16 @@
 
 // TODO once Compass 1.x becomes stable, this function will include string slicing
 // to determine the unit. If it's a percentage, then our equation changes.
-@function em($px, $base: $baseFontSize) {
+@function em($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "em");
 }
 
 // TOOD create a more general function that both em and rem uses. Keep it DRY
-@function rem($px, $base: $baseFontSize) {
+@function rem($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "rem");
 }
 
-@function percent($px, $base: $baseFontSize) {
+@function percent($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "%");
 }
 

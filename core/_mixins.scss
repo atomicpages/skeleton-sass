@@ -2,8 +2,8 @@
 // mixins will reflect on ALL flavors. Alter with discretion.
 // Note: all logic for "private" mixins are in _dependencies.scss
 
-// grid ( [ number $width: 960px, [ bool $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
-@mixin grid($width: $baseWidth, $fluid: $isFluid, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
+// grid ( [ number $width: 960px, [ boolean $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
+@mixin grid($width: $base-width, $fluid: $isFluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
 	@if ( $fluid == true ) {
 		@include _fluidGrid($colCount);
 	} @else {
@@ -15,11 +15,11 @@
 }
 
 // mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ] ] )
-@mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
+@mixin mobileGrid($width: $base-width, $colCount: $base-col-count) {
 	@include _mobileGrid($width, $colCount);
 }
 
-// font-size ( [ number $size, [ bool $fallback: true ] ] )
+// font-size ( [ number $size, [ boolean $fallback: true ] ] )
 @mixin font-size($size, $fallback: $use-px-fallback) {
 	@if($fallback == true) {
 		font-size: $size;
