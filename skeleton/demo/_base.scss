@@ -188,7 +188,7 @@ input[type="button"] {
 		top: 1px solid #ccc;
 		left: 1px solid #ccc;
 	};
-	@include border-radius(3px);
+	border-radius: 3px;
 	color: #444;
 	display: inline-block;
 	font: {
@@ -275,7 +275,7 @@ select {
 	border: 1px solid #ccc;
 	padding: relative(6px) relative(4px);
 	outline: none;
-	@include border-radius(2px);
+	border-radius: 2px;
 	font: {
 		family: $form-font;
 	};
@@ -289,11 +289,11 @@ select {
 	&:focus {
 		border: 1px solid #aaa;
 		color: #444;
-		@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+		box-shadow: 0 0 3px rgba(0,0,0,0.2);
 	}
 	&:active {
 		border: 1px solid darken(#aaa, 10%);
-		@include box_shadow(0 0 3px rgba(0,0,0,0.3));
+		box_shadow: 0 0 3px rgba(0,0,0,0.3);
 	}
 }
 select { padding: 0; }

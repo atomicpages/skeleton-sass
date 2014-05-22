@@ -41,24 +41,30 @@ Skeleton SASS is organized into **three** major categories:
 	* Requires Sass 3.3.x
 
 ### File Overview
-* `skeleton_template.scss` houses **all** custom code.
-	* **Note:** this file name is meant to be changed. // add link to how to
-* `_MYconfig.scss` houses all of your global configuration (e.g. mixins, functions, variables, etc.)
-	* **Note:** this file name is meant to be changed. // add link to how to
+* `bin` a directory that contains various executables
+	* `setup.sh` a simple bash script that aids in setting up Skeleton Sass for first time use
+	* `theme_setup.sh` a simple bash script that aids in setting up a custom theme for Skeleton Sass
+	* `upgrade.sh` a simple bash script that aids in upgrading Skeleton Sass
 * `core`
-	* `_config.scss` houses all of the global configuration and variable options. Any change here will alter all flavors
-	* `_dependencies.scss` houses all of the logic behind the front-facing mixins (e.g. grid generation, conversion, etc.)
-	* `_mixins.scss` houses all of the global mixins that are shared between all flavors
-	* `_MYconfig.scss` houses all of your custom logic, functions, mixins, variables, etc. Simply change to another name (i.e. _projectname_config.sass) and import in `_config.scss`.
-	* `flavors`
-		* `_vanilla.scss` loads all the necessary files for the sass flavor to function
-* `flavors`
-	* `vanilla` &ndash; who doesn't like good ol' vanilla?
-		* `deps` houses flavor-specific functionality
-		* `dev` houses all development files for custom functions and mixins not yet released
-		* `_base.scss` handles all of the base styles for skeleton
-		* `_skeleton.scss` houses the skeleton grid
-		* `_vars.scss` houses all flavor-specific variables
+	* `bones` the directory where theme loaders are located
+		* `_sphenoid.scss` the default theme
+	* `_config.scss` the default global configuration variables
+	* `_dependencies.scss` the default global logic for Skeleton Sass
+	* `_mixins.scss` the default global mixins for Skeleton Sass
+* `skeleton` where the magic happens
+	* `demo`
+		* `_base.scss` contains all of the base styles for Skeleton Sass with the exception of the reset styles
+		* `_bourbon.scss` contains information to import bourbon if it's used
+		* `_vars.scss` contains project-scoped configuration options
+	* `sphenoid`
+		* `marrow` the directory that contains all of the project-scoped logic (e.g. functions and mixins) for your theme to work
+			* `_private.scss` a file that contains all of the private logic for the public mixins/functions to work correctly for the `sphenoid` project. Feel free to name this file whatever you want in your own theme.
+			* `_public.scss` a file that contains all of the public mixins/functions for the `sphenoid` theme. Feel free to name this file whatever you want in your own theme.
+		* `_base.scss` contains all of the origion base styles for Skeleton Sass (nothing has changed visually)
+		* `_vars.scss` contains project-scoped configuration options
+		* `_skeleton.scss` contains all the styles to create the grid like we've used before &ndash; nothing has changed
+* `_MYconfig.scss`
+* `skeleton_template.scss`
 
 ### Bower
 > Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; [bower.io](http://bower.io/)
@@ -104,11 +110,11 @@ Changelog
 ---------
 ### 2.0.0&beta;
 * **Huge** changes to the structure of Skeleton Sass
-* All of the different implementations of Skeleton Sass have been moved to the `flavors` folder
+* Added **_themes_**! All themes are located in `skeleton/` with the default theme called `sphenoid`
+	* Themes allow you to edit the base styles by default to create a differently styles foundation for your project that doesn't get wiped out when there's an update to Skeleton Sass.
 * All core/shared files have been moved to the `core` folder.
-* Ability to choose between bourbon, compass, and vanilla sass by changing the preferred flavor in `skeleton.scss`
-* Added shell scripts to aid in setting up and upgrading Skeleton Sass for you *nix/OS X users who use command line.
-	* Batch scripts for Windows users coming soon
+* Added shell scripts to aid in setting up Skeleton Sass, upgrading Skeleton Sass (removing unneeded files), and creating a theme for you *nix/OS X users who use command line.
+	* Scripts for Windows users coming soon
 	* Manual configuration documentation coming soon
 * Completely removed `layout.scss` and added predefined media queries to `skeleton_template.scss`
 * New functions and mixins:
@@ -123,9 +129,9 @@ Changelog
 	* `relative` converts an absolute `px` unit to the chosen relative unit as defined in `_config.scss` or your hown project configuration.
 		* **Note:** if more than one relative unit is select then this function will simply spit out the `px` unit. // documentation is needed
 	* `@font-size` is a *mixin* that handles everything involving `font-size`. // TODO complete this
-	* Removed `bourbon` and `compass` completely to flatten the dependency tree. At the core, Skeleton Sass never really needed either of these and it was mostly for you. If you wish to use any other frameworks, just add it to a dependency in your `skeleton.scss` file in the project root. Much simpler!
-	* No more camelCase variables. Based on what I've seen the convention seems to be to use hyphens in variable names.
-	* A better naming convention has been created that aligns with Skeleton.
+* Removed `bourbon` and `compass` completely to flatten the dependency tree. At the core, Skeleton Sass never really needed either of these and it was mostly for you. If you wish to use any other frameworks, just add it to a dependency in your `skeleton.scss` file in the project root. Much simpler!
+* No more camelCase variables. Based on what I've seen the convention seems to be to use hyphens in variable names.
+* A better naming convention has been created that aligns with the human skeleton
 
 
 Authors

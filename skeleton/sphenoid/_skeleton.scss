@@ -4,7 +4,6 @@
  * ------------------------------------------------ */
 .container {
 	position: relative;
-	// change value at the top of this file or in _vars.scss
 	width: $base-width;
 	margin: 0 auto;
 	padding: 0;
@@ -28,9 +27,9 @@
  * ------------------------------------------------ */
 @media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) {
 	.container {
-		// change value at the top of this file or in _vars.scss
 		width: $tablet-width;
-		.column, .columns {
+		.column,
+		.columns {
 			&.alpha {
 				margin: {
 					left: 0;
