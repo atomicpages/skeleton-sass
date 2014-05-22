@@ -1,0 +1,101 @@
+@import "vars";
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container {
+	position: relative;
+	// change value at the top of this file or in _vars.scss
+	width: $base-width;
+	margin: 0 auto;
+	padding: 0;
+	.column,
+	.columns {
+		float: left;
+		display: inline;
+		position: relative;
+		&.alpha { margin-left: 0; }
+		&.omega { margin-right: 0; }
+	}
+}
+.row { margin-bottom: relative(20px); }
+
+// @include grid($base-width, true); // fluid
+// @include grid($base-width, false, 20px, 12); // 12-column fixed grid
+// @include grid($base-width, false, 20px, 20); // 20-column fixed grid
+@include grid($base-width, $isFluid, $base-gutter-width, $base-col-count);
+
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) {
+	.container {
+		// change value at the top of this file or in _vars.scss
+		width: $tablet-width;
+		.column, .columns {
+			&.alpha {
+				margin: {
+					left: 0;
+					right: 10px;
+				};
+			}
+			&.omega {
+				margin: {
+					right: 0;
+					left: 10px;
+				};
+			}
+		}
+	}
+	.alpha.omega {
+		margin: {
+			left: 0;
+			right: 0;
+		};
+	}
+
+	// DNRY (Do Not Repeat Yourself) for fluid tablet, values are the same
+	// @include grid($tablet-width, false, 20px, 12); // 12-column fixed grid
+	// @include grid($tablet-width, false, 20px, 20); // 20-column fixed grid
+	@include grid($tablet-width, $isFluid, $base-gutter-width, $base-col-count); // fixed
+}
+
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (max-width: $tablet-width - 1) {
+	@include mobileGrid($mobile-portrait-width);
+}
+
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------ */
+@media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) {
+	@include mobileGrid($mobile-landscape-width);
+}
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix, .row {
+	zoom: 1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+	&:after { clear: both; }
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
