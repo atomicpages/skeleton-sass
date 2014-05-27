@@ -3,7 +3,7 @@
 // Note: all logic for "private" mixins are in _dependencies.scss
 
 // grid ( [ number $width: 960px, [ boolean $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
-@mixin grid($width: $base-width, $fluid: $isFluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
+@mixin grid($width: $base-width, $fluid: $is-fluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
 	@if ( $fluid == true ) {
 		@include _fluidGrid($colCount);
 	} @else {

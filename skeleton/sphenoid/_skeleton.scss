@@ -21,7 +21,7 @@
 // @include grid($base-width, true); // fluid
 // @include grid($base-width, false, 20px, 12); // 12-column fixed grid
 // @include grid($base-width, false, 20px, 20); // 20-column fixed grid
-@include grid($base-width, $isFluid, $base-gutter-width, $base-col-count);
+@include grid($base-width, $is-fluid, $base-gutter-width, $base-col-count);
 
 /* TABLET (PORTRAIT)
  * ------------------------------------------------ */
@@ -54,7 +54,7 @@
 	// DNRY (Do Not Repeat Yourself) for fluid tablet, values are the same
 	// @include grid($tablet-width, false, 20px, 12); // 12-column fixed grid
 	// @include grid($tablet-width, false, 20px, 20); // 20-column fixed grid
-	@include grid($tablet-width, $isFluid, $base-gutter-width, $base-col-count); // fixed
+	@include grid($tablet-width, $is-fluid, $base-gutter-width, $base-col-count); // fixed
 }
 
 /*  MOBILE (PORTRAIT)

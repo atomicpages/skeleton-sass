@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Upgrade utility working..."
+echo "Update utility working..."
 cwd=${PWD##*/}
 
 if [[ $cwd="bin" ]]; then
@@ -29,7 +29,7 @@ while [ $valid -ne 1 ]; do
 	fi
 done
 
-if [[ "$ans" == "y" || "$ans" == "Y" ]]; then
+if [[ ("$ans" = "y" || "$ans" = "Y") ]]; then
 	if [[ $git="true" ]]; then
 		echo "Git repo found, pulling latest version from origin/master"
 		git pull origin/master

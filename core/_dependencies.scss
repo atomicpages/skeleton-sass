@@ -61,9 +61,9 @@
 	}
 }
 
-// _offset ( boolean $isFluid, number $colCount, number $colWidth )
-@mixin _offset($isFluid, $colCount, $colWidth) {
-	@if ( $isFluid == true ) {
+// _offset ( boolean $is-fluid, number $colCount, number $colWidth )
+@mixin _offset($is-fluid, $colCount, $colWidth) {
+	@if ( $is-fluid == true ) {
 		@for $i from 1 through ( $colCount - 1 ) {
 			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
 		}
@@ -124,12 +124,6 @@
 }
 
 // ---------- FUNCTION DEPENDENCIES
-
-// addresses https://github.com/nex3/sass/issues/533
-// number strip-units ( number $number )
-@function strip-units($number) {
-	@return $number / ($number * 0 + 1);
-}
 
 // Converts a number from 0 to 100 to the English word
 // string numToString ( number $int )
@@ -192,31 +186,4 @@
 	}
 
 	@return ($px / $base) * 1#{$unit};
-}
-
-// TODO once Compass 1.x becomes stable, this function will include string slicing
-// to determine the unit. If it's a percentage, then our equation changes.
-@function em($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "em");
-}
-
-// TOOD create a more general function that both em and rem uses. Keep it DRY
-@function rem($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "rem");
-}
-
-@function percent($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "%");
-}
-
-@function relative($size) {
-	@if($use-rem == true and $use-em == false and $use-percent == false) {
-		@return rem($size);
-	} @elseif($use-em == true and $use-rem == false and $use-percent == false) {
-		@return em($size);
-	} @elseif($use-percent == true and $use-rem == false and $use-em == false) {
-		@return percent($size);
-	}
-
-	@return $size; // we're still using pixels
 }
