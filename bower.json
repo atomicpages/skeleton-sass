@@ -14,7 +14,7 @@
 		}
 	],
 	"ignore": [
-		"demo",
-		"flavors/sass/dev"
+		".gitignore",
+		"sache.json"
 	]
 }

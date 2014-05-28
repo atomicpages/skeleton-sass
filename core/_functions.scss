@@ -1,0 +1,94 @@
+// Public functions that can be used globally. Have at it!
+
+@import "dependencies"; // Don't remove me
+
+// addresses https://github.com/nex3/sass/issues/533
+// number strip-units ( number $number )
+@if(not function-exists(strip-units)) {
+	@function strip-units($number) {
+		@return $number / ($number * 0 + 1);
+	}
+}
+
+// to determine the unit. If it's a percentage, then our equation changes.
+@if(not function-exists(em)) {
+	@function em($px, $base: $base-font-size) {
+		@return _calcRU($px, $base, "em");
+	}
+}
+
+@if(not function-exists(rem)) {
+	@function rem($px, $base: $base-font-size) {
+		@return _calcRU($px, $base, "rem");
+	}
+}
+
+@if(not function-exists(precent)) {
+	@function percent($px, $base: $base-font-size) {
+		@return _calcRU($px, $base, "%");
+	}
+}
+
+@if(function-exists(relative)) {
+	@function relative($size) {
+		@if($use-rem == true and $use-em == false and $use-percent == false) {
+			@return rem($size);
+		} @elseif($use-em == true and $use-rem == false and $use-percent == false) {
+			@return em($size);
+		} @elseif($use-percent == true and $use-rem == false and $use-em == false) {
+			@return percent($size);
+		}
+
+		@return $size; // we're still using pixels
+	}
+}
+
+// list triad ( color $color )
+@if(function-exists(triad)) {
+	@function triad($color) {
+		@if(type-of($color) != "color") {
+			@warn "Type must be color to continue. Aborting.";
+			@return null;
+		}
+
+		$triad: ();
+		$hue: strip-units(hue($color));
+
+		@for $i from 1 through 3 {
+			@if($hue + 120 > 360) {
+				$hue: ($hue + 120) - 360;
+			} @else {
+				$hue: $hue + 120;
+			}
+			$color: hsl($hue, saturation($color), lightness($color));
+			$triad: append($triad, $color);
+		}
+
+		@return $triad;
+	}
+}
+
+// list square ( color $color )
+@if(not function-exists(square)) {
+	@function square($color) {
+		@if(type-of($color) != "color") {
+			@warn "Type must be color to continue. Aborting.";
+			@return null;
+		}
+
+		$square: ();
+		$hue: strip-units(hue($color));
+
+		@for $i from 1 through 4 {
+			@if($hue + 90 > 360) {
+				$hue: ($hue + 90) - 360;
+			} @else {
+				$hue: $hue + 90;
+			}
+			$color: hsl($hue, saturation($color), lightness($color));
+			$square: append($square, $color);
+		}
+
+		@return $square;
+	}
+}

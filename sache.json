@@ -1,0 +1,16 @@
+{
+	"name": "skeleton-sass",
+	"description": "Description of project",
+	"tags": [
+		"starting-point",
+		"foundation",
+		"framework",
+		"responsive",
+		"bower",
+		"starter kit",
+		"grids",
+		"ui"
+	],
+	"website": "http://atomicpages.github.io/skeleton-sass/",
+	"docs": "https://github.com/atomicpages/skeleton-sass/wiki"
+}
