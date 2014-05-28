@@ -45,7 +45,7 @@ $mobile-portrait-width: 300px !global; // the mobile portrait media query
 $mobile-landscape-width: 420px !global; // the mobile landscape media query
 
 // ------ IMPORTS. DO NOT CHANGE
-@import "dependencies" !global;
-@import "functions" !global;
-@import "mixins" !global;
+@import "dependencies";
+@import "functions";
+@import "mixins";
 // @import "_MYconfig.scss" !global;

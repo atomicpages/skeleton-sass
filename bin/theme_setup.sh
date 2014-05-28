@@ -53,9 +53,15 @@ cp skeleton/demo/_vars.scss skeleton/${name}
 echo "Use Bourbon? [y/n]"
 read ans
 valid=0
+bourbon=0
 
-if [[ ("$ans" = "y" || "$ans" = "n" || "$ans" = "Y" || "$ans" = "N") ]]; then
+if [[ ($ans =~ "y") || ($ans =~ "Y") || ($ans =~ "n") || ($ans =~ "N") ]]; then
 	let valid=1
+	if [[ ($ans =~ "n") || ($ans =~ "N") ]]; then
+		let bourbon=0
+	else
+		let bourbon=1
+	fi
 else
 	let valid=0
 fi
@@ -63,14 +69,19 @@ fi
 while [ $valid -ne 1 ]; do
 	echo "Invalid response, try again"
 	read ans
-	if [[ ("$ans" = "y" || "$ans" = "n" || "$ans" = "Y" || "$ans" = "N") ]]; then
+	if [[ ($ans =~ "y") || ($ans =~ "Y") || ($ans =~ "n") || ($ans =~ "N") ]]; then
 		let valid=1
+		if [[ ($ans =~ "n") || ($ans =~ "N") ]]; then
+			let bourbon=0
+		else
+			let bourbon=1
+		fi
 	else
 		let valid=0
 	fi
 done
 
-if [ $valid -eq 1 ]; then
+if [ $bourbon -eq 1 ]; then
 	# If gem doesn't exist then we don't need to bother
 	command -v gem >/dev/null 2>&1 || {
 		echo >&2 "Ruby Gems is not installed. Aborting."
@@ -82,7 +93,8 @@ if [ $valid -eq 1 ]; then
 		echo >&2 "Bourbon is not currently installed. Install bourbon now? [y/n]"
 		echo "Note: you will be promoted to enter in your account password. This password is never saved. Ever."
 		read ans
-		valid=0
+		let valid=0
+		let bourbon=0
 		if [[ ("$ans" = "y" || "$ans" = "n" || "$ans" = "Y" || "$ans" = "N") ]]; then
 			let valid=1
 			echo "Installing bourbon..."
@@ -112,9 +124,12 @@ if [ $valid -eq 1 ]; then
 	bourbon install --path=skeleton/${name}/
 	cp skeleton/demo/_bourbon.scss skeleton/${name}
 	sed -i "" -e $'8 a\\\n'"@import \"bourbon\";" skeleton/${name}/_vars.scss
-	echo "Theme setup complete!"
-	exit 0
 fi
+
+skeleton=$(ls | grep skeleton_*.scss)
+
+sed -i "" '/sphenoid/d' $skeleton
+sed -i "" -e $'10 a\\\n'"@import \"core/bones/${name}\"; // compile with sass --update -C ${skeleton}.scss:${skeleton}.css" $skeleton
 
 echo "Theme setup complete!"
 exit 0
