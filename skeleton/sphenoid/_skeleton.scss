@@ -18,9 +18,7 @@
 }
 .row { margin-bottom: relative(20px); }
 
-// @include grid($base-width, true); // fluid
-// @include grid($base-width, false, 20px, 12); // 12-column fixed grid
-// @include grid($base-width, false, 20px, 20); // 20-column fixed grid
+// Set variables in user global config in skeleton sass root instead of editing directly
 @include grid($base-width, $is-fluid, $base-gutter-width, $base-col-count);
 
 /* TABLET (PORTRAIT)
@@ -33,13 +31,13 @@
 			&.alpha {
 				margin: {
 					left: 0;
-					right: 10px;
+					right: if($is-fluid, 2%, 10px);
 				};
 			}
 			&.omega {
 				margin: {
 					right: 0;
-					left: 10px;
+					left: if($is-fluid, 2%, 10px);
 				};
 			}
 		}
@@ -51,22 +49,23 @@
 		};
 	}
 
-	// DNRY (Do Not Repeat Yourself) for fluid tablet, values are the same
-	// @include grid($tablet-width, false, 20px, 12); // 12-column fixed grid
-	// @include grid($tablet-width, false, 20px, 20); // 20-column fixed grid
-	@include grid($tablet-width, $is-fluid, $base-gutter-width, $base-col-count); // fixed
+	// If it is fluid, then we don't need to repeat ourselves. The grid will be identical
+	@if(not $is-fluid) {
+		// Set variables in user global config in skeleton sass root instead of editing directly
+		@include grid($tablet-width, false, $base-gutter-width, $base-col-count); // fixed
+	}
 }
 
 /*  MOBILE (PORTRAIT)
  * ------------------------------------------------ */
 @media only screen and (max-width: $tablet-width - 1) {
-	@include mobileGrid($mobile-portrait-width);
+	@include mobileGrid($mobile-portrait-width, $is-fluid, $base-col-count);
 }
 
 /* MOBILE (LANDSCAPE)
  * ------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) {
-	@include mobileGrid($mobile-landscape-width);
+	@include mobileGrid($mobile-landscape-width, $is-fluid, $base-col-count);
 }
 
 /* CLEARING
