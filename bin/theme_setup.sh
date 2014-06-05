@@ -38,17 +38,16 @@ done
 echo "Theme name is ${name}"
 
 echo "Creating required files and folders..."
-touch core/bones/_${name}.scss;
-echo "// ${name} theme created with love" > core/bones/_${name}.scss
-echo "@import \"../../skeleton/${name}/vars\";" >> core/bones/_${name}.scss
-echo "@import \"../../skeleton/${name}/base\";" >> core/bones/_${name}.scss
-echo "@import \"../../skeleton/sphenoid/vars\"; // Override manually if you wish to create your own grid" >> core/bones/_${name}.scss
-echo "core/bones/_${name}.scss has been created"
+echo "// ${name} theme created with love using Skeleton Sass theme setup script!" > skeleton/themes/_loader.scss
+echo "@import \"${name}/vars\";" >> skeleton/themes/_loader.scss
+echo "@import \"${name}/base\";" >> skeleton/themes/_loader.scss
+echo "@import \"sphenoid/skeleton\"; // Override manually if you wish to create your own grid" >> skeleton/themes/_loader.scss
+echo "skeleton/themes/_loader.scss has been updated... moving on"
 
 
-mkdir -p skeleton/${name}/marrow
-cp skeleton/demo/_base.scss skeleton/${name}
-cp skeleton/demo/_vars.scss skeleton/${name}
+mkdir -p skeleton/themes/${name}/marrow
+cp skeleton/themes/demo/_base.scss skeleton/themes/${name}
+cp skeleton/themes/demo/_vars.scss skeleton/themes/${name}
 
 echo "Use Bourbon? [y/n]"
 read ans
@@ -121,15 +120,9 @@ if [ $bourbon -eq 1 ]; then
 			fi
 		done
 	}
-	bourbon install --path=skeleton/${name}/
-	cp skeleton/demo/_bourbon.scss skeleton/${name}
-	sed -i "" -e $'8 a\\\n'"@import \"bourbon\";" skeleton/${name}/_vars.scss
+	bourbon install --path=skeleton/themes/${name}/
+	sed -i "" -e $'8 a\\\n'"@import \"bourbon/bourbon\";" skeleton/themes/${name}/_vars.scss
 fi
-
-skeleton=$(ls | grep skeleton_*.scss)
-
-sed -i "" '/sphenoid/d' $skeleton
-sed -i "" -e $'10 a\\\n'"@import \"core/bones/${name}\"; // compile with sass --update -C ${skeleton}.scss:${skeleton}.css" $skeleton
 
 echo "Theme setup complete!"
 exit 0

@@ -3,11 +3,10 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2014 AtomicPages LLC
  * @license MIT
- * @version 2.0.0-b6
+ * @version 2.0.0-b7
  */
 
-// Choose the your flavor of Skeleton Sass and compile
-@import "core/bones/sphenoid"; // sass --update -C skeleton.scss:skeleton.css
+@import "skeleton/themes/loader"; // sass --update -C skeleton.scss:skeleton.css
 
 /* Add custom styles here */
 

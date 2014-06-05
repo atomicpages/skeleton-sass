@@ -10,6 +10,7 @@ fi
 echo "Disclaimer: this utility it meant to aid in upgrading from Skeleton Sass 1.x to Skeleton Sass 2.x. If you have followed the wiki articles then please do not use this script without a clean installation of Skeleton Sass 2.x. We, AtomicPages LLC, are not responsible for any unforeseen events that arise by using this script. Please follow the prompts.\n"
 
 echo "Did you add the contents from _vars.scss in Skeleton Sass 1.x to _MYconfig.scss in Skeleton Sass 2.x? [y/n]"
+echo "Note: If you ran the setup utility, your global configuration name might differ"
 read ans
 
 	if [[ ($ans != "y") && ($ans != "Y") && ($ans != "YES") && ($ans != "yes") ]]; then
@@ -51,5 +52,5 @@ if [[ ($ans != "n") && ($ans != "N") && ($ans != "no") && ($ans != "No") && ($an
 	exit 0
 fi
 
-echo "Upgrade is complete! Rename _MYconfig.scss to a different name and import that file into core/_config.scss"
+echo "Upgrade is complete! Rename _MYconfig.scss to a different name if you haven't done so already and import that file into core/_config.scss. You may also run bin/setup.sh from command line to automate this task."
 exit 0
