@@ -7,7 +7,7 @@ if [[ $cwd="bin" ]]; then
 	cd ../
 fi
 
-echo "Update Skeleton Sass?"
+echo "Update Skeleton Sass? [y/n]"
 git=$(git rev-parse --is-inside-work-tree)
 
 read ans

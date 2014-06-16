@@ -41,45 +41,53 @@
 }
 
 // @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-// box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ])
+// @box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ] )
 @mixin box_shadow($shadow) {
 	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
 }
 
+// @border-radius ( $radii... )
 @mixin border-radius($radii...) {
 	@include prefixer(border-radius, $radii, webkit moz ms o spec);
 }
 
+// @border-top-left-radius ( [ $radius: $default-border-radius ] )
 @mixin border-top-left-radius($radius: $default-border-radius) { @include _bd("top", "left", $radius); }
 
+// @border-top-right-radius ( [ $radius: $default-border-radius ] )
 @mixin border-top-right-radius($radius: $default-border-radius) { @include _bd("top", "right", $radius); }
 
+// @border-bottom-left-radius ( [ $radius: $default-border-radius ] )
 @mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd("bottom", "left", $radius); }
 
+// @border-bottom-right-radius ( [ $radius: $default-border-radius ] )
 @mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd("bottom", "right", $radius); }
 
+// @border-top-radius ( [ $radius: $default-border-radius ] )
 @mixin border-top-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
 	@include border-top-right-radius($radius);
 }
 
+// @border-right-radius ( [ $radius: $default-border-radius ] )
 @mixin border-right-radius($radius: $default-border-radius) {
 	@include border-top-right-radius($radius);
 	@include border-bottom-right-radius($radius);
 }
 
+// @border-bottom-radius ( [ $radius: $default-border-radius ] )
 @mixin border-bottom-radius($radius: $default-border-radius) {
 	@include border-bottom-left-radius($radius);
 	@include border-bottom-right-radius($radius);
 }
 
+// @border-left-radius ( [ $radius: $default-border-radius ] )
 @mixin border-left-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
 	@include border-bottom-left-radius($radius);
 }
 
-// opacity
-// opacity ( number $alpha [ boolean $ie: true ] )
+// @opacity ( number $alpha [ boolean $ie: true ] )
 @mixin opacity($alhpa, $ie: true) {
 	@if(type-of($alpha) != number) {
 		@warn "$alpha must be a number. Setting to 0.5.";
@@ -96,13 +104,13 @@
 	opacity: $alpha;
 }
 
-// box-sixing ( string $type )
+// @box-sixing ( string $type )
 @mixin box-sizing($type) {
 	$type: unquote($type);
 	@include prefixer(box-sizing, $type, webkit moz spec);
 }
 
-// single-transition ( string $property, number $duration, string $function, [ number $delay: false ] )
+// @single-transition ( string $property, number $duration, string $function, [ number $delay: false ] )
 @mixin single-transition($property, $duration, $function, $delay: false) {
 	@if($delay == false) {
 		$delay: "";
@@ -111,13 +119,13 @@
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// transition ( list $transition )
+// @transition ( list $transition )
 @mixin transition($transition) {
 	$transition: unquote($transition); //this helps with multiple tansitions
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// filter-gradient ( color $start, [ color $stop: false, [ string $direction: false ] ] )
+// @filter-gradient ( color $start, [ color $stop: false, [ string $direction: false ] ] )
 @mixin filter-gradient($start, $stop: false, $direction: false) {
 	$direction: unquote($direction);
 	$type: false;
@@ -133,7 +141,7 @@
 }
 
 // needs multiple stop support
-// linear-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
+// @linear-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
 @mixin linear-gradient($direction, $start, $stop, $ie: true) {
 	@if(type-of($start) != "list") {
 		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
@@ -145,29 +153,38 @@
 	@include _buildGradient($direction, $start, $stop, $ie);
 }
 
-// radial-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
+// @radial-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
 @mixin radial-gradient($direction, $start, $stop, $ie: true) {
 	@include _buildRadialGradient($direction, $start, $stop, $ie);
 }
 
-// begin reset mixins
+// @reset-box-model ( )
 @mixin reset-box-model {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
+// @reset-font ( )
 @mixin reset-font {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
 
+// @reset-focus ( )
 @mixin reset-focus { outline: 0; }
+
+// @reset-body ( )
 @mixin reset-body { line-height: 1; }
+
+// @reset-list-style ( )
 @mixin reset-list-style { list-style: none; }
+
+// @reset-image-anchor-border ( )
 @mixin reset-image-anchor-border { border: none; }
 
+// @reset-table ( )
 @mixin reset-table {
 	border: {
 		collapse: collapse;
@@ -175,12 +192,14 @@
 	}
 }
 
+// @reset-table-cell ( )
 @mixin reset-table-cell {
 	text-align: left;
 	font-weight: normal;
 	vertical-align: middle;
 }
 
+// @reset-quotation ( )
 @mixin reset-quotation {
 	quotes: none;
 	&:before, &:after {
@@ -189,12 +208,14 @@
 	}
 }
 
+// @reset-html5 ( )
 @mixin reset-html5 {
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section { display: block; }
 }
 
+// @global-reset ( )
 @mixin global-reset {
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -221,6 +242,7 @@
 	}
 }
 
+// @nested-reset ( )
 @mixin nested-reset {
 	div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -244,4 +266,3 @@
 	table { @include reset-table; }
 	a img { @include reset-image-anchor-border; }
 }
-// end reset mixins
