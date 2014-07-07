@@ -1,26 +1,5 @@
-*.gem
-*.rbc
-.bundle
-.config
 .sass-cache
-flavors/*/css
 *.config.scss
-skeleton.scss
-skeleton.css
+skeleton.*
 skeleton_template.css
 *.html
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-TODO.md
-
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
