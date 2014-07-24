@@ -42,12 +42,18 @@
 
 // @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
 // @box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ] )
-@mixin box_shadow($shadow) {
+@mixin box-shadow($shadow...) {
+	@if length($shadow) > 4 {
+		@warn("$shadow should only accept four argument for each side of the box. Using more may cause undesired results");
+	}
 	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
 }
 
 // @border-radius ( $radii... )
 @mixin border-radius($radii...) {
+	@if length($shadow) > 4 {
+		@warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
+	}
 	@include prefixer(border-radius, $radii, webkit moz ms o spec);
 }
 
@@ -119,9 +125,8 @@
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// @transition ( list $transition )
-@mixin transition($transition) {
-	$transition: unquote($transition); //this helps with multiple tansitions
+// @transition ( list $transition... )
+@mixin transition($transition...) {
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 

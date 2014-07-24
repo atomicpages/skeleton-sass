@@ -56,3 +56,7 @@ variables = {
 	"mobilePortraitWidth" => "mobile-portrait-width",
 	"mobileLandscapeWidth" => "mobile-landscape-width"
 }
+
+variables.each do |key, value|
+	%x(ruby -p -e "gsub /#{key}/, '#{value}' #{Dir.pwd}#{filename}")
+end
