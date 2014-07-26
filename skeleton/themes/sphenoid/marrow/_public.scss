@@ -130,19 +130,16 @@
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// @filter-gradient ( color $start, [ color $stop: false, [ string $direction: false ] ] )
-@mixin filter-gradient($start, $stop: false, $direction: false) {
-	$direction: unquote($direction);
-	$type: false;
-	@if(unquote($start) != none) {
-		*zoom: 1;
-		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}');
-	} @else {
-		$stop: null;
-		$direction: null;
-		// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
-		filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+// @filter-gradient ( color $start, color $stop, [ number $direction: 0 ] )
+@mixin filter-gradient($start, $stop, $direction) {
+	@if $direction < 0 or $direction > 1 {
+		@warn "Invalid value for $direction. Defaulting to 0";
+		$direction: 0;
 	}
+
+	*zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
 }
 
 // needs multiple stop support
@@ -158,9 +155,9 @@
 	@include _buildGradient($direction, $start, $stop, $ie);
 }
 
-// @radial-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
-@mixin radial-gradient($direction, $start, $stop, $ie: true) {
-	@include _buildRadialGradient($direction, $start, $stop, $ie);
+// @radial-gradient ( mixed $start, mixed $stop, [ boolean $ie: true ] )
+@mixin radial-gradient($start, $stop, $ie: true) {
+	@include _buildRadialGradient($start, $stop, $ie);
 }
 
 // @reset-box-model ( )
@@ -218,6 +215,12 @@
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section { display: block; }
+}
+
+@mixin reset-filter-gradient {
+	// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+	filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
 }
 
 // @global-reset ( )
