@@ -5,23 +5,21 @@
 // partial in that flavor.
 
 // background vars
-$background-color: #fff !global; // default background information
+$background-color: #fff !global; // default background color
 
-// FONTS
+// GENERAL
+$use-global-border-box: true !global; // use global border box?
 $use-rem: true !global; // use rem as default unit?
 $use-em: false !global; // use em as default unit?
 $use-percent: false !global; // use percentage as default unit?
 $use-px-fallback: true !global; // allow for pixel fall back
-$use-global-border-box: true !global; // use global border box?
 
-	// Font size and families
-	$font-size: 14px !global;  // default font size. Change here will adjust sizes across the board.
-	$font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // default fonts
-	$heading-family: "Georgia", "Times New Roman", serif !global; // default heading (h1-h6) font
-	$font-color: #444 !global;  // default font color
-	$heading-color: #181818 !global; // default heading (h1-h6) color
-
-// form vars
+// FONTS
+$font-size: 14px !global;  // default font size. Change here will adjust sizes across the board.
+$font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // default fonts
+$heading-family: "Georgia", "Times New Roman", serif !global; // default heading (h1-h6) font
+$font-color: #444 !global;  // default font color
+$heading-color: #181818 !global; // default heading (h1-h6) color
 $form-font: $font-family !global; // default form font
 
 // LINKS
@@ -35,7 +33,7 @@ $is-fluid: false !global; // Change to true to enable the fluid grid
 $base-col-width: 40px !global; // The width of each columns
 $base-gutter-width: 20px !global; // The space between columns
 $base-col-count: 16 !global; // The number of columns
-$base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Why not generate it for you?
+$base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Calculated
 
 // BREAKPOINTS AND CONTAINER WIDTHS
 $tablet-width: 768px !global; // the tablet width media query

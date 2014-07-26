@@ -51,7 +51,7 @@
 
 // @border-radius ( $radii... )
 @mixin border-radius($radii...) {
-	@if length($shadow) > 4 {
+	@if length($radii) > 4 {
 		@warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
 	}
 	@include prefixer(border-radius, $radii, webkit moz ms o spec);
