@@ -1,0 +1,11 @@
+// This file exists for not only to connect everything at the
+// project level, but for you to import project-level dependencies
+// stored in the marrow folder, but to also create project-level
+// variables.
+
+@import "marrow/public";
+@import "../sphenoid/vars";
+
+// Custom variables
+// $nav-link-color: #A24CBF;
+$nav-link-color: #ED1C24;

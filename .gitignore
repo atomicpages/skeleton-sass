@@ -3,8 +3,11 @@
 .bundle
 .config
 .sass-cache
-compass/css
-sass/css
+node_modules
+bower_compnents/jquery
+bower_compnents/jquery.stellar
+bower_compnents/respond
+bower_compnents/smooth-scroll.js
 coverage
 InstalledFiles
 lib/bundler/man
@@ -15,6 +18,9 @@ test/tmp
 test/version_tmp
 tmp
 TODO.md
+images/logo.png
+images/ss_logo.png
+images/icons
 
 # YARD artifacts
 .yardoc

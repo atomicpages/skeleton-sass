@@ -1,118 +1,31 @@
 /**
  * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
- * originally authored by Dave Gamache. This translation offers
- * mixins that support fluid and as well as fixed grids to supplement
- * the work that Dave Gamache has done.
  * @author Dennis Thompson <http://www.atomicpages.net>
- * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @copyright Copyright (c) 2014 AtomicPages LLC
  * @license MIT
- * @version 1.6.0
+ * @version 2.0.0-b7
  */
 
-// IMPORTS
-@import "vars"; // import _vars
-@import "mixins"; // import _mixins
+@import "skeleton/themes/loader"; // sass --update -C skeleton.scss:skeleton.css
 
-// VARIABLE OVERRIDE EXAMPLES
-// $baseWidth: 95%;
-// $tabletWidth: 95%;
+/* Add custom styles here */
 
-/* BASE GRID
+/* MEDIA QUERIES
  * ------------------------------------------------ */
-.container {
-	position: relative;
-	// change value at the top of this file or in _vars.scss
-	width: $baseWidth;
-	margin: 0 auto;
-	padding: 0;
-	.column,
-	.columns {
-		float: left;
-		display: inline;
-		position: relative;
-		&.alpha { margin-left: 0; }
-		&.omega { margin-right: 0; }
-	}
-}
-.row { margin-bottom: 20px; }
+/* Large displays */
+@media only screen and (min-width: $base-width) and (max-width: 1280px) { /* add code here */ }
 
-// @include grid($baseWidth, true); // fluid
-// @include grid($baseWidth, false, 20px, 12); // 12-column fixed grid
-// @include grid($baseWidth, false, 20px, 20); // 20-column fixed grid
-@include grid($baseWidth);
+/* Smaller than standard #{strip-units($base-width)} (devices and browsers) */
+@media only screen and (max-width: $base-width - 1) { /* add code here */ }
 
-/* TABLET (PORTRAIT)
- * ------------------------------------------------ */
-@media only screen and (min-width: $tabletWidth) and (max-width: $baseWidthMQ - 1) {
-	.container {
-		// change value at the top of this file or in _vars.scss
-		width: $tabletWidth;
-		.column, .columns {
-			&.alpha {
-				margin: {
-					left: 0;
-					right: 10px;
-				};
-			}
-			&.omega {
-				margin: {
-					right: 0;
-					left: 10px;
-				};
-			}
-		}
-	}
-	.alpha.omega {
-		margin: {
-			left: 0;
-			right: 0;
-		};
-	}
+/* Tablet Portrait size to standard #{strip-units($base-width)} (devices and browsers) */
+@media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) { /* add code here */ }
 
-	// DNRY (Do Not Repeat Yourself) for fluid tablet, values are the same
-	// @include grid($tabletWidth, false, 20px, 12); // 12-column fixed grid
-	// @include grid($tabletWidth, false, 20px, 20); // 20-column fixed grid
-	@include grid($tabletWidth, false); // fixed
-}
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: $tablet-width - 1) { /* add code here */ }
 
-/*  MOBILE (PORTRAIT)
- * ------------------------------------------------ */
-@media only screen and (max-width: $tabletWidth - 1) {
-	@include mobileGrid($mobilePortraitWidth);
-}
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) { /* add code here */ }
 
-/* MOBILE (LANDSCAPE)
- * ------------------------------------------------ */
-@media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
-	@include mobileGrid($mobileLandscapeWidth);
-}
-
-/* CLEARING
- * ------------------------------------------------ */
-.container:after {
-	content: "\0020";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-.clearfix, .row {
-	zoom: 1;
-	&:before, &:after {
-		content: "\0020";
-		display: block;
-		overflow: hidden;
-		visibility: hidden;
-		width: 0;
-		height: 0;
-	}
-	&:after { clear: both; }
-}
-.clear {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	visibility: hidden;
-	width: 0;
-	height: 0;
-}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) { /* add code here */ }

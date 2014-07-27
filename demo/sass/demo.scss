@@ -1,0 +1,38 @@
+@mixin border-radius($radii...) {
+	-webkit-border-radius: $radii;
+	-moz-border-radius: $radii;
+	border-radius: $radii;
+}
+
+pre, code {
+	font-family: consolas, monospace;
+	background: #efefef;
+	@include border-radius(2px);
+	padding: 0.75rem;
+	border: 1px solid darken(#efefef, 10%);
+}
+code { padding: 0.2rem; }
+nav {
+	margin-bottom: 2.5rem;
+	ul {
+		li {
+			float: left;
+			margin-right: 1.5rem;
+		}
+		ul {
+			width: 100%;
+			margin-top: 0.5rem;
+			margin-left: 0;
+			padding: 0;
+			display: none;
+			position: absolute;
+			li { width: 100%; }
+			input {
+				width: auto !important;
+				display: inline-block !important;
+			}
+		}
+	}
+}
+.center { text-align: center; }
+.hidden { visibility: hidden; }

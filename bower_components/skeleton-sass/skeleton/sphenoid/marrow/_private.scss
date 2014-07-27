@@ -1,0 +1,67 @@
+// DISCLAIMER: this file is called private because these items are not supposed to accessed directly
+// outside of the public file. They are also not supposed to be edited directly either. Alter only if
+// you know what you're doing. Changes here can potentially render the sphenoid theme unusable.
+//
+// Am I allowed to use these in my own theme? You bet!
+// I have a fix... how do I help? Check the README!
+
+// ---------- MIXIN DEPENDENCIES
+@mixin _bd($vert, $horiz, $radius) {
+	-webkit-border-#{$vert}-#{$horiz}-radius: $radius;
+	-moz-border-radius-#{$vert}#{$horiz}: $radius;
+	border-#{$vert}-#{$horiz}-radius: $radius;
+}
+
+// needs multiple stop support
+// needs center adjustment support
+// _buildRadialGradient ( string $direction, color $start, color $stop, boolean $ie )
+@mixin _buildRadialGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == radial or $direction == ellipse or $direction == center) {
+		background: $start;
+		background: -moz-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0% #{$start}), color-stop(100% #{$stop}));
+		background: -webkit-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -o-radial-gradient(center, ellipse cover, $start, $stop);
+		background: -ms-radial-gradient(center, ellipse cover, $start, $stop);
+		background: radial-gradient(ellipse at center, $start, $stop);
+	}
+	@if($ie == true) {
+		@include filter-gradient($start, $stop, $direction);
+	}
+}
+
+// needs multiple stop support
+// _buildGradient ( string $direction, list $start, list $stop, boolean $ie )
+@mixin _buildGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: null;
+	$linearGradientDirection: null;
+	@if($direction == left or $direction == horizontal) {
+		$webkitGradientDirection: linear, left top, right top;
+		$linearGradientDirection: to right;
+	} @else if($direction == top or $direction == vertical) {
+		$webkitGradientDirection: linear, left top, left bottom;
+		$linearGradientDirection: to bottom;
+	} @else if($direction == left top) {
+		$direction: -45deg;
+		$webkitGradientDirection: linear, left top, right bottom;
+		$linearGradientDirection: 135deg;
+	} @else if($direction == left bottom) {
+		$direction: 45deg;
+		$webkitGradientDirection: linear, left bottom, right top;
+		$linearGradientDirection: $direction;
+	}
+	background: nth($start, 1);
+	background-image: -moz-linear-gradient($direction, $start, $stop);
+	background-image: -webkit-gradient($webkitGradientDirection, color-stop(nth($start, 1), nth($start, 2)), color-stop(nth($stop, 1), nth($stop, 2)));
+	background-image: -webkit-linear-gradient($direction, $start, $stop);
+	background-image: -o-linear-gradient($direction, $start, $stop);
+	background-image: -ms-linear-gradient($direction, $start, $stop);
+	background-image: linear-gradient($linearGradientDirection, $start, $stop);
+	@if($ie == true) {
+		@include filter-gradient(nth($start, 1), nth($stop, 1), vertical);
+	}
+}

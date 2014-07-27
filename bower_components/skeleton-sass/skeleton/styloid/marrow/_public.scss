@@ -1,0 +1,11 @@
+// http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clear($ele: "this") {
+	$ele: unquote(if($ele == this, "&", $ele));
+	#{$ele}:before,
+	#{$ele}:after {
+		content: " ";
+		display: table;
+	}
+	#{$ele}:after { clear: both; }
+	#{$ele} { *zoom: 1; }
+}
