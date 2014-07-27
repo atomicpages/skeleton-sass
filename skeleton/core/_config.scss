@@ -1,0 +1,51 @@
+// GLOBAL VARIABLES - include your variables here or alter the
+// predefined vars.
+// Changes to these variables will alter ALL flavors EXCEPT css.
+// If you wish to override for any given flavor, please edit the vars
+// partial in that flavor.
+
+// background vars
+$background-color: #fff !global; // default background color
+
+// GENERAL
+$use-global-border-box: true !global; // use global border box?
+$use-rem: true !global; // use rem as default unit?
+$use-em: false !global; // use em as default unit?
+$use-percent: false !global; // use percentage as default unit?
+$use-px-fallback: true !global; // allow for pixel fall back
+
+// FONTS
+$font-size: 14px !global;  // default font size. Change here will adjust sizes across the board.
+$font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // default fonts
+$heading-family: "Georgia", "Times New Roman", serif !global; // default heading (h1-h6) font
+$font-color: #444 !global;  // default font color
+$heading-color: #181818 !global; // default heading (h1-h6) color
+$form-font: $font-family !global; // default form font
+
+// LINKS
+$link-color: #333 !global; // default link color
+$link-hover: #000 !global; // default link color on :hover
+$link-decoration: underline !global; // default link decoration
+
+// GRID
+// $base-width: 960px !global;  // The overall width of the grid (.container)
+$is-fluid: false !global; // Change to true to enable the fluid grid
+$base-col-width: 40px !global; // The width of each columns
+$base-gutter-width: 20px !global; // The space between columns
+$base-col-count: 16 !global; // The number of columns
+$base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Calculated
+
+// BREAKPOINTS
+$tablet-width: 768px !global; // the tablet width media query
+$mobile-portrait-width: 300px !global; // the mobile portrait media query
+$mobile-landscape-width: 420px !global; // the mobile landscape media query
+$mobile-fluid-width: 100%; // this value is not used with breakpoints, it is used in generating a fluid grid for mobile devices
+
+// ------ CHANGE MAY CAUSE UNDESIRED RESULTS
+$base-font-size: 10px !global; // the font size in the html element so we can use ems and rems in a friendly way
+
+// ------ IMPORTS. DO NOT CHANGE
+@import "dependencies";
+@import "functions";
+@import "mixins";
+// @import "../../_MYconfig.scss";

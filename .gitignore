@@ -1,8 +1,5 @@
-*.gem
-*.rbc
-.bundle
-.config
 .sass-cache
+<<<<<<< HEAD
 compass/css
 sass/css
 coverage
@@ -20,3 +17,9 @@ TODO.md
 .yardoc
 _yardoc
 doc/
+=======
+*.config.scss
+skeleton.*
+skeleton_template.css
+*.html
+>>>>>>> 2.x

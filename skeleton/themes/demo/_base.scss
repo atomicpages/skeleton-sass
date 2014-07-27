@@ -1,0 +1,356 @@
+// This template file is almost an exact replica of the sphenoid
+// base file except the reset styles are missing. Feel free to
+// edit this file to your hearts content and create an amazing base
+// style for Skeleton Sass!
+
+@import "vars";
+
+/* RESET
+ * ------------------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+	font-size: percentage(strip-units($base-font-size) / 16);
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	line-height: 1.2;
+}
+@if($use-global-border-box) {
+	*,
+	*:before,
+	*:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+body {
+	background: $background-color;
+	font: {
+		family: $font-family;
+		weight: normal;
+		style: normal;
+	}
+	@include font-size(14px);
+	line-height: relative(26px);
+	color: $font-color;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}
+
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	font: {
+		family: $heading-family;
+		weight: normal;
+	}
+}
+h1, h2, h3,
+h4, h5, h6 {
+	a { font-weight: inherit; }
+}
+h1 {
+	@include font-size($font-size * 3.8333);
+	line-height: relative($font-size * 4.1666);
+	margin-bottom: relative($font-size * 1.1666);
+}
+h2 {
+	@include font-size($font-size * 2.9166);
+	line-height: relative($font-size * 3.333);
+	margin-bottom: relative($font-size * 0.833);
+}
+h3 {
+	@include font-size($font-size * 2.333);
+	line-height: relative($font-size * 2.833);
+	margin-bottom: relative($font-size * 0.666);
+}
+h4 {
+	@include font-size($font-size * 1.75);
+	line-height: relative($font-size * 2.5);
+	margin-bottom: relative($font-size * 0.333);
+}
+h5 {
+	@include font-size($font-size * 1.4166);
+	line-height: relative($font-size * 2);
+}
+h6 {
+	@include font-size($font-size * 1.1666);
+	line-height: relative($font-size * 1.75);
+}
+.subheader { color: #777; }
+p {
+	margin: 0 0 relative(20px) 0;
+	img { margin: 0; }
+	&.lead {
+		@include font-size($font-size * 1.75);
+		line-height: relative($font-size * 2.25);
+		color: #777;
+	}
+}
+em, i { font-style: italic; }
+strong, b { font-weight: bold; }
+u { text-decoration: underline; }
+small { font-size: 80%; }
+/*	Blockquotes  */
+blockquote, blockquote p {
+	@include font-size($font-size * 1.4166);
+	line-height: relative($font-size * 2);
+	color: #777;
+	font-style: italic;
+}
+blockquote {
+	margin: 0 0 relative(20px);
+	padding: relative(9px) relative(20px) 0 relative(19px);
+	border-left: 1px solid #ddd;
+}
+blockquote cite {
+	display: block;
+	@include font-size($font-size);
+	color: #555;
+	&:before { content: "\2014 \0020"; }
+	a, a:visited { color: #555; }
+}
+hr {
+	border: {
+		style: solid;
+		color: #ddd;
+		width: 1px 0 0;
+	};
+	clear: both;
+	margin: relative(10px) 0 relative(30px);
+	height: 0;
+}
+
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+	color: $link-color;
+	text-decoration: $link-decoration;
+	outline: 0;
+}
+a:hover, a:focus, a:active { color: $link-hover; }
+p a, p a:visited { line-height: inherit; }
+
+/* LISTS
+ * ------------------------------------------------ */
+ul,
+ol { margin-bottom: relative(20px); }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square,
+ul.circle, ul.disc { margin-left: relative(30px); }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol,
+ol ol, ol ul {
+	margin: {
+		top: relative(4px);
+		right: 0;
+		bottom: relative(5px);
+		left: relative(30px);
+	}
+	font-size: 90%;
+}
+ul ul li,  ul ol li,
+ol ol li,  ol ul li { margin-bottom: relative(6px); }
+li {
+	line-height: relative(18px);
+	margin-bottom: relative(12px);
+}
+ul.large li { line-height: relative(21px); }
+li p { line-height: relative(21px); }
+
+/* IMAGES
+ * ------------------------------------------------ */
+img.scale-with-grid {
+	max-width: 100%;
+	height: auto;
+}
+
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	border: 1px solid #aaa;
+	border: {
+		top: 1px solid #ccc;
+		left: 1px solid #ccc;
+	};
+	border-radius: 3px;
+	color: #444;
+	display: inline-block;
+	font: {
+		weight: bold;
+		family: $form-font;
+	};
+	@include font-size($font-size - 1);
+	text-decoration: none;
+	cursor: pointer;
+	line-height: normal;
+	padding: relative(8px) relative(10px);
+	background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+	background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+	&:hover {
+		color: #222;
+		border: 1px solid #888;
+		border: {
+			top: 1px solid #aaa;
+			left: 1px solid #aaa;
+		};
+		background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+		background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+	}
+	&:active {
+		border: 1px solid #666;
+		background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
+		background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+	}
+	&.full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center;
+	}
+	&.smaller {
+		@include font-size($font-size - 2);
+		padding: relative(4px) relative(5px);
+	}
+	&.larger {
+		@include font-size($font-size + 2);
+		padding: relative(10px) relative(18px);
+	}
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+/* FORMS
+ * ------------------------------------------------ */
+form { margin-bottom: relative(20px); }
+fieldset { margin-bottom: relative(20px); }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: relative(6px) relative(4px);
+	outline: none;
+	border-radius: 2px;
+	font: {
+		family: $form-font;
+	};
+	@include font-size($font-size + 1);
+	color: #777;
+	margin: 0 0 relative(20px);
+	width: relative(210px);
+	max-width: 100%;
+	display: block;
+	&:hover,
+	&:focus {
+		border: 1px solid #aaa;
+		color: #444;
+		box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	}
+	&:active {
+		border: 1px solid darken(#aaa, 10%);
+		box_shadow: 0 0 3px rgba(0,0,0,0.3);
+	}
+}
+select { padding: 0; }
+textarea { min-height: relative(60px); }
+label,
+legend {
+	display: block;
+	font: {
+		weight: bold;
+	};
+	@include font-size($font-size + 1);
+}
+select { width: relative(220px); }
+input[type="checkbox"] { display: inline; }
+label span,
+legend span {
+	font: {
+		weight: normal;
+	};
+	@include font-size($font-size + 1);
+	color: #444;
+}
+
+/* MISC
+ * ------------------------------------------------ */
+.subtract-bottom { margin-bottom: relative(-20px) !important; }
+.remove-bottom { margin-bottom: 0 !important; }
+.half-bottom { margin-bottom: relative(10px) !important; }
+.add-bottom { margin-bottom: relative(20px) !important; }

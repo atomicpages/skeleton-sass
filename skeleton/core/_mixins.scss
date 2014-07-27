@@ -1,0 +1,47 @@
+// Core mixins shared by all flavors (except css) are here. Any changes to these
+// mixins will reflect on ALL flavors. Alter with discretion.
+// Note: all logic for "private" mixins are in _dependencies.scss
+
+// grid ( [ number $width: 960px, [ boolean $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
+@mixin grid($width: $base-width, $fluid: $is-fluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
+	@if($fluid) {
+		@include _fluidGrid($colCount);
+	} @else {
+		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
+		// @see https://github.com/atomicpages/skeleton-sass/issues/7
+		$colWidth: ($width / $colCount) - $gutterWidth;
+		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
+	}
+}
+
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ] ] )
+@mixin mobileGrid($width: $base-width, $isFluid: $is-fluid, $colCount: $base-col-count) {
+	@include _mobileGrid($width, $colCount, $isFluid);
+}
+
+// font-size ( [ number $size, [ boolean $fallback: true ] ] )
+@mixin font-size($size, $fallback: $use-px-fallback) {
+	@if($fallback) {
+		font-size: $size;
+	}
+
+	@if($use-rem and not $use-em and not $use-percent) {
+		font-size: rem($size);
+	} @elseif($use-em and not $use-rem and not $use-percent) {
+		font-size: em($size);
+	} @elseif($use-percent and not $use-rem and not $use-em) {
+		font-size: percent($size);
+	} @else {
+		@debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px.";
+		@if(not $fallback) { // we have no other choice...
+			font-size: $size;
+		}
+	}
+}
+
+// hide-text ( )
+@mixin hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}

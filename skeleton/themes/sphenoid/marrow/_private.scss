@@ -1,0 +1,78 @@
+// DISCLAIMER: this file is called private because these items are not supposed to accessed directly
+// outside of the public file. They are also not supposed to be edited directly either. Alter only if
+// you know what you're doing. Changes here can potentially render the sphenoid theme unusable.
+//
+// Am I allowed to use these in my own theme? You bet!
+// I have a fix... how do I help? Check the README!
+
+// ---------- MIXIN DEPENDENCIES
+@mixin _bd($vert, $horiz, $radius) {
+	-webkit-border-#{$vert}-#{$horiz}-radius: $radius;
+	-moz-border-radius-#{$vert}#{$horiz}: $radius;
+	border-#{$vert}-#{$horiz}-radius: $radius;
+}
+
+// needs multiple stop support
+// needs center adjustment support
+// _buildRadialGradient ( mixed $start, mixed $stop, boolean $ie )
+@mixin _buildRadialGradient($start, $stop, $ie) {
+	@if type-of($start) != "list" {
+		$start: append($start, 0%, space);
+	}
+
+	@if type-of($stop) != "list" {
+		$stop: append($stop, 100%, space);
+	}
+
+	background: nth($start, 1);
+	background: -moz-radial-gradient(center, ellipse cover, nth($start, 1) nth($start, 2), nth($stop, 1) nth($stop, 2));
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(nth($start, 2), nth($start, 1)), color-stop(nth($stop, 2), nth($stop, 1)));
+	background: -webkit-radial-gradient(center, ellipse cover, nth($start, 1) nth($start, 2), nth($stop, 1) nth($stop, 2));
+	background: -o-radial-gradient(center, ellipse cover, nth($start, 1) nth($start, 2), nth($stop, 1) nth($stop, 2));
+	background: -ms-radial-gradient(center, ellipse cover, nth($start, 1) nth($start, 2), nth($stop, 1) nth($stop, 2));
+	background: radial-gradient(ellipse at center, nth($start, 1) nth($start, 2), nth($stop, 1) nth($stop, 2));
+
+	@if($ie) {
+		@include filter-gradient($start, $stop, 1);
+	}
+}
+
+// needs multiple stop support
+// _buildGradient ( string $direction, list $start, list $stop, boolean $ie )
+@mixin _buildGradient($direction, $start, $stop, $ie) {
+	$direction: unquote($direction);
+	$webkitGradientDirection: "";
+	$linearGradientDirection: "";
+	$ieDirection: 0;
+
+	@if($direction == left or $direction == horizontal) {
+		$webkitGradientDirection: linear, left top, right top;
+		$linearGradientDirection: to right;
+		$ieDirection: 1;
+	} @else if($direction == top or $direction == vertical) {
+		$webkitGradientDirection: linear, left top, left bottom;
+		$linearGradientDirection: to bottom;
+	} @else if($direction == left top) {
+		$direction: -45deg;
+		$webkitGradientDirection: linear, left top, right bottom;
+		$linearGradientDirection: 135deg;
+		$ieDirection: 1;
+	} @else if($direction == left bottom) {
+		$direction: 45deg;
+		$webkitGradientDirection: linear, left bottom, right top;
+		$linearGradientDirection: $direction;
+		$ieDirection: 1;
+	}
+
+	background: nth($start, 1);
+	background: -moz-linear-gradient($direction, $start, $stop);
+	background: -webkit-gradient($webkitGradientDirection, color-stop(nth($start, 1), nth($start, 2)), color-stop(nth($stop, 1), nth($stop, 2)));
+	background: -webkit-linear-gradient($direction, $start, $stop);
+	background: -o-linear-gradient($direction, $start, $stop);
+	background: -ms-linear-gradient($direction, $start, $stop);
+	background: linear-gradient($linearGradientDirection, $start, $stop);
+
+	@if($ie) {
+		@include filter-gradient(nth($start, 1), nth($stop, 1), $ieDirection);
+	}
+}

@@ -1,6 +1,10 @@
 {
 	"name": "skeleton-sass",
+<<<<<<< HEAD
 	"version": "1.6.3",
+=======
+	"version": "2.0.0",
+>>>>>>> 2.x
 	"author": "Dennis Thompson",
 	"homepage": "http://atomicpages.github.io/skeleton-sass/",
 	"repository": {
@@ -13,8 +17,15 @@
 			"url": "http://opensource.org/licenses/MIT"
 		}
 	],
+<<<<<<< HEAD
 	"ignore": [
 		"demo",
 		"sass/dev"
+=======
+	"main": "",
+	"ignore": [
+		".gitignore",
+		"sache.json"
+>>>>>>> 2.x
 	]
 }

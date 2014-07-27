@@ -1,0 +1,99 @@
+@import "vars";
+
+/* BASE GRID
+ * ------------------------------------------------ */
+.container {
+	position: relative;
+	width: $base-width;
+	margin: 0 auto;
+	padding: 0;
+	.column,
+	.columns {
+		float: left;
+		display: inline;
+		position: relative;
+		&.alpha { margin-left: 0; }
+		&.omega { margin-right: 0; }
+	}
+}
+.row { margin-bottom: relative(20px); }
+
+// Set variables in user global config in skeleton sass root instead of editing directly
+@include grid($base-width, $is-fluid, $base-gutter-width, $base-col-count);
+
+/* TABLET (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) {
+	.container {
+		width: $tablet-width;
+		.column,
+		.columns {
+			&.alpha {
+				margin: {
+					left: 0;
+					right: if($is-fluid, 2%, 10px);
+				};
+			}
+			&.omega {
+				margin: {
+					right: 0;
+					left: if($is-fluid, 2%, 10px);
+				};
+			}
+		}
+	}
+	.alpha.omega {
+		margin: {
+			left: 0;
+			right: 0;
+		};
+	}
+
+	// If it is fluid, then we don't need to repeat ourselves. The grid will be identical
+	@if(not $is-fluid) {
+		// Set variables in user global config in skeleton sass root instead of editing directly
+		@include grid($tablet-width, false, $base-gutter-width, $base-col-count); // fixed
+	}
+}
+
+/*  MOBILE (PORTRAIT)
+ * ------------------------------------------------ */
+@media only screen and (max-width: $tablet-width - 1) {
+	@include mobileGrid($mobile-portrait-width, $is-fluid, $base-col-count);
+}
+
+/* MOBILE (LANDSCAPE)
+ * ------------------------------------------------ */
+@media only screen and (min-width: $mobile-landscape-width + 60) and (max-width: $tablet-width - 1) {
+	@include mobileGrid($mobile-landscape-width, $is-fluid, $base-col-count);
+}
+
+/* CLEARING
+ * ------------------------------------------------ */
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix, .row {
+	zoom: 1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+	&:after { clear: both; }
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}

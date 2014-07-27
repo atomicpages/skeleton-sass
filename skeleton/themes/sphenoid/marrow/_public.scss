@@ -1,0 +1,276 @@
+// Project-scoped mixins? Oh, boy! Am I allowed to use these in my own theme? You bet!
+// I have a fix... how do I help? Check the README!
+
+@import "private"; // don't remove me
+
+// ---- MIXINS ----
+
+// Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/addons/_prefixer.scss
+// @prefixer ( string $property, mixed $value, list $prefixes )
+@mixin prefixer($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			@if $prefix-for-webkit {
+				-webkit-#{$property}: $value;
+			}
+		}
+		@else if $prefix == moz {
+			@if $prefix-for-mozilla {
+				-moz-#{$property}: $value;
+			}
+		}
+		@else if $prefix == ms {
+			@if $prefix-for-microsoft {
+				-ms-#{$property}: $value;
+			}
+		}
+		@else if $prefix == o {
+			@if $prefix-for-opera {
+				-o-#{$property}: $value;
+			}
+		}
+		@else if $prefix == spec {
+			@if $prefix-for-spec {
+				#{$property}: $value;
+			}
+		}
+		@else  {
+			@warn "Unrecognized prefix: #{$prefix}";
+		}
+	}
+}
+
+// @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+// @box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ] )
+@mixin box-shadow($shadow...) {
+	@if length($shadow) > 4 {
+		@warn("$shadow should only accept four argument for each side of the box. Using more may cause undesired results");
+	}
+	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
+}
+
+// @border-radius ( $radii... )
+@mixin border-radius($radii...) {
+	@if length($radii) > 4 {
+		@warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
+	}
+	@include prefixer(border-radius, $radii, webkit moz ms o spec);
+}
+
+// @border-top-left-radius ( [ $radius: $default-border-radius ] )
+@mixin border-top-left-radius($radius: $default-border-radius) { @include _bd("top", "left", $radius); }
+
+// @border-top-right-radius ( [ $radius: $default-border-radius ] )
+@mixin border-top-right-radius($radius: $default-border-radius) { @include _bd("top", "right", $radius); }
+
+// @border-bottom-left-radius ( [ $radius: $default-border-radius ] )
+@mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd("bottom", "left", $radius); }
+
+// @border-bottom-right-radius ( [ $radius: $default-border-radius ] )
+@mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd("bottom", "right", $radius); }
+
+// @border-top-radius ( [ $radius: $default-border-radius ] )
+@mixin border-top-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-top-right-radius($radius);
+}
+
+// @border-right-radius ( [ $radius: $default-border-radius ] )
+@mixin border-right-radius($radius: $default-border-radius) {
+	@include border-top-right-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+
+// @border-bottom-radius ( [ $radius: $default-border-radius ] )
+@mixin border-bottom-radius($radius: $default-border-radius) {
+	@include border-bottom-left-radius($radius);
+	@include border-bottom-right-radius($radius);
+}
+
+// @border-left-radius ( [ $radius: $default-border-radius ] )
+@mixin border-left-radius($radius: $default-border-radius) {
+	@include border-top-left-radius($radius);
+	@include border-bottom-left-radius($radius);
+}
+
+// @opacity ( number $alpha [ boolean $ie: true ] )
+@mixin opacity($alhpa, $ie: true) {
+	@if(type-of($alpha) != number) {
+		@warn "$alpha must be a number. Setting to 0.5.";
+		$alpha: 0.5;
+	} @else {
+		@if($alpha < 0 or $alpha > 1) {
+			@warn "$alpha must be within 0 and 1. Setting to 0.5.";
+			$alpha: 0.5;
+		}
+	}
+	@if($ie == true) {
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100);
+	}
+	opacity: $alpha;
+}
+
+// @box-sixing ( string $type )
+@mixin box-sizing($type) {
+	$type: unquote($type);
+	@include prefixer(box-sizing, $type, webkit moz spec);
+}
+
+// @single-transition ( string $property, number $duration, string $function, [ number $delay: false ] )
+@mixin single-transition($property, $duration, $function, $delay: false) {
+	@if($delay == false) {
+		$delay: "";
+	}
+	$transition: $property $duration $function $delay;
+	@include prefixer(transition, $transition, webkit moz ms o spec);
+}
+
+// @transition ( list $transition... )
+@mixin transition($transition...) {
+	@include prefixer(transition, $transition, webkit moz ms o spec);
+}
+
+// @filter-gradient ( color $start, color $stop, [ number $direction: 0 ] )
+@mixin filter-gradient($start, $stop, $direction) {
+	@if $direction < 0 or $direction > 1 {
+		@warn "Invalid value for $direction. Defaulting to 0";
+		$direction: 0;
+	}
+
+	*zoom: 1;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
+}
+
+// needs multiple stop support
+// @linear-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
+@mixin linear-gradient($direction, $start, $stop, $ie: true) {
+	@if(type-of($start) != "list") {
+		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
+		$start: false;
+	} @else if(type-of($stop) != "list") {
+		@warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
+		$stop: false;
+	}
+	@include _buildGradient($direction, $start, $stop, $ie);
+}
+
+// @radial-gradient ( mixed $start, mixed $stop, [ boolean $ie: true ] )
+@mixin radial-gradient($start, $stop, $ie: true) {
+	@include _buildRadialGradient($start, $stop, $ie);
+}
+
+// @reset-box-model ( )
+@mixin reset-box-model {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+// @reset-font ( )
+@mixin reset-font {
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+// @reset-focus ( )
+@mixin reset-focus { outline: 0; }
+
+// @reset-body ( )
+@mixin reset-body { line-height: 1; }
+
+// @reset-list-style ( )
+@mixin reset-list-style { list-style: none; }
+
+// @reset-image-anchor-border ( )
+@mixin reset-image-anchor-border { border: none; }
+
+// @reset-table ( )
+@mixin reset-table {
+	border: {
+		collapse: collapse;
+		spacing: 0;
+	}
+}
+
+// @reset-table-cell ( )
+@mixin reset-table-cell {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+// @reset-quotation ( )
+@mixin reset-quotation {
+	quotes: none;
+	&:before, &:after {
+		content: "";
+		content: none;
+	}
+}
+
+// @reset-html5 ( )
+@mixin reset-html5 {
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section { display: block; }
+}
+
+@mixin reset-filter-gradient {
+	// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
+	filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+}
+
+// @global-reset ( )
+@mixin global-reset {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	@include reset-html5;
+	body { @include reset-body; }
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	table {
+		@include reset-table;
+	}
+}
+
+// @nested-reset ( )
+@mixin nested-reset {
+	div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		@include reset-box-model;
+		@include reset-font;
+	}
+	ol, ul { @include reset-list-style; }
+	blockquote, q { @include reset-quotation; }
+	caption, th, td { @include reset-table-cell; }
+	table { @include reset-table; }
+	a img { @include reset-image-anchor-border; }
+}
