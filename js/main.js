@@ -2,11 +2,16 @@ $(document).ready(function() {
 
 	if(navigator.platform == "Win32") {
 		$(".fa-circle-thin").css("left", "15px");
-		$(".fa-arrow-down").css("right", "60px");
+		if(navigator.msManipulationViewsEnabled || navigator.hasOwnProperty("mozId")) {
+			$(".fa-arrow-down").css("right", "60px");
+		}
 	}
 
 	if(navigator.platform == "MacIntel") {
 		$(".fa-circle-thin").css("left", "8px");
+		if(navigator.hasOwnProperty("mozId") || navigator.vendor === "Apple Computer, Inc.") {
+			$(".fa-arrow-down").css("right", "60px");
+		}
 	}
 
 	var move = function(target, speed) {
