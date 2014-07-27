@@ -1,25 +1,5 @@
 .sass-cache
-<<<<<<< HEAD
-compass/css
-sass/css
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-TODO.md
-
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
-=======
 *.config.scss
 skeleton.*
 skeleton_template.css
 *.html
->>>>>>> 2.x
