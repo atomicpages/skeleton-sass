@@ -1,0 +1,310 @@
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2014 AtomicPages LLC
+ * @license MIT
+ * @version 2.0.0-b9
+ */
+/* RESET
+ * ------------------------------------------------ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  line-height: 1.2;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: white;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #444444;
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  color: #181818;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: normal;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 {
+  font-size: 53.6662px;
+  font-size: 5.36662rem;
+  line-height: 5.83324rem;
+  margin-bottom: 1.63324rem;
+}
+h2 {
+  font-size: 40.8324px;
+  font-size: 4.08324rem;
+  line-height: 4.6662rem;
+  margin-bottom: 1.1662rem;
+}
+h3 {
+  font-size: 32.662px;
+  font-size: 3.2662rem;
+  line-height: 3.9662rem;
+  margin-bottom: 0.9324rem;
+}
+h4 {
+  font-size: 24.5px;
+  font-size: 2.45rem;
+  line-height: 3.5rem;
+  margin-bottom: 0.4662rem;
+}
+h5 {
+  font-size: 19.8324px;
+  font-size: 1.98324rem;
+  line-height: 2.8rem;
+}
+h6 {
+  font-size: 16.3324px;
+  font-size: 1.63324rem;
+  line-height: 2.45rem;
+}
+.subheader { color: #777; }
+p { margin: 0 0 2rem 0; }
+p img { margin: 0; }
+p.lead {
+  font-size: 24.5px;
+  font-size: 2.45rem;
+  line-height: 3.15rem;
+  color: #777;
+}
+em, i { font-style: italic; }
+strong, b { font-weight: bold; }
+u { text-decoration: underline; }
+small { font-size: 80%; }
+/*  Blockquotes  */
+blockquote, blockquote p {
+  font-size: 19.8324px;
+  font-size: 1.98324rem;
+  line-height: 2.8rem;
+  color: #777;
+  font-style: italic;
+}
+blockquote {
+  margin: 0 0 2rem;
+  padding: 0.9rem 2rem 0 1.9rem;
+  border-left: 1px solid #ddd;
+}
+blockquote cite {
+  display: block;
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: #555;
+}
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a, blockquote cite a:visited { color: #555; }
+hr {
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1rem 0 3rem;
+  height: 0;
+}
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+  color: #333333;
+  text-decoration: underline;
+  outline: 0;
+}
+a:hover, a:focus, a:active { color: black; }
+p a, p a:visited { line-height: inherit; }
+/* LISTS
+ * ------------------------------------------------ */
+ul, ol { margin-bottom: 2rem; }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square, ul.circle, ul.disc { margin-left: 3rem; }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol, ol ol, ol ul {
+  margin-top: 0.4rem;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  font-size: 90%;
+}
+ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 0.6rem; }
+li {
+  line-height: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+ul.large li { line-height: 2.1rem; }
+li p { line-height: 2.1rem; }
+/* IMAGES
+ * ------------------------------------------------ */
+img.scale-with-grid {
+  max-width: 100%;
+  height: auto;
+}
+/* BUTTONS
+ * ------------------------------------------------ */
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  border: 1px solid #aaa;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  font-weight: bold;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: normal;
+  padding: 0.8rem 1rem;
+  background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+  background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+}
+.button:hover,  button:hover,  input[type="submit"]:hover,  input[type="reset"]:hover,  input[type="button"]:hover {
+  color: #222;
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+  background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+.button:active,  button:active,  input[type="submit"]:active,  input[type="reset"]:active,  input[type="button"]:active, .button.active {
+  border: 1px solid #666;
+  background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
+  background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+  background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+  background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+  background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+}
+.button.full-width,  button.full-width,  input[type="submit"].full-width,  input[type="reset"].full-width,  input[type="button"].full-width {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}
+.button.smaller,  button.smaller,  input[type="submit"].smaller,  input[type="reset"].smaller,  input[type="button"].smaller {
+  font-size: 12px;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.5rem;
+}
+.button.larger,  button.larger,  input[type="submit"].larger,  input[type="reset"].larger,  input[type="button"].larger {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 1rem 1.8rem;
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner, input::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+/* FORMS
+ * ------------------------------------------------ */
+form { margin-bottom: 2rem; }
+fieldset { margin-bottom: 2rem; }
+input[type="text"], input[type="password"], input[type="email"], input[type="search"], input[type="url"], input[type="tel"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"], input[type="number"], textarea, select {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.6rem 0.4rem;
+  outline: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #777;
+  margin: 0 0 2rem;
+  width: 21rem;
+  max-width: 100%;
+  display: block;
+}
+input[type="text"]:hover, input[type="text"]:focus,  input[type="password"]:hover,  input[type="password"]:focus,  input[type="email"]:hover,  input[type="email"]:focus,  input[type="search"]:hover,  input[type="search"]:focus,  input[type="url"]:hover,  input[type="url"]:focus,  input[type="tel"]:hover,  input[type="tel"]:focus,  input[type="date"]:hover,  input[type="date"]:focus,  input[type="datetime"]:hover,  input[type="datetime"]:focus,  input[type="datetime-local"]:hover,  input[type="datetime-local"]:focus,  input[type="month"]:hover,  input[type="month"]:focus,  input[type="week"]:hover,  input[type="week"]:focus,  input[type="time"]:hover,  input[type="time"]:focus,  input[type="number"]:hover,  input[type="number"]:focus,  textarea:hover,  textarea:focus,  select:hover,  select:focus {
+  border: 1px solid #aaa;
+  color: #444;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+input[type="text"]:active,  input[type="password"]:active,  input[type="email"]:active,  input[type="search"]:active,  input[type="url"]:active,  input[type="tel"]:active,  input[type="date"]:active,  input[type="datetime"]:active,  input[type="datetime-local"]:active,  input[type="month"]:active,  input[type="week"]:active,  input[type="time"]:active,  input[type="number"]:active,  textarea:active,  select:active {
+  border: 1px solid #909090;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+select { padding: 0; }
+textarea { min-height: 6rem; }
+label, legend {
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+select { width: 22rem; }
+input[type="checkbox"] { display: inline; }
+label span, legend span {
+  font-weight: normal;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #444;
+}
+/* MISC
+ * ------------------------------------------------ */
+.subtract-bottom { margin-bottom: -2rem !important; }
+.remove-bottom { margin-bottom: 0 !important; }
+.half-bottom { margin-bottom: 1rem !important; }
+.add-bottom { margin-bottom: 2rem !important; }
