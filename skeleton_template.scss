@@ -3,7 +3,7 @@
  * @author Dennis Thompson <http://www.atomicpages.net>
  * @copyright Copyright (c) 2014 AtomicPages LLC
  * @license MIT
- * @version 2.0.0-b12
+ * @version 2.0.0
  */
 
 @import "skeleton/themes/loader"; // sass --update -C skeleton.scss:skeleton.css
@@ -25,7 +25,7 @@
 @media only screen and (max-width: $tablet-width - 1) { /* add code here */ }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) { /* add code here */ }
+@media only screen and (min-width: $mobile-landscape-width + 60) and (max-width: $tablet-width - 1) { /* add code here */ }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) { /* add code here */ }
+@media only screen and (max-width: ($mobile-landscape-width + 60) - 1) { /* add code here */ }
