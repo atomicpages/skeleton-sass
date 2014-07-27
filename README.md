@@ -45,22 +45,44 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 	* `_mixins.scss`
 	* `_functions.scss`
 	* `_vars.scss`
+<<<<<<< HEAD
 	* `_config.scss`
+=======
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 	* `base.scss`
 	* `layout.scss`
 	*  `skeleton.scss`
 * `compass` (Compass Version)
+<<<<<<< HEAD
+=======
+	* `sass`
+		* `_dependencies.sass`
+		* `_mixins.sass`
+		* `_functions.sass`
+		* `_vars.sass`
+		* `base.sass`
+		* `layout.sass`
+		*  `skeleton.sass`
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 	* `scss`
 		* `_dependencies.scss`
 		* `_mixins.scss`
 		* `_functions.scss`
 		* `_vars.scss`
+<<<<<<< HEAD
 		* * `_config.scss`
+=======
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 		* `base.scss`
 		* `layout.scss`
 		*  `skeleton.scss`
 * `sass` (Non-Compass Version)
+<<<<<<< HEAD
 	* `scss` has the same files as `compass`
+=======
+	* `sass` is the same as above
+	* `scss` is the same as above
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 
 ### File Overview
 * `skeleton` contains the core of the framework. This file contains the  responsive goodness among other structural styles and is **required** for the framework to be used.
@@ -70,7 +92,10 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 * `_dependencies` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that contains core functions and "private" mixins that aren't meant to be used directly. Avoid editing this file directly unless you know what you're doing! The framework **will not work** if you delete this file.
 * `_vars` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) which is **required** because it contains all of the global variables for the framework. See file for additional information.
 * `_functions` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) where you may add custom functions. This file is **not required** by any means and may be discarded if you wish.
+<<<<<<< HEAD
 * `_config.scss` is a [partial file](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials) that houses all **local** configuration information that you do not wish to be overridden by bower. Git users be warned as if you are doing a fresh pull, git will still *override* this file!
+=======
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 
 ### Bower
 > Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; bower.io
@@ -78,6 +103,7 @@ Both of these versions are organized the same exact way to ensure maximum usabil
 For more info on bower, checkout [bower.io](http://bower.io/).
 
 Skeleton Sass is now available on Bower because we want to make your life easier. You can now add Skeleton Sass to any project easily by issuing `bower install skeleton-sass`.
+<<<<<<< HEAD
 
 ### Demo
 Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
@@ -123,6 +149,41 @@ Changelog
 * Fixed missing `one-third` and `two-thirds` selectors in fluid grid
 * Updated `12`, `20`, and `fluid` CSS files in `css` directory
 
+=======
+
+### Demo
+Live demo can be seen here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
+
+Want to see spin on the default 16-column fixed-grid system? See the [demo here](http://atomicpages.github.io/skeleton-sass/demo.html)!
+
+### Documentation
+Skeleton SASS is heavily documented! If you're looking for a detailed description (or just want more info) you can checkout the [wiki pages](https://github.com/atomicpages/skeleton-sass/wiki/_pages)!
+
+##### Resources
+* [Installing SASS](https://github.com/atomicpages/skeleton-sass/wiki/Installing-SASS)
+* [Installing Compass](https://github.com/atomicpages/skeleton-sass/wiki/Installing-Compass)
+* [Setting up a Fluid Grid](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-a-Fluid-Grid)
+
+
+##### Documentation
+* [Introduction to Skeleton SASS](https://github.com/atomicpages/skeleton-sass/wiki)
+* [Function Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Function-Documentation)
+* [Variable Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Variable-Documentation)
+* [Mixin Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Mixin-Documentation)
+
+### License
+This project is released under the [MIT license](https://github.com/atomicpages/skeleton-sass/blob/master/license.txt). Who doesn't like free code?
+
+### Find a Bug?
+Skeleton SASS is community driven. We will gladly review any issues that you find. If you wish to contribute you'll land a spot in the contributions section of this document!
+
+##### I Found a Bug/How Can I Help?
+* [Create a new issue on the github page!](https://github.com/atomicpages/skeleton-sass/issues)
+* [Fork me if you want to help!](https://github.com/atomicpages/skeleton-sass)
+
+Changelog
+---------
+>>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
 ### 1.6.0
 * Added support for [Bourbon](http://bourbon.io/)
 * Revised `_fluidGrid` mixin to utilize Sass functions
