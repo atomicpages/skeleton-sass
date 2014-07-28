@@ -47,7 +47,7 @@ echo "Launch Setup Utility now? [y/n]"
 read ans
 
 if [[ ($ans != "n") && ($ans != "N") && ($ans != "no") && ($ans != "No") && ($ans != "NO") ]]; then
-	bin/setup.sh
+	bin/setup.rb
 	echo "Upgrade and Setup is complete!"
 	exit 0
 fi

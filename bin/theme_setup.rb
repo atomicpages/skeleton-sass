@@ -34,6 +34,7 @@ end
 
 Helper.cp("skeleton/themes/demo/_base.scss", "skeleton/themes/#{name}/_base.scss")
 Helper.cp("skeleton/themes/demo/_vars.scss", "skeleton/themes/#{name}/_vars.scss")
+Helper.cp("skeleton/themes/demo/marrow/_mixins.scss", "skeleton/themes/#{name}/marrow/_mixins.scss")
 
 END {
 	puts "Theme setup complete!"

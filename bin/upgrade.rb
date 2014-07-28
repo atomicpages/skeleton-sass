@@ -13,6 +13,8 @@ include Helper
 
 STDOUT.flush
 
+puts "Warning: this script is incomplete at the moment. If you are using a BASH shell, please run bin/upgrade instead\n\n"
+
 puts "Disclaimer: this utility it meant to aid in upgrading from Skeleton Sass 1.x to Skeleton Sass 2.x. If you have followed the wiki articles then please do not use this script without a clean installation of Skeleton Sass 2.x. We, AtomicPages LLC, are not responsible for any unforeseen events that arise by using this script. Please follow the prompts."
 
 resp = Helper.yesno("Did you add the contents from _vars.scss in Skeleton Sass 1.x to _MYconfig.scss in Skeleton Sass 2.x? [y/n]\nNote: If you ran the setup utility, your global configuration name might differ")
@@ -57,6 +59,12 @@ variables = {
 	"mobileLandscapeWidth" => "mobile-landscape-width"
 }
 
-variables.each do |key, value|
-	%x(ruby -p -e "gsub /#{key}/, '#{value}' #{Dir.pwd}#{filename}")
+# variables.each do |key, value|
+# 	key = key.gsub(/(?<=[a-z])(?=[A-Z])/, '-').downcase
+# end
+
+File.open(Dir.pwd + "/" + filename, "r+") do |file|
+	file.each_line do |line|
+		puts line
+	end
 end
