@@ -1,0 +1,24 @@
+// See skeleton file for copyright info
+
+@import "dependencies"; // don't remove me
+@import "functions";	// your custom functions
+
+// ---------- ADD CUSTOM MIXINS BELOW HERE
+// @mixin myMixin() { }
+
+// grid ( [ number $width: 960px, [ bool $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
+@mixin grid($width: $baseWidth, $fluid: $isFluid, $gutterWidth: $baseGutterWidth, $colCount: $baseColCount) {
+	@if ( $fluid == true ) {
+		@include _fluidGrid($colCount);
+	} @else {
+		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
+		// @see https://github.com/atomicpages/skeleton-sass/issues/7
+		$colWidth: ($width / $colCount) - $gutterWidth;
+		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
+	}
+}
+
+// mobileGrid ( [ number $width: 960px, [ number $colCount: 16 ]  ] )
+@mixin mobileGrid($width: $baseWidth, $colCount: $baseColCount) {
+	@include _mobileGrid($width, $colCount);
+}

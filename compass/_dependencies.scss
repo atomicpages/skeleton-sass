@@ -1,0 +1,175 @@
+// See skeleton file for copyright info
+
+// This file is not meant to be tampered with. This file contains the background operations
+// that are interesting but you don't really need to see. Feel free to poke around and edit
+// various functions and mixins if you wish! Note that altering this file may cause
+// undesired results!
+
+// ---------- MIXIN DEPENDENCIES
+// _fluidGrid ( number $colCount )
+@mixin _fluidGrid($colCount) {
+	// override only for fluid
+	/* Overrides */
+	.container {
+		.column,
+		.columns {
+			margin: {
+				left: 1%;
+				right: 1%;
+			}
+		}
+	}
+	// Grid
+	.container {
+		@for $i from 1 through $colCount {
+			@if ( $i == 1 ) {
+				.#{numToString($i)}.column,
+				.#{numToString($i)}.columns { width: percentage( $i / $colCount ) - 2; }
+			} @else {
+				.#{numToString($i)}.columns { width: percentage( $i / $colCount ) - 2; }
+			}
+		}
+		$top: percentage( 16 / $colCount ) - 2;
+		.columns.one-third { width: $top * (1 / 3) - 2; }
+		.columns.two-thirds { width: $top * (2 / 3) - 2; }
+		// Offsets
+		@include _offset(true, $colCount, false);
+	}
+}
+
+// _fixedGrid ( number $width, number $colWidth, number $gutterWidth, number $colCount )
+@mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
+	.container {
+		.column,
+		.columns {
+			margin: {
+				left: $gutterWidth / 2;
+				right: $gutterWidth / 2;
+			};
+		}
+	}
+	/* The Grid */
+	.container {
+		@for $i from 1 through $colCount {
+			 @if ( $i == 1 ) {
+				.#{numToString($i)}.column,
+				.#{numToString($i)}.columns { width: $colWidth; }
+			} @else {
+				.#{numToString($i)}.columns { width: $colWidth + ( ( $colWidth + $gutterWidth ) * ( $i - 1 ) ); }
+			}
+		}
+		.one-third.column { width: ( $width / 3 ) - 20}
+		.two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
+		@include _offset(false, $colCount, $colWidth);
+	}
+}
+
+// _offset ( string $unit, number $colCount, number $colWidth )
+@mixin _offset($isFluid, $colCount, $colWidth) {
+	@if ( $isFluid == true ) {
+		@for $i from 1 through ( $colCount - 1 ) {
+			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
+		}
+	} @else {
+		@for $i from 1 through ( $colCount - 1 ) {
+			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
+		}
+	}
+}
+
+// _mobileGrid ( number $width, number $colCount )
+@mixin _mobileGrid($width, $colCount) {
+	.container {
+		width: $width;
+		.column,
+		.columns {
+			// fixes https://github.com/atomicpages/skeleton-sass/issues/9
+			margin: {
+				left: 0;
+				right: 0;
+			};
+		}
+		@for $i from 1 through $colCount {
+			@if ($i == 1) {
+				.#{numToString($i)}.column { width: $width; }
+			}
+		}
+		@include _group($colCount, ".columns", "after") { width: $width; }
+		.one-third.column { width: $width; }
+		.two-thirds.column { width: $width; }
+		@include _mobileOffset($colCount);
+	}
+}
+
+// _mobileOffset ( number $colCount )
+@mixin _mobileOffset($colCount) {
+	@include _group($colCount - 1, "offset-by-") { padding-left: 0; }
+}
+
+// _group ( number $stop, string $selector, [ string $pos: "before" ] )
+@mixin _group($stop, $selector, $pos: "before") {
+	$store: "";
+	@if(type-of($stop) != "number") {
+		@warn "Stop must be a number! #{type-of($stop)} was provided.";
+	}
+	@if($pos == "after") {
+		@for $i from 1 through $stop {
+			$store: $store + "." + numToString($i) + $selector + ",";
+		}
+	} @else {
+		@for $i from 1 through $stop {
+			$store: $store + "." + $selector + numToString($i) + ",";
+		}
+	}
+	#{$store} {
+		@content;
+	}
+}
+
+// ---------- FUNCTION DEPENDENCIES
+
+// addresses https://github.com/nex3/sass/issues/533
+// number strip-units ( number $number )
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+// Converts a number from 0 to 100 to the English word
+// string numToString ( number $int )
+@function numToString($int) {
+	// set up lists
+	$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
+	$teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
+	$tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety";
+
+	$int: abs($int); // no nonnegative numbers
+	$number: "";
+	$temp: $int / 10;
+	$temp: floor($temp);
+	@if($int >= 1 and $int <= 100) {
+		@if($temp < 1) { // it's a one!
+			$number: nth($ones, $int % 10);
+		}
+		@if($temp == 1) { // in the teen range
+			@if($int % 10 == 0) {
+				$number: "ten";
+			} @else {
+				$number: nth($teens, $int % 10);
+			}
+		}
+		@if($temp >= 2 and $temp <= 9) { // more than our teens
+			@if($int % 10 == 0) {
+				// means it's a number evenly divisible by 10
+				$number: nth($tens, $int / 10);
+			} @else {
+				$number: "#{nth($tens, floor($int / 10))}-#{nth($ones, $int % 10)}";
+			}
+		}
+		@if($temp == 10) { // this is the end...
+			$number: "one-hundred";
+		}
+	} @else {
+		$number: "Invalid parameter passed. Number must be between 1 and 100."
+	}
+	@return $number;
+}
