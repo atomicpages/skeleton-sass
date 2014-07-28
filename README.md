@@ -11,6 +11,9 @@ Skeleton Sass is a "Sassification" of Dave Gamache's [Skeleton CSS](http://getsk
 ### Upgrading From 1.x
 Skeleton Sass 2.x is **not** backwards compatible with Skeleton Sass 1.x due to a major change in the file structure. However, we have a [wiki article](https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-1-to-2) that explains how to upgrade from Skeleton Sass 1 to Skeleton Sass 2.
 
+### Looking for Skeleton Sass 1?
+We still have the latest stable release available to download if you wish! Head over to the [1.x-master branch](https://github.com/atomicpages/skeleton-sass/tree/1.x-master) and continue using Skeleton Sass 1. Version 1 docs can be found [here](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs).
+
 ## TL;DR
 Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 2 has been trimmed down and a **ton** of new features have been added.
 
