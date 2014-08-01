@@ -3,35 +3,5 @@
 .bundle
 .config
 .sass-cache
-<<<<<<< HEAD
-node_modules
-bower_compnents/jquery
-bower_compnents/jquery.stellar
-bower_compnents/respond
-bower_compnents/smooth-scroll.js
-=======
-compass/css
-sass/css
-sass/scss/dev
->>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-TODO.md
-<<<<<<< HEAD
-images/logo.png
-images/ss_logo.png
-images/icons
-=======
->>>>>>> 3fe6cdfbef9168c9f858615b2db98e9fa935f662
-
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
+node_modules/
+bower_compnents/
