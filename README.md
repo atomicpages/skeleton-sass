@@ -29,7 +29,7 @@ If you are not new to Sass and you've tried other Skeleton CSS Sass ports and ha
 5. Upgradeable
 
 ### Dependencies
-The only dependency Skeleton Sass is Sass 3.3+. Any other libraries (e.g. Bourbon) are up to you to include if you wish.
+The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (e.g. Bourbon) are up to you to include if you wish.
 
 **Warning:** The current stable release of Compass does *not* support Sass 3.3.x. Skeleton Sass uses functions that are a part of that version. There are currently alpha builds of Compass 1.x that do support Sass 3.3.x
 
@@ -37,7 +37,8 @@ The only dependency Skeleton Sass is Sass 3.3+. Any other libraries (e.g. Bourbo
 * `bin` a directory that contains ruby executables
 	* `setup.rb` a ruby script that aids in setting up Skeleton Sass for first time use
 	* `theme_setup.rb` a ruby script that aids in setting up a custom theme for Skeleton Sass
-	* `upgrade` a bash script that aids in upgrading Skeleton Sass
+	* `upgrade` a bash script that aids in upgrading Skeleton Sass (ruby version in the making)
+	* `update.rb` a ruby script that handles updating Skeleton Sass (in progress)
 * `skeleton` where all of the magic happens
 	* `core`
 		* `_config.scss` the default global configuration variables
@@ -135,7 +136,7 @@ Changelog
 	* `em` converts an absolute `px` unit to an `em` unit
 	* `rem` converts an absolute `px` unit to a `rem` unit
 	* `percent` converts an absolute `px` unit to a `%` unit
-	* `relative` converts an absolute `px` unit to the chosen relative unit as defined in `_config.scss` or your hown project configuration.
+	* `relative` converts an absolute `px` unit to the chosen relative unit as defined in `_config.scss` or your own project configuration.
 		* **Note:** if more than one relative unit is select then this function will simply spit out the `px` unit. // documentation is needed
 	* `@font-size` is a *mixin* that handles everything involving `font-size`. // TODO complete this
 * Added a grid generator helper in [atomicpages.github.io/skeleton-sass/](http://atomicpages.github.io/skeleton-sass/)

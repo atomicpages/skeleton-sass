@@ -16,6 +16,7 @@
 	"main": "",
 	"ignore": [
 		".gitignore",
+		".gitattributes",
 		"sache.json"
 	]
 }
