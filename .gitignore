@@ -4,8 +4,8 @@
 .config
 .sass-cache
 node_modules/
-bower_components/fontawesome
-bower_components/jquery
-bower_components/jquery.stellar
-bower_components/respond
-bower_components/smooth-scroll.js
+bower_components/fontawesome/
+bower_components/jquery/
+bower_components/jquery.stellar/
+bower_components/respond/
+bower_components/smooth-scroll.js/
