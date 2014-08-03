@@ -1,27 +1,30 @@
-# Smooth Scroll
+# Smooth Scroll [![Build Status](https://travis-ci.org/cferdinandi/smooth-scroll.svg)](https://travis-ci.org/cferdinandi/smooth-scroll)
 A lightweight script to animate scrolling to anchor links.
 
-[Download Smooth Scroll 4](https://github.com/cferdinandi/smooth-scroll/archive/master.zip) / [View the demo](http://cferdinandi.github.io/smooth-scroll/)
+[Download Smooth Scroll](https://github.com/cferdinandi/smooth-scroll/archive/master.zip) / [View the demo](http://cferdinandi.github.io/smooth-scroll/)
 
 **In This Documentation**
 
 1. [Getting Started](#getting-started)
-2. [Options & Settings](#options-and-settings)
-3. [Browser Compatibility](#browser-compatibility)
-4. [Contributors](#contributors)
-5. [How to Contribute](#how-to-contribute)
-6. [License](#license)
-7. [Changelog](#changelog)
-8. [Older Docs](#older-docs)
+2. [Installing with Package Managers](#installing-with-package-managers)
+3. [Options & Settings](#options-and-settings)
+4. [Browser Compatibility](#browser-compatibility)
+5. [Contributors](#contributors)
+6. [How to Contribute](#how-to-contribute)
+7. [License](#license)
+8. [Changelog](#changelog)
+9. [Older Docs](#older-docs)
 
 
 
 ## Getting Started
 
+Compiled and production-ready code can be found in the `dist` directory. The `src` directory contains development code. Unit tests are located in the `test` directory.
+
 ### 1. Include Smooth Scroll on your site.
 
 ```html
-<script src="js/smooth-scroll.js"></script>
+<script src="dist/js/smooth-scroll.js"></script>
 ```
 
 ### 2. Add the markup to your HTML.
@@ -46,6 +49,16 @@ In the footer of your page, after the content, initialize Smooth Scroll. And tha
 
 
 
+## Installing with Package Managers
+
+You can install Smooth Scroll with your favorite package manager.
+
+* **[NPM](https://www.npmjs.org/):** `npm install cferdinandi/smooth-scroll`
+* **[Bower](http://bower.io/):** `bower install https://github.com/cferdinandi/smooth-scroll.git`
+* **[Component](http://component.io/):** `component install cferdinandi/smooth-scroll`
+
+
+
 ## Options and Settings
 
 Smooth Scroll includes smart defaults and works right out of the box. But if you want to customize things, it also has a robust API that provides multiple ways for you to adjust the default options and settings.
@@ -58,7 +71,7 @@ You can pass options and callbacks into Smooth Scroll through the `init()` funct
 smoothScroll.init({
 	speed: 500, // Integer. How fast to complete the scroll in milliseconds
 	easing: 'easeInOutCubic', // Easing pattern to use
-	updateURL: false, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+	updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
 	offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
 	callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
 	callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
@@ -108,14 +121,18 @@ Smooth Scroll also lets you override global settings on a link-by-link basis usi
 
 ```html
 <a data-scroll
-   data-options="speed: 500;
-                 easing: easeInOutCubic;
-                 offset: 0;
-                 updateURL: false"
+   data-options='{
+                	"speed": 500,
+                	"easing": "easeInOutCubic",
+                	"offset": 0,
+                	"updateURL": false
+                }'
 >
 	Anchor Link
 </a>
 ```
+
+**Note:** You must use [valid JSON](http://jsonlint.com/) in order for the `data-options` feature to work.
 
 ### Use Smooth Scroll events in your own scripts
 
@@ -173,6 +190,8 @@ Smooth Scroll is built with modern JavaScript APIs, and uses progressive enhance
 * IE10 rounding error fixed by [Luke Siedle](https://github.com/luke-siedle).
 * Enhanced callback functions by [Constant Meiring](https://github.com/constantm).
 * Scroll-to-top bug for links at the bottom of the page by [Jonas Havers](https://github.com/JonasHavers).
+* AMD support and numerous code improvements by [Todd Motto](https://github.com/toddmotto).
+* Push State bug fix by [Yanick Witschi](https://github.com/Toflar).
 
 
 
@@ -188,6 +207,33 @@ Smooth Scroll is licensed under the [MIT License](http://gomakethings.com/mit/).
 
 
 ## Changelog
+
+* v5.0.0 - July 21, 2014
+	* Updated `data-options` functionality to JSON.
+	* Fixed update URL bug.
+	* Set update URL to `true` by default.
+* v4.8.2 - June 28, 2014
+	* Fixed `extend()` method.
+* v4.8.1 - June 27, 2014
+	* Fixed problem with `toggles` containing a URL before the fragment identifier
+* v4.8.0 - June 21, 2014
+	* Converted to gulp.js workflow.
+	* Added unit testing.
+	* Added minified versions of files.
+* v4.7.2 - June 19, 2014
+	* Fixed typo that broke scroll.
+* v4.7.1 - June 19, 2014
+	* Fixed factory/root/UMD definition.
+* v4.7.0 - June 7, 2014
+	* Added AMD support.
+	* Moved public APIs to `exports` variable.
+	* Improved feature test.
+	* Replaced `Array.prototype.forEach` hack with proper `forEach` function.
+	* Added a more well supported `trim` function.
+	* General code optimizations for better minification and performance.
+	* Updated to JSDoc documentation (sort of).
+	* Updated to three number versioning system.
+	* Added package manager installation info.
 * v4.6 - March 21, 2014
 	* [Fixed scroll-to-top bug for links at the bottom of the page](https://github.com/cferdinandi/smooth-scroll/issues/49).
 * v4.5 - March 20, 2014

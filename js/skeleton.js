@@ -11228,11 +11228,11 @@ window.smoothScroll = (function (window, document, undefined) {
 	}
 	$(window).resize(function() {
 		$("section.home").height( $(window).height() );
-		if( $(this).width() < 768 ) {
+		// if( $(this).width() < 768 ) {
 			$("section.home").height("auto").addClass("row");
-		} else {
-			$("section.home").height( $(window).height() ).removeClass("row");
-		}
+		// } else {
+		// 	$("section.home").height( $(window).height() ).removeClass("row");
+		// }
 	});
 
 	$.stellar({
