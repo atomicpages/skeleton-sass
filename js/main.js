@@ -50,6 +50,10 @@ $(document).ready(function() {
 
 });
 
+$(".nav a").click(function(e) {
+	e.preventDefault();
+});
+
  smoothScroll.init({
  	speed: 1000,
  	easing: 'easeInOutQuad',

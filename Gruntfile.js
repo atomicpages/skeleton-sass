@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				src: [
 					"bower_components/respond/dest/respond.js",
 					"bower_components/jquery/dist/jquery.js",
-					"bower_components/smooth-scroll.js/smooth-scroll.js",
+					"bower_components/smooth-scroll.js/src/js/smooth-scroll.js",
 					"bower_components/jquery.stellar/jquery.stellar.js",
 					"js/main.js"
 				],

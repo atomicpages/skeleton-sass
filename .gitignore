@@ -4,8 +4,19 @@
 .config
 .sass-cache
 node_modules/
-bower_components/fontawesome/
+bower_components/fontawesome/css/
+bower_components/fontawesome/less/
+bower_components/fontawesome/scss/
+bower_components/fontawesome/.bower.json
+bower_components/fontawesome/.gitignore
+bower_components/fontawesome/.npmignore
 bower_components/jquery/
 bower_components/jquery.stellar/
 bower_components/respond/
 bower_components/smooth-scroll.js/
+
+## OS X
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
