@@ -94,7 +94,7 @@
 }
 
 // @opacity ( number $alpha [ boolean $ie: true ] )
-@mixin opacity($alhpa, $ie: true) {
+@mixin opacity($alpha, $ie: true) {
 	@if(type-of($alpha) != number) {
 		@warn "$alpha must be a number. Setting to 0.5.";
 		$alpha: 0.5;
