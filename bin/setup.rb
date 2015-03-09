@@ -27,7 +27,7 @@ end
 
 puts "Adding user override to core/_config.scss"
 file = File.open("skeleton/core/_config.scss", "a")
-file.puts "@import \"../../_#{name}.config.scss\""
+file.puts "@import \"../../_#{name}.config.scss\";"
 file.close
 
 END {
