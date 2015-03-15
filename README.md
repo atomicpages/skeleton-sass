@@ -11,15 +11,16 @@ Skeleton Sass is a "Sassification" of Dave Gamache's [Skeleton CSS](http://getsk
 ### Coming up in 2.5
 * Addition of a new default theme called **fresh**
 	* Removal of old reset CSS in favor of [normalize.css](http://necolas.github.io/normalize.css/)
+		* Although, you can always use `reset.css` if you wish since it will still be part of the theme mixins!
 	* Adjustment of media queries
+		* **Note:** these media queries probably won't be perfect for _every_ project. Let the content dictate the media queries!
 	* Fluid grid is now the default with a fixed width set on the `body` element (you can change this behavior, of course)
-		* **Note:** the fixed grid will still be there! Difference is that the fluid grid will be the new default with the new theme only. You can still use the `sphenoid` for the pre 2.5 setup.
-	* New theme has a blue, dark gray, and white colorscheme instead of gray on gray theme that `sphenoid` brought.
+		* **Note:** the fixed grid will still be there! Difference is that the fluid grid will be the new default with the new theme only. You can still use the old `sphenoid` theme for the pre 2.5 setup (e.g. fixed grid, old skeleton.css theme, `reset.css`, etc.).
 	* New default font: [Raleway](http://www.google.com/fonts/specimen/Raleway)
 * Improvements with scripts and better compatibility with Ruby 2.x and better backward compatibility with Ruby 1.8+
 
 ### Life after 2.5
-* At some point after 2.5 I would like to create a Ruby Gem of Skeleton Sass with Rails support. This will likely be the next major release (i.e. 3.0).
+* At some point after 2.5 I would like to create a Ruby Gem of Skeleton Sass with Rails/Sinatra support. This will likely be the next major release (i.e. 3.0).
 
 ### Upgrading From 1.x
 Skeleton Sass 2.x is **not** backwards compatible with Skeleton Sass 1.x due to a major change in the file structure. However, we have a [wiki article](https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-1-to-2) that explains how to upgrade from Skeleton Sass 1 to Skeleton Sass 2.
