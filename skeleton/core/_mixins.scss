@@ -5,12 +5,12 @@
 // grid ( [ number $width: 960px, [ boolean $fluid: false, [  number $gutterWidth: 20px, [ number $colCount: 16 ] ] ] ] )
 @mixin grid($width: $base-width, $fluid: $is-fluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
 	@if($fluid) {
-		@include _fluidGrid($colCount);
+		@include _fluidGrid($colCount, $new: $use-new-grid);
 	} @else {
 		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
 		// @see https://github.com/atomicpages/skeleton-sass/issues/7
-		$colWidth: ($width / $colCount) - $gutterWidth;
-		@include _fixedGrid($width, $colWidth, $gutterWidth, $colCount);
+		// _fixedGrid ( $width, $colWidth, $gutterWidth, $colCount )
+		@include _fixedGrid($width, (($width / $colCount) - $gutterWidth), $gutterWidth, $colCount);
 	}
 }
 

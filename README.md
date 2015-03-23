@@ -121,6 +121,18 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 2.5.0
+
+###### Removals
+* `$colWidth` variable in the `@grid` mixin
+
+###### Fixes/Changes
+* Plural `column` and `columns` for `one-third`, `two-third`, and `full-width`
+
+###### New Features/Themes
+* `one-half` selector to grid
+* `$new` parameter to `@_fluidGrid` and `@_fixedGrid`. This makes some basic changes to the grid for the new Skeleton CSS format
+
 ### 2.0.0
 
 ###### Removals

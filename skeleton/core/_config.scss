@@ -43,9 +43,11 @@ $mobile-fluid-width: 100%; // this value is not used with breakpoints, it is use
 
 // ------ CHANGE MAY CAUSE UNDESIRED RESULTS
 $base-font-size: 10px !global; // the font size in the html element so we can use ems and rems in a friendly way
+$use-new-grid: false !global; // Uses the new grid released in Skeleton CSS 2
 
 // ------ IMPORTS. DO NOT CHANGE
 @import "dependencies";
 @import "functions";
 @import "mixins";
 // @import "../../_MYconfig.scss";
+@import "../../_demo.config.scss"

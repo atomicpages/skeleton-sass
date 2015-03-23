@@ -36,7 +36,7 @@ module Helper
 	end
 
 	def cp(file, destination)
-		if !File.exists?(file) # fail quickly if not found
+		if !File.exist?(file) # fail quickly if not found
 			raise SystemCallError, "#{file} was not found or does not exist"
 		end
 
