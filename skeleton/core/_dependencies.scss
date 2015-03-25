@@ -3,8 +3,8 @@
 
 // ---------- MIXIN DEPENDENCIES
 
-// _fluidGrid ( number $colCount, [ boolean $new = false ] )
-@mixin _fluidGrid($colCount, $new: false) {
+// _fluidGrid ( number $colCount, [ boolean $new = true ] )
+@mixin _fluidGrid($colCount, $new: $use-new-grid) {
 	// override only for fluid
 	/* Overrides */
 	$gutter: percent($base-gutter-width) / 100;
@@ -46,11 +46,11 @@
 				}
 			}
 		}
-		$top: percentage(12 / $colCount) - 2;
+		// $top: percentage($colCount / $colCount) - 2; // not sure if this is needed -- test with < 2.5
 		.one-third.column,
-		.one-third.columns { width: $top * (1 / 3) - 2; }
+		.one-third.columns { width: 98% * (1 / 3) - 2; }
 		.two-thirds.column,
-		.two-thirds.columns { width: $top * (2 / 3) - 2; }
+		.two-thirds.columns { width: 98% * (2 / 3) - 2; }
 		.one-half.column,
 		.one-half.columns { width: 48%; } // Leaving this static for now
 		.full-width.column,
@@ -96,11 +96,13 @@
 	}
 }
 
-// _offset ( boolean $is-fluid, number $colCount, number $colWidth )
-@mixin _offset($is-fluid, $colCount, $colWidth) {
+// _offset ( boolean $is-fluid, number $colCount, number $colWidth, [ $new = true ] )
+@mixin _offset($is-fluid, $colCount, $colWidth, $new: $use-new-grid) { // TODO: finish this
 	@if ($is-fluid) {
+		$multiplier: 1;
+		@if($new == true) { $multiplier: (1/3); }
 		@for $i from 1 through ($colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: percentage($i / $colCount); }
+			.offset-by-#{numToString($i)} { padding-left: percentage($i / $colCount) + $multiplier; }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
