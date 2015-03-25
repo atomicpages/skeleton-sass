@@ -46,13 +46,13 @@
 				}
 			}
 		}
-		$top: percentage(16 / $colCount) - 2;
+		$top: percentage(12 / $colCount) - 2;
 		.one-third.column,
 		.one-third.columns { width: $top * (1 / 3) - 2; }
 		.two-thirds.column,
 		.two-thirds.columns { width: $top * (2 / 3) - 2; }
 		.one-half.column,
-		.one-half.columns { width: 48%; } // FIXME: make this dynamic
+		.one-half.columns { width: 48%; } // Leaving this static for now
 		.full-width.column,
 		.full-width.columns {
 			width: 100%;
