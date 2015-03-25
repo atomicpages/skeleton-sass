@@ -31,18 +31,18 @@
 	.container {
 		@for $i from 1 through $colCount {
 			$subtractor: 2;
+			@if($new == true) { $subtractor: ($colCount - $i) / 3; }
 			@if($i == 1) {
-				@if($new == true) { $subtractor: ($colCount - $i) / 3; }
 				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: percentage( $i / $colCount ) - $subtractor; }
+				.#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
 			} @else {
-				@if($i == $colCount and $new == true) { // 2.5 addition
+				@if($i == $colCount and $new == true) {
 					.#{numToString($i)}.columns {
-						width: percentage( $i / $colCount ) - 2;
+						width: percentage($i / $colCount);
 						margin-left: 0;
 					}
 				} @else {
-					.#{numToString($i)}.columns { width: percentage( $i / $colCount ) - $subtractor; }
+					.#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
 				}
 			}
 		}
@@ -82,11 +82,11 @@
 				.#{numToString($i)}.column,
 				.#{numToString($i)}.columns { width: $colWidth; }
 			} @else {
-				.#{numToString($i)}.columns { width: $colWidth + ( ( $colWidth + $gutterWidth ) * ( $i - 1 ) ); }
+				.#{numToString($i)}.columns { width: $colWidth + (($colWidth + $gutterWidth) * ($i - 1)); }
 			}
 		}
-		.one-third.column { width: ( $width / 3 ) - 20}
-		.two-thirds.column { width: ( ( $width * 2 ) / 3 ) - 20 }
+		.one-third.column { width: ($width / 3) - 20}
+		.two-thirds.column { width: (($width * 2) / 3) - 20 }
 		.full-width.columns {
 			width: $width;
 			margin-left: 0;
@@ -99,12 +99,12 @@
 // _offset ( boolean $is-fluid, number $colCount, number $colWidth )
 @mixin _offset($is-fluid, $colCount, $colWidth) {
 	@if ($is-fluid) {
-		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
+		@for $i from 1 through ($colCount - 1 ) {
+			.offset-by-#{numToString($i)} { padding-left: percentage($i / $colCount); }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
+			.offset-by-#{numToString($i)} { padding-left: ($colWidth + 20) * $i; }
 		}
 	}
 }
@@ -159,9 +159,7 @@
 			$store: $store + "." + $selector + numToString($i) + ",";
 		}
 	}
-	#{$store} {
-		@content;
-	}
+	#{$store} { @content; }
 }
 
 // ---------- FUNCTION DEPENDENCIES
