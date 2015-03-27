@@ -126,6 +126,7 @@ Changelog
 
 ###### Removals
 * `$colWidth` variable in the `@grid` mixin
+* Removed some sloppy code in the `@_offsets` mixin
 
 ###### Fixes/Changes
 * Plural `column` and `columns` for `one-third`, `two-third`, and `full-width`
@@ -135,6 +136,7 @@ Changelog
 * `$new` parameter to `@_fluidGrid` and `@_fixedGrid`. This makes some basic changes to the grid for the new Skeleton CSS format
 * Default fixed/fluid combo grid for `fresh` theme
 	* Updated offsets for the new fixed/fluid grid combo
+* Added new `offset-by-one-third`, `.offset-by-two-thirds`, and `.offset-by-one-half` selectors for new grid
 
 ### 2.0.0
 
