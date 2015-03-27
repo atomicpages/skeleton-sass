@@ -72,6 +72,7 @@ The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (
 			* `_base.scss` contains all of the base styles for Skeleton Sass (same look as Skeleton CSS created)
 			* `_vars.scss` contains project-scoped configuration options
 			* `_skeleton.scss` contains all the styles to create the grid
+		* `fresh`
 * `_MYconfig.scss` contains all of your global configuration options that won't be overridden by an update to Skeleton Sass
 * `skeleton_template.scss` contains all of the styles accumulated into a single file.
 
@@ -132,6 +133,8 @@ Changelog
 ###### New Features/Themes
 * `one-half` selector to grid
 * `$new` parameter to `@_fluidGrid` and `@_fixedGrid`. This makes some basic changes to the grid for the new Skeleton CSS format
+* Default fixed/fluid combo grid for `fresh` theme
+	* Updated offsets for the new fixed/fluid grid combo
 
 ### 2.0.0
 

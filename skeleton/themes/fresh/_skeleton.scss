@@ -8,7 +8,7 @@
 	max-width: $grid-max-width;
 	margin: 0 auto;
 	padding: 0 relative(20px);
-	border-box: box-sizing;
+	box-sizing: border-box;
 }
 .column,
 .columns {

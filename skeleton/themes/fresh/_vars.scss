@@ -17,6 +17,7 @@ $prefix-for-spec:      true !default;
 
 // Default overrides for new theme
 $is-fluid: true; // Change to true to enable the fluid grid
+$use-global-border-box: false; // Change to true the enable global border-box
 
 $link-color: #1EAEDB; // default link color
 $link-hover: #0FA0CE; // default link color on :hover
@@ -38,7 +39,7 @@ $form-font: $font-family; // default form font
 $button-color: #555;
 $button-weight: 600;
 $button-font-uppercase: true;
-$button-border-color: #444;
+$button-border-color: #bbb;
 
 // GRID CHANGES
 $grid-max-width: 960px;
