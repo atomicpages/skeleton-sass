@@ -202,5 +202,5 @@
 		@return percentage($px / $base);
 	}
 
-	@return ($px / $base) * 1#{$unit};
+	@return #{($px / $base) * 1}#{$unit};
 }
