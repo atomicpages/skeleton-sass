@@ -21,7 +21,7 @@ $use-global-border-box: false; // Change to true the enable global border-box
 
 $link-color: #1EAEDB; // default link color
 $link-hover: #0FA0CE; // default link color on :hover
-$link-decoration: none; // default link decoration
+$link-decoration: underline; // default link decoration
 
 $base-width: if($is-fluid, 100%, ($base-col-width + $base-gutter-width) * $base-col-count);
 

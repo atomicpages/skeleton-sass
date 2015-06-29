@@ -202,6 +202,7 @@ input[type="button"] {
 		}
 	}
 }
+.button:visited { color: $button-color; }
 
 /* Fix for odd Mozilla border & padding issues */
 button,
