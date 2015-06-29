@@ -111,6 +111,9 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 2.5.1
+* Fixes [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
+
 ### 2.5.0
 * Addition of a new default theme called **fresh**
 	* Removal of old reset CSS in favor of [normalize.css](http://necolas.github.io/normalize.css/)
@@ -184,3 +187,6 @@ Contributors
 * [vephinx](https://github.com/vephinx):
 	* [Issue #7](https://github.com/atomicpages/skeleton-sass/issues/7)
 	* [Issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
+* [thomasvandongen](https://github.com/thomasvandongen
+	* Pull request [0af774f](https://github.com/atomicpages/skeleton-sass/pull/20)
+		* **Note:** as a result of his work we can finally close [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
