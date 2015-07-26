@@ -1,0 +1,22 @@
+{
+  "name": "skeleton-sass",
+  "version": "0.0.1",
+  "description": "npm installer for skeleton-sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/menthena/skeleton-sass"
+  },
+  "author": "Ahmet Atasoy <menthena@gmail.com> (http://www.menthena.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menthena/skeleton-sass/issues"
+  },
+  "homepage": "https://github.com/menthena/skeleton-sass",
+  "dependencies": {
+    "amdefine": "^1.0.0"
+  }
+}

@@ -79,6 +79,24 @@ You can also install alpha, beta, rc, and previous versions by looking at the [r
 
 [Learn how to set up Skeleton Sass for the first time here](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use).
 
+### NPM
+> npm is a package manager for JavaScript, and is the default for Node.js
+
+Install Skeleton Sass with npm via command line
+
+	npm install skeleton-sass --save
+
+### RequireJS installation for ReactJS applications
+>Most of the ReactJS boilerplates built with RequireJS which you need to require the Sass/Scss files within the application.
+
+Install Skeleton Sass with npm via command line
+
+	npm install skeleton-sass --save
+
+Require the Skeleton Sass within your React / RequireJS application
+
+	require('skeleton-sass');
+
 ### Demo
 You can see Skeleton Sass in action here: [http://atomicpages.github.io/skeleton-sass](http://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
 
