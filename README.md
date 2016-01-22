@@ -111,6 +111,9 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 2.5.2
+* Fixes [issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)
+
 ### 2.5.1
 * Fixes [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
 
@@ -190,3 +193,5 @@ Contributors
 * [thomasvandongen](https://github.com/thomasvandongen
 	* Pull request [0af774f](https://github.com/atomicpages/skeleton-sass/pull/20)
 		* **Note:** as a result of his work we can finally close [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
+* [seshaljain](https://github.com/seshaljain)
+	* [Issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)
