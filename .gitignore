@@ -3,3 +3,5 @@
 skeleton.*
 skeleton_template.css
 *.html
+node_modules
+npm-debug.log
