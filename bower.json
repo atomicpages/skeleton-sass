@@ -29,7 +29,8 @@
 	"ignore": [
 		".gitignore",
 		".gitattributes",
-		"sache.json"
+		"sache.json",
+		"dependencies/"
 	],
 	"dependencies": {
 		"normalize-scss": "normalize.scss#^4.2.1"
