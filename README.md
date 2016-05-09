@@ -111,6 +111,11 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 2.5.3
+* Added some more HTML 5 form elements
+* Migrated normalize to a bower dependency so it can be maintained in a better way
+* Removed old version of normalize from mixin
+
 ### 2.5.2
 * Fixes [issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)
 

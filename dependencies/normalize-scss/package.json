@@ -1,0 +1,46 @@
+{
+  "name": "normalize-scss",
+  "version": "4.2.1",
+  "description": "This is the Sass version of Normalize.css, a collection of HTML element and attribute rulesets to normalize styles across all browsers. This port aims to use a light dusting of Sass to make Normalize even easier to integrate with your website.",
+  "homepage": "https://github.com/JohnAlbin/normalize-scss",
+  "bugs": {
+    "url": "https://github.com/JohnAlbin/normalize-scss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JohnAlbin/normalize-scss.git"
+  },
+  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
+  "keywords": [
+    "eyeglass-module",
+    "sass",
+    "normalize"
+  ],
+  "main": "sass/_normalize.scss",
+  "style": "sass/_normalize.scss",
+  "eyeglass": {
+    "sassDir": "sass",
+    "exports": false,
+    "name": "normalize",
+    "needs": "*"
+  },
+  "directories": {
+    "lib": "sass",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "posttest": "eslint test"
+  },
+  "license": "(MIT OR GPL-2.0)",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chroma-sass": "^1.2.3",
+    "eslint": "^2.4.0",
+    "eyeglass": "^0.8.3",
+    "mocha": "^2.4.5",
+    "sassy-test": "^3.0.0",
+    "support-for": "^1.0.5",
+    "typey": "^1.0.0"
+  }
+}

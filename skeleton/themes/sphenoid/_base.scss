@@ -250,7 +250,9 @@ form { margin-bottom: relative(20px); }
 fieldset { margin-bottom: relative(20px); }
 input[type="text"],
 input[type="password"],
+input[type="color"],
 input[type="email"],
+input[type="range"],
 input[type="search"],
 input[type="url"],
 input[type="tel"],
@@ -286,7 +288,10 @@ select {
 		@include box-shadow(0 0 3px rgba(0,0,0,0.3));
 	}
 }
-select { padding: 0; }
+select {
+	padding: 0;
+	width: relative(220px);
+}
 textarea { min-height: relative(60px); }
 label,
 legend {
@@ -299,7 +304,6 @@ legend {
 	font-weight: bold;
 	@include font-size($font-size + 1);
 }
-select { width: relative(220px); }
 input[type="checkbox"] { display: inline; }
 
 /* MISC
