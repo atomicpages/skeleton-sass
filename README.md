@@ -117,6 +117,7 @@ Changelog
 ### 2.5.4
 * Adding `normalize.scss` as a dependency
 * Merged master in development for version bump
+* Added scripts to check and automagically fix import paths
 
 ### 2.5.3
 * Comment cleanup
