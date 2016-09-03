@@ -49,7 +49,7 @@ The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (
 		* `_functions.scss` the default global functions for Skeleton Sass
 		* `_mixins.scss` the default global mixins for Skeleton Sass
 	* `themes` where all of the themes live
-		* `demo`
+		* `demo` &amp; `fresh`
 			* `marrow` stores all project-level functions and mixins
 				* `_mixins.scss` loads the default theme mixins and functions from `sphenoid`
 			* `_base.scss` contains all of the base styles for Skeleton Sass with the exception of the reset styles
@@ -61,7 +61,6 @@ The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (
 			* `_base.scss` contains all of the base styles for Skeleton Sass (same look as Skeleton CSS created)
 			* `_vars.scss` contains project-scoped configuration options
 			* `_skeleton.scss` contains all the styles to create the grid
-		* `fresh`
 * `_MYconfig.scss` contains all of your global configuration options that won't be overridden by an update to Skeleton Sass
 * `skeleton_template.scss` contains all of the styles accumulated into a single file.
 
@@ -70,12 +69,16 @@ The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (
 
 Install Skeleton Sass with bower via command line:
 
-	bower install skeleton-sass
+~~~bash
+bower install skeleton-sass --save
+~~~
 
-You can also install alpha, beta, rc, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
+You can also install alpha, beta, release candidate, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
 
-	bower install skeleton-sass#[tag]
-	bower install skeleton-sass#2.0.0-b2
+~~~bash
+bower install skeleton-sass#[tag]
+bower install skeleton-sass#2.0.0-b2
+~~~
 
 [Learn how to set up Skeleton Sass for the first time here](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use).
 
@@ -111,10 +114,16 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 2.5.4
+* Adding `normalize.scss` as a dependency
+* Merged master in development for version bump
+
 ### 2.5.3
-* Added some more HTML 5 form elements
-* Migrated normalize to a bower dependency so it can be maintained in a better way
-* Removed old version of normalize from mixin
+* Comment cleanup
+* Rearranging of dependencies
+* Update to year in license and other copyright headers
+* Change `Dir.exists?` to `Dir.exist?` to squash ruby 2.3.x deprecation notice
+* Manual bump to normalize.css 4.2.0
 
 ### 2.5.2
 * Fixes [issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)

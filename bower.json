@@ -1,9 +1,7 @@
 {
 	"name": "skeleton-sass",
-	"version": "2.5.3",
-	"authors": [
-		"Dennis Thompson <dennis-thompson@outlook.com>"
-	],
+	"version": "2.5.4",
+	"author": "Dennis Thompson",
 	"homepage": "http://atomicpages.github.io/skeleton-sass/",
 	"repository": {
 		"type": "git",
@@ -15,9 +13,7 @@
 			"url": "http://opensource.org/licenses/MIT"
 		}
 	],
-	"main": [
-		"skeleton_template.scss"
-	],
+	"main": ["skeleton_template.scss"],
 	"keywords": [
 		"sass",
 		"design",
@@ -33,6 +29,6 @@
 		"dependencies/"
 	],
 	"dependencies": {
-		"normalize-scss": "normalize.scss#^4.2.1"
+		"normalize.scss": "latest"
 	}
 }

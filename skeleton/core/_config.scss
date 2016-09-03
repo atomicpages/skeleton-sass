@@ -1,8 +1,6 @@
-// GLOBAL VARIABLES - include your variables here or alter the
-// predefined vars.
-// Changes to these variables will alter ALL flavors EXCEPT css.
-// If you wish to override for any given flavor, please edit the vars
-// partial in that flavor.
+// GLOBAL VARIABLES - default global variables in this file.
+// If you wish to change the default value of these variables,
+// please do so in your _MYconfig.scss.
 
 // background vars
 $background-color: #fff !global; // default background color

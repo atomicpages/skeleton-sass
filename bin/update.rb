@@ -37,7 +37,7 @@ if File.directory?("#{Dir.pwd}/.git")
 	end
 end
 
-if File.exists?(".bower.json")
+if File.exist?(".bower.json")
 	resp = Helper.yesno("Bowers files found. Update with bower now? [y/n]")
 	if resp =~ /y(es)?/i
 		puts "Updating skeleton-sass"

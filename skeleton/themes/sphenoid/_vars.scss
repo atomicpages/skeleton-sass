@@ -3,10 +3,8 @@
 // stored in the marrow folder, but to also create project-level
 // variables.
 
-
 @import "marrow/private";
 @import "marrow/public";
-@import "../../core/config"; // default dependencies
 
 // Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/settings/_prefixer.scss
 $prefix-for-webkit:    true !default;
