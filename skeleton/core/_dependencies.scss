@@ -1,5 +1,6 @@
-// Core dependencies shared by all flavors (except css) are here. Any changes to these
-// dependencies will reflect on ALL flavors. Alter with discretion.
+// Core mixin and function dependencies that are globally scoped.
+// Can be used as building blocks for other functions/mixins in your
+// own themes.
 
 // ---------- MIXIN DEPENDENCIES
 
@@ -9,7 +10,7 @@
 	/* Overrides */
 	$gutter: percent($base-gutter-width) / 100;
 	.container {
-		@if($new == true) { width: 80%; } // FIXME: make this dynamic somehow
+		@if($new == true) { width: 80%; } // TODO: make this dynamic somehow
 	}
 	@if($new == false) {
 		.column,

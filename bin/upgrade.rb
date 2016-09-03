@@ -39,7 +39,7 @@ module Helper
 	end
 
 	def cp(file, destination)
-		if !File.exists?(file) # fail quickly if not found
+		if !File.exist?(file) # fail quickly if not found
 			raise SystemCallError, "#{file} was not found or does not exist"
 		end
 
@@ -125,7 +125,7 @@ variables.each do |key, value|
 	%x(ruby -i.bak -pe "gsub /#{key}/i, '#{value}'" #{filename})
 end
 
-if File.exists?("#{filename}.bak")
+if File.exist?("#{filename}.bak")
 	File.delete("#{filename}.bak")
 end
 

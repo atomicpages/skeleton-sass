@@ -15,7 +15,7 @@ STDOUT.flush
 name = Helper.nfqr("Please enter in the name of your theme with no spaces or special characters other than - or _ and press [ENTER]", /[^\w\-]/, "Theme name invalid, please try again and press [ENTER]")
 puts "Theme name is #{name}"
 
-if !Dir.exists?("skeleton/themes/#{name}")
+if !Dir.exist?("skeleton/themes/#{name}")
 	Dir.mkdir("skeleton/themes/#{name}")
 end
 
@@ -28,7 +28,7 @@ file.puts("@import \"#{name}/base\";")
 file.puts("@import \"sphenoid/skeleton\"; // Override manually if you wish to create your own grid")
 puts "skeleton/themes/_loader.scss has been updated... moving on"
 
-if !Dir.exists?("skeleton/themes/#{name}/marrow")
+if !Dir.exist?("skeleton/themes/#{name}/marrow")
 	Dir.mkdir("skeleton/themes/#{name}/marrow")
 end
 

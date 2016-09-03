@@ -1,9 +1,4 @@
-// DISCLAIMER: this file is called private because these items are not supposed to accessed directly
-// outside of the public file. They are also not supposed to be edited directly either. Alter only if
-// you know what you're doing. Changes here can potentially render the sphenoid theme unusable.
-//
-// Am I allowed to use these in my own theme? You bet!
-// I have a fix... how do I help? Check the README!
+// Private mixins scoped at the theme level. Change with discretion.
 
 // ---------- MIXIN DEPENDENCIES
 @mixin _bd($vert, $horiz, $radius) {
@@ -12,10 +7,11 @@
 	border-#{$vert}-#{$horiz}-radius: $radius;
 }
 
-// needs multiple stop support
-// needs center adjustment support
 // _buildRadialGradient ( mixed $start, mixed $stop, boolean $ie )
 @mixin _buildRadialGradient($start, $stop, $ie) {
+	// TODO: needs multiple stop support
+	// TODO: needs center adjustment support
+
 	@if type-of($start) != "list" {
 		$start: append($start, 0%, space);
 	}
