@@ -31,7 +31,7 @@
 		"jquery.stellar": "latest",
 		"jquery": "2.*",
 		"font-awesome": "latest",
-		"skeleton-sass": "latest",
+		"skeleton-sass": "3.0.0-dev2",
 		"normalize.scss": "latest"
 	}
 }

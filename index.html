@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="Cache-control" content="public">
+	<meta http-equiv="Cache-Control" content="public">
 	<title>Skeleton Sass | Responsive Sass Framework</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
@@ -32,21 +32,24 @@
 			<div class="four columns">
 				<i class="fa fa-bolt circle"></i>
 				<p class="title">Faster</p>
-				<p>Skeleton Sass 3 reduced in size by 1000% and is faster than ever before!</p>
+				<p>Skeleton Sass 3 reduced in size by 1000% from Skeleton Sass 1 and is faster than ever before!</p>
 			</div>
 			<div class="four columns">
 				<i class="fa fa-cog circle"></i>
 				<p class="title">Customizable</p>
-				<p>Customize Skeleton Sass without fear of losing all your hard work!</p>
+				<p>With decoupled modules in Skeleton Sass 3, your hard work is safe from your favorite package
+					managers!</p>
 			</div>
 			<div class="four columns">
 				<i class="fa fa-thumbs-o-up circle"></i>
-				<p class="title">Simple</p>
+				<p class="title">Simpler</p>
 				<p>Skeleton Sass 3 is still the same, it's just a little easier to use!</p>
 			</div>
 		</div>
-		<div class="twelve columns fa fa-circle-thin">
-			<i class="fa fa-arrow-down"></i>
+		<div class="twelve columns scroll-down">
+			<div class="fa fa-circle-thin">
+				<i class="fa fa-arrow-down"></i>
+			</div>
 		</div>
 	</div>
 </section>
@@ -74,130 +77,107 @@
 		<div class="row">
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-github">&nbsp;</i> Github</p>
-				<p>Skeleton Sass is on Github! Fork and <a
-					href="https://github.com/atomicpages/skeleton-sass" rel="nofollow">contribute!</a></p>
+				<p>Skeleton Sass is on Github! Fork and <a href="https://github.com/atomicpages/skeleton-sass" rel="nofollow">contribute!</a> Found a bug? <a href="https://github.com/atomicpages/skeleton-sass/issues" rel="nofollow">Let us
+					know!</a></p>
 			</div>
 			<div class="four columns">
-				<p class="large bold center"><i class="fa fa-cogs">&nbsp;</i> Customize</p>
-				<p>Skeleton Sass is easily customizable to suit your project needs with friendly mixins, useful
-					functions, configuration overrides, and much more!</p>
+				<p class="large bold center"><i class="fa fa-terminal">&nbsp;</i> Tested</p>
+				<p>Skeleton Sass 3 is tested against Sass, Libsass, Wellington, and other Libsass wrappers. We also
+					use gulp-sass for this site!</p>
 			</div>
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-css3">&nbsp;</i> CSS3</p>
-				<p>Skeleton Sass 3 adds some necessary CSS3 features such as global <code>border-box</code> and many other mixins that make dealing with CSS3 features easy and fun again.</p>
+				<p>Skeleton Sass 3 adds some necessary CSS3 features such as global <code>border-box</code> and many other mixins that make dealing with CSS easy and fun again.</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="twelve columns">
 				<h4>Requirements</h4>
-				<p>Skeleton Sass 2 has only a single requirement: Sass 3.3. If you wish to integrate other Sass
-					libraries into Skeleton Sass, just simply add it as an import in <code>skeleton_template.scss</code> or bundle it with your theme to start using it!</p>
+				<p>Skeleton Sass 3 has only a single requirement: Sass 3.3 or similar compiler</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="twelve columns">
 				<h4>Structure</h4>
-				<p>Skeleton Sass 2 has an intuitive file structure that allows for greater customization. Note: if you
+				<p>Skeleton Sass 3 has an intuitive file structure that allows for greater customization. Note: if you
 					are a Skeleton Sass 1 user, the structure for Skeleton Sass 2 is vastly different.</p>
 				<ul class="fa-ul">
-					<li><i class="fa-li fa fa-folder-open"></i><code>bin/</code> &ndash; this directory contains
-						executables (shell scripts) that perform various tasks
+					<li><i class="fa-li fa fa-folder-open"></i><code>skeleton/</code> &ndash; contains the heart of the
+						framework
 						<ul class="fa-ul">
-							<li><i class="fa-li fa fa-file-code-o"></i><code>setup.sh</code> &ndash; automates setting
-								up Skeleton Sass 2 for first use!
-							</li>
-							<li><i class="fa-li fa fa-file-code-o"></i><code>theme_setup.sh</code> &ndash; automates
-								setting up a brand new theme
-							</li>
-							<li><i class="fa-li fa fa-file-code-o"></i><code>update.sh</code> &ndash; automates updating
-								the script via git, bower, or sache (script determines which method to use)
-							</li>
-							<li><i class="fa-li fa fa-file-code-o"></i><code>upgrade</code> &ndash; aids in successfully
-								upgrading from Skeleton Sass 1 to Skeleton Sass 2
-							</li>
-						</ul>
-					</li>
-					<li><i class="fa-li fa fa-folder-open"></i><code>skeleton/</code> &ndash; this directory contains
-						the heart and personality of the framework
-						<ul class="fa-ul">
-							<li><i class="fa-li fa fa-folder-open"></i><code>core/</code> &ndash; this entire directory
-								contains the core of the framework
+							<li><i class="fa-li fa fa-folder-open"></i><code>core/</code> &ndash; contains the core of the
+								framework
 								<ul class="fa-ul">
-									<li><i class="fa-li fa fa-file-code-o"></i><code>_config.scss</code> &ndash; this
-										file contains all of the globally default configuration variables and values
+									<li><i class="fa-li fa fa-file-code-o"></i><code>_config.scss</code> &ndash; contains all of the globally default configuration variables and values
 									</li>
-									<li><i class="fa-li fa fa-file-code-o"></i><code>_dependencies.scss</code> &ndash;
-										this file contains all logic that goes into creating the public-facing functions
-										and mixins
+									<li><i class="fa-li fa fa-file-code-o"></i><code>_dependencies.scss</code> &ndash; contains all logic that goes into creating the public-facing functions and mixins
 									</li>
-									<li><i class="fa-li fa fa-file-code-o"></i><code>_functions.scss</code> &ndash; this
-										file contains all the globally public functions
+									<li><i class="fa-li fa fa-file-code-o"></i><code>_functions.scss</code> &ndash; contains all the globally public functions
 									</li>
-									<li><i class="fa-li fa fa-file-code-o"></i><code>_mixins.scss</code> &ndash; this
-										file contains all of the globally public mixins
+									<li><i class="fa-li fa fa-file-code-o"></i><code>_mixins.scss</code> &ndash; contains all of the globally public mixins
 									</li>
 								</ul>
 							</li>
-							<li><i class="fa-li fa fa-folder-open"></i><code>themes/</code> &ndash; this directory
-								contains the personality of the framework. Add new themes here so your changes don't get
-								overridden with an update!
+							<li><i class="fa-li fa fa-folder-open"></i><code>themes/</code> &ndash; contains the default
+								themes of the framework: sphenoid and fresh
 								<ul class="fa-ul">
-									<li><i class="fa-li fa fa-folder-open"></i><code>demo/</code> &ndash; a simple demo
-										theme for you to base your theme off of
-										<ul class="fa-ul">
-											<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash;
-												all the base styles for your new theme
-											</li>
-											<li><i class="fa-li fa fa-file-code-o"></i><code>_vars.scss</code> &ndash;
-												all project-scoped mixins, functions, etc. go in here
-											</li>
-										</ul>
-									</li>
 									<li><i class="fa-li fa fa-folder-open"></i><code>sphenoid/</code> &ndash; the
-										default look of Skeleton Sass that's still identical to Skeleton CSS
+										old look of Skeleton Sass that's still identical to Skeleton CSS 1
 										<ul class="fa-ul">
-											<li><i class="fa-li fa fa-folder-open"></i><code>marrow/</code> &ndash; a
-												directory that holds project-scoped logic, functions, mixins, and other
-												such constructs
+											<li><i class="fa-li fa fa-folder-open"></i><code>marrow/</code> &ndash; holds project-scoped logic, functions, mixins, etc. shared across both themes
 												<ul class="fa-ul">
 													<li><i
 														class="fa-li fa fa-file-code-o"></i><code>_private.scss</code> &ndash;
-														contains all the project-scoped logic
+														contains all the private project-scoped logic
 													</li>
 													<li><i
-														class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash;
-														contains all the project-scoped front-facing mixins, functions,
-														and other such constructs
+														class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash; contains all the public-facing project-scoped mixins, functions, etc.
 													</li>
 												</ul>
 											</li>
 											<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash;
-												all the base styles to make sphenoid look like a boss
+												all the base styles to give sphenoid some life
 											</li>
 											<li><i
 												class="fa-li fa fa-file-code-o"></i><code>_skeleton.scss</code> &ndash;
 												all the styles that generate the grid
 											</li>
 											<li><i class="fa-li fa fa-file-code-o"></i><code>_vars.scss</code> &ndash;
-												all project-scoped overrides and new settings that should
-												<strong>not</strong> be global go here
+												all project-scoped overrides
 											</li>
 										</ul>
 									</li>
-									<li><i class="fa-li fa fa-file-code-o"></i><code>_loader.scss</code> &ndash; a
-										simple file that loads the currently selected theme
+								</ul>
+								<ul class="fa-ul">
+									<li><i class="fa-li fa fa-folder-open"></i><code>fresh/</code> &ndash; the
+										new look of Skeleton Sass that's still identical to Skeleton CSS 2
+										<ul class="fa-ul">
+											<li><i class="fa-li fa fa-folder-open"></i><code>marrow/</code> &ndash; holds project-scoped logic, functions, mixins, etc. (imported from sphenoid)
+												<ul class="fa-ul">
+													<li><i
+														class="fa-li fa fa-file-code-o"></i><code>_private.scss</code> &ndash;
+														contains all the private project-scoped logic
+													</li>
+													<li><i
+														class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash; contains all the public-facing project-scoped mixins, functions, etc.
+													</li>
+												</ul>
+											</li>
+											<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash;
+												all the base styles to give fresh some life
+											</li>
+											<li><i
+												class="fa-li fa fa-file-code-o"></i><code>_skeleton.scss</code> &ndash;
+												all the styles that generate the grid
+											</li>
+											<li><i class="fa-li fa fa-file-code-o"></i><code>_vars.scss</code> &ndash;
+												all project-scoped overrides
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</li>
 						</ul>
-					</li>
-					<li><i class="fa-li fa fa-file-code-o"></i><code>_MYconfig.scss</code> &ndash; your file for global
-						overrides, just rename and your changes will be preserved on update!
-					</li>
-					<li><i class="fa-li fa fa-file-code-o"></i><code>skeleton_template.scss</code> the file that
-						accumulates all of the styles together in a simple and cohesive file. This is file is where all
-						of the styles for your project can go if you wish. Simply rename to <code>skeleton.scss</code>
-						and compile for the first time and your changes will be preserved after an update!
 					</li>
 				</ul>
 			</div>

@@ -60,7 +60,7 @@ gulp.task('images', () => {
 gulp.task('sass', ['clean-sass'], () => {
 	return gulp.src('source/sass/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('target/css'));
 });

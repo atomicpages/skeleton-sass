@@ -64,12 +64,17 @@ nav {
 		font-size: 5.61rem;
 	}
 }
-.fa-circle-thin { font-size: 7.478rem !important; }
-.fa-arrow-down {
-	font-size: 2rem !important;
-	position: relative;
-	right: 58px;
-	bottom: 27px;
+.scroll-down {
+	.fa-circle-thin {
+		font-size: 7.478rem !important;
+		margin-left: 3.5rem;
+	}
+	.fa-arrow-down {
+		font-size: 2rem !important;
+		position: relative;
+		right: 58px;
+		bottom: 27px;
+	}
 }
 .intro {
 	text-align: center;
@@ -142,14 +147,8 @@ section {
 /* MEDIA QUERIES
  * ------------------------------------------------ */
 
-/* Large displays */
-@media only screen and (min-width: $base-width) and (max-width: 1280px) { }
-
 /* Smaller than standard #{strip-units($base-width)} (devices and browsers) */
 @media only screen and (max-width: $base-width - 1) { }
-
-/* Tablet Portrait size to standard #{strip-units($base-width)} (devices and browsers) */
-@media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) { }
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: $tablet-width - 1) {
@@ -187,9 +186,6 @@ section {
 	}
 }
 
-@media (min-width: 550px) { // dirty hack to get the original design to behave
-	.container {
-		width: 100%;
-		padding: 0 1%;
-	}
+@media (min-width: 550px) {
+	.container { padding: 0 1%; }
 }
