@@ -1,27 +1,37 @@
 {
 	"name": "skeleton-sass",
-	"version": "2.0.1",
-	"description": "Skeleton Sass is a sass-based transcription of Dave Gamache's Skeleton CSS",
-	"main": "Gruntfile.js",
-	"dependencies": {
-		"grunt": "~0.4.2"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-contrib-uglify": "~0.4.0",
-		"grunt-contrib-watch": "~0.6.1",
-		"grunt-contrib-concat": "~0.4.0",
-		"grunt-contrib-sass": "~0.7.3",
-		"shelljs": "~0.3.0"
+	"version": "3.0.0",
+	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/atomicpages/skeleton-sass.git"
+		"url": "git+https://github.com/atomicpages/skeleton-sass.git"
 	},
-	"keywords": ["scss", "sass", "frontend"],
-	"author": "AtomicPages LLC",
+	"keywords": [
+		"sass",
+		"scss",
+		"skeleton",
+		"css",
+		"frontend",
+		"responsive"
+	],
+	"author": "Dennis Thompson",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/atomicpages/skeleton-sass/issues"
+	},
+	"homepage": "https://github.com/atomicpages/skeleton-sass#readme",
+	"devDependencies": {
+		"del": "^2.2.2",
+		"gulp": "^3.9.1",
+		"gulp-concat": "^2.6.0",
+		"gulp-imagemin": "^3.0.3",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^2.3.2",
+		"gulp-sourcemaps": "^1.6.0",
+		"gulp-uglify": "^2.0.0"
 	}
 }

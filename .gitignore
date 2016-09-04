@@ -1,19 +1,10 @@
-*.gem
-*.rbc
-.bundle
-.config
-.sass-cache
+.sass-cache/
 node_modules/
-bower_components/fontawesome/css/
-bower_components/fontawesome/less/
-bower_components/fontawesome/scss/
-bower_components/fontawesome/.bower.json
-bower_components/fontawesome/.gitignore
-bower_components/fontawesome/.npmignore
-bower_components/jquery/
-bower_components/jquery.stellar/
-bower_components/respond/
-bower_components/smooth-scroll.js/
+bower_components/
+.idea/
+#.idea/codeStyleSettings.xml
+#.idea/workspace.xml
+# target/
 
 ## OS X
 .DS_Store

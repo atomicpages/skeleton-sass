@@ -1,0 +1,14 @@
+@import "config";
+
+// import default theme variables
+@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/vars";
+
+// import theme overrides and extras
+@import "themes/demo/vars";
+
+// import default theme styles
+@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/base";
+@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/skeleton";
+
+// import extras
+@import "../../../bower_components/font-awesome/scss/font-awesome";

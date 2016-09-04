@@ -1,0 +1,195 @@
+@import "skeleton/loader";
+
+// Font sizes based on a perfect fourth http://modularscale.com/scale/?px1=10&px2=20&ra1=1.333&ra2=0
+a:hover { text-decoration: none; }
+ul ul, ul ol, ol ol, ol ul { font-size: 100%; }
+code, pre {
+	font-size: 1.5rem;
+	font-family: Consolas, "Courier New", Courier, monospace;
+	background: rgba(255, 255, 255, 0.3);
+	border: 0 none;
+	@include border-radius(0);
+	padding: 0.25rem;
+	&.plain { background: none; }
+}
+body {
+	margin: 0;
+	background: #666 url("../images/shattered.png") repeat 0 0;
+}
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+nav {
+	background-color: rgba(255, 255, 255, 0.35);
+	font-size: 1.777rem;
+	h3 {
+		margin-bottom: 0;
+		margin-top: 0.5rem;
+	}
+	ul {
+		margin-bottom: 0;
+		padding: 0;
+		white-space: nowrap;
+		list-style: none;
+		li {
+			margin-bottom: 0;
+			line-height: 3.5;
+			width: (100% / 6);
+			float: left;
+			text-align: center;
+			a {
+				&, &:visited { color: $nav-link-color; }
+				text-decoration: none;
+				line-height: 3.5;
+				padding: 0.5rem;
+				&:hover { color: darken($nav-link-color, 15%); }
+			}
+		}
+	}
+}
+.small { font-size: 1.126rem; }
+.large { font-size: 2rem; }
+.bold { font-weight: bold; }
+.center { text-align: center; }
+.circle {
+	border: 5px solid black;
+	@include border-radius(50rem);
+	display: inline-block;
+	height: 10rem;
+	width: 10rem;
+	&.fa {
+		line-height: 1.6565;
+		font-size: 5.61rem;
+	}
+}
+.fa-circle-thin { font-size: 7.478rem !important; }
+.fa-arrow-down {
+	font-size: 2rem !important;
+	position: relative;
+	right: 58px;
+	bottom: 27px;
+}
+.intro {
+	text-align: center;
+	padding-top: 10%;
+}
+.features {
+	.title {
+		margin-bottom: 1rem;
+		font-weight: 700;
+		color: darken(grayscale(#a24cbf), 15%);
+		font-size: 1.5rem;
+	}
+	@include clear;
+	.fa { margin-bottom: 1rem; }
+}
+section {
+	.fa { font-size: 2.666rem; }
+	ul {
+		li { line-height: 1.5; }
+		.fa { font-size: 1.5rem; }
+	}
+	&.learn_more {
+		color: white;
+		padding-top: 3.157rem;
+		background: rgba(255, 255, 255, 0.4) url("../images/code.png") no-repeat 5% center;
+		background-size: cover;
+		h4 { color: white; }
+	}
+	&.documentation {
+		padding-top: 3.157rem;
+		background: transparent url("../images/documentation.png") no-repeat center center;
+		background-size: cover;
+		h4, h5 { margin-top: 0; }
+		h5 { margin-bottom: 0; }
+		ul {
+			a {
+				color: $nav-link-color;
+				text-decoration: underline;
+				&:hover {
+					color: $nav-link-color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&.grid {
+		background: transparent url("../images/grid.png") no-repeat center center;
+		background-size: cover;
+		h4 { text-align: center; }
+		.number, label, h4, h5 { color: white; }
+		label { padding-bottom: 1rem; }
+		.number {
+			font-size: 3.554rem;
+			margin-bottom: 3.554rem;
+		}
+		pre {
+			border: 0 none;
+			@include border-radius(2px);
+			padding: 0.634rem;
+			color: white;
+			background: rgba(0, 0, 0, 0.2);
+			word-break: break-word;
+		}
+	}
+	&.footer {
+		.copyright { text-align: center; }
+	}
+}
+
+/* MEDIA QUERIES
+ * ------------------------------------------------ */
+
+/* Large displays */
+@media only screen and (min-width: $base-width) and (max-width: 1280px) { }
+
+/* Smaller than standard #{strip-units($base-width)} (devices and browsers) */
+@media only screen and (max-width: $base-width - 1) { }
+
+/* Tablet Portrait size to standard #{strip-units($base-width)} (devices and browsers) */
+@media only screen and (min-width: $tablet-width) and (max-width: $base-width - 1) { }
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: $tablet-width - 1) {
+	nav {
+		ul {
+			li {
+				width: 100%;
+				float: none;
+				text-align: left;
+				a {
+					display: block;
+					width: 100%;
+					line-height: 2.5;
+					&:hover { background: rgba(255, 255, 255, 0.5); }
+				}
+			}
+		}
+	}
+	section.home {
+		.fa-circle-thin { display: none; }
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) {
+	.home {
+		.fa-circle-thin { display: none; }
+	}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	.home {
+		.fa-circle-thin { display: none; }
+	}
+}
+
+@media (min-width: 550px) { // dirty hack to get the original design to behave
+	.container {
+		width: 100%;
+		padding: 0 1%;
+	}
+}

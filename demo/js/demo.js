@@ -1,33 +1,33 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 	var $h = $(window).height();
 	var $w = $(window).width();
 	$('.default, .resize').text($w + "px X " + $h + "px");
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		var h = $(window).height();
 		var w = $(window).width();
 		$('.resize').text(w + "px X " + h + "px");
-		if( $(window).width() <= 479) {
+		if ($(window).width() <= 479) {
 			$('.container').removeAttr('style');
 			$("#width_control").attr('type', 'hidden');
 			$("#width_control").val(92);
 		}
-		if( $('body').hasClass('fluid') && $(window).width() > 479 ) {
+		if ($('body').hasClass('fluid') && $(window).width() > 479) {
 			$("#width_control").attr('type', 'number');
 		}
 	});
 
-	$("nav a").click(function(e) {
+	$("nav a").click(function (e) {
 		e.preventDefault();
-		switch ( $(this).attr("data-suffix") ) {
+		switch ($(this).attr("data-suffix")) {
 			case "fluid":
-				var styles = {".container" : {"width": "98%"}};
+				var styles = {".container": {"width": "98%"}};
 				addInternalStyles(styles);
 				swapStyleSheet("fluid");
 				loadContent("fluid");
 				$("nav ul ul").fadeIn(200);
-				$("#ss-fluid-width").change(function() {
+				$("#ss-fluid-width").change(function () {
 					$(".container").css("width", $(this).val() + "%");
 				});
 				break;
@@ -53,7 +53,7 @@ $(document).ready(function() {
 	});
 
 	/**
-	 * @param string suffix
+	 * @param {string} suffix
 	 */
 	function swapStyleSheet(suffix) {
 		$("#ss-grid").attr("href", "css/skeleton-" + suffix + ".css");
@@ -64,16 +64,16 @@ $(document).ready(function() {
 	}
 
 	/* {
-	  "selector": {
-	    "p1": "v1",
-	    "p2": "v2"
-	  },
-	  "s1": { "p": "v" }
-	} */
+	 "selector": {
+	 "p1": "v1",
+	 "p2": "v2"
+	 },
+	 "s1": { "p": "v" }
+	 } */
 	function addInternalStyles(styles) {
-		for(var selector in styles) {
+		for (var selector in styles) {
 			$("#ss-override").append("\n" + selector + " {");
-			for(var property in styles[selector]) {
+			for (var property in styles[selector]) {
 				$("#ss-override").append("\n\t" + property + ": " + styles[selector][property] + ";");
 			}
 			$("#ss-override").append("\n}");
@@ -82,10 +82,10 @@ $(document).ready(function() {
 
 	function removeInternalStyles() {
 		$("#ss-override").text("");
-		if( $("#ss-fluid-width").is(":visible") ) {
+		if ($("#ss-fluid-width").is(":visible")) {
 			$("nav ul ul").fadeOut(200);
 		}
-		if( $(".container").attr("style") !== "" ) {
+		if ($(".container").attr("style") !== "") {
 			$(".container").attr("style", "");
 		}
 	}
