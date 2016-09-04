@@ -24,6 +24,15 @@ gulp.task('clean-scripts', () => {
 	return del('target/js');
 });
 
+gulp.task('clean-fonts', () => {
+	return del('target/fonts');
+});
+
+gulp.task('fonts', ['clean-fonts'], () => {
+	gulp.src('bower_components/font-awesome/fonts/**/*.{ttf,woff,eot,svg}')
+		.pipe(gulp.dest('target/fonts/'));
+});
+
 gulp.task('vendor', ['clean-scripts'], () => {
 	return gulp.src(PATHS)
 		.pipe(sourcemaps.init())
@@ -42,7 +51,7 @@ gulp.task('scripts', ['vendor'], () => {
 		.pipe(gulp.dest('target/js'));
 });
 
-gulp.task('images', ['clean'], () => {
+gulp.task('images', () => {
 	return gulp.src('source/images/*.png')
 		.pipe(imagemin({optimizationLevel: 8}))
 		.pipe(gulp.dest('target/images'));
@@ -64,8 +73,8 @@ gulp.task('watch:scripts', () => {
 	gulp.watch('source/js/*.js', ['scripts']);
 });
 
-gulp.task('dist', ['scripts', 'sass', 'images']);
+gulp.task('dist', ['clean', 'scripts', 'sass', 'images', 'fonts']);
 
 gulp.task('watch', ['watch:sass', 'watch:scripts']);
 
-gulp.task('default', ['sass', 'vendor', 'scripts', 'watch']);
+gulp.task('default', ['dist']);
