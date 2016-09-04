@@ -1,6 +1,0 @@
-{
-	"directory": "dependencies",
-	"scripts": {
-		"postinstall": "node bin/install/install-check.js"
-	}
-}

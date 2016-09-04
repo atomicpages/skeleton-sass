@@ -1,47 +1,55 @@
-Skeleton Sass 2
-=======================
+Skeleton Sass 3
+===============
 
-Skeleton Sass is a "Sassification" of Dave Gamache's [Skeleton CSS](http://getskeleton.com) responsive Sass starting point.
+Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com).
 
+### Key Features
 * Ability to seamlessly adjust grids by changing the value of variables
-* Install Skeleton Sass with bower via `bower install skeleton-sass`
+* Themes
+* Easy-to-use mixins and functions
+* Install Skeleton Sass with bower or npm!
 * [Live demo!](http://atomicpages.github.io/skeleton-sass/demo/index.html)
-* [Extensive documentation](https://github.com/atomicpages/skeleton-sass/wiki)
+* [Heavily documented](https://github.com/atomicpages/skeleton-sass/wiki)
 
-### Life after 2.5
-* At some point after 2.5 I would like to create a Ruby Gem of Skeleton Sass with Rails/Sinatra support. This will likely be the next major release (i.e. 3.0).
+### Dependencies
+* Sass 3.3+
 
-### Upgrading From 1.x
-Skeleton Sass 2.x is **not** backwards compatible with Skeleton Sass 1.x due to a major change in the file structure. However, we have a [wiki article](https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-1-to-2) that explains how to upgrade from Skeleton Sass 1 to Skeleton Sass 2.
+#### Does this work with other Sass compilers?
+Yes! Skeleton Sass has been tested with the following compilers and libsass wrappers
 
-### Looking for Skeleton Sass 1?
-We still have the latest stable release available to download if you wish! Head over to the [1.x-master branch](https://github.com/atomicpages/skeleton-sass/tree/1.x-master) and continue using Skeleton Sass 1. Version 1 docs can be found [here](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs).
+* [Sass](http://sass-lang.com/) 3.3+
+* [libsass](https://github.com/sass/libsass) 3.2+
+* [Wellington](http://getwt.io/) 0.9.3+
+* [node-sass](https://www.npmjs.com/package/node-sass) 3.5+
+
+#### Upgrading From 2.x
+Skeleton Sass 3 is decently compatible to the 2.x series, but requires some manual labor (i.e. copy and pasting multiple files to the 2.x series).
+
+#### Upgrading From 1.x
+Skeleton Sass 2 is **not** backwards compatible with Skeleton Sass 1.x due to a major change in the file structure. However, we have a [wiki article](https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-1-to-2) that explains how to upgrade from Skeleton Sass 1 to Skeleton Sass 2.
+
+#### Looking for older versions of Skeleton Sass?
+* Skeleton Sass 2
+    * [Verion 2 branch](https://github.com/atomicpages/skeleton-sass/tree/master/2.0)
+    * [Version 2 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-2-Docs)
+* Skeleton Sass
+    * [Version 1 branch](https://github.com/atomicpages/skeleton-sass/tree/master/1.0)
+    * [Version 1 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
+
+#### New to Sass?
+Check out our [wiki](https://github.com/atomicpages/skeleton-sass/wiki) for a more in-depth look at Skeleton Sass, information regarding installing ruby and Sass, and other valuable resources!
 
 ## TL;DR
-Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 2 has been trimmed down and a **ton** of new features have been added.
-
-Note: If you are new to Sass altogether then please read our [wiki](https://github.com/atomicpages/skeleton-sass/wiki) for a more in-depth look at Skeleton Sass, information regarding installing ruby and Sass, and many other valuable resources!
-
-If you are not new to Sass and you've tried other Skeleton CSS Sass ports and had a feeling is dissatisfaction, then look no more. Skeleton Sass is your last stop.
+Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself from your project so you can consume it without worrying if your package manager will clobber all of your hard work.
 
 ### Features
 1. DRY
 2. Customizable
 3. Themeable
-4. Bower ready
-5. Upgradeable
-
-### Dependencies
-The only dependency for Skeleton Sass to run is Sass 3.3+. Any other libraries (e.g. Bourbon) are up to you to include if you wish.
 
 **Warning:** The current stable release of Compass does *not* support Sass 3.3.x. Skeleton Sass uses functions that are a part of that version. There are currently alpha builds of Compass 1.x that do support Sass 3.3.x
 
 ### File Overview
-* `bin` a directory that contains ruby executables
-	* `setup.rb` a ruby script that aids in setting up Skeleton Sass for first time use
-	* `theme_setup.rb` a ruby script that aids in setting up a custom theme for Skeleton Sass
-	* `upgrade` a bash script that aids in upgrading Skeleton Sass (ruby version in the making)
-	* `update.rb` a ruby script that handles updating Skeleton Sass (in progress)
 * `skeleton` where all of the magic happens
 	* `core`
 		* `_config.scss` the default global configuration variables
@@ -114,6 +122,13 @@ Skeleton Sass is community driven. We will gladly review any issues that you fin
 
 Changelog
 ---------
+### 3.0.0
+* Adding `package.json` for npm support
+* Converting all core files to partials for better support for installing via bower and npm
+
+###### Removals
+* `bin/`
+
 ### 2.5.4
 * Adding `normalize.scss` as a dependency
 * Merged master in development for version bump
