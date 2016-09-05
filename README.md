@@ -244,6 +244,7 @@ Changelog
     * Importing of theme components has to be done manually by consumers.
 * Added `.editorconfig`
 * Added `package.json` for installing via npm
+* Updated dependency to use [`normalize-scss`](https://github.com/JohnAlbin/normalize-scss/)
 
 ###### Removals
 * `bin/`
@@ -251,6 +252,7 @@ Changelog
 * `_MYConfig.scss`
 * `themes/demo`
 * `var` partial imports in shipped theme files
+* Removed `normalize` import from `fresh/vars`, user can add the import in the `loader` partial
 
 ###### Additions
 * Introduction of `$new-grid-width` in the global config
