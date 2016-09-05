@@ -9,8 +9,8 @@
 	// override only for fluid
 	/* Overrides */
 	$gutter: percent($base-gutter-width) / 100;
-	.container {
-		@if($new == true) { width: 80%; } // TODO: make this dynamic somehow
+	@if($new == true) {
+		.container { width: $new-grid-width; }
 	}
 	@if($new == false) {
 		.column,

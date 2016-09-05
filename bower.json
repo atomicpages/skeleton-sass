@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass",
-	"version": "3.0.0-dev1",
+	"version": "3.0.0-dev2",
 	"author": "Dennis Thompson",
 	"homepage": "http://atomicpages.github.io/skeleton-sass/",
 	"repository": {
@@ -13,7 +13,7 @@
 			"url": "http://opensource.org/licenses/MIT"
 		}
 	],
-	"main": ["skeleton_template.scss"],
+	"main": ["README.md"],
 	"keywords": [
 		"sass",
 		"design",

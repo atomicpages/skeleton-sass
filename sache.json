@@ -1,15 +1,11 @@
 {
 	"name": "skeleton-sass",
-	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS [written in Sass]",
+	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
 	"tags": [
-		"framework",
-		"responsive",
-		"grids",
-		"ui",
-		"skeleton",
-		"structure",
-		"scss",
-		"layout"
+		"framework", "responsive",
+		"grids", "ui", "skeleton",
+		"scss", "layout", "ux", "sass",
+		"style", "css"
 	],
 	"website": "http://atomicpages.github.io/skeleton-sass/",
 	"docs": "https://github.com/atomicpages/skeleton-sass/wiki"

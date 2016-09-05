@@ -32,6 +32,7 @@ $base-col-width: 40px !global; // The width of each columns
 $base-gutter-width: 20px !global; // The space between columns
 $base-col-count: 16 !global; // The number of columns
 $base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Calculated
+$new-grid-width: 80%; // the new grid with set within the 550px breakpoint
 
 // BREAKPOINTS
 $tablet-width: 768px !global; // the tablet width media query
@@ -47,4 +48,3 @@ $use-new-grid: true !global; // Uses the new grid released in Skeleton CSS 2
 @import "dependencies";
 @import "functions";
 @import "mixins";
-// @import "../../_MYconfig.scss";

@@ -1,8 +1,8 @@
 {
 	"name": "skeleton-sass",
-	"version": "3.0.0-dev1",
-	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
-	"main": "index.js",
+	"version": "3.0.0-dev2",
+	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
+	"main": "skeleton/core/_config.scss",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -15,9 +15,10 @@
 		"skeleton",
 		"front-end",
 		"css",
-		"boilerplate"
+		"boilerplate",
+		"scss"
 	],
-	"author": "Dennis THompson",
+	"author": "Dennis Thompson",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/atomicpages/skeleton-sass/issues"
