@@ -1,14 +1,17 @@
 @import "config";
 
+// import theme dependencies
+@import "../../../bower_components/normalize-scss/sass/normalize/import-now";
+
 // import default theme variables
 @import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/vars";
 
-// import theme overrides and extras
+// import default theme overrides
 @import "themes/demo/vars";
 
 // import default theme styles
 @import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/base";
 @import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/skeleton";
 
-// import extras
+// import extras to be used in skeleton.scss
 @import "../../../bower_components/font-awesome/scss/font-awesome";

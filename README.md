@@ -18,7 +18,6 @@ gulp dist
 * Bump to Skeleton Sass 3 (as part of decoupling process)
 * Made it easier for other developers to contribute to the site
 * Enforced coding standards with `.editorconfig`
-* Added `target/` to `.gitignore`
 * Fixed bower version issues
 * Switched to Gulp
 * Deployment of artifacts in `target` directory
