@@ -13,5 +13,20 @@
 @import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/base";
 @import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/skeleton";
 
-// import extras to be used in skeleton.scss
-@import "../../../bower_components/font-awesome/scss/font-awesome";
+
+// FOR NPM USES: delete everything above and uncomment the imports below
+
+// @import "config";
+
+// import theme dependencies
+// @import "../../../node_modules/normalize-scss/sass/normalize/import-now";
+
+// import default theme variables
+// @import "../../../node_modules/skeleton-sass/skeleton/themes/fresh/vars";
+
+// import default theme overrides
+// @import "themes/demo/vars";
+
+// import default theme styles
+// @import "../../../node_modules/skeleton-sass/skeleton/themes/fresh/base";
+// @import "../../../node_modules/skeleton-sass/skeleton/themes/fresh/skeleton";

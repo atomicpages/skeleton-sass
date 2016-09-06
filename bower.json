@@ -1,6 +1,7 @@
 {
-	"name": "skeleton-sass",
-	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
+	"name": "skeleton-sass-demo",
+	"version": "1.0.0",
+	"description": "A Demo and sample use case of Skeleton Sass 3",
 	"main": "index.html",
 	"authors": [
 		"Dennis Thompson"
@@ -12,7 +13,8 @@
 		"skeleton",
 		"css",
 		"frontend",
-		"responsive"
+		"responsive",
+		"demo"
 	],
 	"homepage": "https://github.com/atomicpages/skeleton-sass",
 	"private": true,
@@ -23,14 +25,7 @@
 		"test",
 		"tests"
 	],
-	"scripts": {
-		"postinstall": ""
-	},
-	"devDependencies": {
-		"smooth-scroll.js": "latest",
-		"jquery.stellar": "latest",
-		"jquery": "2.*",
-		"font-awesome": "latest",
+	"dependencies": {
 		"skeleton-sass": "3.0.0-dev4"
 	}
 }

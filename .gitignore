@@ -2,6 +2,7 @@
 node_modules/
 bower_components/
 .idea/
+target/
 #.idea/codeStyleSettings.xml
 #.idea/workspace.xml
 # target/

@@ -1,8 +1,8 @@
 {
-	"name": "skeleton-sass",
-	"version": "3.0.0",
-	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
-	"main": "gulpfile.js",
+	"name": "skeleton-sass-demo",
+	"version": "1.0.0",
+	"description": "A Demo and sample use case of Skeleton Sass 3",
+	"main": "index.html",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -16,7 +16,8 @@
 		"skeleton",
 		"css",
 		"frontend",
-		"responsive"
+		"responsive",
+		"demo"
 	],
 	"author": "Dennis Thompson",
 	"license": "MIT",
@@ -27,11 +28,7 @@
 	"devDependencies": {
 		"del": "^2.2.2",
 		"gulp": "^3.9.1",
-		"gulp-concat": "^2.6.0",
-		"gulp-imagemin": "^3.0.3",
-		"gulp-rename": "^1.2.2",
 		"gulp-sass": "^2.3.2",
-		"gulp-sourcemaps": "^1.6.0",
-		"gulp-uglify": "^2.0.0"
+		"gulp-sourcemaps": "^1.6.0"
 	}
 }

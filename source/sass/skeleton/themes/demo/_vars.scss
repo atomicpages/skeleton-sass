@@ -1,13 +1,5 @@
-@import "mixins";
-
-// Theme-scoped variables
-$nav-link-color: #ed1c24;
-
-$grid-max-width: 100%;
+@import "include/mixins";
 
 $font-family: "Open Sans", Arial, sans-serif;
 $heading-family: $font-family;
 $form-font: $font-family;
-
-// Breakpoints
-$tablet-width: 750px;

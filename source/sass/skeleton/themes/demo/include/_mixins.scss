@@ -1,3 +1,6 @@
+// import mixins from bower_components/skeleton-sass/skeleton/themes/sphenoid/marrow/_public.scss
+// to use Skeleton Sass defined mixins in your custom theme!
+
 @mixin clear($ele: "this") {
 	$ele: unquote(if($ele == this, "&", $ele));
 	#{$ele}:before,
