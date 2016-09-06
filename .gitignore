@@ -5,3 +5,4 @@ skeleton_template.css
 *.html
 dependencies/
 .idea/
+.DS_Store

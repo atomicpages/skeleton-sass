@@ -13,6 +13,7 @@ Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.c
 
 ### Dependencies
 * Sass 3.3+
+* [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 
 #### Does this work with other Sass compilers?
 Yes! Skeleton Sass has been tested with the following compilers and libsass wrappers
@@ -51,6 +52,7 @@ echo. 2>skeleton.scss
 Inside of `skeleton.scss` we need to add our components:
 
 ~~~sass
+@import "path/to/bower_components/normalize-scss/sass/normalize/import-now"; // import normalize-scss
 @import "path/to/bower_components/skeleton-sass/skeleton/core/config"; // Skeleton Sass core loader
 
 // import default theme variables
@@ -141,10 +143,10 @@ Skeleton Sass 2 is **not** backwards compatible with Skeleton Sass 1.x due to a 
 
 #### Looking for older versions of Skeleton Sass?
 * Skeleton Sass 2
-    * [Version 2 branch](https://github.com/atomicpages/skeleton-sass/tree/master/2.0)
+    * [Version 2 branch](https://github.com/atomicpages/skeleton-sass/tree/2.x-master)
     * [Version 2 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-2-Docs)
 * Skeleton Sass
-    * [Version 1 branch](https://github.com/atomicpages/skeleton-sass/tree/master/1.0)
+    * [Version 1 branch](https://github.com/atomicpages/skeleton-sass/tree/1.x-master)
     * [Version 1 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
 
 #### New to Sass?
