@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"author": "Dennis Thompson",
 	"homepage": "http://atomicpages.github.io/skeleton-sass/",
 	"repository": {
@@ -29,6 +29,6 @@
 		"dependencies/"
 	],
 	"dependencies": {
-		"normalize-scss": "normalize.scss#^5.0.3"
+		"normalize-scss": "normalize.scss#latest"
 	}
 }

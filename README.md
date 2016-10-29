@@ -238,6 +238,10 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.0.1
+* Updating `normalize.scss` dependency to `latest` in `bower.json` and any version `>=5.0.4` in `package.json`
+* Updated sache tags
+
 ### 3.0.0
 * Adding `package.json` for npm support
 * Converting all core files to partials for better support for installing via bower and npm
