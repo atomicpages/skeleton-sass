@@ -13,7 +13,7 @@ const PATHS = [
 ];
 
 gulp.task('clean', () => {
-	return del('target');
+	return del('target', {force: true});
 });
 
 gulp.task('clean-sass', () => {

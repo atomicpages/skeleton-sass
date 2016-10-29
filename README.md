@@ -13,6 +13,11 @@ gulp dist
 ~~~
 
 ## Changelog
+### 3.0.1
+* Updated Skeleton Sass to 3.0.1 stable
+* Updated jQuery to use latest version
+* Fixed a case where `gulp clean` command failed
+
 ### 3.0.0
 * Updated/decoupled dependencies
 * Bump to Skeleton Sass 3 (as part of decoupling process)

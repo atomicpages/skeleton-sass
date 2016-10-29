@@ -29,8 +29,8 @@
 	"devDependencies": {
 		"smooth-scroll.js": "latest",
 		"jquery.stellar": "latest",
-		"jquery": "2.*",
+		"jquery": "latest",
 		"font-awesome": "latest",
-		"skeleton-sass": "3.0.0-dev4"
+		"skeleton-sass": "latest"
 	}
 }

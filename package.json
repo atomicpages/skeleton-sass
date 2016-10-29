@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
 	"main": "gulpfile.js",
 	"scripts": {
