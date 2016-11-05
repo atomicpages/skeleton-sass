@@ -1,5 +1,5 @@
 {
-  "name": "skeleton-sass",
+  "name": "skeleton-sass-amd",
   "version": "0.0.1",
   "description": "npm installer for skeleton-sass",
   "main": "index.js",
