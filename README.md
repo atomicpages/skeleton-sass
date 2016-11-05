@@ -28,7 +28,7 @@ If you're using a `bower` or `npm` then install via:
 
 ~~~bash
 bower i --save-dev skeleton-sass
-npm i --save-dev skeleton-sass
+npm i --save-dev https://github.com/atomicpages/skeleton-sass
 ~~~
 
 Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
