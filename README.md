@@ -16,7 +16,7 @@ Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.c
 * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 
 #### Does this work with other Sass compilers?
-Yes! Skeleton Sass has been tested with the following compilers and libsass wrappers
+Yes! Skeleton Sass 3 has been tested with the following compilers and libsass wrappers:
 
 * [Sass](http://sass-lang.com/) 3.3+
 * [libsass](https://github.com/sass/libsass) 3.2+
@@ -24,18 +24,20 @@ Yes! Skeleton Sass has been tested with the following compilers and libsass wrap
 * [node-sass](https://www.npmjs.com/package/node-sass) 3.5+
 
 ### How do I Consume Skeleton Sass?
-If you're using a `bower` or `npm` then install via:
+If you're using a `bower`, `npm`, or `yarn` then install via:
 
 ~~~bash
 bower i --save-dev skeleton-sass
-npm i --save-dev https://github.com/atomicpages/skeleton-sass
+bower i --save-dev skeleton-sass-official
+npm i --save-dev skeleton-sass-official
+yarn install skeleton-sass-official
 ~~~
 
 Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
 
 From here, minimal stitching is required to get Skeleton Sass 3 integrated into your project! At a minimum, you need to create a single file: `skeleton.scss`
 
-From *nix:
+From \*nix:
 
 ~~~bash
 cd path/to/sass/in/project
@@ -68,13 +70,12 @@ Compile `skeleton.scss` and you now have Skeleton Sass 3 integrated into your pr
 #### But wait! What about my themes?!
 Skeleton Sass 3 makes it easy to keep your changes external to the core of Skeleton Sass with the new all-partial approach. We'll outline a sample case where we use a custom theme below:
 
-* `MyProject/`
-	* `bower_components`
-    * `sources/`
+* `my_project/`
+    * `source/`
         * `sass/`
             * `skeleton/` use skeleton folder to keep file structure clean
                 * `themes/`
-                    * `MyTheme/`
+                    * `my_theme/`
                         * `marrow/`
                             * `_private.scss` contains private mixins, conventionally only available to `_public.scss`
                             * `_public.scss` contains public-facing mixins available to the theme
@@ -84,8 +85,6 @@ Skeleton Sass 3 makes it easy to keep your changes external to the core of Skele
                 * `_config.scss` contains global overrides and applies to **all** themes
                 * `_loader.scss` contains all of the imports
             * `skeleton.scss` imports `_loader.scss` and houses all additional styles
-        * `js/`
-        * `images/`
 
 Now that we have our sample project outlined, let's see how we can get everything working! Open `_config.scss` and add the following:
 
@@ -156,9 +155,10 @@ Check out our [wiki](https://github.com/atomicpages/skeleton-sass/wiki) for a mo
 Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself from your project so you can consume it without worrying if your package manager will clobber all of your hard work.
 
 ### Features
-1. DRY
-2. Customizable
-3. Themeable
+1. Modular
+2. Decoupled core code
+3. Extensible
+4. Themeable
 
 ### File Overview
 * `skeleton` where all of the magic happens
@@ -181,20 +181,25 @@ Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself f
 			* `_vars.scss` contains project-scoped configuration options
 			* `_skeleton.scss` contains all the styles to create the grid
 
-### Bower
-> Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat &mdash; [bower.io](http://bower.io/)
-
 Install Skeleton Sass with bower via command line:
 
 ~~~bash
-bower install skeleton-sass --save
+bower install skeleton-sass --save-dev
+bower install skeleton-sass-official --save-dev
+~~~
+
+You can also add Skeleton Sass as a dependency via NPM or Yarn!
+
+~~~bash
+npm install --save-dev skeleton-sass-official
+yarn install skeleton-sass-official
 ~~~
 
 You can also install alpha, beta, release candidate, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
 
 ~~~bash
 bower install skeleton-sass#[tag]
-bower install skeleton-sass#2.0.0-b2
+bower install skeleton-sass#3.0.2
 ~~~
 
 [Learn how to set up Skeleton Sass for the first time here](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use).
@@ -208,15 +213,14 @@ Skeleton Sass is heavily documented. If you're looking for a detailed descriptio
 ##### Resources
 * [Installing Sass](https://github.com/atomicpages/skeleton-sass/wiki/Installing-Sass)
 * [Setting up Skeleton Sass for first time use](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use)
-* [Setting up a Fluid Grid](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-a-Fluid-Grid)
 * [Creating a theme](https://github.com/atomicpages/skeleton-sass/wiki/Creating-a-theme)
 
 
 ##### Documentation
 * [Introduction to Skeleton Sass](https://github.com/atomicpages/skeleton-sass/wiki)
-* [Function Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Function-Documentation)
-* [Variable Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Variable-Documentation)
-* [Mixin Documentation](https://github.com/atomicpages/skeleton-sass/wiki/Mixin-Documentation)
+* [Function API](https://github.com/atomicpages/skeleton-sass/wiki/Function-API)
+* [Core Variable API](https://github.com/atomicpages/skeleton-sass/wiki/Core-Variable-API)
+* [Mixin API](https://github.com/atomicpages/skeleton-sass/wiki/Mixin-API)
 * [Skeleton Sass version 1 Docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
 
 ### License
@@ -238,6 +242,13 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.0.2
+* Changing `package.json` name to `skeleton-sass-official` to avoid name collisions.
+* Updated links in README
+* Major wiki changes
+* Added `skeleton-sass-official` to bower
+* Fixing Issue #22
+
 ### 3.0.1
 * Updating `normalize.scss` dependency to `latest` in `bower.json` and any version `>=5.0.4` in `package.json`
 * Updated sache tags

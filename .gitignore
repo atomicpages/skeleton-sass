@@ -1,8 +1,6 @@
-.sass-cache
-*.config.scss
-skeleton.*
-skeleton_template.css
-*.html
-dependencies/
 .idea/
 .DS_Store
+yarn.lock
+node_modules/
+bower_components/
+.editorconfig
