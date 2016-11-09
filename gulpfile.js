@@ -7,10 +7,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 
-const PATHS = [
-	'bower_components/jquery.stellar/jquery.stellar.js',
-	'bower_components/smooth-scroll.js/dist/js/smooth-scroll.js'
-];
+const PATHS = ['node_modules/jump.js/dist/jump.min.js'];
 
 gulp.task('clean', () => {
 	return del('target', {force: true});
@@ -29,7 +26,7 @@ gulp.task('clean-fonts', () => {
 });
 
 gulp.task('fonts', ['clean-fonts'], () => {
-	gulp.src('bower_components/font-awesome/fonts/**/*.{ttf,woff,eot,svg}')
+	gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,eot,svg}')
 		.pipe(gulp.dest('target/fonts/'));
 });
 

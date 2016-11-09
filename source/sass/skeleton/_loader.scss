@@ -1,17 +1,20 @@
 @import "config";
 
 // import theme dependencies
-@import "../../../bower_components/normalize-scss/sass/normalize/import-now";
+@import "../../../node_modules/normalize-scss/sass/normalize/import-now";
 
 // import default theme variables
-@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/vars";
+@import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/vars";
 
 // import default theme overrides
 @import "themes/demo/vars";
 
 // import default theme styles
-@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/base";
-@import "../../../bower_components/skeleton-sass/skeleton/themes/fresh/skeleton";
+@import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/base";
+@import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/skeleton";
 
 // import extras to be used in skeleton.scss
-@import "../../../bower_components/font-awesome/scss/font-awesome";
+@import "../../../node_modules/font-awesome/scss/variables";
+@import "../../../node_modules/font-awesome/scss/core";
+@import "../../../node_modules/font-awesome/scss/path";
+@import "../../../node_modules/font-awesome/scss/icons";

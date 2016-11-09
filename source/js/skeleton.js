@@ -1,56 +1,43 @@
-(function ($) {
+function ready(fn) {
+	if (document.readyState !== 'loading') {
+		fn();
+	} else {
+		document.addEventListener('DOMContentLoaded', fn);
+	}
+}
+
+ready(function () {
 	'use strict';
 
-	function move(element, speed) {
-		$(element).delay(800).animate({bottom: "-=20"}, speed, function() {
-			$(this).fadeOut(200, function() {
-				$(this).css("bottom", "+=20");
-			});
-			$(this).fadeIn(200, function() {
-				move(element, speed);
+	document.querySelector('[data-date]').textContent = new Date().getFullYear();
+
+	var _registerEvents = function () {
+		var nav_items = document.querySelectorAll('.nav a[data-scroll]');
+		var $grid = document.getElementById('grid');
+
+		Array.prototype.forEach.call(nav_items, function (element, i) {
+			element.addEventListener('click', function (e) {
+				e.preventDefault();
+				Jump(document.getElementById(e.srcElement.getAttribute('href').replace('#', '')));
 			});
 		});
-	}
 
-	$("span[data-date]").text(new Date().getFullYear());
+		$grid.addEventListener('keyup', function (e) {
+			var gutter = parseInt($grid.querySelector('input[name="gutter"]').value);
+			var cols = parseInt($grid.querySelector('input[name="cols"]').value);
+			var width = parseInt($grid.querySelector('input[name="width"]').value);
+			var total = (width + gutter) * cols;
 
-	$(".nav a[data-scroll]").click(function(e) {
-		e.preventDefault();
-	});
+			document.getElementsByClassName('content_width')[0].textContent = ((total - gutter) + 'px');
+			document.getElementsByClassName('full_width')[0].textContent = (total + 'px');
 
-	var $grid = $('#grid');
+			document.getElementsByClassName('vars')[0].textContent = '// Copy and paste these in your global config file to override ' +
+					'the grid\n$base-col-width: '
+					+ width + 'px;\n$base-gutter-width: '
+					+ gutter + 'px;\n$base-col-count: '
+					+ cols + ';';
+			});
+	};
 
-	$grid.submit(function (e) {
-		e.preventDefault();
-	});
-
-	$grid.keyup(function () {
-		var gutter = parseInt($('input[name="gutter"]').val());
-		var cols = parseInt($('input[name="cols"]').val());
-		var width = parseInt($('input[name="width"]').val());
-		var $total = ( width + gutter ) * cols;
-
-		$('.content_width').text($total - gutter + 'px');
-
-		$('.full_width').text($total + 'px');
-
-		$('.vars').text('// Copy and paste these in your global config file to override ' +
-			'the grid\n$base-col-width: '
-			+ width + 'px;\n$base-gutter-width: '
-			+ gutter + 'px;\n$base-col-count: '
-			+ cols + ';');
-	});
-
-	move(".fa-arrow-down", 500);
-
-	$.stellar({
-		horizontalScrolling: false,
-		verticalOffset: 40
-	});
-
-}(jQuery));
-
-smoothScroll.init({
-	speed: 1000,
-	easing: 'easeInOutQuad'
+	_registerEvents();
 });

@@ -8,11 +8,25 @@ Looking for Skeleton Sass v1 Site? Find it here: http://atomicpages.github.io/sk
 ### How do I build?
 
 ~~~bash
-npm i && bower i
-gulp dist
+npm i && gulp dist
+~~~
+
+If you are using `yarn` then:
+
+~~~bash
+yarn install && gulp dist
 ~~~
 
 ## Changelog
+### 3.0.2
+* Removed bower as a dependency to build this site. Only `npm` or `yarn` is required
+* Updated links on site
+* Converted all existing jQuery js to vanilla js
+* Removed parallax scrolling
+* Fixed smooth scrolling issues
+* Changed OS X to macOS
+* Cleaned up grid panel
+
 ### 3.0.1
 * Updated Skeleton Sass to 3.0.1 stable
 * Updated jQuery to use latest version

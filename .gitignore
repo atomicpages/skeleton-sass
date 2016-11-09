@@ -1,12 +1,8 @@
 .sass-cache/
 node_modules/
-bower_components/
 .idea/
-#.idea/codeStyleSettings.xml
-#.idea/workspace.xml
-# target/
 
-## OS X
+# macOS
 .DS_Store
 ._*
 .Spotlight-V100
