@@ -70,21 +70,22 @@ Compile `skeleton.scss` and you now have Skeleton Sass 3 integrated into your pr
 #### But wait! What about my themes?!
 Skeleton Sass 3 makes it easy to keep your changes external to the core of Skeleton Sass with the new all-partial approach. We'll outline a sample case where we use a custom theme below:
 
-* `my_project/`
-    * `source/`
-        * `sass/`
-            * `skeleton/` use skeleton folder to keep file structure clean
-                * `themes/`
-                    * `my_theme/`
-                        * `marrow/`
-                            * `_private.scss` contains private mixins, conventionally only available to `_public.scss`
-                            * `_public.scss` contains public-facing mixins available to the theme
-                        * `_skeleton.scss` contains the theme grid, replaces shipped grids
-                        * `_base.scss` contains the theme base styles, replaces shipped base styles
-                        * `_vars.scss` contains theme-scoped variables and overrides
-                * `_config.scss` contains global overrides and applies to **all** themes
-                * `_loader.scss` contains all of the imports
-            * `skeleton.scss` imports `_loader.scss` and houses all additional styles
+```
+my_project
+└── src
+    └── sass
+        ├── skeleton.scss	 # Skeleton folder to keep file structure clean
+        └── themes
+            ├── _config.scss	 # Global overrides and applies to all themes
+            ├── _loader.scss 	# Contains all of the imports
+            └── my_theme
+                ├── _base.scss 	# Theme base styles, replaces shipped base styles
+                ├── _skeleton.scss	# Theme grid, replaces shipped grids
+                ├── _vars.scss 	# Theme-scoped variables and overrides
+                └── marrow
+                    ├── _private.scss # Private mixins, conventionally only available to _public.scss
+                    └── _public.scss # Public-facing mixins available to the theme
+```
 
 Now that we have our sample project outlined, let's see how we can get everything working! Open `_config.scss` and add the following:
 
@@ -161,25 +162,28 @@ Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself f
 4. Themeable
 
 ### File Overview
-* `skeleton` where all of the magic happens
-	* `core`
-		* `_config.scss` the default global configuration variables
-		* `_dependencies.scss` the default global logic for Skeleton Sass
-		* `_functions.scss` the default global functions for Skeleton Sass
-		* `_mixins.scss` the default global mixins for Skeleton Sass
-	* `themes` where all of the themes live
-		* `fresh`
-			* `marrow` stores all project-level functions and mixins
-				* `_mixins.scss` loads the default theme mixins and functions from `sphenoid`
-			* `_base.scss` contains all of the base styles for Skeleton Sass with the exception of the reset styles
-			* `_vars.scss` contains project-scoped configuration options and variables
-		* `sphenoid` the main theme bundled with Skeleton Sass
-			* `marrow` the directory that contains all of the project-scoped logic (e.g. functions and mixins) for your theme to work
-				* `_private.scss` a file that contains all of the private logic for the public mixins/functions to work correctly for the `sphenoid` project. Feel free to name this file whatever you want in your own theme.
-				* `_public.scss` a file that contains all of the public mixins/functions for the `sphenoid` theme. Feel free to name this file whatever you want in your own theme.
-			* `_base.scss` contains all of the base styles for Skeleton Sass (same look as Skeleton CSS created)
-			* `_vars.scss` contains project-scoped configuration options
-			* `_skeleton.scss` contains all the styles to create the grid
+```
+Skeleton 	# Where all of the magic happens
+├── core
+│   ├── _config.scss 	# Default global configuration variables
+│   ├── _dependencies.scss	 # Default global logic for Skeleton Sass
+│   ├── _functions.scss	 # Default global functions for Skeleton Sass
+│   └── _mixins.scss	 # Default global mixins for Skeleton Sass
+└── themes 	# Where all of the themes live
+    ├── fresh
+    │   ├── _base.scss contains # All of the base styles for Skeleton Sass with the exception of the reset styles
+    │   ├── _skeleton.scss 
+    │   ├── _vars.scss 	# Project-scoped configuration options and variables
+    │   └── marrow 	# Stores all project-level functions and mixins
+    │       └── _mixins.scss	 # loads the default theme mixins and functions from sphenoid
+    └── sphenoid
+        ├── _base.scss 	# Base styles for Skeleton Sass (same look as Skeleton CSS created)
+        ├── _skeleton.scss	 # Styles to create the grid
+        ├── _vars.scss 	# Project-scoped configuration options
+        └── marrow 	#Project-scoped logic (e.g. functions and mixins) for your theme to work
+            ├── _private.scss 	# Private logic for the public mixins/functions to work correctly for the sphenoid project. Feel free to name this file whatever you want in your own theme.
+            └── _public.scss 	# Public mixins/functions for the sphenoid theme. Feel free to name this file whatever you want in your own theme.
+```
 
 Install Skeleton Sass with bower via command line:
 
