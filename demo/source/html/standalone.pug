@@ -1,0 +1,24 @@
+doctype html
+html(lang='en', xml:lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        title Skeleton Sass Demo
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        link(rel='stylesheet', type='text/css', href='target/css/base.css')
+        link(rel='stylesheet', type='text/css', href='target/css/skeleton.css')
+        link(rel='stylesheet', type='text/css', href='target/css/demo.css')
+body
+    header
+        nav
+            ul
+                li
+                    button.button(template='default') Fixed Grid
+                li
+                   button.button(template='fluid') Fluid Grid
+                li
+                   button.button(template='12-col') 12 Columns Grid
+                li
+                   button.button(template='1040px') 1040px Width Grid
+                li
+                   button.button(template='1280px') 1280px Width Grid

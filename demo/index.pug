@@ -1,0 +1,31 @@
+doctype html
+html(lang='en', xml:lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(http-equiv="Cache-Control", content="public")
+		title Skeleton Sass Demo
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', type='text/css', href='target/css/fresh.css').theme
+		link(rel='stylesheet', type='text/css', href='target/css/skeleton-fluid.css').grid
+		link(rel='stylesheet', type='text/css', href='target/css/demo.css')
+	body
+		header
+			nav
+				ul
+					li
+						button(preset='fluid').active Fluid Grid
+					li
+						button(preset='fixed') Fixed Grid
+					li
+						button(template='16-col') 16 Columns Grid
+					//- li
+					//- 	button(preset='1040px') 1040px Width Grid
+					//- li
+					//- 	button(preset='1280px') 1280px Width Grid
+					li
+						select(title="Theme Chooser").themes-chooser
+							option(value="fresh" selected="selected") Fresh
+							option(value="sphenoid") Sphenoid
+		main.
+		script(src="source/js/demo.js")

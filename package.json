@@ -34,8 +34,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
-    "skeleton-sass-official": ">=3.0.2",
     "jump.js": ">=1.0.1",
+    "skeleton-sass-official": ">=3.0.2",
     "skrollr": ">=0.6.26"
   }
 }
