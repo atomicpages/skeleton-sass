@@ -172,7 +172,7 @@ Skeleton 	# Where all of the magic happens
 └── themes 	# Where all of the themes live
     ├── fresh
     │   ├── _base.scss contains # All of the base styles for Skeleton Sass with the exception of the reset styles
-    │   ├── _skeleton.scss 
+    │   ├── _skeleton.scss
     │   ├── _vars.scss 	# Project-scoped configuration options and variables
     │   └── marrow 	# Stores all project-level functions and mixins
     │       └── _mixins.scss	 # loads the default theme mixins and functions from sphenoid
@@ -376,3 +376,5 @@ Contributors
 		* **Note:** as a result of his work we can finally close [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
 * [seshaljain](https://github.com/seshaljain)
 	* [Issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)
+* [pcbulai](https://github.com/pcbulai)
+    * [Issue #24](https://github.com/atomicpages/skeleton-sass/issues/24)
