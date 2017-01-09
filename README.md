@@ -246,6 +246,18 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.1.0
+* Adding a new theme based on [Wing](http://usewing.ml/) which is _heavily_ based on Skeleton.
+* **Major** update to demo section of the demo site.
+    * Using current version of Skeleton Sass
+    * Removed legacy demos
+    * Added new demos
+    * Better styling
+    * Less clutter
+
+### 3.0.3
+* Addressing issue #24
+
 ### 3.0.2
 * Changing `package.json` name to `skeleton-sass-official` to avoid name collisions.
 * Updated links in README
