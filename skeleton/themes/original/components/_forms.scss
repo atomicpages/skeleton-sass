@@ -1,0 +1,61 @@
+/* FORMS
+ * ------------------------------------------------ */
+form { margin-bottom: relative(20px); }
+fieldset { margin-bottom: relative(20px); }
+input[type="text"],
+input[type="password"],
+input[type="color"],
+input[type="email"],
+input[type="range"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="number"],
+textarea,
+select {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: relative(6px) relative(4px);
+	outline: none;
+	@include border-radius(2px);
+	font-family: $form-font;
+	@include font-size($font-size + 1);
+	color: #777;
+	margin: 0 0 relative(20px);
+	width: relative(210px);
+	max-width: 100%;
+	display: block;
+	&:hover,
+	&:focus {
+		border: 1px solid #aaa;
+		color: #444;
+		@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+	}
+	&:active {
+		border: 1px solid darken(#aaa, 10%);
+		@include box-shadow(0 0 3px rgba(0,0,0,0.3));
+	}
+}
+select {
+	padding: 0;
+	width: relative(220px);
+}
+textarea { min-height: relative(60px); }
+label,
+legend {
+	span {
+		font-weight: normal;
+		@include font-size($font-size + 1);
+		color: #444;
+	}
+	display: block;
+	font-weight: bold;
+	@include font-size($font-size + 1);
+}
+input[type="checkbox"] { display: inline; }

@@ -1,0 +1,52 @@
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	display: inline-block;
+	height: 38px;
+	padding: 0 relative(30px);
+	color: $button-color;
+	text-align: center;
+	font-size: relative(11px);
+	font-weight: $button-weight;
+	line-height: 38px;
+	letter-spacing: 0.1rem;
+	text-transform: if($button-font-uppercase, uppercase, none);
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 1px solid $button-border-color;
+	cursor: pointer;
+	box-sizing: border-box;
+	&:hover,
+	&:focus {
+		color: #333;
+		border-color: #888;
+		outline: 0;
+	}
+	&.button-primary {
+		color: #FFF;
+		background-color: #33C3F0;
+		border-color: #33C3F0;
+		&:hover,
+		&:focus {
+			color: #FFF;
+			background-color: #1EAEDB;
+			border-color: #1EAEDB;
+		}
+	}
+}
+.button:visited { color: $button-color; }
+
+/* Fix for odd Mozilla border & padding issues */
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}

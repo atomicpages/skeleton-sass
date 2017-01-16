@@ -1,0 +1,13 @@
+/* IMAGES
+ * ------------------------------------------------ */
+img.scale-with-grid {
+	max-width: 100%;
+	height: auto;
+}
+
+/* MISC
+ * ------------------------------------------------ */
+.subtract-bottom { margin-bottom: relative(-20px) !important; }
+.remove-bottom { margin-bottom: 0 !important; }
+.half-bottom { margin-bottom: relative(10px) !important; }
+.add-bottom { margin-bottom: relative(20px) !important; }

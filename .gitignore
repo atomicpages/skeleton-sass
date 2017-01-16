@@ -4,3 +4,5 @@ yarn.lock
 node_modules/
 bower_components/
 .editorconfig
+main.scss
+index.html

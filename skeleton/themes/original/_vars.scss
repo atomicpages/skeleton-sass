@@ -1,10 +1,10 @@
 // This file exists for not only to connect everything at the
 // project level, but for you to import project-level dependencies
-// stored in the marrow folder, but to also create project-level
+// stored in the mixins folder, but to also create project-level
 // variables.
 
-@import "marrow/private";
-@import "marrow/public";
+@import "mixins/private";
+@import "mixins/public";
 
 // Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/settings/_prefixer.scss
 $prefix-for-webkit:    true !default;

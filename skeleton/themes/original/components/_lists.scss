@@ -1,0 +1,29 @@
+/* LISTS
+ * ------------------------------------------------ */
+ul,
+ol { margin-bottom: relative(20px); }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square,
+ul.circle, ul.disc { margin-left: relative(30px); }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol,
+ol ol, ol ul {
+	margin: {
+		top: relative(4px);
+		right: 0;
+		bottom: relative(5px);
+		left: relative(30px);
+	}
+	font-size: 90%;
+}
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: relative(6px); }
+li {
+	line-height: relative(18px);
+	margin-bottom: relative(12px);
+}
+ul.large li { line-height: relative(21px); }
+li p { line-height: relative(21px); }

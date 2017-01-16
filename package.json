@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass-official",
-	"version": "3.0.2",
+	"version": "3.1.0",
 	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
 	"main": "skeleton/core/_config.scss",
 	"scripts": {
@@ -11,12 +11,12 @@
 		"url": "git+https://github.com/atomicpages/skeleton-sass.git"
 	},
 	"keywords": [
+		"scss",
 		"sass",
 		"skeleton",
-		"front-end",
+		"frontend",
 		"css",
-		"boilerplate",
-		"scss"
+		"boilerplate"
 	],
 	"author": "Dennis Thompson",
 	"license": "MIT",
@@ -26,5 +26,13 @@
 	"homepage": "https://github.com/atomicpages/skeleton-sass#readme",
 	"dependencies": {
 		"normalize-scss": ">=5.0.4"
+	},
+	"devDependencies": {
+		"del": ">=2.2.2",
+		"gulp": "^3.9.1",
+		"gulp-cli": ">=1.2.2",
+		"gulp-sass": ">=3.1.0",
+		"gulp-sourcemaps": "^2.4.0",
+		"sassdoc": ">=2.1.20"
 	}
 }

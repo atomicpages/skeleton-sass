@@ -1,0 +1,84 @@
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	font: {
+		family: $heading-family;
+		weight: normal;
+	}
+}
+h1, h2, h3,
+h4, h5, h6 {
+	a { font-weight: inherit; }
+}
+h1 {
+	@include font-size($font-size * 3.8333);
+	line-height: relative($font-size * 4.1666);
+	margin-bottom: relative($font-size * 1.1666);
+}
+h2 {
+	@include font-size($font-size * 2.9166);
+	line-height: relative($font-size * 3.333);
+	margin-bottom: relative($font-size * 0.833);
+}
+h3 {
+	@include font-size($font-size * 2.333);
+	line-height: relative($font-size * 2.833);
+	margin-bottom: relative($font-size * 0.666);
+}
+h4 {
+	@include font-size($font-size * 1.75);
+	line-height: relative($font-size * 2.5);
+	margin-bottom: relative($font-size * 0.333);
+}
+h5 {
+	@include font-size($font-size * 1.4166);
+	line-height: relative($font-size * 2);
+}
+h6 {
+	@include font-size($font-size * 1.1666);
+	line-height: relative($font-size * 1.75);
+}
+.subheader { color: #777; }
+p {
+	margin: 0 0 relative(20px) 0;
+	img { margin: 0; }
+	&.lead {
+		@include font-size($font-size * 1.75);
+		line-height: relative($font-size * 2.25);
+		color: #777;
+	}
+}
+em, i { font-style: italic; }
+strong, b { font-weight: bold; }
+u { text-decoration: underline; }
+small { font-size: 80%; }
+/*	Blockquotes  */
+blockquote, blockquote p {
+	@include font-size($font-size * 1.4166);
+	line-height: relative($font-size * 2);
+	color: #777;
+	font-style: italic;
+}
+blockquote {
+	margin: 0 0 relative(20px);
+	padding: relative(9px) relative(20px) 0 relative(19px);
+	border-left: 1px solid #ddd;
+}
+blockquote cite {
+	display: block;
+	@include font-size($font-size);
+	color: #555;
+	&:before { content: "\2014 \0020"; }
+	a, a:visited { color: #555; }
+}
+hr {
+	border: {
+		style: solid;
+		color: #ddd;
+		width: 1px 0 0;
+	};
+	clear: both;
+	margin: relative(10px) 0 relative(30px);
+	height: 0;
+}

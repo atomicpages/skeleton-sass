@@ -1,0 +1,53 @@
+/* TYPOGRAPHY
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	font: {
+		family: $heading-family;
+		weight: $heading-weight;
+	}
+	margin-top: 0;
+	margin-bottom: relative(20px);
+}
+h1 {
+	font-size: relative(40px);
+	line-height: 1.2;
+	letter-spacing: relative(-1px);
+}
+h2 {
+	font-size: relative(36px);
+	line-height: 1.25;
+	letter-spacing: -0.1rem;
+}
+h3 {
+	font-size: relative(30px);
+	line-height: 1.3;
+	letter-spacing: -0.1rem;
+}
+h4 {
+	font-size: relative(24px);
+	line-height: 1.35;
+	letter-spacing: -0.08rem;
+}
+h5 {
+	font-size: relative(18px);
+	line-height: 1.5;
+	letter-spacing: -0.05rem;
+}
+h6 {
+	font-size: relative(15px);
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: relative(50px); }
+  h2 { font-size: relative(42px); }
+  h3 { font-size: relative(36px); }
+  h4 { font-size: relative(30px); }
+  h5 { font-size: relative(24px); }
+  h6 { font-size: relative(15px); }
+}
+
+p { margin-top: 0; }

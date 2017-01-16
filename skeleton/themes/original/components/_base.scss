@@ -1,0 +1,40 @@
+// The foundation of Skeleton which includes all base styles
+// that come bundled by default.
+// See skeleton/core/_config.scss for default variable values.
+// See _vars.scss for theme-scoped default values.
+
+/* RESET
+ * ------------------------------------------------ */
+@include global-reset;
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+	font-size: percentage(strip-units($base-font-size) / 16);
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	line-height: 1.2;
+}
+@if($use-global-border-box) {
+	*,
+	*:before,
+	*:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+body {
+	background: $background-color;
+	font: {
+		family: $font-family;
+		weight: normal;
+		style: normal;
+	}
+	@include font-size(14px);
+	line-height: relative(26px);
+	color: $font-color;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}

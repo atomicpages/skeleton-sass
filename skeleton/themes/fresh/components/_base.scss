@@ -1,0 +1,46 @@
+// The foundation of Skeleton which includes all base styles
+// that come bundled by default.
+// See skeleton/core/_config.scss for default variable values.
+// See _vars.scss for theme-scoped default values.
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html { font-size: percentage(strip-units($base-font-size) / 16); }
+@if($use-global-border-box) {
+	*,
+	*:before,
+	*:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+body {
+	background: $background-color;
+	font: {
+		family: $font-family;
+		weight: $font-weight;
+		style: normal;
+	}
+	@include font-size($font-size);
+	line-height: 1.6;
+	color: $font-color;
+}
+
+/* SPACING
+ * ------------------------------------------------ */
+button,
+.button { margin-bottom: relative(10px); }
+input,
+textarea,
+select,
+fieldset { margin-bottom: relative(15px); }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form { margin-bottom: relative(25px); }

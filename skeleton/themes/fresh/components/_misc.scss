@@ -1,0 +1,25 @@
+/* CODE
+ * ------------------------------------------------ */
+code {
+	padding: relative(2px) relative(5px);
+	margin: 0 relative(2px);
+	font-size: 90%;
+	white-space: nowrap;
+	background: #F1F1F1;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+}
+pre > code {
+	display: block;
+	padding: relative(10px) relative(15px);
+	white-space: pre;
+}
+
+/* MISC
+ * ------------------------------------------------ */
+hr {
+	margin-top: relative(30px);
+	margin-bottom: relative(35px);
+	border-width: 0;
+	border-top: 1px solid #E1E1E1;
+}

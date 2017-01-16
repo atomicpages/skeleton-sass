@@ -1,0 +1,7 @@
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+	color: $link-color;
+	text-decoration: $link-decoration;
+}
+a:hover, a:focus, a:active { color: $link-hover; }

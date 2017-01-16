@@ -1,7 +1,9 @@
-$font-size: 1.5rem;
-$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$heading-weight: 300;
-$heading-family: "Quicksand", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/settings/_prefixer.scss
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default;
 
 // Buttons
 $button-color: #fff;
@@ -9,3 +11,34 @@ $button-font-uppercase: true;
 $button-bg-color: #333030;
 $button-weight: 500;
 $button-outline-border-color: $button-color;
+
+// Default overrides for new theme
+$is-fluid: true; // Change to true to enable the fluid grid
+
+$link-color: #2a92ea; // default link color
+$link-hover: $link-color; // default link color on :hover
+$link-decoration: underline; // default link decoration
+
+$base-width: 80%;
+
+$font-size: 15px;  // default font size. Change here will adjust sizes across the board.
+$font-weight: 400; // sets the font weight
+$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; // default fonts
+$font-color: #222;  // default font color
+
+$heading-family: "Quicksand", $font-family; // default heading (h1-h6) font
+$heading-color: $font-color; // default heading (h1-h6) color
+$heading-weight: 300; // sets the weight of the heading text
+
+$form-font: $font-family; // default form font
+
+$button-color: #fff;
+$button-weight: 600;
+$button-font-uppercase: true;
+$button-border-color: #bbb;
+
+// GRID CHANGES
+$grid-max-width: 960px;
+$base-col-count: 12;
+$base-col-width: 60px;
+$use-new-grid: true;

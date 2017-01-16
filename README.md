@@ -30,10 +30,15 @@ If you're using a `bower`, `npm`, or `yarn` then install via:
 bower i --save-dev skeleton-sass
 bower i --save-dev skeleton-sass-official
 npm i --save-dev skeleton-sass-official
-yarn install skeleton-sass-official
+yarn install skeleton-sass-official --dev
 ~~~
 
 Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
+
+~~~bash
+cd path/to/my_dir
+git clone https://github.com/atomicpages/skeleton-sass.git
+~~~
 
 From here, minimal stitching is required to get Skeleton Sass 3 integrated into your project! At a minimum, you need to create a single file: `skeleton.scss`
 
@@ -61,8 +66,8 @@ Inside of `skeleton.scss` we need to add our components:
 @import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/vars"; // theme variable overrides
 
 // import default theme styles
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/base"; // theme base styles
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/skeleton"; // theme grid styles
+@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/include\_components"; // theme base styles
+@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/grid"; // theme grid styles
 ~~~
 
 Compile `skeleton.scss` and you now have Skeleton Sass 3 integrated into your project!
@@ -79,12 +84,20 @@ my_project
             ├── _config.scss	 # Global overrides and applies to all themes
             ├── _loader.scss 	# Contains all of the imports
             └── my_theme
-                ├── _base.scss 	# Theme base styles, replaces shipped base styles
-                ├── _skeleton.scss	# Theme grid, replaces shipped grids
-                ├── _vars.scss 	# Theme-scoped variables and overrides
-                └── marrow
-                    ├── _private.scss # Private mixins, conventionally only available to _public.scss
-                    └── _public.scss # Public-facing mixins available to the theme
+                ├── _grid.scss # Theme grid, replaces shipped grids
+                ├── \_include_components.scss # Includes all of the components in the components folder
+                ├── _vars.scss # Theme-scoped variables and overrides
+                ├── components
+                │   ├── _base.scss # Default html and body styles
+                │   ├── _buttons.scss
+                │   ├── _forms.scss
+                │   ├── _links.scss
+                │   ├── _lists.scss
+                │   ├── _typography.scss
+                │   └── _utils.scss # Utility classes
+                └── mixins
+                    ├── _private.scss # Contains all "private" mixins
+                    └── _public.scss # Contains all public mixins
 ```
 
 Now that we have our sample project outlined, let's see how we can get everything working! Open `_config.scss` and add the following:
@@ -104,8 +117,8 @@ Now open `_loader.scss` and add the following:
 
 // import theme, overrides, and extras
 @import "themes/MyTheme/vars";
-@import "themes/MyTheme/base";
-@import "themes/MyTheme/skeleton";
+@import "themes/MyTheme/include_components";
+@import "themes/MyTheme/grid";
 ~~~
 
 Finally, open `skeleton.scss` and add the following as the first line of the file:
@@ -124,14 +137,14 @@ For example, let's assume we want to use font-awesome inside of our `skeleton.sc
 
 // import theme, overrides, and extras
 @import "themes/MyTheme/vars";
-@import "themes/MyTheme/base";
-@import "themes/MyTheme/skeleton";
+@import "themes/MyTheme/include_components";
+@import "themes/MyTheme/grid";
 
 // import extras
 @import "../../../bower_components/font-awesome/scss/font-awesome";
 ~~~
 
-**Note:** the position of the import changes which files have access to the loaded data. For example, if you need the data in `themes/MyTheme/skeleton` then you'd need to move the import above the line where you import `themes/MyTheme/skeleton`.
+**Note:** the position of the import changes which files have access to the loaded data. For example, if you need the data in `themes/MyTheme/grid` then you'd need to move the import above the line where you import `themes/MyTheme/grid`.
 
 For more information on why we made this change, [click here](#change).
 
@@ -158,31 +171,63 @@ Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself f
 ### Features
 1. Modular
 2. Decoupled core code
-3. Extensible
-4. Themeable
+3. Decoupled theme files for rapid theme development
+4. Extensible
 
 ### File Overview
 ```
-Skeleton 	# Where all of the magic happens
+skeleton/ # Where all of the magic happens
 ├── core
-│   ├── _config.scss 	# Default global configuration variables
-│   ├── _dependencies.scss	 # Default global logic for Skeleton Sass
-│   ├── _functions.scss	 # Default global functions for Skeleton Sass
-│   └── _mixins.scss	 # Default global mixins for Skeleton Sass
-└── themes 	# Where all of the themes live
+│   ├── _config.scss # Default global configuration variables
+│   ├── _dependencies.scss # Default global logic for Skeleton Sass
+│   ├── _functions.scss # Default global functions for Skeleton Sass
+│   └── _mixins.scss # Default global mixins for Skeleton Sass
+└── themes # Where all of the themes live
     ├── fresh
-    │   ├── _base.scss contains # All of the base styles for Skeleton Sass with the exception of the reset styles
-    │   ├── _skeleton.scss
-    │   ├── _vars.scss 	# Project-scoped configuration options and variables
-    │   └── marrow 	# Stores all project-level functions and mixins
-    │       └── _mixins.scss	 # loads the default theme mixins and functions from sphenoid
-    └── sphenoid
-        ├── _base.scss 	# Base styles for Skeleton Sass (same look as Skeleton CSS created)
-        ├── _skeleton.scss	 # Styles to create the grid
-        ├── _vars.scss 	# Project-scoped configuration options
-        └── marrow 	#Project-scoped logic (e.g. functions and mixins) for your theme to work
-            ├── _private.scss 	# Private logic for the public mixins/functions to work correctly for the sphenoid project. Feel free to name this file whatever you want in your own theme.
-            └── _public.scss 	# Public mixins/functions for the sphenoid theme. Feel free to name this file whatever you want in your own theme.
+    │   ├── _grid.scss
+    │   ├── \_include_components.scss # partial to import all of the components
+    │   ├── _vars.scss # Project-scoped configuration options and variables
+    │   ├── components
+    │   │   ├── _base.scss
+    │   │   ├── _buttons.scss
+    │   │   ├── _forms.scss
+    │   │   ├── _links.scss
+    │   │   ├── _lists.scss
+    │   │   ├── _misc.scss
+    │   │   ├── _normalize.scss
+    │   │   ├── _tables.scss
+    │   │   ├── _typography.scss
+    │   │   └── _utils.scss
+    │   └── mixins # Stores all project-level functions and mixins
+    │       └── _mixins.scss
+    ├── original
+    │   ├── _grid.scss
+    │   ├── \_include_components.scss # partial to import all of the components
+    │   ├── _vars.scss # Project-scoped configuration options and variables
+    │   ├── components
+    │   │   ├── _base.scss
+    │   │   ├── _buttons.scss
+    │   │   ├── _forms.scss
+    │   │   ├── _links.scss
+    │   │   ├── _lists.scss
+    │   │   ├── _typography.scss
+    │   │   └── _utils.scss
+    │   └── mixins # Stores all project-level functions and mixins
+    │       ├── _private.scss
+    │       └── _public.scss
+    └── wing
+        ├── _grid.scss
+        ├── \_include_components.scss # partial to import all of the components
+        ├── _vars.scss # Project-scoped configuration options and variables
+        └── components
+            ├── _base.scss
+            ├── _buttons.scss
+            ├── _forms.scss
+            ├── _links.scss
+            ├── _lists.scss
+            ├── _misc.scss
+            ├── _typography.scss
+            └── _utils.scss
 ```
 
 Install Skeleton Sass with bower via command line:
@@ -196,14 +241,14 @@ You can also add Skeleton Sass as a dependency via NPM or Yarn!
 
 ~~~bash
 npm install --save-dev skeleton-sass-official
-yarn install skeleton-sass-official
+yarn install skeleton-sass-official --dev
 ~~~
 
 You can also install alpha, beta, release candidate, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
 
 ~~~bash
 bower install skeleton-sass#[tag]
-bower install skeleton-sass#3.0.2
+bower install skeleton-sass#3.1.0
 ~~~
 
 [Learn how to set up Skeleton Sass for the first time here](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use).
@@ -254,6 +299,15 @@ Changelog
     * Added new demos
     * Better styling
     * Less clutter
+* Splitting base styles into several components to accelerate theme development and reduce file coupling.
+    * `_base.scss`
+    * `_buttons.scss`
+    * etc...
+* Adding `_include_components.scss` partial in every theme for easy loading
+* Standardizing naming conventions
+    * Renaming `sphenoid` theme to `original`
+    * Renaming `marrow` folders to `mixins`
+    * Renaming `_skeleton.scss` to `_grid.scss`
 
 ### 3.0.3
 * Addressing issue #24

@@ -1,0 +1,9 @@
+/* LINKS
+ * ------------------------------------------------ */
+a, a:visited {
+	color: $link-color;
+	text-decoration: $link-decoration;
+	outline: 0;
+}
+a:hover, a:focus, a:active { color: $link-hover; }
+p a, p a:visited { line-height: inherit; }

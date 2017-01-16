@@ -1,0 +1,75 @@
+/* BUTTONS
+ * ------------------------------------------------ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	border: 1px solid #aaa;
+	border: {
+		top: 1px solid #ccc;
+		left: 1px solid #ccc;
+	};
+	@include border-radius(3px);
+	color: #444;
+	display: inline-block;
+	font: {
+		weight: bold;
+		family: $form-font;
+	};
+	@include font-size($font-size - 1);
+	text-decoration: none;
+	cursor: pointer;
+	line-height: normal;
+	padding: relative(8px) relative(10px);
+	background: #eeeeee -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+	background: #eeeeee -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background: #eeeeee linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+	&:hover {
+		color: #222;
+		border: 1px solid #888;
+		border: {
+			top: 1px solid #aaa;
+			left: 1px solid #aaa;
+		};
+		background: #dddddd -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+		background: #dddddd -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -moz-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd -o-linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+		background: #dddddd linear-gradient(top, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+	}
+	&:active {
+		border: 1px solid #666;
+		background: #cccccc -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.35)), color-stop(100%, rgba(10, 10, 10, 0.4)));
+		background: #cccccc -webkit-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -moz-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc -o-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+		background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
+	}
+	&.full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center;
+	}
+	&.smaller {
+		@include font-size($font-size - 2);
+		padding: relative(4px) relative(5px);
+	}
+	&.larger {
+		@include font-size($font-size + 2);
+		padding: relative(10px) relative(18px);
+	}
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}

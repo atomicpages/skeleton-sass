@@ -1,0 +1,25 @@
+// The foundation of Skeleton which includes all base styles
+// that come bundled by default.
+// See skeleton/core/_config.scss for default variable values.
+// See _vars.scss for theme-scoped default values.
+
+/* BASIC STYLES
+ * ------------------------------------------------ */
+html {
+    font-size: percentage(strip-units($base-font-size) / 16);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    letter-spacing: 0.01em;
+	background: $background-color;
+	font: {
+		family: $font-family;
+		weight: $font-weight;
+		style: normal;
+	}
+	@include font-size($font-size);
+	line-height: 1.6;
+	color: $font-color;
+}
