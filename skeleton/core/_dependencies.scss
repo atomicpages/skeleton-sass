@@ -1,10 +1,16 @@
-// Core mixin and function dependencies that are globally scoped.
-// Can be used as building blocks for other functions/mixins in your
-// own themes.
+////
+/// Core mixin and function dependencies that are globally scoped.
+/// Can be used as building blocks for other functions/mixins in your
+/// own themes
+////
 
 // ---------- MIXIN DEPENDENCIES
 
-// _fluidGrid ( number $colCount, [ boolean $new = true ] )
+/// Handles the generation of fluid grids.
+/// @param {number} $colCount - The number of columns to generate (max 99)
+/// @param {Bool} $new [ $use-new-grid ] - Set true to enable the new style of grid to be generated
+/// @group core
+/// @access private
 @mixin _fluidGrid($colCount, $new: $use-new-grid) {
 	// override only for fluid
 	/* Overrides */
@@ -63,7 +69,13 @@
 	@include _offset(true, $colCount, false);
 }
 
-// _fixedGrid ( number $width, number $colWidth, number $gutterWidth, number $colCount )
+/// Handles the generation of fixed grids.
+/// @param {number} $width - The width of the grid as defined in `.container`
+/// @param {number} $colWidth - The width of each column
+/// @param {number} $gutterWidth - The amount of padding between each column
+/// @param {number} $colCount - The number of columns to generate (max 99)
+/// @group core
+/// @access private
 @mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
 	.container {
 		.column,
@@ -95,7 +107,13 @@
 	}
 }
 
-// _offset ( boolean $is-fluid, number $colCount, number $colWidth, [ $new = false ] )
+/// Creates offset rules
+/// @param {bool} $is-fluid - Set true if the offsets are to be used with a fluid grid.
+/// @param {number} $colCount - The number of columns to generate (max 99)
+/// @param {number} $colWidth - The width of each column
+/// @param {bool} $new [ $use-new-grid ] - Set true to enable the new style of grid to be generated
+/// @group core
+/// @access private
 @mixin _offset($is-fluid, $colCount, $colWidth, $new: $use-new-grid) { // TODO: finish this
 	@for $i from 1 through ($colCount - 1 ) {
 		.offset-by-#{numToString($i)} { margin-left: if($is-fluid, percentage($i / $colCount) + ($i / 3), ($colWidth + 20) * $i); }
@@ -110,7 +128,12 @@
 	}
 }
 
-// _mobileGrid ( number $width, number $colCount, boolean $isFluid )
+/// Creates the mobile grid which should be inside of a `@media` query.
+/// @param {number} $width - The width of the grid as defined in `.container`.
+/// @param {number} $colCount - The number of columns to generate (max 99).
+/// @param {bool} $isFluid - Set true of the mobile grid should be fluid.
+/// @group core
+/// @access private
 @mixin _mobileGrid($width, $colCount, $isFluid) {
 	$width: if($isFluid, $mobile-fluid-width, $width);
 	.container {
@@ -140,12 +163,20 @@
 	}
 }
 
-// _mobileOffset ( number $colCount )
+/// Creates offset classes for the mobile grid
+/// @param {number} $colCount - The number of columns to create offset classes for.
+/// @group core
+/// @access private
 @mixin _mobileOffset($colCount) {
 	@include _group($colCount - 1, "offset-by-") { padding-left: 0; }
 }
 
-// _group ( number $stop, string $selector, [ string $pos: "before" ] )
+/// Groups all of `offset-by-` selectors together
+/// @param {number} $stop - The column to stop at (e.g. `offset-by-fifteen`) when `$stop = 15`
+/// @param {string} $selector - The selector to group
+/// @param {string} $pos [ before ] - Where to place `$selector` (`offset-by-two` vs. `two-offset-by`)
+/// @group core
+/// @access private
 @mixin _group($stop, $selector, $pos: "before") {
 	$store: "";
 	@if(type-of($stop) != "number") {
@@ -165,8 +196,11 @@
 
 // ---------- FUNCTION DEPENDENCIES
 
-// Converts a number from 0 to 100 to the English word
-// string numToString ( number $int )
+/// Converts a number from 0 to 100 to the English word
+/// @param {number} $int - Any number between 1 and 99
+/// @return {string} The English version of the number entered in.
+/// @group core
+/// @access private
 @function numToString($int) {
 	// set up lists
 	$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
@@ -205,11 +239,17 @@
 	@return $number;
 }
 
+/// Calculates the relative units given absolute units.
+/// @param {string|number} $px - The unit in pixels.
+/// @param {number} $base - The base value to divide by.
+/// @param {string} $unit - `em`, `rem`, or `%` are valid **relative** values.
+/// @return {string} The new relative unit.
+/// @group core
+/// @access private
 @function _calcRU($px, $base, $unit) {
 	$unit: quote($unit);
 
 	@if not $unit == "em" or not $unit == "rem" or not $unit == "%" {
-		@debug "Invalid unit, choose 'em' or 'rem'";
 		@return null;
 	}
 

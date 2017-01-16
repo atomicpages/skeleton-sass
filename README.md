@@ -66,7 +66,7 @@ Inside of `skeleton.scss` we need to add our components:
 @import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/vars"; // theme variable overrides
 
 // import default theme styles
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/include\_components"; // theme base styles
+@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/include_components"; // theme base styles
 @import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/grid"; // theme grid styles
 ~~~
 
@@ -85,7 +85,7 @@ my_project
             ├── _loader.scss 	# Contains all of the imports
             └── my_theme
                 ├── _grid.scss # Theme grid, replaces shipped grids
-                ├── \_include_components.scss # Includes all of the components in the components folder
+                ├── _include_components.scss # Includes all of the components in the components folder
                 ├── _vars.scss # Theme-scoped variables and overrides
                 ├── components
                 │   ├── _base.scss # Default html and body styles
@@ -185,7 +185,7 @@ skeleton/ # Where all of the magic happens
 └── themes # Where all of the themes live
     ├── fresh
     │   ├── _grid.scss
-    │   ├── \_include_components.scss # partial to import all of the components
+    │   ├── _include_components.scss # partial to import all of the components
     │   ├── _vars.scss # Project-scoped configuration options and variables
     │   ├── components
     │   │   ├── _base.scss
@@ -202,7 +202,7 @@ skeleton/ # Where all of the magic happens
     │       └── _mixins.scss
     ├── original
     │   ├── _grid.scss
-    │   ├── \_include_components.scss # partial to import all of the components
+    │   ├── _include_components.scss # partial to import all of the components
     │   ├── _vars.scss # Project-scoped configuration options and variables
     │   ├── components
     │   │   ├── _base.scss
@@ -217,7 +217,7 @@ skeleton/ # Where all of the magic happens
     │       └── _public.scss
     └── wing
         ├── _grid.scss
-        ├── \_include_components.scss # partial to import all of the components
+        ├── _include_components.scss # partial to import all of the components
         ├── _vars.scss # Project-scoped configuration options and variables
         └── components
             ├── _base.scss
@@ -308,6 +308,7 @@ Changelog
     * Renaming `sphenoid` theme to `original`
     * Renaming `marrow` folders to `mixins`
     * Renaming `_skeleton.scss` to `_grid.scss`
+* Moving to [sassdoc](http://sassdoc.com/); no more manual documentation!
 
 ### 3.0.3
 * Addressing issue #24

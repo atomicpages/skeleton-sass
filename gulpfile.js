@@ -1,9 +1,11 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const del = require('del');
+const sassdoc = require('sassdoc');
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('clean', function () {
+    del('sassdoc');
     return del('main.css*');
 });
 
@@ -15,4 +17,17 @@ gulp.task('sass', ['clean'], function () {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('doc', function () {
+    return gulp.src('skeleton/**/*.scss')
+        .pipe(sassdoc({
+            display: {
+                alias: true,
+                watermark: true
+            },
+            groups: {
+                core: 'Core'
+            }
+        }));
+});
+
+gulp.task('default', ['sass', 'doc']);
