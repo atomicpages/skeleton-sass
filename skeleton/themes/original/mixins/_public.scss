@@ -1,12 +1,13 @@
-// Project-scoped mixins? Oh, boy! Am I allowed to use these in my own theme? You bet!
-// I have a fix... how do I help? Check the README!
-
 @import "private"; // don't remove me
 
 // ---- MIXINS ----
 
-// Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/addons/_prefixer.scss
-// @prefixer ( string $property, mixed $value, list $prefixes )
+/// Prefixes CSS properties
+/// @param {string} $property - The property name to prefix.
+/// @param {any} $value - The value of the property.
+/// @param {list} $prefixes - A list of prefixes to use (e.g. webkit moz ms o spec)
+/// @group theme
+/// @access public
 @mixin prefixer($property, $value, $prefixes) {
 	@each $prefix in $prefixes {
 		@if $prefix == webkit {
@@ -40,60 +41,95 @@
 	}
 }
 
-// @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-// @box-shadow ( [ none | inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ] ] )
+/// Auto-prefixes the `box-shadow` property.
+/// @param {list} $shadow - The shadow properties to include (e.g. 5px, inset 5px 6px, etc.)
+/// @group theme
+/// @access public
 @mixin box-shadow($shadow...) {
 	@if length($shadow) > 4 {
 		@warn("$shadow should only accept four argument for each side of the box. Using more may cause undesired results");
 	}
+
 	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
 }
 
-// @border-radius ( $radii... )
+/// Auto-prefixes the `border-radius` property.
+/// @param {list} $radii - The border-radius properties to include (e.g. 5px, 3px 5px, etc.)
+/// @group theme
+/// @access public
 @mixin border-radius($radii...) {
 	@if length($radii) > 4 {
 		@warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
 	}
+
 	@include prefixer(border-radius, $radii, webkit moz ms o spec);
 }
 
-// @border-top-left-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-top-left-radius($radius: $default-border-radius) { @include _bd("top", "left", $radius); }
 
-// @border-top-right-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-top-right-radius($radius: $default-border-radius) { @include _bd("top", "right", $radius); }
 
-// @border-bottom-left-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-bototm-left-radius($radius: $default-border-radius) { @include _bd("bottom", "left", $radius); }
 
-// @border-bottom-right-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-bottom-right-radius($radius: $default-border-radius) { @include _bd("bottom", "right", $radius); }
 
-// @border-top-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-top-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
 	@include border-top-right-radius($radius);
 }
 
-// @border-right-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-right-radius($radius: $default-border-radius) {
 	@include border-top-right-radius($radius);
 	@include border-bottom-right-radius($radius);
 }
 
-// @border-bottom-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-bottom-radius($radius: $default-border-radius) {
 	@include border-bottom-left-radius($radius);
 	@include border-bottom-right-radius($radius);
 }
 
-// @border-left-radius ( [ $radius: $default-border-radius ] )
+/// Auto-prefixes specified border-radius variant propery
+/// @param {number} $radius [ $default-border-radius ] - The radius to set.
+/// @group theme
+/// @access public
 @mixin border-left-radius($radius: $default-border-radius) {
 	@include border-top-left-radius($radius);
 	@include border-bottom-left-radius($radius);
 }
 
-// @opacity ( number $alpha [ boolean $ie: true ] )
+/// Sets the opacity with or without IE support.
+/// @param {number} $alpha - A decmal value between 0 and 1.
+/// @param {bool} $ie [ true ] - Set true to support legacy IE clients.
+/// @group theme
+/// @access public
 @mixin opacity($alpha, $ie: true) {
 	@if(type-of($alpha) != number) {
 		@warn "$alpha must be a number. Setting to 0.5.";
@@ -110,13 +146,22 @@
 	opacity: $alpha;
 }
 
-// @box-sixing ( string $type )
+/// Auto-prefixes the `box-sizing` property.
+/// @param {string} $type - A valid value of the `box-sizing` property.
+/// @group theme
+/// @access public
 @mixin box-sizing($type) {
 	$type: unquote($type);
 	@include prefixer(box-sizing, $type, webkit moz spec);
 }
 
-// @single-transition ( string $property, number $duration, string $function, [ number $delay: false ] )
+/// Sets a single transition.
+/// @param {string} $property - The property to animate (e.g. all, opacity, etc.)
+/// @param {number} $duration - The duration of animation.
+/// @param {string} $function - The particular easing function to use (e.g. linear)
+/// @param {number} $delay - The amount of time to wait before animating.
+/// @group theme
+/// @access public
 @mixin single-transition($property, $duration, $function, $delay: false) {
 	@if($delay == false) {
 		$delay: "";
@@ -125,68 +170,56 @@
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// @transition ( list $transition... )
+/// Sets multiple transitions
+/// @param {list} $transition - A list of transitions.
+/// @see single-transition
+/// @group theme
+/// @access public
 @mixin transition($transition...) {
 	@include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
-// @filter-gradient ( color $start, color $stop, [ number $direction: 0 ] )
-@mixin filter-gradient($start, $stop, $direction) {
-	@if $direction < 0 or $direction > 1 {
-		@warn "Invalid value for $direction. Defaulting to 0";
-		$direction: 0;
-	}
-
-	*zoom: 1;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', gradientType='#{$direction}');
-}
-
-// needs multiple stop support
-// @linear-gradient ( string $direction, list $start, list $stop, [ boolean $ie: true ] )
-@mixin linear-gradient($direction, $start, $stop, $ie: true) {
-	@if(type-of($start) != "list") {
-		@warn "Bad parameter for $start. Expected list got #{type-of($start)}, defaulting to false.";
-		$start: false;
-	} @else if(type-of($stop) != "list") {
-		@warn "Bad parameter for $stop. Expected list got #{type-of($stop)}, defaulting to false.";
-		$stop: false;
-	}
-	@include _buildGradient($direction, $start, $stop, $ie);
-}
-
-// @radial-gradient ( mixed $start, mixed $stop, [ boolean $ie: true ] )
-@mixin radial-gradient($start, $stop, $ie: true) {
-	@include _buildRadialGradient($start, $stop, $ie);
-}
-
-// @reset-box-model ( )
+/// Resets the box model.
+/// @group theme
+/// @access public
 @mixin reset-box-model {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
-// @reset-font ( )
+/// Resets fonts.
+/// @group theme
+/// @access public
 @mixin reset-font {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
 
-// @reset-focus ( )
+/// Wipes all focus outline styles.
+/// @group theme
+/// @access public
 @mixin reset-focus { outline: 0; }
 
-// @reset-body ( )
+/// Resets line-height values.
+/// @group theme
+/// @access public
 @mixin reset-body { line-height: 1; }
 
-// @reset-list-style ( )
+/// Wipes all list styles.
+/// @group theme
+/// @access public
 @mixin reset-list-style { list-style: none; }
 
-// @reset-image-anchor-border ( )
+/// Resets image anchors.
+/// @group theme
+/// @access public
 @mixin reset-image-anchor-border { border: none; }
 
-// @reset-table ( )
+/// Normalizes table styles.
+/// @group theme
+/// @access public
 @mixin reset-table {
 	border: {
 		collapse: collapse;
@@ -194,14 +227,18 @@
 	}
 }
 
-// @reset-table-cell ( )
+/// Resets table cell alignment and font-weights.
+/// @group theme
+/// @access public
 @mixin reset-table-cell {
 	text-align: left;
 	font-weight: normal;
 	vertical-align: middle;
 }
 
-// @reset-quotation ( )
+/// Reset quotations.
+/// @group theme
+/// @access public
 @mixin reset-quotation {
 	quotes: none;
 	&:before, &:after {
@@ -210,20 +247,18 @@
 	}
 }
 
-// @reset-html5 ( )
+/// Reset HTML5 elements (mainly for legacy browsers).
+/// @group theme
+/// @access public
 @mixin reset-html5 {
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section { display: block; }
 }
 
-@mixin reset-filter-gradient {
-	// see http://stackoverflow.com/questions/1768161/how-do-i-reset-or-override-ie-css-filters
-	filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
-}
-
-// @global-reset ( )
+/// Eric Meyer's global reset.
+/// @group theme
+/// @access public
 @mixin global-reset {
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -250,7 +285,9 @@
 	}
 }
 
-// @nested-reset ( )
+/// Nested elements reset.
+/// @group theme
+/// @access public
 @mixin nested-reset {
 	div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,

@@ -3,9 +3,9 @@
 // stored in the marrow folder, but to also create project-level
 // variables.
 
-@import "mixins/mixins";
+@import "../original/mixins/private";
+@import "../original/mixins/public";
 
-// Yep, taken right from bourbon - https://github.com/thoughtbot/bourbon/blob/master/dist/settings/_prefixer.scss
 $prefix-for-webkit:    true !default;
 $prefix-for-mozilla:   true !default;
 $prefix-for-microsoft: true !default;

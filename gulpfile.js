@@ -5,7 +5,7 @@ const sassdoc = require('sassdoc');
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('clean', function () {
-    del('sassdoc');
+    del('docs');
     return del('main.css*');
 });
 
@@ -20,12 +20,14 @@ gulp.task('sass', ['clean'], function () {
 gulp.task('doc', function () {
     return gulp.src('skeleton/**/*.scss')
         .pipe(sassdoc({
+            dest: './docs',
             display: {
                 alias: true,
                 watermark: true
             },
             groups: {
-                core: 'Core'
+                core: 'Core API',
+                theme: 'Theme API'
             }
         }));
 });

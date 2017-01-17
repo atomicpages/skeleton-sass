@@ -2,29 +2,51 @@
 
 @import "dependencies";
 
-// addresses https://github.com/nex3/sass/issues/533
-// number strip-units ( number $number )
+/// Strips the units from strings
+/// @param {string|number} $number - The number to remove units from.
+/// @return {number} Unitless number.
+/// @group core
+/// @access public
+/// @link https://github.com/nex3/sass/issues/533
 @function strip-units($number) {
 	@return $number / ($number * 0 + 1);
 }
 
-// to determine the unit. If it's a percentage, then our equation changes.
-// number em ( number $px, [ number $base: $base-font-size ] )
+/// Takes in an absolute unit and gives back a relative one.
+/// @param {number} $px - A absolute unit.
+/// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
+/// @return {number} Realtive `em` unit.
+/// @group core
+/// @access public
 @function em($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "em");
 }
 
-// number rem ( number $px, [ number $base: $base-font-size ] )
+/// Takes in an absolute unit and gives back a relative one.
+/// @param {number} $px - A absolute unit.
+/// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
+/// @return {number} Realtive `rem` unit.
+/// @group core
+/// @access public
 @function rem($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "rem");
 }
 
-// number percent ( number $px, [ number $base: $base-font-size ] )
+/// Takes in an absolute unit and gives back a relative one.
+/// @param {number} $px - A absolute unit.
+/// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
+/// @return {number} Realtive `%` unit.
+/// @group core
+/// @access public
 @function percent($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "%");
 }
 
-// number relative ( number $size )
+/// Takes in an absolute unit and gives back a relative one.
+/// @param {number} $size - A absolute unit.
+/// @group core
+/// @access public
+/// @return {number} A relative unit based on the values of `$use-rem`, `$use-em`, and `$use-percent`.
 @function relative($size) {
 	@if($use-rem == true and $use-em == false and $use-percent == false) {
 		@return rem($size);
@@ -37,7 +59,11 @@
 	@return $size; // we're still using pixels
 }
 
-// list triad ( color $color )
+/// Takes in a color and provides a list of triad-compatible colors.
+/// @param {color} $color - The color to calculate traid colors for.
+/// @return {list} A list of triad colors.
+/// @group core
+/// @access public
 @function triad($color) {
 	@if(type-of($color) != "color") {
 		@warn "Type must be color to continue. Aborting.";
@@ -60,7 +86,11 @@
 	@return $triad;
 }
 
-// list square ( color $color )
+/// Takes in a color and provides a list of square-compatible colors.
+/// @param {color} $color - The color to calculate traid colors for.
+/// @return {list} A list of square colors.
+/// @group core
+/// @access public
 @function square($color) {
 	@if(type-of($color) != "color") {
 		@warn "Type must be color to continue. Aborting.";

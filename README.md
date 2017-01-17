@@ -309,6 +309,7 @@ Changelog
     * Renaming `marrow` folders to `mixins`
     * Renaming `_skeleton.scss` to `_grid.scss`
 * Moving to [sassdoc](http://sassdoc.com/); no more manual documentation!
+* Removing graident support in theme mixins
 
 ### 3.0.3
 * Addressing issue #24
