@@ -291,6 +291,9 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.1.1
+* Forgot to add the grid for `Wing` theme :)
+
 ### 3.1.0
 * Adding a new theme based on [Wing](http://usewing.ml/) which is _heavily_ based on Skeleton.
 * **Major** update to demo section of the demo site.

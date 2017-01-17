@@ -24,6 +24,8 @@
     }
 }
 
+@include grid($base-width, $is-fluid, $base-gutter-width, $base-col-count);
+
 @media screen and (max-width: 768px) {
     .row { margin-top: 0; }
     .row [class*='column'] {
