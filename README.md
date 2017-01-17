@@ -14,10 +14,14 @@ npm i && gulp dist
 If you are using `yarn` then:
 
 ~~~bash
-yarn install && gulp dist
+yarn && gulp dist
 ~~~
 
 ## Changelog
+### 3.1.0
+* Adding new demo
+* Adding sassdoc documentation
+
 ### 3.0.2
 * Removed bower as a dependency to build this site. Only `npm` or `yarn` is required
 * Updated links on site
@@ -43,6 +47,3 @@ yarn install && gulp dist
 * All source code can be found in `source`
     * **Note:** the only exception to this is `index.html` which serves as the entry point to the site.
 * Dropped legacy `X-UA-Compatible` meta tag. [See here for more info](http://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do)
-
-## TODO
-* Update demo

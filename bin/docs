@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cwd=$(pwd)
+
+cd ../
+yarn
+rm -rf docs/
+cd node_modules/skeleton-sass-official/
+yarn
+gulp doc
+mv docs/ ../../.
+rm -rf node_modules/
+exit 0

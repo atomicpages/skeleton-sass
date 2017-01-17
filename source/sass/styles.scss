@@ -96,7 +96,10 @@ section {
 	.fa { font-size: 2.666rem; }
 	ul {
 		li { line-height: 1.5; }
-		.fa { font-size: 1.5rem; }
+		.fa {
+			font-size: 1.5rem;
+			padding-right: 1rem;
+		}
 	}
 	&.learn_more {
 		color: white;

@@ -56,6 +56,10 @@
         var loadedTheme = document.head.getElementsByClassName('theme')[0];
         var activeTheme = loadedTheme.getAttribute('href');
         loadedTheme.setAttribute('href', activeTheme.replace(/\w+\.css/i, theme + '.css'));
+
+        if (theme === 'wing') {
+            loadNewStyles('wing');
+        }
     });
 
     var buttons = document.querySelectorAll('nav button');

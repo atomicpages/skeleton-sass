@@ -1,3 +1,4 @@
 @import "loader";
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../node_modules/skeleton-sass-official/skeleton/themes/fresh/vars";
-@import "../../node_modules/skeleton-sass-official/skeleton/themes/fresh/base";
+@import "../../node_modules/skeleton-sass-official/skeleton/themes/fresh/include_components";

@@ -7,7 +7,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 
-const PATHS = ['node_modules/jump.js/dist/jump.min.js'];
+const PATHS = ['./node_modules/jump.js/dist/jump.js'];
 
 gulp.task('clean', () => {
 	return del('target', {force: true});
@@ -26,7 +26,7 @@ gulp.task('clean-fonts', () => {
 });
 
 gulp.task('fonts', ['clean-fonts'], () => {
-	gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,eot,svg}')
+	gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eot,svg}')
 		.pipe(gulp.dest('target/fonts/'));
 });
 
@@ -55,7 +55,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('sass', ['clean-sass'], () => {
-	return gulp.src('source/sass/*.scss')
+	return gulp.src(['source/sass/*.scss', 'source/sass/themes/*.scss'])
 		.pipe(sourcemaps.init())
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(sourcemaps.write())

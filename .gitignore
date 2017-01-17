@@ -10,3 +10,5 @@ node_modules/
 
 # NPM/Yarn
 yarn.lock
+
+main.scss
