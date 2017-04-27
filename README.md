@@ -291,6 +291,10 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.1.2
+* Merging in pull request [dirkolbrich](https://github.com/dirkolbrich)
+	* Fixes duplicate `normalize.css` in transpiled output
+
 ### 3.1.1
 * Forgot to add the grid for `Wing` theme :)
 
