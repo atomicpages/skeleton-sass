@@ -148,7 +148,7 @@
 		}
 		@for $i from 1 through $colCount {
 			@if ($i == 1) {
-				.#{numToString($i)}.column { width: $width; }
+				.#{numToString($i)}.column { width: $width - 4 ; }
 			}
 		}
 		@include _group($colCount, ".columns", "after") { width: $width - 4; }
