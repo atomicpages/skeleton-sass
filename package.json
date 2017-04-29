@@ -1,41 +1,44 @@
 {
-  "name": "skeleton-sass",
-  "version": "3.0.2",
-  "description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/atomicpages/skeleton-sass.git"
-  },
-  "keywords": [
-    "sass",
-    "scss",
-    "skeleton",
-    "css",
-    "frontend",
-    "responsive"
-  ],
-  "author": "Dennis Thompson",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/atomicpages/skeleton-sass/issues"
-  },
-  "homepage": "https://github.com/atomicpages/skeleton-sass#readme",
-  "devDependencies": {
-    "del": "^2.2.2",
-    "font-awesome": ">=4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0",
-    "jump.js": ">=1.0.1",
-    "skeleton-sass-official": ">=3.1.0",
-    "skrollr": ">=0.6.26"
-  }
+    "name": "skeleton-sass",
+    "version": "3.1.1",
+    "description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
+    "main": "gulpfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/atomicpages/skeleton-sass.git"
+    },
+    "keywords": [
+        "sass",
+        "scss",
+        "skeleton",
+        "css",
+        "frontend",
+        "responsive"
+    ],
+    "author": "Dennis Thompson",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/atomicpages/skeleton-sass/issues"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "homepage": "https://github.com/atomicpages/skeleton-sass#readme",
+    "devDependencies": {
+        "del": "^2.2.2",
+        "font-awesome": ">=4.7.0",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-imagemin": "^3.0.3",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^2.0.0",
+        "jump.js": ">=1.0.1",
+        "skeleton-sass-official": ">=3.1.0",
+        "skrollr": ">=0.6.26"
+    }
 }

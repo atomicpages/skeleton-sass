@@ -10,7 +10,7 @@ const del = require('del');
 const PATHS = ['./node_modules/jump.js/dist/jump.js'];
 
 gulp.task('clean', () => {
-	return del('target', {force: true});
+	return del('target', { force: true });
 });
 
 gulp.task('clean-sass', () => {

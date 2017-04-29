@@ -35,11 +35,11 @@ nav {
 		padding: 0;
 		white-space: nowrap;
 		list-style: none;
+		display: flex;
+		justify-content: space-between;
 		li {
 			margin-bottom: 0;
 			line-height: 3.5;
-			width: (100% / 6);
-			float: left;
 			text-align: center;
 			a {
 				&, &:visited { color: $nav-link-color; }
@@ -147,6 +147,7 @@ section {
 			color: white;
 			background: rgba(0, 0, 0, 0.2);
 			word-break: break-word;
+			overflow: auto;
 		}
 	}
 	&.footer {
@@ -181,13 +182,16 @@ section {
 @media only screen and (max-width: $tablet-width - 1) {
 	nav {
 		ul {
+			display: block;
+			width: 100% !important;
+			margin: {
+				left: 0 !important;
+				right: 0 !important;
+			};
 			li {
-				width: 100%;
-				float: none;
 				text-align: left;
 				a {
 					display: block;
-					width: 100%;
 					line-height: 2.5;
 					&:hover { background: rgba(255, 255, 255, 0.5); }
 				}
@@ -201,9 +205,14 @@ section {
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) {
+	nav ul { display: block; }
 	.home {
 		.fa-circle-thin { display: none; }
 	}
+}
+
+@media only screen and (min-width: 750px) and (max-width: 806px) {
+	nav ul { justify-content: flex-end; }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

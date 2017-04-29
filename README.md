@@ -18,6 +18,11 @@ yarn && gulp dist
 ~~~
 
 ## Changelog
+### 3.1.1
+* Bumping `node` dependencies
+* Adding engine version in `package.json`
+* Fixing styling issues in the showcase site.
+
 ### 3.1.0
 * Adding new demo
 * Adding sassdoc documentation
