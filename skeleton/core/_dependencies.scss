@@ -84,6 +84,7 @@
 				left: $gutterWidth / 2;
 				right: $gutterWidth / 2;
 			};
+			max-width: 100%;
 		}
 	}
 	/* The Grid */
@@ -96,8 +97,13 @@
 				.#{numToString($i)}.columns { width: $colWidth + (($colWidth + $gutterWidth) * ($i - 1)); }
 			}
 		}
-		.one-third.column { width: ($width / 3) - 20}
-		.two-thirds.column { width: (($width * 2) / 3) - 20 }
+		.one-third.column,
+		.one-third.columns { width: ($width / 3) - $gutterWidth}
+		.two-thirds.column,
+		.two-thirds.columns { width: (($width * 2) / 3) - $gutterWidth }
+		.one-half.column,
+		.one-half.columns { width: $width / 2 - $gutterWidth; }
+		.full-width.column,
 		.full-width.columns {
 			width: $width;
 			margin-left: 0;
@@ -140,7 +146,7 @@
 		width: $width;
 		.column,
 		.columns {
-			// fixes https://github.com/atomicpages/skeleton-sass/issues/9
+			max-width: 100%;
 			margin: {
 				left: if($isFluid, 2%, 0);
 				right: if($isFluid, 2%, 0);

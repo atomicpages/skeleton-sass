@@ -25,6 +25,7 @@ body {
 	@include font-size($font-size);
 	line-height: 1.6;
 	color: $font-color;
+	margin: 0 auto;
 }
 
 /* SPACING

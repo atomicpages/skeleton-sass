@@ -291,6 +291,24 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 
 Changelog
 ---------
+### 3.1.4
+* Addressing issue #31
+    * Adding styles for `.one-half`
+    * Adding new selectors to fixed grid:
+        * `.one-third.columns`
+        * `.two-third.columns`
+        * `.one-half.column`
+		* `.one-half.columns`
+        * `.full-width.column`
+* Addressing issue #28
+* Fixing configuration issues when `$base-gutter-width` is something other than `20px` in fixed grid mixin
+* Enforcing `body` margin styles to fixed overflow issue in `960px - 1129px`
+    * Applies only to `fresh` theme
+
+### 3.1.3
+* Merging in pull request #30
+    * Addresses issue #29
+
 ### 3.1.2
 * Merging in pull request [dirkolbrich](https://github.com/dirkolbrich)
 	* Fixes duplicate `normalize.css` in transpiled output
