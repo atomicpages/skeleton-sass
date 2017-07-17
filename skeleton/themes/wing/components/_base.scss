@@ -12,6 +12,7 @@ html {
     padding: 0;
 }
 body {
+    @include font-size($font-size);
     letter-spacing: 0.01em;
     background: $background-color;
     font: {
@@ -19,7 +20,6 @@ body {
         weight: $font-weight;
         style: normal;
     }
-    @include font-size($font-size);
     line-height: 1.6;
     color: $font-color;
 }

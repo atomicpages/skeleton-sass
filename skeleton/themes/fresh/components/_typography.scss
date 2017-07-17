@@ -1,5 +1,6 @@
 /* TYPOGRAPHY
  * ------------------------------------------------ */
+p { margin-top: 0; }
 h1, h2, h3, h4, h5, h6 {
     color: $heading-color;
     font: {
@@ -42,12 +43,10 @@ h6 {
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 { font-size: relative(50px); }
-  h2 { font-size: relative(42px); }
-  h3 { font-size: relative(36px); }
-  h4 { font-size: relative(30px); }
-  h5 { font-size: relative(24px); }
-  h6 { font-size: relative(15px); }
+    h1 { font-size: relative(50px); }
+    h2 { font-size: relative(42px); }
+    h3 { font-size: relative(36px); }
+    h4 { font-size: relative(30px); }
+    h5 { font-size: relative(24px); }
+    h6 { font-size: relative(15px); }
 }
-
-p { margin-top: 0; }

@@ -20,18 +20,20 @@
     &:after {
         display: table;
         clear: both;
-        content: '';
+        content: "";
     }
 }
 
 @include grid($base-width, $is-fluid, $base-gutter-width, $base-col-count);
 
 @media screen and (max-width: 768px) {
-    .row { margin-top: 0; }
-    .row [class*='column'] {
-        width: 100%;
-        margin-top: 2.0833%;
-        margin-left: 0;
+    .row {
+        margin-top: 0;
+        &[class*="column"] {
+            width: 100%;
+            margin-top: 2.0833%;
+            margin-left: 0;
+        }
     }
 }
 

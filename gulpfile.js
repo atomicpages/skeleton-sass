@@ -65,7 +65,9 @@ gulp.task('lint', function () {
                         'no-ids': 0,
                         'no-css-comments': 0,
                         'force-attribute-nesting': 0,
-                        'quotes': [1, { style: 'double' }]
+                        'quotes': [1, { style: 'double' }],
+                        'no-warn': 0,
+                        'border-zero': 0
                     }
                 }))
                 .pipe(sassLint.format())

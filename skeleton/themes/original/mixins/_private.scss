@@ -1,3 +1,4 @@
+// sass-lint:disable-all
 // Private mixins scoped at the theme level
 
 // ---------- MIXIN DEPENDENCIES
@@ -9,7 +10,7 @@
 /// @group theme
 /// @access private
 @mixin _bd($vert, $horiz, $radius) {
-	-webkit-border-#{$vert}-#{$horiz}-radius: $radius;
-	-moz-border-radius-#{$vert}#{$horiz}: $radius;
-	border-#{$vert}-#{$horiz}-radius: $radius;
+    -webkit-border-#{$vert}-#{$horiz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horiz}: $radius;
+    border-#{$vert}-#{$horiz}-radius: $radius;
 }

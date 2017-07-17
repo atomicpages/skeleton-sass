@@ -19,43 +19,43 @@ input[type="time"],
 input[type="number"],
 textarea,
 select {
-	background: #fff;
-	border: 1px solid #ccc;
-	padding: relative(6px) relative(4px);
-	outline: none;
-	@include border-radius(2px);
-	font-family: $form-font;
-	@include font-size($font-size + 1);
-	color: #777;
-	margin: 0 0 relative(20px);
-	width: relative(210px);
-	max-width: 100%;
-	display: block;
-	&:hover,
-	&:focus {
-		border: 1px solid #aaa;
-		color: #444;
-		@include box-shadow(0 0 3px rgba(0,0,0,0.2));
-	}
-	&:active {
-		border: 1px solid darken(#aaa, 10%);
-		@include box-shadow(0 0 3px rgba(0,0,0,0.3));
-	}
+    @include border-radius(2px);
+    @include font-size($font-size + 1);
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: relative(6px) relative(4px);
+    outline: none;
+    font-family: $form-font;
+    color: #777;
+    margin: 0 0 relative(20px);
+    width: relative(210px);
+    max-width: 100%;
+    display: block;
+    &:hover,
+    &:focus {
+        @include box-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+        border: 1px solid #AAA;
+        color: #444;
+    }
+    &:active {
+        @include box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+        border: 1px solid darken(#AAA, 10%);
+    }
 }
 select {
-	padding: 0;
-	width: relative(220px);
+    padding: 0;
+    width: relative(220px);
 }
 textarea { min-height: relative(60px); }
 label,
 legend {
-	span {
-		font-weight: normal;
-		@include font-size($font-size + 1);
-		color: #444;
-	}
-	display: block;
-	font-weight: bold;
-	@include font-size($font-size + 1);
+    @include font-size($font-size + 1);
+    display: block;
+    font-weight: bold;
+    span {
+        @include font-size($font-size + 1);
+        font-weight: normal;
+        color: #444;
+    }
 }
 input[type="checkbox"] { display: inline; }

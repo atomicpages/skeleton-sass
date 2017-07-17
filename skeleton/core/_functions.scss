@@ -9,7 +9,7 @@
 /// @access public
 /// @link https://github.com/nex3/sass/issues/533
 @function strip-units($number) {
-	@return $number / ($number * 0 + 1);
+    @return $number / ($number * 0 + 1);
 }
 
 /// Takes in an absolute unit and gives back a relative one.
@@ -19,7 +19,7 @@
 /// @group core
 /// @access public
 @function em($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "em");
+    @return _calcRU($px, $base, "em");
 }
 
 /// Takes in an absolute unit and gives back a relative one.
@@ -29,7 +29,7 @@
 /// @group core
 /// @access public
 @function rem($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "rem");
+    @return _calcRU($px, $base, "rem");
 }
 
 /// Takes in an absolute unit and gives back a relative one.
@@ -39,7 +39,7 @@
 /// @group core
 /// @access public
 @function percent($px, $base: $base-font-size) {
-	@return _calcRU($px, $base, "%");
+    @return _calcRU($px, $base, "%");
 }
 
 /// Takes in an absolute unit and gives back a relative one.
@@ -48,15 +48,15 @@
 /// @access public
 /// @return {number} A relative unit based on the values of `$use-rem`, `$use-em`, and `$use-percent`.
 @function relative($size) {
-	@if($use-rem == true and $use-em == false and $use-percent == false) {
-		@return rem($size);
-	} @elseif($use-em == true and $use-rem == false and $use-percent == false) {
-		@return em($size);
-	} @elseif($use-percent == true and $use-rem == false and $use-em == false) {
-		@return percent($size);
-	}
+    @if($use-rem == true and $use-em == false and $use-percent == false) {
+        @return rem($size);
+    } @elseif($use-em == true and $use-rem == false and $use-percent == false) {
+        @return em($size);
+    } @elseif($use-percent == true and $use-rem == false and $use-em == false) {
+        @return percent($size);
+    }
 
-	@return $size; // we're still using pixels
+    @return $size; // we're still using pixels
 }
 
 /// Takes in a color and provides a list of triad-compatible colors.
@@ -65,25 +65,25 @@
 /// @group core
 /// @access public
 @function triad($color) {
-	@if(type-of($color) != "color") {
-		@warn "Type must be color to continue. Aborting.";
-		@return null;
-	}
+    @if(type-of($color) != "color") {
+        @warn "Type must be color to continue. Aborting.";
+        @return null;
+    }
 
-	$triad: ();
-	$hue: strip-units(hue($color));
+    $triad: ();
+    $hue: strip-units(hue($color));
 
-	@for $i from 1 through 3 {
-		@if($hue + 120 > 360) {
-			$hue: ($hue + 120) - 360;
-		} @else {
-			$hue: $hue + 120;
-		}
-		$color: hsl($hue, saturation($color), lightness($color));
-		$triad: append($triad, $color);
-	}
+    @for $i from 1 through 3 {
+        @if($hue + 120 > 360) {
+            $hue: ($hue + 120) - 360;
+        } @else {
+            $hue: $hue + 120;
+        }
+        $color: hsl($hue, saturation($color), lightness($color));
+        $triad: append($triad, $color);
+    }
 
-	@return $triad;
+    @return $triad;
 }
 
 /// Takes in a color and provides a list of square-compatible colors.
@@ -92,23 +92,23 @@
 /// @group core
 /// @access public
 @function square($color) {
-	@if(type-of($color) != "color") {
-		@warn "Type must be color to continue. Aborting.";
-		@return null;
-	}
+    @if(type-of($color) != "color") {
+        @warn "Type must be color to continue. Aborting.";
+        @return null;
+    }
 
-	$square: ();
-	$hue: strip-units(hue($color));
+    $square: ();
+    $hue: strip-units(hue($color));
 
-	@for $i from 1 through 4 {
-		@if($hue + 90 > 360) {
-			$hue: ($hue + 90) - 360;
-		} @else {
-			$hue: $hue + 90;
-		}
-		$color: hsl($hue, saturation($color), lightness($color));
-		$square: append($square, $color);
-	}
+    @for $i from 1 through 4 {
+        @if($hue + 90 > 360) {
+            $hue: ($hue + 90) - 360;
+        } @else {
+            $hue: $hue + 90;
+        }
+        $color: hsl($hue, saturation($color), lightness($color));
+        $square: append($square, $color);
+    }
 
-	@return $square;
+    @return $square;
 }

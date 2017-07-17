@@ -9,14 +9,14 @@
 /// @group core
 /// @access public
 @mixin grid($width: $base-width, $fluid: $is-fluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
-	@if($fluid) {
-		@include _fluidGrid($colCount, $new: $use-new-grid);
-	} @else {
-		// we no longer need to set a value for $colWdith because it is generated dynamically right here!
-		// @see https://github.com/atomicpages/skeleton-sass/issues/7
-		// _fixedGrid ( $width, $colWidth, $gutterWidth, $colCount )
-		@include _fixedGrid($width, (($width / $colCount) - $gutterWidth), $gutterWidth, $colCount);
-	}
+    @if($fluid) {
+        @include _fluidGrid($colCount, $new: $use-new-grid);
+    } @else {
+        // we no longer need to set a value for $colWdith because it is generated dynamically right here!
+        // @see https://github.com/atomicpages/skeleton-sass/issues/7
+        // _fixedGrid ( $width, $colWidth, $gutterWidth, $colCount )
+        @include _fixedGrid($width, (($width / $colCount) - $gutterWidth), $gutterWidth, $colCount);
+    }
 }
 
 /// Creates the mobile grid.
@@ -26,7 +26,7 @@
 /// @group core
 /// @access public
 @mixin mobileGrid($width: $base-width, $isFluid: $is-fluid, $colCount: $base-col-count) {
-	@include _mobileGrid($width, $colCount, $isFluid);
+    @include _mobileGrid($width, $colCount, $isFluid);
 }
 
 /// Calculates the font-size automatically based on config settings.
@@ -35,29 +35,29 @@
 /// @group core
 /// @access public
 @mixin font-size($size, $fallback: $use-px-fallback) {
-	@if($fallback) {
-		font-size: $size;
-	}
+    @if($fallback) {
+        font-size: $size;
+    }
 
-	@if($use-rem and not $use-em and not $use-percent) {
-		font-size: rem($size);
-	} @elseif($use-em and not $use-rem and not $use-percent) {
-		font-size: em($size);
-	} @elseif($use-percent and not $use-rem and not $use-em) {
-		font-size: percent($size);
-	} @else {
-		@debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px.";
-		@if(not $fallback) { // we have no other choice...
-			font-size: $size;
-		}
-	}
+    @if($use-rem and not $use-em and not $use-percent) {
+        font-size: rem($size);
+    } @elseif($use-em and not $use-rem and not $use-percent) {
+        font-size: em($size);
+    } @elseif($use-percent and not $use-rem and not $use-em) {
+        font-size: percent($size);
+    } @else {
+        @debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px.";
+        @if(not $fallback) { // we have no other choice...
+            font-size: $size;
+        }
+    }
 }
 
 /// Helper mixin to easily hide text.
 /// @group core
 /// @access public
 @mixin hide-text {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }

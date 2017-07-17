@@ -243,7 +243,7 @@
     quotes: none;
     &:before, &:after {
         content: "";
-        content: none;
+        content: none; // sass-lint:disable-line no-duplicate-properties
     }
 }
 

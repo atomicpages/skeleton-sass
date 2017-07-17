@@ -12,61 +12,61 @@
 /// @group core
 /// @access private
 @mixin _fluidGrid($colCount, $new: $use-new-grid) {
-	// override only for fluid
-	/* Overrides */
-	$gutter: percent($base-gutter-width) / 100;
-	@if($new == true) {
-		.container { width: $new-grid-width; }
-	}
-	@if($new == false) {
-		.column,
-		.columns {
-			margin: {
-				left: $gutter / 2;
-				right: $gutter / 2;
-			}
-		}
-	}
-	@if($new == true) {
-		.column,
-		.columns {
-			margin-left: percent($gutter * 2) / 10;
-			&:first-child:not([class^="offset"]) { margin-left: 0; }
-		}
-	}
+    // override only for fluid
+    /* Overrides */
+    $gutter: percent($base-gutter-width) / 100;
+    @if($new == true) {
+        .container { width: $new-grid-width; }
+    }
+    @if($new == false) {
+        .column,
+        .columns {
+            margin: {
+                left: $gutter / 2;
+                right: $gutter / 2;
+            }
+        }
+    }
+    @if($new == true) {
+        .column,
+        .columns {
+            margin-left: percent($gutter * 2) / 10;
+            &:first-child:not([class^="offset"]) { margin-left: 0; }
+        }
+    }
 
-	@for $i from 1 through $colCount {
-		$subtractor: 2;
-		@if($new == true) { $subtractor: ($colCount - $i) / 3; }
-		@if($i == 1) {
-			.#{numToString($i)}.column,
-			.#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
-		} @else {
-			@if($i == $colCount and $new == true) {
-				.#{numToString($i)}.columns {
-					width: percentage($i / $colCount);
-					margin-left: 0;
-				}
-			} @else {
-				.#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
-			}
-		}
-	}
-	// $top: percentage($colCount / $colCount) - 2; // not sure if this is needed -- test with < 2.5
-	.one-third.column,
-	.one-third.columns { width: 98% * (1 / 3) - 2; }
-	.two-thirds.column,
-	.two-thirds.columns { width: 98% * (2 / 3) - 2; }
-	.one-half.column,
-	.one-half.columns { width: 48%; }
-	.full-width.column,
-	.full-width.columns {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
+    @for $i from 1 through $colCount {
+        $subtractor: 2;
+        @if($new == true) { $subtractor: ($colCount - $i) / 3; }
+        @if($i == 1) {
+            .#{numToString($i)}.column,
+            .#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
+        } @else {
+            @if($i == $colCount and $new == true) {
+                .#{numToString($i)}.columns {
+                    width: percentage($i / $colCount);
+                    margin-left: 0;
+                }
+            } @else {
+                .#{numToString($i)}.columns { width: percentage($i / $colCount) - $subtractor; }
+            }
+        }
+    }
+    // $top: percentage($colCount / $colCount) - 2; // not sure if this is needed -- test with < 2.5
+    .one-third.column,
+    .one-third.columns { width: 98% * (1 / 3) - 2; }
+    .two-thirds.column,
+    .two-thirds.columns { width: 98% * (2 / 3) - 2; }
+    .one-half.column,
+    .one-half.columns { width: 48%; }
+    .full-width.column,
+    .full-width.columns {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-	@include _offset(true, $colCount, false);
+    @include _offset(true, $colCount, false);
 }
 
 /// Handles the generation of fixed grids.
@@ -77,40 +77,40 @@
 /// @group core
 /// @access private
 @mixin _fixedGrid($width, $colWidth, $gutterWidth, $colCount) {
-	.container {
-		.column,
-		.columns {
-			margin: {
-				left: $gutterWidth / 2;
-				right: $gutterWidth / 2;
-			};
-			max-width: 100%;
-		}
-	}
-	/* The Grid */
-	.container {
-		@for $i from 1 through $colCount {
-			 @if($i == 1) {
-				.#{numToString($i)}.column,
-				.#{numToString($i)}.columns { width: $colWidth; }
-			} @else {
-				.#{numToString($i)}.columns { width: $colWidth + (($colWidth + $gutterWidth) * ($i - 1)); }
-			}
-		}
-		.one-third.column,
-		.one-third.columns { width: ($width / 3) - $gutterWidth}
-		.two-thirds.column,
-		.two-thirds.columns { width: (($width * 2) / 3) - $gutterWidth }
-		.one-half.column,
-		.one-half.columns { width: $width / 2 - $gutterWidth; }
-		.full-width.column,
-		.full-width.columns {
-			width: $width;
-			margin-left: 0;
-			margin-right: 0;
-		}
-		@include _offset(false, $colCount, $colWidth);
-	}
+    .container {
+        .column,
+        .columns {
+            margin: {
+                left: $gutterWidth / 2;
+                right: $gutterWidth / 2;
+            };
+            max-width: 100%;
+        }
+    }
+    /* The Grid */
+    .container {
+        @for $i from 1 through $colCount {
+             @if($i == 1) {
+                .#{numToString($i)}.column,
+                .#{numToString($i)}.columns { width: $colWidth; }
+            } @else {
+                .#{numToString($i)}.columns { width: $colWidth + (($colWidth + $gutterWidth) * ($i - 1)); }
+            }
+        }
+        .one-third.column,
+        .one-third.columns { width: ($width / 3) - $gutterWidth}
+        .two-thirds.column,
+        .two-thirds.columns { width: (($width * 2) / 3) - $gutterWidth }
+        .one-half.column,
+        .one-half.columns { width: $width / 2 - $gutterWidth; }
+        .full-width.column,
+        .full-width.columns {
+            width: $width;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        @include _offset(false, $colCount, $colWidth);
+    }
 }
 
 /// Creates offset rules
@@ -121,17 +121,17 @@
 /// @group core
 /// @access private
 @mixin _offset($is-fluid, $colCount, $colWidth, $new: $use-new-grid) { // TODO: finish this
-	@for $i from 1 through ($colCount - 1 ) {
-		.offset-by-#{numToString($i)} { margin-left: if($is-fluid, percentage($i / $colCount) + ($i / 3), ($colWidth + 20) * $i); }
-	}
-	@if($is-fluid == true and $new == true) {
-		.offset-by-one-third.column,
-		.offset-by-one-third.columns { margin-left: 98% * (1 / 3) + 2; }
-		.offset-by-two-thirds.column,
-		.offset-by-two-thirds.columns { margin-left: 98% * (2 / 3) + 4; }
-		.offset-by-one-half.column,
-		.offset-by-one-half.columns { margin-left: 52%; }
-	}
+    @for $i from 1 through ($colCount - 1 ) {
+        .offset-by-#{numToString($i)} { margin-left: if($is-fluid, percentage($i / $colCount) + ($i / 3), ($colWidth + 20) * $i); }
+    }
+    @if($is-fluid == true and $new == true) {
+        .offset-by-one-third.column,
+        .offset-by-one-third.columns { margin-left: 98% * (1 / 3) + 2; }
+        .offset-by-two-thirds.column,
+        .offset-by-two-thirds.columns { margin-left: 98% * (2 / 3) + 4; }
+        .offset-by-one-half.column,
+        .offset-by-one-half.columns { margin-left: 52%; }
+    }
 }
 
 /// Creates the mobile grid which should be inside of a `@media` query.
@@ -141,32 +141,32 @@
 /// @group core
 /// @access private
 @mixin _mobileGrid($width, $colCount, $isFluid) {
-	$width: if($isFluid, $mobile-fluid-width, $width);
-	.container {
-		width: $width;
-		.column,
-		.columns {
-			max-width: 100%;
-			margin: {
-				left: if($isFluid, 2%, 0);
-				right: if($isFluid, 2%, 0);
-			};
-		}
-		@for $i from 1 through $colCount {
-			@if ($i == 1) {
-				.#{numToString($i)}.column { width: $width - 4 ; }
-			}
-		}
-		@include _group($colCount, ".columns", "after") { width: $width - 4; }
-		.one-third.column { width: $width - 4; }
-		.two-thirds.column { width: $width - 4; }
-		.full-width.columns {
-			width: $width;
-			margin-left: 0;
-			margin-right: 0;
-		}
-		@include _mobileOffset($colCount);
-	}
+    $width: if($isFluid, $mobile-fluid-width, $width);
+    .container {
+        width: $width;
+        .column,
+        .columns {
+            max-width: 100%;
+            margin: {
+                left: if($isFluid, 2%, 0);
+                right: if($isFluid, 2%, 0);
+            };
+        }
+        @for $i from 1 through $colCount {
+            @if ($i == 1) {
+                .#{numToString($i)}.column { width: $width - 4 ; }
+            }
+        }
+        @include _group($colCount, ".columns", "after") { width: $width - 4; }
+        .one-third.column { width: $width - 4; }
+        .two-thirds.column { width: $width - 4; }
+        .full-width.columns {
+            width: $width;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        @include _mobileOffset($colCount);
+    }
 }
 
 /// Creates offset classes for the mobile grid
@@ -174,7 +174,7 @@
 /// @group core
 /// @access private
 @mixin _mobileOffset($colCount) {
-	@include _group($colCount - 1, "offset-by-") { padding-left: 0; }
+    @include _group($colCount - 1, "offset-by-") { padding-left: 0; }
 }
 
 /// Groups all of `offset-by-` selectors together
@@ -184,20 +184,20 @@
 /// @group core
 /// @access private
 @mixin _group($stop, $selector, $pos: "before") {
-	$store: "";
-	@if(type-of($stop) != "number") {
-		@warn "Stop must be a number! #{type-of($stop)} was provided.";
-	}
-	@if($pos == "after") {
-		@for $i from 1 through $stop {
-			$store: $store + "." + numToString($i) + $selector + ",";
-		}
-	} @else {
-		@for $i from 1 through $stop {
-			$store: $store + "." + $selector + numToString($i) + ",";
-		}
-	}
-	#{$store} { @content; }
+    $store: "";
+    @if(type-of($stop) != "number") {
+        @warn "Stop must be a number! #{type-of($stop)} was provided.";
+    }
+    @if($pos == "after") {
+        @for $i from 1 through $stop {
+            $store: $store + "." + numToString($i) + $selector + ",";
+        }
+    } @else {
+        @for $i from 1 through $stop {
+            $store: $store + "." + $selector + numToString($i) + ",";
+        }
+    }
+    #{$store} { @content; }
 }
 
 // ---------- FUNCTION DEPENDENCIES
@@ -208,41 +208,41 @@
 /// @group core
 /// @access private
 @function numToString($int) {
-	// set up lists
-	$ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
-	$teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
-	$tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety";
+    // set up lists
+    $ones: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine";
+    $teens: "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen";
+    $tens: "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety";
 
-	$int: abs($int); // no nonnegative numbers
-	$number: "";
-	$temp: $int / 10;
-	$temp: floor($temp);
-	@if($int >= 1 and $int <= 100) {
-		@if($temp < 1) { // it's a one!
-			$number: nth($ones, $int % 10);
-		}
-		@if($temp == 1) { // in the teen range
-			@if($int % 10 == 0) {
-				$number: "ten";
-			} @else {
-				$number: nth($teens, $int % 10);
-			}
-		}
-		@if($temp >= 2 and $temp <= 9) { // more than our teens
-			@if($int % 10 == 0) {
-				// means it's a number evenly divisible by 10
-				$number: nth($tens, $int / 10);
-			} @else {
-				$number: "#{nth($tens, floor($int / 10))}-#{nth($ones, $int % 10)}";
-			}
-		}
-		@if($temp == 10) { // this is the end...
-			$number: "one-hundred";
-		}
-	} @else {
-		$number: "Invalid parameter passed. Number must be between 1 and 100."
-	}
-	@return $number;
+    $int: abs($int); // no nonnegative numbers
+    $number: "";
+    $temp: $int / 10;
+    $temp: floor($temp);
+    @if($int >= 1 and $int <= 100) {
+        @if($temp < 1) { // it's a one!
+            $number: nth($ones, $int % 10);
+        }
+        @if($temp == 1) { // in the teen range
+            @if($int % 10 == 0) {
+                $number: "ten";
+            } @else {
+                $number: nth($teens, $int % 10);
+            }
+        }
+        @if($temp >= 2 and $temp <= 9) { // more than our teens
+            @if($int % 10 == 0) {
+                // means it's a number evenly divisible by 10
+                $number: nth($tens, $int / 10);
+            } @else {
+                $number: "#{nth($tens, floor($int / 10))}-#{nth($ones, $int % 10)}";
+            }
+        }
+        @if($temp == 10) { // this is the end...
+            $number: "one-hundred";
+        }
+    } @else {
+        $number: "Invalid parameter passed. Number must be between 1 and 100."
+    }
+    @return $number;
 }
 
 /// Calculates the relative units given absolute units.
@@ -253,23 +253,23 @@
 /// @group core
 /// @access private
 @function _calcRU($px, $base, $unit) {
-	$unit: quote($unit);
+    $unit: quote($unit);
 
-	@if not $unit == "em" or not $unit == "rem" or not $unit == "%" {
-		@return null;
-	}
+    @if not $unit == "em" or not $unit == "rem" or not $unit == "%" {
+        @return null;
+    }
 
-	@if not unitless($px) {
-		$px: strip-units($px);
-	}
+    @if not unitless($px) {
+        $px: strip-units($px);
+    }
 
-	@if not unitless($base) {
-		$base: strip-units($base);
-	}
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
 
-	@if($unit == "%") {
-		@return percentage($px / $base);
-	}
+    @if($unit == "%") {
+        @return percentage($px / $base);
+    }
 
-	@return #{($px / $base) * 1}#{$unit};
+    @return #{($px / $base) * 1}#{$unit};
 }
