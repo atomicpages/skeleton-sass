@@ -1,8 +1,8 @@
 /* IMAGES
  * ------------------------------------------------ */
-img.scale-with-grid {
-	max-width: 100%;
-	height: auto;
+img.scale-with-grid { // sass-lint:disable-line force-element-nesting
+    max-width: 100%;
+    height: auto;
 }
 
 /* UTILS
@@ -11,19 +11,19 @@ img.scale-with-grid {
 .pull-left { float: left; }
 .text-center { text-align: center; }
 .full-screen {
-	width: 100%;
-	min-height: 100vh;
+    width: 100%;
+    min-height: 100vh;
 }
 .vertical-align {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 .horizontal-align {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

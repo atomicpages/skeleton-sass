@@ -9,36 +9,36 @@
 /// @group theme
 /// @access public
 @mixin prefixer($property, $value, $prefixes) {
-	@each $prefix in $prefixes {
-		@if $prefix == webkit {
-			@if $prefix-for-webkit {
-				-webkit-#{$property}: $value;
-			}
-		}
-		@else if $prefix == moz {
-			@if $prefix-for-mozilla {
-				-moz-#{$property}: $value;
-			}
-		}
-		@else if $prefix == ms {
-			@if $prefix-for-microsoft {
-				-ms-#{$property}: $value;
-			}
-		}
-		@else if $prefix == o {
-			@if $prefix-for-opera {
-				-o-#{$property}: $value;
-			}
-		}
-		@else if $prefix == spec {
-			@if $prefix-for-spec {
-				#{$property}: $value;
-			}
-		}
-		@else  {
-			@warn "Unrecognized prefix: #{$prefix}";
-		}
-	}
+    @each $prefix in $prefixes {
+        @if $prefix == webkit {
+            @if $prefix-for-webkit {
+                -webkit-#{$property}: $value;
+            }
+        }
+        @else if $prefix == moz {
+            @if $prefix-for-mozilla {
+                -moz-#{$property}: $value;
+            }
+        }
+        @else if $prefix == ms {
+            @if $prefix-for-microsoft {
+                -ms-#{$property}: $value;
+            }
+        }
+        @else if $prefix == o {
+            @if $prefix-for-opera {
+                -o-#{$property}: $value;
+            }
+        }
+        @else if $prefix == spec {
+            @if $prefix-for-spec {
+                #{$property}: $value;
+            }
+        }
+        @else  {
+            @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
 }
 
 /// Auto-prefixes the `box-shadow` property.
@@ -46,11 +46,11 @@
 /// @group theme
 /// @access public
 @mixin box-shadow($shadow...) {
-	@if length($shadow) > 4 {
-		@warn("$shadow should only accept four argument for each side of the box. Using more may cause undesired results");
-	}
+    @if length($shadow) > 4 {
+        @warn("$shadow should only accept four argument for each side of the box. Using more may cause undesired results");
+    }
 
-	@include prefixer(box-shadow, $shadow, webkit moz ms o spec);
+    @include prefixer(box-shadow, $shadow, webkit moz ms o spec);
 }
 
 /// Auto-prefixes the `border-radius` property.
@@ -58,11 +58,11 @@
 /// @group theme
 /// @access public
 @mixin border-radius($radii...) {
-	@if length($radii) > 4 {
-		@warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
-	}
+    @if length($radii) > 4 {
+        @warn("$radii should only accept four argument for each side of the box. Using more may cause undesired results");
+    }
 
-	@include prefixer(border-radius, $radii, webkit moz ms o spec);
+    @include prefixer(border-radius, $radii, webkit moz ms o spec);
 }
 
 /// Auto-prefixes specified border-radius variant propery
@@ -94,8 +94,8 @@
 /// @group theme
 /// @access public
 @mixin border-top-radius($radius: $default-border-radius) {
-	@include border-top-left-radius($radius);
-	@include border-top-right-radius($radius);
+    @include border-top-left-radius($radius);
+    @include border-top-right-radius($radius);
 }
 
 /// Auto-prefixes specified border-radius variant propery
@@ -103,8 +103,8 @@
 /// @group theme
 /// @access public
 @mixin border-right-radius($radius: $default-border-radius) {
-	@include border-top-right-radius($radius);
-	@include border-bottom-right-radius($radius);
+    @include border-top-right-radius($radius);
+    @include border-bottom-right-radius($radius);
 }
 
 /// Auto-prefixes specified border-radius variant propery
@@ -112,8 +112,8 @@
 /// @group theme
 /// @access public
 @mixin border-bottom-radius($radius: $default-border-radius) {
-	@include border-bottom-left-radius($radius);
-	@include border-bottom-right-radius($radius);
+    @include border-bottom-left-radius($radius);
+    @include border-bottom-right-radius($radius);
 }
 
 /// Auto-prefixes specified border-radius variant propery
@@ -121,8 +121,8 @@
 /// @group theme
 /// @access public
 @mixin border-left-radius($radius: $default-border-radius) {
-	@include border-top-left-radius($radius);
-	@include border-bottom-left-radius($radius);
+    @include border-top-left-radius($radius);
+    @include border-bottom-left-radius($radius);
 }
 
 /// Sets the opacity with or without IE support.
@@ -131,19 +131,19 @@
 /// @group theme
 /// @access public
 @mixin opacity($alpha, $ie: true) {
-	@if(type-of($alpha) != number) {
-		@warn "$alpha must be a number. Setting to 0.5.";
-		$alpha: 0.5;
-	} @else {
-		@if($alpha < 0 or $alpha > 1) {
-			@warn "$alpha must be within 0 and 1. Setting to 0.5.";
-			$alpha: 0.5;
-		}
-	}
-	@if($ie == true) {
-		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100);
-	}
-	opacity: $alpha;
+    @if(type-of($alpha) != number) {
+        @warn "$alpha must be a number. Setting to 0.5.";
+        $alpha: 0.5;
+    } @else {
+        @if($alpha < 0 or $alpha > 1) {
+            @warn "$alpha must be within 0 and 1. Setting to 0.5.";
+            $alpha: 0.5;
+        }
+    }
+    @if($ie == true) {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha * 100);
+    }
+    opacity: $alpha;
 }
 
 /// Auto-prefixes the `box-sizing` property.
@@ -151,8 +151,8 @@
 /// @group theme
 /// @access public
 @mixin box-sizing($type) {
-	$type: unquote($type);
-	@include prefixer(box-sizing, $type, webkit moz spec);
+    $type: unquote($type);
+    @include prefixer(box-sizing, $type, webkit moz spec);
 }
 
 /// Sets a single transition.
@@ -163,11 +163,11 @@
 /// @group theme
 /// @access public
 @mixin single-transition($property, $duration, $function, $delay: false) {
-	@if($delay == false) {
-		$delay: "";
-	}
-	$transition: $property $duration $function $delay;
-	@include prefixer(transition, $transition, webkit moz ms o spec);
+    @if($delay == false) {
+        $delay: "";
+    }
+    $transition: $property $duration $function $delay;
+    @include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
 /// Sets multiple transitions
@@ -176,25 +176,25 @@
 /// @group theme
 /// @access public
 @mixin transition($transition...) {
-	@include prefixer(transition, $transition, webkit moz ms o spec);
+    @include prefixer(transition, $transition, webkit moz ms o spec);
 }
 
 /// Resets the box model.
 /// @group theme
 /// @access public
 @mixin reset-box-model {
-	margin: 0;
-	padding: 0;
-	border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 /// Resets fonts.
 /// @group theme
 /// @access public
 @mixin reset-font {
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /// Wipes all focus outline styles.
@@ -221,93 +221,93 @@
 /// @group theme
 /// @access public
 @mixin reset-table {
-	border: {
-		collapse: collapse;
-		spacing: 0;
-	}
+    border: {
+        collapse: collapse;
+        spacing: 0;
+    }
 }
 
 /// Resets table cell alignment and font-weights.
 /// @group theme
 /// @access public
 @mixin reset-table-cell {
-	text-align: left;
-	font-weight: normal;
-	vertical-align: middle;
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
 }
 
 /// Reset quotations.
 /// @group theme
 /// @access public
 @mixin reset-quotation {
-	quotes: none;
-	&:before, &:after {
-		content: "";
-		content: none;
-	}
+    quotes: none;
+    &:before, &:after {
+        content: "";
+        content: none;
+    }
 }
 
 /// Reset HTML5 elements (mainly for legacy browsers).
 /// @group theme
 /// @access public
 @mixin reset-html5 {
-	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section { display: block; }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section { display: block; }
 }
 
 /// Eric Meyer's global reset.
 /// @group theme
 /// @access public
 @mixin global-reset {
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed,
-	figure, figcaption, footer, header, hgroup,
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
-		@include reset-box-model;
-		@include reset-font;
-	}
-	@include reset-html5;
-	body { @include reset-body; }
-	ol, ul { @include reset-list-style; }
-	blockquote, q { @include reset-quotation; }
-	table {
-		@include reset-table;
-	}
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        @include reset-box-model;
+        @include reset-font;
+    }
+    @include reset-html5;
+    body { @include reset-body; }
+    ol, ul { @include reset-list-style; }
+    blockquote, q { @include reset-quotation; }
+    table {
+        @include reset-table;
+    }
 }
 
 /// Nested elements reset.
 /// @group theme
 /// @access public
 @mixin nested-reset {
-	div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed,
-	figure, figcaption, footer, header, hgroup,
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
-		@include reset-box-model;
-		@include reset-font;
-	}
-	ol, ul { @include reset-list-style; }
-	blockquote, q { @include reset-quotation; }
-	caption, th, td { @include reset-table-cell; }
-	table { @include reset-table; }
-	a img { @include reset-image-anchor-border; }
+    div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        @include reset-box-model;
+        @include reset-font;
+    }
+    ol, ul { @include reset-list-style; }
+    blockquote, q { @include reset-quotation; }
+    caption, th, td { @include reset-table-cell; }
+    table { @include reset-table; }
+    a img { @include reset-image-anchor-border; }
 }

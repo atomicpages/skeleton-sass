@@ -1,6 +1,6 @@
 {
 	"name": "skeleton-sass-official",
-	"version": "3.1.4",
+	"version": "3.1.5",
 	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
 	"main": "skeleton/core/_config.scss",
 	"scripts": {
@@ -28,11 +28,17 @@
 		"normalize-scss": ">=5.0.4"
 	},
 	"devDependencies": {
+		"autoprefixer": "^7.1.2",
+		"cssnano": "^3.10.0",
 		"del": ">=2.2.2",
+		"doiuse": "^3.0.0",
 		"gulp": "^3.9.1",
 		"gulp-cli": ">=1.2.2",
+		"gulp-postcss": "^7.0.0",
 		"gulp-sass": ">=3.1.0",
-		"gulp-sourcemaps": "^2.4.0",
-		"sassdoc": "^2.1.20"
+		"gulp-sass-lint": "^1.3.2",
+		"gulp-sourcemaps": ">=2.4.0",
+		"sass-lint": "^1.10.2",
+		"sassdoc": "^2.3.0"
 	}
 }

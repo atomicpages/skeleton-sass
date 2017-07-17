@@ -16,7 +16,7 @@ Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.c
 * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 
 #### Does this work with other Sass compilers?
-Yes! Skeleton Sass 3 has been tested with the following compilers and libsass wrappers:
+Yes! Skeleton Sass 3 has been tested with the following compilers and `libsass` wrappers:
 
 * [Sass](http://sass-lang.com/) 3.3+
 * [libsass](https://github.com/sass/libsass) 3.2+
