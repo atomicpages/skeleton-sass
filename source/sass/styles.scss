@@ -1,9 +1,25 @@
 @import "../../node_modules/skeleton-sass-official/skeleton/themes/fresh/vars";
+
+@import "../../node_modules/open-sans-fontface/sass/variables";
+$OpenSansPath: "../fonts";
+
+@import "../../node_modules/open-sans-fontface/sass/mixins";
+@import "../../node_modules/open-sans-fontface/sass/Light";
+@import "../../node_modules/open-sans-fontface/sass/LightItalic";
+@import "../../node_modules/open-sans-fontface/sass/Regular";
+@import "../../node_modules/open-sans-fontface/sass/Italic";
+@import "../../node_modules/open-sans-fontface/sass/Bold";
+@import "../../node_modules/open-sans-fontface/sass/BoldItalic";
+
 @import "skeleton/themes/demo/mixins";
 @import "skeleton/themes/demo/vars";
 
 // Font sizes based on a perfect fourth http://modularscale.com/scale/?px1=10&px2=20&ra1=1.333&ra2=0
-a:hover { text-decoration: none; }
+a {
+    color: darken($link-color, 10%);
+    &:hover { text-decoration: none; }
+    &:visited { color: darken($link-color, 10%); }
+}
 ul ul, ul ol, ol ol, ol ul { font-size: 100%; }
 code, pre {
 	font-size: 1.5rem;
@@ -16,7 +32,7 @@ code, pre {
 }
 body {
 	margin: 0;
-	background: #666 url("../images/shattered.png") repeat 0 0;
+    background: #666 url("../images/shattered.png") repeat 0 0;
 }
 fieldset {
 	border: 0 none;
@@ -25,7 +41,7 @@ fieldset {
 }
 nav {
 	background-color: rgba(255, 255, 255, 0.35);
-	font-size: 1.777rem;
+    font-size: 1.777rem;
 	h3 {
 		margin-bottom: 0;
 		margin-top: 0.5rem;
@@ -42,14 +58,16 @@ nav {
 			line-height: 3.5;
 			text-align: center;
 			a {
-				&, &:visited { color: $nav-link-color; }
+                color: $nav-link-color;
 				text-decoration: none;
 				line-height: 3.5;
 				padding: 0.5rem;
-				&:hover { color: darken($nav-link-color, 15%); }
+                &:hover { color: darken($nav-link-color, 15%); }
+                &:visited { color: $nav-link-color; }
 			}
 		}
-	}
+    }
+    .collapse { display: none; }
 }
 .small { font-size: 1.126rem; }
 .large { font-size: 2rem; }
@@ -101,13 +119,7 @@ section {
 			padding-right: 1rem;
 		}
 	}
-	&.learn_more {
-		color: white;
-		padding-top: 3.157rem;
-		background: rgba(255, 255, 255, 0.4) url("../images/code.png") no-repeat 5% center;
-		background-size: cover;
-		h4 { color: white; }
-	}
+	&.learn-more { padding-top: 3.157rem; }
 	&.documentation {
 		padding-top: 3.157rem;
 		background: transparent url("../images/documentation.png") no-repeat center center;
@@ -171,6 +183,20 @@ section {
 		transform: translate3d(0, 50%, 0);
 	}
 }
+.draw {
+    height: 100%;
+    width: 20px;
+    .top,
+    .bottom {
+        width: 20px;
+        height: 1px;
+        background: black;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+    }
+    .top { top: 21px; }
+    .bottom { bottom: 21px; }
+}
 
 /* MEDIA QUERIES
  * ------------------------------------------------ */
@@ -182,7 +208,7 @@ section {
 @media only screen and (max-width: $tablet-width - 1) {
 	nav {
 		ul {
-			display: block;
+			display: none;
 			width: 100% !important;
 			margin: {
 				left: 0 !important;
@@ -205,7 +231,7 @@ section {
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: $tablet-width - 1) {
-	nav ul { display: block; }
+    nav ul { display: block; }
 	.home {
 		.fa-circle-thin { display: none; }
 	}

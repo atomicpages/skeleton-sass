@@ -1,10 +1,10 @@
 {
     "name": "skeleton-sass",
-    "version": "3.1.1",
+    "version": "3.1.2",
     "description": "Skeleton Sass is a highly modularized version of Skeleton CSS",
     "main": "gulpfile.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "./node_modules/.bin/gulp serve"
     },
     "repository": {
         "type": "git",
@@ -28,7 +28,8 @@
     },
     "homepage": "https://github.com/atomicpages/skeleton-sass#readme",
     "devDependencies": {
-        "del": "^2.2.2",
+        "browser-sync": "^2.18.13",
+        "del": "^3.0.0",
         "font-awesome": ">=4.7.0",
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.0",
@@ -36,8 +37,9 @@
         "gulp-rename": "^1.2.2",
         "gulp-sass": "^3.1.0",
         "gulp-sourcemaps": "^2.6.0",
-        "gulp-uglify": "^2.0.0",
+        "gulp-uglify": "^3.0.0",
         "jump.js": ">=1.0.1",
+        "open-sans-fontface": "^1.4.0",
         "skeleton-sass-official": ">=3.1.0",
         "skrollr": ">=0.6.26"
     }

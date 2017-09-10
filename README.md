@@ -5,7 +5,7 @@ Welcome to the Skeleton Sass website. Feel free to browse the source code of thi
 
 Looking for Skeleton Sass v1 Site? Find it here: http://atomicpages.github.io/skeleton-sass/v1/
 
-### How do I build?
+### How Do I Build?
 
 ~~~bash
 npm i && gulp dist
@@ -17,7 +17,27 @@ If you are using `yarn` then:
 yarn && gulp dist
 ~~~
 
+### Running Locally
+
+~~~bash
+cd path/to/skeleton-sass
+yarn && yarn dev # or if using NPM
+npm i && npm run dev
+~~~
+
+**Note:** the `dev` task will automatically build the project for you.
+
 ## Changelog
+### 3.1.2
+* Renaming some gulp tasks
+* Adding browserify to serve static resources
+    * Streaming `sass` changes to the browser
+    * Reloading when `index.html` changes
+    * Reloading when `js` changes
+* Improving accessibility
+* Adding `noopener` on `_blank` anchors
+* Updating content to reflect changes in Skeleton Sass 3
+
 ### 3.1.1
 * Bumping `node` dependencies
 * Adding engine version in `package.json`

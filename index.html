@@ -6,14 +6,13 @@
 	<meta http-equiv="Expires" content="1800">
 	<title>Skeleton Sass | Responsive Sass</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="target/css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="target/css/styles.css">
 </head>
 <body>
 <div class="wrapper row nav">
 	<nav class="container">
-		<div class="three columns">
+		<div class="three columns logo-wrapper">
 			<h3 class="logo">Skeleton Sass</h3>
 		</div>
 		<ul class="nine columns omega">
@@ -21,15 +20,15 @@
 			<li><a data-scroll href="#doc">Documentation</a></li>
 			<li><a data-scroll href="#the-grid">The Grid</a></li>
 			<li><a href="demo/index.html">Demo</a></li>
-			<li><a href="https://github.com/atomicpages/skeleton-sass" rel="nofollow">View on Github</a></li>
-			<li><a href="https://github.com/atomicpages/skeleton-sass/archive/master.zip" rel="nofollow">Download</a></li>
-		</ul>
+			<li><a href="https://github.com/atomicpages/skeleton-sass" rel="nofollow, noopener">View on Github</a></li>
+			<li><a href="https://github.com/atomicpages/skeleton-sass/archive/master.zip" rel="nofollow, noopener">Download</a></li>
+        </ul>
 	</nav>
 </div>
 <section class="container home">
 	<div class="twelve columns intro">
 		<h2>Skeleton Sass</h2>
-		<p>Skeleton Sass is a sass-based translation of Dave Gamache's <a href="http://getskeleton.com/" rel="nofollow" target="_blank">Skeleton CSS</a>.</p>
+		<p>Skeleton Sass is a sass-based translation of Dave Gamache's <a href="http://getskeleton.com/" rel="nofollow, noopener" target="_blank">Skeleton CSS</a>.</p>
 		<div class="features row">
 			<div class="four columns">
 				<i class="fa fa-bolt circle"></i>
@@ -54,18 +53,18 @@
 		</div>
 	</div>
 </section>
-<section id="learn-more" class="container learn_more">
+<section id="learn-more" class="container learn-more">
 	<div class="twelve columns more">
 		<div class="row">
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-money">&nbsp;</i> Free!</p>
 				<p>Skeleton Sass is completely free to use. Check out the <a
 					href="https://github.com/atomicpages/skeleton-sass/blob/master/license.txt"
-					rel="nofollow">license</a>.</p>
+					rel="nofollow, noopener">license</a>.</p>
 			</div>
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-file-code-o">&nbsp;</i> No JavaScript</p>
-				<p>Skeleton Sass has no dependency on JavaScript. Skeleton Sass is built with Sass which compiles down to CSS. <a href="http://sass-lang.com/guide/" rel="nofollow" target="_blank">Learn more about sass</a>.</p>
+				<p>Skeleton Sass has no dependency on JavaScript. Skeleton Sass is built with Sass which compiles down to CSS. <a href="http://sass-lang.com/guide/" rel="nofollow, noopener" target="_blank">Learn more about sass</a>.</p>
 			</div>
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-mobile">&nbsp;</i> Responsive</p>
@@ -75,7 +74,7 @@
 		<div class="row">
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-github">&nbsp;</i> Github</p>
-				<p>Skeleton Sass is on Github! Fork and <a href="https://github.com/atomicpages/skeleton-sass" rel="nofollow">contribute!</a> Found a bug? <a href="https://github.com/atomicpages/skeleton-sass/issues" rel="nofollow">Let us know!</a></p>
+				<p>Skeleton Sass is on Github! Fork and <a href="https://github.com/atomicpages/skeleton-sass" rel="nofollow">contribute!</a> Found a bug? <a href="https://github.com/atomicpages/skeleton-sass/issues" rel="nofollow, noopener">Let us know!</a></p>
 			</div>
 			<div class="four columns">
 				<p class="large bold center"><i class="fa fa-terminal">&nbsp;</i> Tested</p>
@@ -86,17 +85,17 @@
 				<p class="large bold center"><i class="fa fa-css3">&nbsp;</i> CSS3</p>
 				<p>Skeleton Sass 3 adds some necessary CSS3 features such as global <code>border-box</code> and many other mixins that make dealing with CSS easy and fun again.</p>
 			</div>
-		</div>
+        </div>
+    </section>
+    <section id="details" class="container details">
+        <div class="twelve columns">
+            <h4>Requirements</h4>
+            <p>Skeleton Sass 3 has only a single requirement: Sass 3.3 or similar compiler</p>
+        </div>
 		<div class="row">
 			<div class="twelve columns">
-				<h4>Requirements</h4>
-				<p>Skeleton Sass 3 has only a single requirement: Sass 3.3 or similar compiler</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve columns">
-				<h4>Structure</h4>
-				<p>Skeleton Sass 3 has an intuitive file structure that allows for greater customization.</p>
+				<h4>Technical Details</h4>
+				<p>Skeleton Sass 3 has an intuitive file structure that allows for greater customization and the ability to seamlessly upgrade the Skeleton Sass TPL.</p>
 				<ul class="fa-ul">
 					<li><i class="fa-li fa fa-folder-open"></i><code>skeleton/</code> &ndash; contains all core code and core themes
 						<ul class="fa-ul">
@@ -112,24 +111,47 @@
 									</li>
 								</ul>
 							</li>
-							<li><i class="fa-li fa fa-folder-open"></i><code>themes/</code> &ndash; contains default themes of Skleton Sass: sphenoid and fresh
+							<li><i class="fa-li fa fa-folder-open"></i><code>themes/</code> &ndash; contains all shipped themes of Skleton Sass
 								<ul class="fa-ul">
-									<li><i class="fa-li fa fa-folder-open"></i><code>sphenoid/</code> &ndash; the old look of Skeleton Sass that's still identical to Skeleton Sass 1
+									<li><i class="fa-li fa fa-folder-open"></i><code>original/</code> &ndash; the classic Skeleton Sass 1 look
 										<ul class="fa-ul">
-											<li><i class="fa-li fa fa-folder-open"></i><code>marrow/</code> &ndash; holds project-scoped logic, functions, mixins, etc. shared across both themes
+											<li><i class="fa-li fa fa-folder-open"></i><code>components/</code> &ndash; contains sass partials for each component
 												<ul class="fa-ul">
-													<li><i
-														class="fa-li fa fa-file-code-o"></i><code>_private.scss</code> &ndash; contains private project-scoped logic
-													</li>
-													<li><i
-														class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash; contains public-facing project-scoped mixins, functions, etc.
-													</li>
+													<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash; contains all foundation styles for the theme
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_buttons.scss</code> &ndash; contains all button styles
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_forms.scss</code> &ndash; contains form styles (e.g. <code>form</code>, <code>input</code>, etc.)
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_links.scss</code> &ndash; contains anchor styles
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_lists.scss</code> &ndash; contains <code>ul</code>, <code>ol</code>, etc. styles
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_misc.scss</code> &ndash; contains styles for misc elements like <code>&lt;code&gt;</code>
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_tables.scss</code> &ndash; contains table styles
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_typography.scss</code> &ndash; contains typography rules for elements like <code>p</code>, <code>h1-h6</code>, and more...
+                                                    </li>
+                                                    <li><i class="fa-li fa fa-file-code-o"></i><code>_utils.scss</code> &ndash; contains various helper selectors for setting widths, hiding elements, etc.
+                                                    </li>
 												</ul>
-											</li>
-											<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash; base styles to give sphenoid some life
-											</li>
+                                            </li>
+                                            <li><i class="fa-li fa fa-folder-open"></i><code>mixins/</code> &ndash; contains mixins used in <b>all</b> themes
+												<ul class="fa-ul">
+                                                    <li><i
+                                                        class="fa-li fa fa-file-code-o"></i><code>_private.scss</code> &ndash; contains private project-scoped logic
+                                                    </li>
+                                                    <li><i
+                                                        class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash; contains public-facing project-scoped mixins, functions, etc.
+                                                    </li>
+                                                </ul>
+                                            </li>
 											<li><i
-												class="fa-li fa fa-file-code-o"></i><code>_skeleton.scss</code> &ndash; styles that generate the grid
+												class="fa-li fa fa-file-code-o"></i><code>_grid.scss</code> &ndash; contains all grid styles and mixin calls
+                                            </li>
+                                            <li><i
+												class="fa-li fa fa-file-code-o"></i><code>_include_components.scss</code> &ndash; contains all selectively enabled/disabled components for the theme
 											</li>
 											<li><i class="fa-li fa fa-file-code-o"></i><code>_vars.scss</code> &ndash; project-scoped overrides
 											</li>
@@ -137,26 +159,9 @@
 									</li>
 								</ul>
 								<ul class="fa-ul">
-									<li><i class="fa-li fa fa-folder-open"></i><code>fresh/</code> &ndash; the new look of Skeleton Sass that's still identical to Skeleton Sass 2
-										<ul class="fa-ul">
-											<li><i class="fa-li fa fa-folder-open"></i><code>marrow/</code> &ndash; holds project-scoped logic, functions, mixins, etc. (imported from sphenoid)
-												<ul class="fa-ul">
-													<li><i
-														class="fa-li fa fa-file-code-o"></i><code>_private.scss</code> &ndash; contains private project-scoped logic
-													</li>
-													<li><i
-														class="fa-li fa fa-file-code-o"></i><code>_public.scss</code> &ndash; contains public-facing project-scoped mixins, functions, etc.
-													</li>
-												</ul>
-											</li>
-											<li><i class="fa-li fa fa-file-code-o"></i><code>_base.scss</code> &ndash; base styles to give fresh some life
-											</li>
-											<li><i
-												class="fa-li fa fa-file-code-o"></i><code>_skeleton.scss</code> &ndash; styles that generate the grid
-											</li>
-											<li><i class="fa-li fa fa-file-code-o"></i><code>_vars.scss</code> &ndash; project-scoped overrides
-											</li>
-										</ul>
+									<li><i class="fa-li fa fa-folder-open"></i><code>fresh/</code> &ndash; the default look of Skeleton Sass
+                                    </li>
+                                    <li><i class="fa-li fa fa-folder-open"></i><code>wing/</code> &ndash; a Skeleton Sass port of the Wing theme
 									</li>
 								</ul>
 							</li>
@@ -172,49 +177,49 @@
 		<h4>Documentation</h4>
 		<p>Skeleton Sass is heavily documented for your convenience. No one likes to use software that has little to no documentation!</p>
 		<ul class="fa-ul row">
-			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki">Intro to Skeleton Sass</a></li>
-			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use">Setting up Skeleton Sass for the First Time</a></li>
-			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-2-to-3">Upgrading from Skeleton Sass 2 to Skeleton Sass 3</a></li>
+			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki" rel="nofollow, noopener">Intro to Skeleton Sass</a></li>
+			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use" rel="nofollow, noopener">Setting up Skeleton Sass for the First Time</a></li>
+			<li><i class="fa-li fa fa-check-circle-o"></i><a href="https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-2-to-3" rel="nofollow, noopener">Upgrading from Skeleton Sass 2 to Skeleton Sass 3</a></li>
 			<li><i class="fa-li fa fa-check-circle-o"></i><a href="docs/index.html">API Docs</a></li>
 		</ul>
 		<h4>Resources</h4>
 		<p>Below are a few resources for you to learn more about Sass, Bower, Sache, Sass compilers, and other Sass libraries:</p>
 		<h5>Learn Sass</h5>
 		<ul class="fa-ul">
-			<li>You can learn a lot about Sass even if you're brand new to web development! Check out the <i class="fa-li fa fa-graduation-cap"></i><a href="http://sass-lang.com/guide" target="_blank" rel="nofollow">official Sass website</a></li>
-			<li><i class="fa-li fa fa-graduation-cap"></i>Another excellent free resource for learn more about Sass is <a href="http://thesassway.com/" rel="nofollow" target="_blank">thesassway.com</a></li>
+			<li>You can learn a lot about Sass even if you're brand new to web development! Check out the <i class="fa-li fa fa-graduation-cap"></i><a href="http://sass-lang.com/guide" target="_blank" rel="nofollow, noopener">official Sass website</a></li>
+			<li><i class="fa-li fa fa-graduation-cap"></i>Another excellent free resource for learn more about Sass is <a href="http://thesassway.com/" rel="nofollow, noopener" target="_blank">thesassway.com</a></li>
 		</ul>
 		<h5>Compile Sass</h5>
 		<ul class="fa-ul row">
 			<li><i class="fa-li fa fa-code"></i>Command line via <code>sass</code> command
 				<ul class="fa-ul">
-					<li><i class="fa-li fa fa-apple"></i> <a href="http://sass-lang.com/install" rel="nofollow" target="_blank">macOS</a> &ndash; thankfully, most macOS platforms come bundled with Ruby and Ruby Gems so the setup will be minimal! Learn more about how to install <a href="#">Ruby and Sass here</a></li>
-					<li><i class="fa-li fa fa-windows"></i> <a href="http://sass-lang.com/install" rel="nofollow" target="_blank">Windows</a> &ndash; it is just as easy for Windows users as macOS users. Simply install ruby via <a href="http://www.rubyinstaller.org/" rel="nofollow">Ruby Installer</a> (be sure to add Ruby to your PATH) and then resume with the <a href="#">installation here</a></li>
-					<li><i class="fa fa-li fa-linux"></i> <a href="http://sass-lang.com/install" rel="nofollow" target="_blank">Linux</a> &ndash; If you're using Linux it might be fair to assume that you have experience with terminal. If your Linux installation does not come with ruby, be sure to install it (either from source or from your package manager) and then resume with the <a href="http://sass-lang.com/install" target="_blank">installation here</a></li>
+					<li><i class="fa-li fa fa-apple"></i> <a href="http://sass-lang.com/install" rel="nofollow, noopener" target="_blank">macOS</a> &ndash; thankfully, most macOS platforms come bundled with Ruby and Ruby Gems so the setup will be minimal! Learn more about how to install <a href="#">Ruby and Sass here</a></li>
+					<li><i class="fa-li fa fa-windows"></i> <a href="http://sass-lang.com/install" rel="nofollow, noopener" target="_blank">Windows</a> &ndash; it is just as easy for Windows users as macOS users. Simply install ruby via <a href="http://www.rubyinstaller.org/" rel="nofollow">Ruby Installer</a> (be sure to add Ruby to your PATH) and then resume with the <a href="#">installation here</a></li>
+					<li><i class="fa fa-li fa-linux"></i> <a href="http://sass-lang.com/install" rel="nofollow, noopener" target="_blank">Linux</a> &ndash; If you're using Linux it might be fair to assume that you have experience with terminal. If your Linux installation does not come with ruby, be sure to install it (either from source or from your package manager) and then resume with the <a href="http://sass-lang.com/install" target="_blank" rel="nofollow, noopener">installation here</a></li>
 				</ul>
 			</li>
 			<li><i class="fa-li fa fa-car"></i>Applications
 				<ul class="fa-ul">
-					<li><a href="https://code.visualstudio.com/" rel="nofollow" target="_blank">Visual Studio Code</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free)</li>
-					<li><a href="http://incident57.com/codekit/" rel="nofollow" target="_blank">CodeKit</a> <i class="fa fa-apple"></i> (paid)</li>
-					<li><a href="http://compass.kkbox.com/" rel="nofollow" target="_blank">Compass.app</a> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i> <i class="fa fa-linux"></i> (paid, open source)</li>
-					<li><a href="http://hammerformac.com/" rel="nofollow" target="_blank">Hammer</a> <i class="fa fa-apple"></i> (paid) </li>
-					<li><a href="http://koala-app.com/" rel="nofollow" target="_blank">Koala</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free, open source)</li>
-					<li><a href="http://livereload.com/" rel="nofollow">LiveReload</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i> (paid, open source)</li>
-					<li><a href="http://alphapixels.com/prepros/" rel="nofollow" target="_blank">Prepros</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i> (paid, open source)</li>
-					<li><a href="http://brackets.io/" target="_blank" rel="nofollow">Brackets</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free, open source)</li>
-					<li><a href="https://atom.io/" target="_blank" rel="nofollow">Atom</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (<a href="https://atom.io/packages/compile-watch" target="_blank" rel="nofollow">needs plugin</a>, free, open source)</li>
-					<li><a href="https://www.sublimetext.com/3" target="_blank" rel="nofollow">Sublime Text</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (<a href="https://packagecontrol.io/packages/SassBuilder" target="_blank" rel="nofollow">needs plugin</a>, free, open source)</li>
-					<li><a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="nofollow">Webstorm</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (paid, <a href="https://www.jetbrains.com/student/" target="_blank" rel="nofollow">free for students</a>)</li>
+					<li><a href="https://code.visualstudio.com/" rel="nofollow, noopener" target="_blank">Visual Studio Code</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free)</li>
+					<li><a href="http://incident57.com/codekit/" rel="nofollow, noopener" target="_blank">CodeKit</a> <i class="fa fa-apple"></i> (paid)</li>
+					<li><a href="http://compass.kkbox.com/" rel="nofollow, noopener" target="_blank">Compass.app</a> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i> <i class="fa fa-linux"></i> (paid, open source)</li>
+					<li><a href="http://hammerformac.com/" rel="nofollow, noopener" target="_blank">Hammer</a> <i class="fa fa-apple"></i> (paid) </li>
+					<li><a href="http://koala-app.com/" rel="nofollow, noopener" target="_blank">Koala</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free, open source)</li>
+					<li><a href="http://livereload.com/" rel="nofollow, noopener">LiveReload</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i> (paid, open source)</li>
+					<li><a href="http://alphapixels.com/prepros/" rel="nofollow, noopener" target="_blank">Prepros</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i> (paid, open source)</li>
+					<li><a href="http://brackets.io/" target="_blank" rel="nofollow, noopener">Brackets</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (free, open source)</li>
+					<li><a href="https://atom.io/" target="_blank" rel="nofollow, noopener">Atom</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (<a href="https://atom.io/packages/compile-watch" target="_blank" rel="nofollow, noopener">needs plugin</a>, free, open source)</li>
+					<li><a href="https://www.sublimetext.com/3" target="_blank" rel="nofollow, noopener">Sublime Text</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (<a href="https://packagecontrol.io/packages/SassBuilder" target="_blank" rel="nofollow, noopener">needs plugin</a>, free, open source)</li>
+					<li><a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="nofollow, noopener">Webstorm</a> <i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-linux"></i> (paid, <a href="https://www.jetbrains.com/student/" target="_blank" rel="nofollow, noopener">free for students</a>)</li>
 				</ul>
 			</li>
 		</ul>
 		<h5>Extend Sass</h5>
 		<p>There are plenty of ruby gems, libraries, and frameworks that extend Sass. Below are three ways you can easily download/find Skeleton Sass:</p>
 		<ul class="fa-ul">
-			<li><i class="fa-li fa fa-cogs"></i> <a href="https://www.npmjs.com/package/skeleton-sass-official" rel="nofollow" target="_blank">NPM</a> &ndash; Node Package Manager which allows an easy and intuative way to install and manager backend/frontend dependencies.</li>
-			<li><i class="fa-li fa fa-cogs"></i> <a href="http://bower.io/" rel="nofollow" target="_blank">Bower.io</a> &ndash; Bower is an easy way to gather dependencies for any given frontend software that exists in bower's list. Skeleton Sass is among many softwares in that list including jQuery and Linux Kernal.</li>
-			<li><i class="fa-li fa fa-cogs"></i><a href="http://www.sache.in/" rel="nofollow" target="_blank">Sache.in</a> &ndash; Sache is a utility created exclusively for Sass and Compass projects. It's an excellent resource for extending Sass!</li>
+			<li><i class="fa-li fa fa-cogs"></i> <a href="https://www.npmjs.com/package/skeleton-sass-official" rel="nofollow, noopener" target="_blank">NPM</a> &ndash; Node Package Manager which allows an easy and intuative way to install and manager backend/frontend dependencies.</li>
+			<li><i class="fa-li fa fa-cogs"></i> <a href="http://bower.io/" rel="nofollow, noopener" target="_blank">Bower.io</a> &ndash; Bower is an easy way to gather dependencies for any given frontend software that exists in bower's list. Skeleton Sass is among many softwares in that list including jQuery and Linux Kernal.</li>
+			<li><i class="fa-li fa fa-cogs"></i><a href="http://www.sache.in/" rel="nofollow, noopener" target="_blank">Sache.in</a> &ndash; Sache is a utility created exclusively for Sass and Compass projects. It's an excellent resource for extending Sass!</li>
 		</ul>
 	</div>
 </section>
@@ -225,12 +230,12 @@
 			<form id="grid" class="row">
 				<div class="six columns alpha">
 					<div class="grid-input">
-						<label>Column width</label>
-						<input type="tel" name="width" value="40">
-						<label>Gutter width</label>
-						<input type="tel" name="gutter" value="20">
-						<label>Number of columns</label>
-						<input type="tel" name="cols" value="16">
+						<label for="c_width">Column width</label>
+						<input id="c_width" type="tel" name="width" value="40">
+						<label for="c_gwith">Gutter width</label>
+						<input id="c_gwith" type="tel" name="gutter" value="20">
+						<label for="n_cols">Number of columns</label>
+						<input id="n_cols" type="tel" name="cols" value="16">
 					</div>
 				</div>
 				<div class="six columns omega">
@@ -254,16 +259,15 @@ $base-col-count: 16;</pre>
 <section class="container footer">
 	<div class="twelve columns">
 		<h4>Thanks</h4>
-		<p>As a big proponent of the <a href="http://opensource.org/" rel="nofollow" target="_blank">Open Source Initiative</a>, we would like to thank the following:</p>
+		<p>As a big proponent of the <a href="http://opensource.org/" rel="nofollow, noopener" target="_blank">Open Source Initiative</a>, we would like to thank the following:</p>
 		<ul class="fa-ul">
-			<li><i class="fa fa-flickr"></i> <a href="https://www.flickr.com/photos/wscullin/" rel="nofollow" target="_blank">Will Scullin</a> for the blueprint stock photo that is used for the Documentation section.</li>
-			<li><i class="fa fa-image"></i> <a href="http://www.sublimetext.com/" rel="nofollow" target="_blank">SublimeText</a> for inspiring the image for the Learn More section and being an awesome text editor.</li>
-			<li><i class="fa fa-flag"></i> <a href="http://fontawesome.io/" rel="nofollow" target="_blank">Fontawesome.io</a> for being awesome! These icons played a major role in the design of the site!</li>
-			<li><i class="fa fa-cogs"></i> <a href="http://www.npmjs.com" rel="nofollow" target="_blank">NPM</a> for providing a means to manage dependencies easily!</li>
-			<li><i class="fa fa-bullseye"></i> <a href="http://gulpjs.com/" rel="nofollow" target="_blank">gulp.js</a>for being awesome and saving development time by automating stuff!</li>
-			<li><i class="fa fa-bookmark-o"></i> <a href="http://www.premiumpixels.com/freebies/20-seamless-photoshop-grid-patterns/" rel="nofollow" target="_blank">Orman</a> for creating the awesome pattern for the grid generation background!</li>
+			<li><i class="fa fa-flickr"></i> <a href="https://www.flickr.com/photos/wscullin/" rel="nofollow, noopener" target="_blank">Will Scullin</a> for the blueprint stock photo that is used for the Documentation section.</li>
+			<li><i class="fa fa-flag"></i> <a href="http://fontawesome.io/" rel="nofollow, noopener" target="_blank">Fontawesome.io</a> for being awesome! These icons played a major role in the design of the site!</li>
+			<li><i class="fa fa-cogs"></i> <a href="http://www.npmjs.com" rel="nofollow, noopener" target="_blank">NPM</a> for providing a means to manage dependencies easily!</li>
+			<li><i class="fa fa-bullseye"></i> <a href="http://gulpjs.com/" rel="nofollow, noopener" target="_blank">gulp.js</a> for being awesome and saving development time by automating stuff!</li>
+			<li><i class="fa fa-bookmark-o"></i> <a href="http://www.premiumpixels.com/freebies/20-seamless-photoshop-grid-patterns/" rel="nofollow, noopener" target="_blank">Orman</a> for creating the awesome pattern for the grid generation background!</li>
 		</ul>
-		<p class="center small">&copy; <span data-date>2016</span> AtomicPages LLC</p>
+		<p class="center small">&copy; <span data-date>2017</span> AtomicPages LLC</p>
 	</div>
 </section>
 <script type="text/javascript" src="target/js/skeleton-vendor.min.js"></script>
