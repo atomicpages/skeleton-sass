@@ -30,7 +30,7 @@ If you're using a `bower`, `npm`, or `yarn` then install via:
 bower i --save-dev skeleton-sass
 bower i --save-dev skeleton-sass-official
 npm i --save-dev skeleton-sass-official
-yarn install skeleton-sass-official --dev
+yarn add skeleton-sass-official --dev
 ~~~
 
 Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
@@ -241,7 +241,7 @@ You can also add Skeleton Sass as a dependency via NPM or Yarn!
 
 ~~~bash
 npm install --save-dev skeleton-sass-official
-yarn install skeleton-sass-official --dev
+yarn add skeleton-sass-official --dev
 ~~~
 
 You can also install alpha, beta, release candidate, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:
