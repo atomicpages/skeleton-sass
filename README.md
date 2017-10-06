@@ -30,7 +30,7 @@ If you're using a `bower`, `npm`, or `yarn` then install via:
 bower i --save-dev skeleton-sass
 bower i --save-dev skeleton-sass-official
 npm i --save-dev skeleton-sass-official
-yarn install skeleton-sass-official --dev
+yarn add skeleton-sass-official --dev
 ~~~
 
 Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
