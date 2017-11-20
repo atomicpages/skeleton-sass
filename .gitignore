@@ -1,10 +1,12 @@
 .idea/
 .DS_Store
-yarn.lock
 node_modules/
 bower_components/
 .editorconfig
 main.scss
+main.css
+main.css.map
 index.html
 sassdoc/
 issues/
+docs/

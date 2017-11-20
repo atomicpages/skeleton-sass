@@ -3,3 +3,7 @@ sache.json
 .gitattributes
 .editorconfig
 bower.json
+main.css
+main.css.map
+main.scss
+docs/

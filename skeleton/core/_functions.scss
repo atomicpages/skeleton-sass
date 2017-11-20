@@ -1,11 +1,14 @@
-// Public functions that can be used globally.
+////
+/// Public functions that can be used globally.
+/// @author Dennis Thompson
+/// @group core
+////
 
 @import "dependencies";
 
 /// Strips the units from strings
 /// @param {string|number} $number - The number to remove units from.
 /// @return {number} Unitless number.
-/// @group core
 /// @access public
 /// @link https://github.com/nex3/sass/issues/533
 @function strip-units($number) {
@@ -16,7 +19,6 @@
 /// @param {number} $px - A absolute unit.
 /// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
 /// @return {number} Realtive `em` unit.
-/// @group core
 /// @access public
 @function em($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "em");
@@ -26,7 +28,6 @@
 /// @param {number} $px - A absolute unit.
 /// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
 /// @return {number} Realtive `rem` unit.
-/// @group core
 /// @access public
 @function rem($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "rem");
@@ -36,7 +37,6 @@
 /// @param {number} $px - A absolute unit.
 /// @param {number} $base [ $base-font-size ] - The base font size to calculate with.
 /// @return {number} Realtive `%` unit.
-/// @group core
 /// @access public
 @function percent($px, $base: $base-font-size) {
 	@return _calcRU($px, $base, "%");
@@ -44,7 +44,6 @@
 
 /// Takes in an absolute unit and gives back a relative one.
 /// @param {number} $size - A absolute unit.
-/// @group core
 /// @access public
 /// @return {number} A relative unit based on the values of `$use-rem`, `$use-em`, and `$use-percent`.
 @function relative($size) {
@@ -62,7 +61,6 @@
 /// Takes in a color and provides a list of triad-compatible colors.
 /// @param {color} $color - The color to calculate traid colors for.
 /// @return {list} A list of triad colors.
-/// @group core
 /// @access public
 @function triad($color) {
 	@if(type-of($color) != "color") {
@@ -89,7 +87,6 @@
 /// Takes in a color and provides a list of square-compatible colors.
 /// @param {color} $color - The color to calculate traid colors for.
 /// @return {list} A list of square colors.
-/// @group core
 /// @access public
 @function square($color) {
 	@if(type-of($color) != "color") {

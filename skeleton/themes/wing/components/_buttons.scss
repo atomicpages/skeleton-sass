@@ -12,8 +12,8 @@ input[type="button"] {
     padding: relative(12px) relative(12px);
     -webkit-user-select: none;
     user-select: none;
-    -webkit-transition: all 60ms ease-in-out;
-    transition: all 60ms ease-in-out;
+    -webkit-transition: $button-transition;
+    transition: $button-transition;
 	color: $button-color;
 	text-align: center;
     font-family: inherit;
@@ -26,22 +26,22 @@ input[type="button"] {
 	text-decoration: none;
 	white-space: nowrap;
 	background-color: $button-bg-color;
-	border-radius: 4px;
+	border-radius: $button-border-radius;
 	border: 0 none;
 	cursor: pointer;
 	&:hover {
-		-webkit-transition: all 60ms ease;
-        transition: all 60ms ease;
-        opacity: 0.85;
+		-webkit-transition: $button-transition-hover;
+        transition: $button-transition-hover;
+        opacity: $button-hover-alpha;
 	}
     &:disabled {
-		opacity: 0.8;
+		opacity: $button-disabled-alpha;
         cursor: not-allowed;
     }
     &:focus { outline: 0 none; }
 	&:active {
-        -webkit-transition: all 60ms ease;
-        transition: all 60ms ease;
+        -webkit-transition: $button-transition-hover;
+        transition: $button-transition-hover;
         -webkit-transform: scale(0.97);
         transform: scale(0.97);
         opacity: 0.75;
@@ -49,26 +49,28 @@ input[type="button"] {
     &.btn-outline {
         border: 3px solid $button-outline-border-color;
         color: $button-color;
-        background: transparent;
+        background: $button-outline-background-color;
         transition: all 0.5s ease;
-		&:hover, &:active {
-			color: #000;
-			background: #fff;
+        &:hover,
+        &:active {
+			color: $button-outline-hover-color;
+			background: $button-outline-hover-background-color;
 		}
     }
 	&.btn-outline-inverted {
-		border: 3px solid #000;
-		color: #000;
-		background: transparent;
+		border: 3px solid $button-outline-invert-border-color;
+		color: $button-color-invert;
+		background: $button-inver-background-color;
 		transition: all 0.5s ease;
-		&:hover, &:active {
-			color: #fff;
-			background: #000;
+        &:hover,
+        &:active {
+			color: $button-color-invert-hover;
+			background: $button-outline-hover-invert-background-color;
 		}
 	}
 	&.btn-clear {
-		background: transparent;
-		color: gray;
+		background: $button-clear-background-color;
+		color: $button-clear-color;
 	}
 }
 

@@ -1,10 +1,10 @@
 {
 	"name": "skeleton-sass-official",
-	"version": "3.1.4",
+	"version": "3.1.5",
 	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
 	"main": "skeleton/core/_config.scss",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",

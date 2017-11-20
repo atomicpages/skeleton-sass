@@ -1,12 +1,14 @@
-// Core mixins with global scope.
-// Note: all logic for private mixins are in _dependencies.scss
+////
+/// Core mixins with global scope.
+/// @author Dennis Thompson
+/// @group core
+////
 
 /// Creates the grid
 /// @param {number} $width [ $base-width ] - The with of the grid as defined in `.container`
 /// @param {bool} $fluid [ $is-fluid ] - Set true to generate a fluid grid.
 /// @param {number} $gutterWidth [ $base-gutter-width ] - Adjusts the gutter width.
 /// @param {number} $colCount [ $base-col-count ] - Adjusts the number of columns to generate.
-/// @group core
 /// @access public
 @mixin grid($width: $base-width, $fluid: $is-fluid, $gutterWidth: $base-gutter-width, $colCount: $base-col-count) {
 	@if($fluid) {
@@ -23,7 +25,6 @@
 /// @param {number} $width [ $base-width ] - The with of the grid as defined in `.container`
 /// @param {bool} $fluid [ $is-fluid ] - Set true to generate a fluid grid.
 /// @param {number} $colCount [ $base-col-count ] - Adjusts the number of columns to generate.
-/// @group core
 /// @access public
 @mixin mobileGrid($width: $base-width, $isFluid: $is-fluid, $colCount: $base-col-count) {
 	@include _mobileGrid($width, $colCount, $isFluid);
@@ -32,7 +33,6 @@
 /// Calculates the font-size automatically based on config settings.
 /// @param {number} $size - The font size to convert.
 /// @param {bool} $fallback [ $use-px-fallback ] - Set true to fallback to px for legacy browsers.
-/// @group core
 /// @access public
 @mixin font-size($size, $fallback: $use-px-fallback) {
 	@if($fallback) {
@@ -54,7 +54,6 @@
 }
 
 /// Helper mixin to easily hide text.
-/// @group core
 /// @access public
 @mixin hide-text {
 	text-indent: 100%;

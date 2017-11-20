@@ -1,5 +1,11 @@
 Changelog
 =========
+### 3.1.5
+* Addressing issue #34
+* Merging #35 &mdash; thanks [e-compton](https://github.com/e-compton)!
+* Adding more variables to `fresh` and `wing` themes
+* Creating file on-the-fly for devs on gulp `sass` task
+* Updating docs
 
 ### 3.1.4
 * Addressing issue #31

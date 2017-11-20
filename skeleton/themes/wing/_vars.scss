@@ -9,8 +9,35 @@ $prefix-for-spec:      true !default;
 $button-color: #fff;
 $button-font-uppercase: true;
 $button-bg-color: #333030;
-$button-weight: 500;
+$button-weight: 600;
+$button-font-uppercase: true;
+$button-border-color: #bbb;
+$button-transition: all 60ms ease-in-out;
+$button-border-radius: 4px;
+
+// hover state
+$button-transition-hover: all 60ms ease;
+$button-hover-alpha: 0.85;
+
+// disabled
+$button-disabled-alpha: 0.8;
+
+// outline buttons
+$button-outline-background-color: transparent;
+$button-outline-hover-color: #000;
+$button-outline-hover-background-color: #fff;
 $button-outline-border-color: $button-color;
+
+// inverted outline buttons
+$button-inver-background-color: transparent;
+$button-color-invert: invert($button-color);
+$button-color-invert-hover: invert($button-outline-hover-color);
+$button-outline-hover-invert-background-color: invert($button-outline-hover-background-color);
+$button-outline-invert-border-color: $button-outline-hover-color;
+
+// clear button
+$button-clear-background-color: transparent;
+$button-clear-color: gray;
 
 // Default overrides for new theme
 $is-fluid: true; // Change to true to enable the fluid grid
@@ -31,11 +58,6 @@ $heading-color: $font-color; // default heading (h1-h6) color
 $heading-weight: 300; // sets the weight of the heading text
 
 $form-font: $font-family; // default form font
-
-$button-color: #fff;
-$button-weight: 600;
-$button-font-uppercase: true;
-$button-border-color: #bbb;
 
 // GRID CHANGES
 $grid-max-width: 960px;

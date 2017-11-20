@@ -33,21 +33,28 @@ $heading-weight: 300; // sets the weight of the heading text
 
 $form-font: $font-family; // default form font
 
+// Button Settings
 $button-color: #555;
 $button-weight: 600;
 $button-font-uppercase: true;
 $button-border-color: #bbb;
 $button-background-color: transparent;
+$button-height: 38px;
+$button-letter-spacing: 0.1rem;
+$button-border-radius: 4px;
+$button-font-size: relative(11px);
 
 $button-hover-color: #FFF;
 $button-hover-border-color: #888;
 $button-hover-background-color: transparent;
 
 $button-primary-color: #333;
+$button-primary-border-color: $button-primary-color;
 $button-primary-background-color: #33C3F0;
 
 $button-primary-hover-color: #FFF;
 $button-primary-hover-background-color: #1EAEDB;
+$button-primary-hover-border-color: $button-primary-hover-background-color;
 
 // GRID CHANGES
 $grid-max-width: 960px;
