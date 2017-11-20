@@ -28,6 +28,10 @@ npm i && npm run dev
 **Note:** the `dev` task will automatically build the project for you.
 
 ## Changelog
+### 3.1.3
+* Updating docs script to use shell.js
+* Updating docs
+
 ### 3.1.2
 * Renaming some gulp tasks
 * Adding browserify to serve static resources

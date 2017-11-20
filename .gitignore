@@ -1,15 +1,10 @@
 .sass-cache/
 node_modules/
 .idea/
-
-# macOS
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
-
-# NPM/Yarn
-yarn.lock
-
 main.scss
 .vscode
+issues/

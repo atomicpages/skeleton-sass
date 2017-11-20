@@ -1,13 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-cwd=$(pwd)
+const fs = require('fs');
+const path = require('path');
+const shell = require('shelljs');
+let yarn = !!shell.which('yarn');
 
-cd ../
-yarn
-rm -rf docs/
-cd node_modules/skeleton-sass-official/
-yarn
-gulp doc
-mv docs/ ../../.
-rm -rf node_modules/
-exit 0
+const cwd = shell.pwd();
+
+shell.cd(__dirname); // process root
+shell.cd('..');
+shell.exec(yarn ? 'yarn' : 'npm i');
+
+let pwd = shell.pwd();
+
+if (fs.existsSync(path.join(pwd.toString(), 'docs'))) {
+    shell.rm('-rf', path.join(pwd.toString(), 'docs'));
+}
+
+shell.cd(path.join(pwd.toString(), 'node_modules', 'skeleton-sass-official'));
+shell.exec(yarn ? 'yarn' : 'npm i');
+shell.exec('gulp doc');
+shell.mv('docs/', '../../.');
+shell.rm('-rf', `${shell.pwd().toString()}node_modules`);
+shell.cd(cwd.toString());
