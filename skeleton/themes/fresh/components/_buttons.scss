@@ -17,26 +17,27 @@ input[type="button"] {
 	text-transform: if($button-font-uppercase, uppercase, none);
 	text-decoration: none;
 	white-space: nowrap;
-	background-color: transparent;
+	background-color: $button-background-color;
 	border-radius: 4px;
 	border: 1px solid $button-border-color;
 	cursor: pointer;
 	box-sizing: border-box;
 	&:hover,
 	&:focus {
-		color: #333;
-		border-color: #888;
+		color: $button-hover-color;
+		border-color: $button-hover-border-color;
+        background-color: $button-hover-background-color;
 		outline: 0;
 	}
 	&.button-primary {
-		color: #FFF;
-		background-color: #33C3F0;
-		border-color: #33C3F0;
+		color: $button-primary-color;
+		background-color: $button-primary-background-color;
+		border-color: $button-primary-background-color;
 		&:hover,
 		&:focus {
-			color: #FFF;
-			background-color: #1EAEDB;
-			border-color: #1EAEDB;
+			color: $button-primary-hover-color;
+			background-color: $button-primary-hover-background-color;
+			border-color: $button-primary-hover-background-color;
 		}
 	}
 }
