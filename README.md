@@ -317,3 +317,5 @@ Contributors
     * [Issue #24](https://github.com/atomicpages/skeleton-sass/issues/24)
 * [dirkolbrich](https://github.com/dirkolbrich)
     * [Issues 26, 27, 29, 31, 32](https://github.com/atomicpages/skeleton-sass/issues/32)
+* [brysonreece](https://github.com/brysonreece)
+	* [Issues #37](https://github.com/atomicpages/skeleton-sass/pull/37)
