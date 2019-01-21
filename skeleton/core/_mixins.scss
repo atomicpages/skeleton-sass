@@ -41,9 +41,9 @@
 
 	@if($use-rem and not $use-em and not $use-percent) {
 		font-size: rem($size);
-	} @elseif($use-em and not $use-rem and not $use-percent) {
+	} @else if($use-em and not $use-rem and not $use-percent) {
 		font-size: em($size);
-	} @elseif($use-percent and not $use-rem and not $use-em) {
+	} @else if($use-percent and not $use-rem and not $use-em) {
 		font-size: percent($size);
 	} @else {
 		@debug "More than one option is chosen for the default unit. Choose only one. Defaulting to px.";

@@ -49,9 +49,9 @@
 @function relative($size) {
 	@if($use-rem == true and $use-em == false and $use-percent == false) {
 		@return rem($size);
-	} @elseif($use-em == true and $use-rem == false and $use-percent == false) {
+	} @else if($use-em == true and $use-rem == false and $use-percent == false) {
 		@return em($size);
-	} @elseif($use-percent == true and $use-rem == false and $use-em == false) {
+	} @else if($use-percent == true and $use-rem == false and $use-em == false) {
 		@return percent($size);
 	}
 
