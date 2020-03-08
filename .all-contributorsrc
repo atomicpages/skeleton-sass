@@ -1,0 +1,14 @@
+{
+  "projectName": "skelecton-sass-official",
+  "projectOwner": "@atomicpages",
+  "repoType": "github",
+  "repoHost": "https://github.com/atomicpages/skeleton-sass",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}

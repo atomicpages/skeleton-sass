@@ -1,8 +1,6 @@
-.idea/
 .DS_Store
 node_modules/
 bower_components/
-.editorconfig
 main.scss
 main.css
 main.css.map

@@ -1,38 +1,49 @@
 {
-	"name": "skeleton-sass-official",
-	"version": "4.0.0",
-	"description": "Skeleton Sass is a highly modular version of Skeleton CSS",
-	"main": "skeleton/core/_config.scss",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/atomicpages/skeleton-sass.git"
-	},
-	"keywords": [
-		"scss",
-		"sass",
-		"skeleton",
-		"frontend",
-		"css",
-		"boilerplate"
-	],
-	"author": "Dennis Thompson",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/atomicpages/skeleton-sass/issues"
-	},
-	"homepage": "https://github.com/atomicpages/skeleton-sass#readme",
-	"dependencies": {
-		"normalize-scss": ">=5.0.4"
-	},
-	"devDependencies": {
-		"del": ">=2.2.2",
-		"gulp": "^3.9.1",
-		"gulp-cli": ">=1.2.2",
-		"gulp-sass": ">=3.1.0",
-		"gulp-sourcemaps": "^2.4.0",
-		"sassdoc": "^2.1.20"
-	}
+    "name": "skeleton-sass-official",
+    "version": "4.0.0",
+    "description": "Skeleton Sass is a highly modular version of Skeleton CSS",
+    "main": "skeleton/core/_config.scss",
+    "scripts": {
+        "test": "npm-run-all --parallel build:libsass build:sass",
+        "build:libsass": "node-sass ./src/tests/test.scss 2>&1 /dev/null",
+        "build:sass": "cd ./src/tests/ && sass test.scss --stop-on-error --no-source-map 2>&1 /dev/null"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/atomicpages/skeleton-sass.git"
+    },
+    "keywords": [
+        "scss",
+        "sass",
+        "skeleton",
+        "frontend",
+        "css",
+        "boilerplate"
+    ],
+    "author": "Dennis Thompson",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/atomicpages/skeleton-sass/issues"
+    },
+    "homepage": "https://github.com/atomicpages/skeleton-sass#readme",
+    "peerDependencies": {
+        "normalize-scss": "^7.0.1"
+    },
+    "devDependencies": {
+        "@djthoms/prettier-config": "^1.0.0",
+        "all-contributors-cli": "^6.14.0",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-cli": "^1.2.2",
+        "gulp-sass": ">=3.1.0",
+        "gulp-sourcemaps": "^2.4.0",
+        "node-sass": "^4.13.1",
+        "normalize-scss": "^7.0.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "rimraf": "^3.0.2",
+        "sass": "^1.26.2",
+        "sassdoc": "^2.1.20"
+    },
+    "prettier": "@djthoms/prettier-config"
 }

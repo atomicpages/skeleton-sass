@@ -1,84 +1,92 @@
-Skeleton Sass 3
-===============
+# Skeleton Sass 3
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com).
 
 ### Key Features
-* Ability to seamlessly adjust grids by changing the value of variables
-* Themes
-* Easy-to-use mixins and functions
-* Install Skeleton Sass with bower or npm! No more clunky scripts!
-* [Live demo!](http://atomicpages.github.io/skeleton-sass/demo/index.html)
-* [Heavily documented](https://github.com/atomicpages/skeleton-sass/wiki)
+
+-   Ability to seamlessly adjust grids by changing the value of variables
+-   Themes
+-   Easy-to-use mixins and functions
+-   Install Skeleton Sass with bower or npm! No more clunky scripts!
+-   [Live demo!](http://atomicpages.github.io/skeleton-sass/demo/index.html)
+-   [Heavily documented](https://github.com/atomicpages/skeleton-sass/wiki)
 
 ### Dependencies
-* Sass 3.3+
-* [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
+
+-   node-sass `>=3.5.0` or dart sass `>=1.0.0`
+-   [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 
 #### Does this work with other Sass compilers?
-Yes! Skeleton Sass 3 has been tested with the following compilers and libsass wrappers:
 
-* [Sass](http://sass-lang.com/) 3.3+
-* [libsass](https://github.com/sass/libsass) 3.2+
-* [Wellington](http://getwt.io/) 0.9.3+
-* [node-sass](https://www.npmjs.com/package/node-sass) 3.5+
+Yes! Skeleton Sass has been tested with the official sass compiler and `node-sass` (which wraps libsass):
 
-### How do I Consume Skeleton Sass?
-If you're using a `bower`, `npm`, or `yarn` then install via:
+-   [Dart Sass](https://sass-lang.com/dart-sass) 1.x
+-   [node-sass](https://www.npmjs.com/package/node-sass) 3.5+
 
-~~~bash
-# bower is deprecated
-bower i --save-dev skeleton-sass
-bower i --save-dev skeleton-sass-official
+## Installing Skeleton Sass
 
-npm i --save-dev skeleton-sass-official
+### From NPM
 
-yarn add skeleton-sass-official --dev
-~~~
+Install from the NPM registry:
 
-Optionally, if you are not using one of these package managers, then you can clone the repo and put in a special directory with the rest of your dependencies.
+```sh
+npm i skeleton-sass-official normalize-scss -D
+yarn add skeleton-sass-official normalize-scss --dev
+```
 
-~~~bash
+### From Source
+
+If you're not using NPM or Yarn, you can clone the repro:
+
+```sh
 cd path/to/my_dir
 git clone https://github.com/atomicpages/skeleton-sass.git
-~~~
+```
 
-From here, minimal stitching is required to get Skeleton Sass 3 integrated into your project! At a minimum, you need to create a single file: `skeleton.scss`
+Create a file called `skeleton.scss`
 
-From \*nix:
+On \*nix:
 
-~~~bash
+```sh
 cd path/to/sass/in/project
 touch skeleton.scss
-~~~
+```
 
-From Windows:
+On Windows:
 
-~~~batch
+```batch
 cd path/to/sass/in/project
 echo. 2>skeleton.scss
-~~~
+```
 
-Inside of `skeleton.scss` we need to add our components:
+Inside of `skeleton.scss` we need to add our import statements:
 
-~~~sass
+```scss
 @import "path/to/bower_components/normalize-scss/sass/normalize/import-now"; // import normalize-scss
-@import "path/to/bower_components/skeleton-sass/skeleton/core/config"; // Skeleton Sass core loader
+@import "path/to/bower_components/skeleton-sass/src/core/config"; // Skeleton Sass core loader
 
 // import default theme variables
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/vars"; // theme variable overrides
+@import "path/to/bower_components/skeleton-sass/src/themes/fresh/vars"; // theme variable overrides
 
 // import default theme styles
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/include_components"; // theme base styles
-@import "path/to/bower_components/skeleton-sass/skeleton/themes/fresh/grid"; // theme grid styles
-~~~
+@import "path/to/bower_components/skeleton-sass/src/themes/fresh/include_components"; // theme base styles
+@import "path/to/bower_components/skeleton-sass/src/themes/fresh/grid"; // theme grid styles
+```
 
-Compile `skeleton.scss` and you now have Skeleton Sass 3 integrated into your project!
+Building using CLI:
+
+```sh
+npx sass skeleton.scss skeleton.css
+```
 
 #### But wait! What about my themes?!
+
 Skeleton Sass 3 makes it easy to keep your changes external to the core of Skeleton Sass with the new all-partial approach. We'll outline a sample case where we use a custom theme below:
 
-```
+```plain
 my_project
 └── src
     └── sass
@@ -107,35 +115,36 @@ Now that we have our sample project outlined, let's see how we can get everythin
 
 **Note:** all relative paths in the examples below fit the file structure above. If you are using a different structure, amend the paths accordingly.
 
-~~~sass
-@import "../../../bower_components/skeleton-sass/skeleton/core/config";
+```scss
+@import "../../../node_modules/skeleton-sass/src/core/config";
 
 // Global var overrides
-~~~
+```
 
 Now open `_loader.scss` and add the following:
 
-~~~sass
+```scss
 @import "config";
 
 // import theme, overrides, and extras
 @import "themes/MyTheme/vars";
 @import "themes/MyTheme/include_components";
 @import "themes/MyTheme/grid";
-~~~
+```
 
 Finally, open `skeleton.scss` and add the following as the first line of the file:
 
-~~~sass
-@import "skeleton/loader";
-~~~
+```scss
+@import "src/loader";
+```
 
 #### How do I load third party Sass partials into theme?
+
 Glad you asked! Skeleton Sass 3 makes this super easy as well! Depending where you need these mixins, function, and/or variables, you can load them at the appropriate place in your `_loader.scss` file!
 
 For example, let's assume we want to use font-awesome inside of our `skeleton.scss` file, we could modify the `_loader.scss` file as follows:
 
-~~~sass
+```scss
 @import "config";
 
 // import theme, overrides, and extras
@@ -144,42 +153,49 @@ For example, let's assume we want to use font-awesome inside of our `skeleton.sc
 @import "themes/MyTheme/grid";
 
 // import extras
-@import "../../../bower_components/font-awesome/scss/font-awesome";
-~~~
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+```
 
 **Note:** the position of the import changes which files have access to the loaded data. For example, if you need the data in `themes/MyTheme/grid` then you'd need to move the import above the line where you import `themes/MyTheme/grid`.
 
 For more information on why we made this change, [click here](#change).
 
 #### Upgrading From 2.x
+
 Skeleton Sass 3 is decently compatible to the 2.x series, but requires some manual labor (i.e. copy and pasting multiple files to the 2.x series).
 
 #### Upgrading From 1.x
+
 Skeleton Sass 2 is **not** backwards compatible with Skeleton Sass 1.x due to a major change in the file structure. However, we have a [wiki article](https://github.com/atomicpages/skeleton-sass/wiki/Upgrade-from-1-to-2) that explains how to upgrade from Skeleton Sass 1 to Skeleton Sass 2.
 
 #### Looking for older versions of Skeleton Sass?
-* Skeleton Sass 2
-    * [Version 2 branch](https://github.com/atomicpages/skeleton-sass/tree/2.x-master)
-    * [Version 2 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-2-Docs)
-* Skeleton Sass
-    * [Version 1 branch](https://github.com/atomicpages/skeleton-sass/tree/1.x-master)
-    * [Version 1 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
+
+-   Skeleton Sass 2
+    -   [Version 2 branch](https://github.com/atomicpages/skeleton-sass/tree/2.x-master)
+    -   [Version 2 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-2-Docs)
+-   Skeleton Sass
+    -   [Version 1 branch](https://github.com/atomicpages/skeleton-sass/tree/1.x-master)
+    -   [Version 1 docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
 
 #### New to Sass?
+
 Check out our [wiki](https://github.com/atomicpages/skeleton-sass/wiki) for a more in-depth look at Skeleton Sass, information regarding installing ruby, Sass, and other valuable resources.
 
 ## TL;DR
+
 Skeleton Sass is a Sass port of Skeleton CSS. Skeleton Sass 3 decouples itself from your project so you can consume it without worrying if your package manager will clobber all of your hard work.
 
 ### Features
+
 1. Modular
 2. Decoupled core code
 3. Decoupled theme files for rapid theme development
 4. Extensible
 
 ### File Overview
+
 ```
-skeleton/ # Where all of the magic happens
+src/ # Where all of the magic happens
 ├── core
 │   ├── _config.scss # Default global configuration variables
 │   ├── _dependencies.scss # Default global logic for Skeleton Sass
@@ -235,87 +251,77 @@ skeleton/ # Where all of the magic happens
 
 Install Skeleton Sass as a dependency via NPM or Yarn:
 
-~~~bash
+```sh
 npm install --save-dev skeleton-sass-official
 yarn add skeleton-sass-official --dev
-~~~
+```
 
 **Note:** [bower is deprecated](https://github.com/bower/bower/issues/2298) and we encourage you to adopt modern [workflows like rollup and webpack](https://github.com/atomicpages/skeleton-sass/wiki/Integrating-Skeleton-Sass-into-Dev-Workflows).
 
 ~~Install Skeleton Sass with bower via command line:~~
 
-~~~bash
+```sh
 bower install skeleton-sass --save-dev
 bower install skeleton-sass-official --save-dev
-~~~
+```
 
 ~~You can also install alpha, beta, release candidate, and previous versions by looking at the [releases](https://github.com/atomicpages/skeleton-sass/releases) page and install with the following syntax:~~
 
-~~~bash
+```sh
 bower install skeleton-sass#[tag]
 bower install skeleton-sass#3.1.0
-~~~
+```
 
 [Learn how to set up Skeleton Sass for the first time here](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use).
 
 ### Demo
+
 You can see Skeleton Sass in action here: [https://atomicpages.github.io/skeleton-sass](https://atomicpages.github.io/skeleton-sass). Be sure to resize your browser window and see the responsive goodness in action!
 
 ### Documentation
+
 Skeleton Sass is heavily documented. If you're looking for a detailed description (or just want more info) you can view all the [wiki pages here](https://github.com/atomicpages/skeleton-sass/wiki/_pages).
 
 ##### Resources
-* [Installing Sass](https://github.com/atomicpages/skeleton-sass/wiki/Installing-Sass)
-* [Setting up Skeleton Sass for first time use](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use)
-* [Creating a theme](https://github.com/atomicpages/skeleton-sass/wiki/Creating-a-theme)
 
+-   [Installing Sass](https://github.com/atomicpages/skeleton-sass/wiki/Installing-Sass)
+-   [Setting up Skeleton Sass for first time use](https://github.com/atomicpages/skeleton-sass/wiki/Setting-up-Skeleton-Sass-for-first-time-use)
+-   [Creating a theme](https://github.com/atomicpages/skeleton-sass/wiki/Creating-a-theme)
 
 ##### Documentation
-* [Introduction to Skeleton Sass](https://github.com/atomicpages/skeleton-sass/wiki)
-* [Function API](https://github.com/atomicpages/skeleton-sass/wiki/Function-API)
-* [Core Variable API](https://github.com/atomicpages/skeleton-sass/wiki/Core-Variable-API)
-* [Mixin API](https://github.com/atomicpages/skeleton-sass/wiki/Mixin-API)
-* [Skeleton Sass version 1 Docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
+
+-   [Introduction to Skeleton Sass](https://github.com/atomicpages/skeleton-sass/wiki)
+-   [Function API](https://github.com/atomicpages/skeleton-sass/wiki/Function-API)
+-   [Core Variable API](https://github.com/atomicpages/skeleton-sass/wiki/Core-Variable-API)
+-   [Mixin API](https://github.com/atomicpages/skeleton-sass/wiki/Mixin-API)
+-   [Skeleton Sass version 1 Docs](https://github.com/atomicpages/skeleton-sass/wiki/Version-1-Docs)
 
 ### License
+
 This project is released under the [MIT license](https://github.com/atomicpages/skeleton-sass/blob/master/license.txt). Who doesn't like free code?
 
-### Find a Bug?
+### Found a Bug?
+
 Skeleton Sass is community driven. We will gladly review any issues that you find. If you wish to contribute you'll land a spot in the contributions section of this document!
 
 ##### I Found a Bug/How Can I Help?
-* [Create an Issue](https://github.com/atomicpages/skeleton-sass/issues)
-* [Fork](https://github.com/atomicpages/skeleton-sass)
+
+-   [Create an Issue](https://github.com/atomicpages/skeleton-sass/issues)
+-   [Fork](https://github.com/atomicpages/skeleton-sass)
 
 <a name="change"></a>
 
 ### Version 3 Update
+
 After a year of working with build systems like gulp, make, gradle, and maven it became obvious that the structure of Skeleton Sass 2 didn't really promote easy updating. Most build systems have a clean task which deletes entire directories that contains artifacts, target directories, object files, etc. Skeleton Sass 2 strived to be a catch-all solution with the addition of clunky scripts to automate certain things. With the release of 2.5.3, we realized a change was needed.
 
 Skeleton Sass 3 offers a far more portable solution in order to adapt to new ways of development using dependency management systems like ~~`bower` and~~ `npm`. We wanted to truly make updating Skeleton Sass have zero risk of losing all your hard work. Now contributors to your projects can simply install Skeleton Sass as a dependency and all of your changes are 100% decoupled from the core.
 
-Authors
--------
-* [Dennis Thompson](http://dennis-thompson.com/)
-* [AtomicPages LLC](http://www.atomicpages.net/)
+## Contributors
 
-Contributors
-------------
-* Jackson Hines
-* [robertosobachi](https://github.com/robertosobachi)
-	* [Issue #6](https://github.com/atomicpages/skeleton-sass/issues/6)
-	* [Pull #10](https://github.com/atomicpages/skeleton-sass/pull/10)
-* [vephinx](https://github.com/vephinx)
-	* [Issue #7](https://github.com/atomicpages/skeleton-sass/issues/7)
-	* [Issue #9](https://github.com/atomicpages/skeleton-sass/issues/9)
-* [thomasvandongen](https://github.com/thomasvandongen)
-	* Pull request [0af774f](https://github.com/atomicpages/skeleton-sass/pull/20)
-		* **Note:** as a result of his work we can finally close [issue #16](https://github.com/atomicpages/skeleton-sass/issues/16)
-* [seshaljain](https://github.com/seshaljain)
-	* [Issue #22](https://github.com/atomicpages/skeleton-sass/issues/22)
-* [pcbulai](https://github.com/pcbulai)
-    * [Issue #24](https://github.com/atomicpages/skeleton-sass/issues/24)
-* [dirkolbrich](https://github.com/dirkolbrich)
-    * [Issues 26, 27, 29, 31, 32](https://github.com/atomicpages/skeleton-sass/issues/32)
-* [brysonreece](https://github.com/brysonreece)
-	* [Issues #37](https://github.com/atomicpages/skeleton-sass/pull/37)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
