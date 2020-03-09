@@ -1,7 +1,9 @@
-# Skeleton Sass 3
+# Skeleton Sass
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![npm](https://img.shields.io/npm/v/skeleton-sass-official?style=flat-square)
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com) build on top of the popular CSS metalanguage, Sass.
 
