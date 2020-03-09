@@ -1,6 +1,6 @@
 # Skeleton Sass 3
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com).
@@ -329,6 +329,7 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
     <td align="center"><a href="https://github.com/seshaljain"><img src="https://avatars0.githubusercontent.com/u/11702800?v=4" width="100px;" alt=""/><br /><sub><b>Seshal Jain</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Aseshaljain" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/pcbulai"><img src="https://avatars1.githubusercontent.com/u/949571?v=4" width="100px;" alt=""/><br /><sub><b>Paul Bulai</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Apcbulai" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.dirkolbrich.de"><img src="https://avatars1.githubusercontent.com/u/3765119?v=4" width="100px;" alt=""/><br /><sub><b>Dirk Olbrich</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Adirkolbrich" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://bryson.cc/"><img src="https://avatars1.githubusercontent.com/u/4043157?v=4" width="100px;" alt=""/><br /><sub><b>Bryson Reece</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Abrysonreece" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
