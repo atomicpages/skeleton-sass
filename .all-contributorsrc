@@ -65,6 +65,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "e-compton",
+      "name": "Edward Compton",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11599729?v=4",
+      "profile": "https://github.com/e-compton",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6
