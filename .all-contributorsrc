@@ -85,6 +85,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "k-snow",
+      "name": "k-snow",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11395605?v=4",
+      "profile": "https://github.com/k-snow",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
