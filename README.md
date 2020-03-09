@@ -1,6 +1,6 @@
 # Skeleton Sass 3
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com).
@@ -325,6 +325,7 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
 <table>
   <tr>
     <td align="center"><a href="http://robertosobachi.com"><img src="https://avatars0.githubusercontent.com/u/1422326?v=4" width="100px;" alt=""/><br /><sub><b>Roberto Sobachi</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Arobertosobachi" title="Bug reports">🐛</a> <a href="https://github.com/atomicpages/skeleton-sass-official/commits?author=robertosobachi" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/thomasvandongen"><img src="https://avatars2.githubusercontent.com/u/11245177?v=4" width="100px;" alt=""/><br /><sub><b>Thomas van Dongen</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Athomasvandongen" title="Bug reports">🐛</a> <a href="https://github.com/atomicpages/skeleton-sass-official/commits?author=thomasvandongen" title="Code">💻</a></td>
   </tr>
 </table>
 
