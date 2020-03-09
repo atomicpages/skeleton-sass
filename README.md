@@ -1,6 +1,6 @@
 # Skeleton Sass 3
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com).
@@ -333,6 +333,7 @@ Skeleton Sass 3 offers a far more portable solution in order to adapt to new way
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/e-compton"><img src="https://avatars3.githubusercontent.com/u/11599729?v=4" width="100px;" alt=""/><br /><sub><b>Edward Compton</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/issues?q=author%3Ae-compton" title="Bug reports">🐛</a> <a href="https://github.com/atomicpages/skeleton-sass-official/commits?author=e-compton" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/if2527"><img src="https://avatars2.githubusercontent.com/u/18335580?v=4" width="100px;" alt=""/><br /><sub><b>if2527</b></sub></a><br /><a href="https://github.com/atomicpages/skeleton-sass-official/commits?author=if2527" title="Code">💻</a></td>
   </tr>
 </table>
 
