@@ -7,6 +7,14 @@
 
 Skeleton Sass is a highly modular version of [Skeleton CSS](http://getskeleton.com) build on top of the popular CSS metalanguage, Sass.
 
+## Public Archive
+
+I remember starting this project back in early 2010 when I was learning Java and using Netbeans
+IDE. Good times. Since then, Sass has gone from a Ruby-based implementation, to `libsass`, and now `dart`.
+I'll be honest, I haven't used Sass in a very long time. Maintaining this project was fun, but with
+agentic coding and solutions like tailwind, no one is really asking for something like this (or have I maintained it).
+Thanks for the support over the years and happy hacking!
+
 ### Key Features
 
 -   Ability to seamlessly adjust grids by changing the value of variables
